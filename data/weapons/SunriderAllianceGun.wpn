@@ -1,0 +1,47 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING_BURST",
+  "displayArcRadius": 300,
+  "fireSoundTwo": "SunriderGunFire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "id": "SunriderAllianceGun",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "particleColor": [
+      255,
+      120,
+      105,
+      250
+    ],
+    "particleCount": 11,
+    "particleDuration": 0.15,
+    "particleSizeMin": 7,
+    "particleSizeRange": 9,
+    "spread": 6
+  },
+  "projectileSpecId": "heavymg_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "specialWeaponGlowHeight": 25,
+  "specialWeaponGlowWidth": 15,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "turretOffsets": [
+    24.5,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SunriderAllianceGun.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 3
+}

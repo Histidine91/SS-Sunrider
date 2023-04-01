@@ -1,0 +1,204 @@
+{
+  "hullName": "Guppy",
+  "hullId": "SunriderPactCruiser",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/SunriderPactCruiser.png",
+  "style": "MIDLINE",
+  "height": 441,
+  "width": 169,
+  "center": [84.5, 220.5],
+  "collisionRadius": 209,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 215,
+  "viewOffset": 0,
+  "builtInMods": [
+    "armoredweapons",
+    "solar_shielding"
+  ],
+  "builtInWeapons": {
+    "WS0015": "SunriderLaserMedium",
+    "WS0016": "SunriderLaserMedium"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 217,
+      "angle": -42,
+      "locations": [186.5, -9.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 217,
+      "angle": 42,
+      "locations": [186.5, 8.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 45,
+      "locations": [103.5, 11.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 221,
+      "angle": -45,
+      "locations": [103.5, -12.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 222,
+      "angle": 45,
+      "locations": [172.5, 8.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 222,
+      "angle": -45,
+      "locations": [172.5, -9.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 111,
+      "angle": 74.5,
+      "locations": [-67.5, 9.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 111,
+      "angle": -74.5,
+      "locations": [-67.5, -9.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 148,
+      "angle": 74.5,
+      "locations": [-26.5, 15.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 148,
+      "angle": -74.5,
+      "locations": [-26.5, -16.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 111,
+      "angle": 90,
+      "locations": [35.5, 6.5]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 111,
+      "angle": -90,
+      "locations": [35.5, -7.5]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [84, -0.5],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [53, -0.5],
+      "renderOrderMod": 2
+    },
+    {
+      "id": "WS0015",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [39.5, 39.5]
+    },
+    {
+      "id": "WS0016",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [39.5, -39.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-179, 40],
+      "length": 40,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-179, -40.5],
+      "length": 40,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-207, -0.5],
+      "length": 70,
+      "width": 46,
+      "angle": 180,
+      "contrailSize": 38,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    210.5, -10.5,
+    -153.5, -77.5,
+    -208.5, -17,
+    -208.5, 17,
+    -153.5, 77.5,
+    210.5, 10.5
+  ]
+}

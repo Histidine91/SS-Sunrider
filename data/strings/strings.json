@@ -1,0 +1,56 @@
+{
+	"sunrider":{
+		"systemAwakenFloaty":"Awakened!",
+		"systemIronWillDesc1":"%s%% less damage taken",
+		"systemIronWillDesc2":"ballistic rate of fire +%s%%",
+		"systemIronWillDesc3":"ballistic flux use -%s%%",
+		
+		"mutinyFleetName":"Ava's Mutiny",		
+		"mutinyBlockSPDisengageTooltip":"This is unavoidable, face the consequences!",
+		
+		"skill_sunridersMother_desc1":"+%s%% flux dissipation (Sunrider only)",
+		"skill_sunridersMother_desc2":"Zero flux cost for ship system (Sunrider only)",
+		"skill_sunridersMother_desc3":"-%s%% fighter damage taken (Sunrider only)",
+		"skill_sunridersMother_desc4":"+%s%% fighter speed and acceleration (Sunrider only)"
+	},
+	"sunrider_missions":{
+		"firstTimeEngageOptionText":"BATTLE STATIONS",
+		"afterFirstTimeEngageOptionText":"BATTLE STATIONS",
+		"noSalvageLeaveOptionText":"Continue",
+		
+		# note: not used in in rules.csv, that file has to be edited separately
+		"avaNameFirst":"Ava",
+		"avaNameLast":"Crescentia",
+		"salvagerNameFirst":"Jinta",
+		"salvagerNameLast":"Suzuki",
+		
+		"findSunrider_name":"First Arrival",	# lol
+		"findSunrider_playthroughLogText":"Recovered the Sunrider",
+		
+		"findSunrider_talkToPirateDesc":"Talk to a pirate boss in comms directory in a permanent pirate settlement to find information on the salvage captain, %s.",
+		"findSunrider_talkToSalvagerDesc":"You've learned that %s is currently retired on the planet %s. Pay him a visit to find the location of the Sunrider.",
+		"findSunrider_recoverDesc":"Search the %s and recover the Sunrider.",
+		
+		"findSunrider_talkToPirateNextStep":"Talk to a pirate boss",
+		"findSunrider_talkToSalvagerNextStep":"Visit %s $onOrAt %s",
+		"findSunrider_recoverNextStep":"Recover the Sunrider in %s",
+		
+		"findSunrider_personalityAndLevel":"Personality: %s, level: %s",
+		
+		"mission2_name":"Origins",
+		"mission2_playthroughLogText":"Uncovered Ava Crescentia's origins",
+		"mission2_recoverDataDesc":"Bring the Sunrider to a skilled technical team somewhere, to perform a data recovery on the ship's memory.",
+		"mission2_recoverDataDesc1":"You could try asking an administrator in a Tri-Tachyon planet, or a secretary in one of your own colonies if you have Nexerelin enabled.",
+		"mission2_recoverDataDesc1Highlight":"Tri-Tachyon;own colonies",
+		"mission2_recoverDataDescGargoyle":"Alternatively, you might know someone at the Galatia Academy who could help with this task.",
+		"mission2_recoverDataDescGargoyleHighlight":"Galatia Academy",
+		"mission2_recoverDataDescKween":"Or perhaps, a prominent researcher from the Sindrian Fuel Company may have the required expertise.",
+		"mission2_recoverDataDescKweenHighlight":"Sindrian Fuel Company",
+		"mission2_recoverDataNextStep":"Bring the Sunrider to someone who can recover its memory",
+		
+		"mission3_name":"Nightmare Breakdown",
+		"mission3_nextStep":"Speak to Ava",
+		"mission3_desc":"Ava wants to discuss the potential weaknesses of the Nightmares with you.",
+		"mission3_button":"Speak with Ava",
+	},
+}

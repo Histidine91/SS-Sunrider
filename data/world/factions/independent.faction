@@ -1,0 +1,14 @@
+{
+	"knownShips":{
+		"hulls":[
+			"SunriderGunboat",
+			"SunriderMiningFrigate",
+		],
+	},
+	"hullFrequency":{		
+		"hulls":{
+			"SunriderGunboat":0.1,
+			"SunriderMiningFrigate":0.1,
+		},
+	}
+}

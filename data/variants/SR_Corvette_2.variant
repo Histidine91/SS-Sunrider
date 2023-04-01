@@ -1,0 +1,35 @@
+{
+  "variantId": "SR_Corvette_2",
+  "hullId": "SunriderPirateFrigate",
+  "displayName": "Overdriven",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 1,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "safetyoverrides",
+    "heavyarmor",
+    "armoredweapons",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderLaserSmall",
+        "WS0003": "SunriderLaserSmall"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

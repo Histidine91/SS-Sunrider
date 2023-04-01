@@ -1,0 +1,75 @@
+{
+  "variantId": "SR_AC_1",
+  "hullId": "SunriderAllianceCruiser",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 30,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "lightag",
+        "WS0008": "lightag",
+        "WS0009": "lightag",
+        "WS0010": "lightag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0021": "SunriderAllianceMissile",
+        "WS0022": "SunriderAllianceMissile"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0019": "SunriderLaserMedium",
+        "WS0020": "SunriderLaserMedium"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "vulcan",
+        "WS0004": "vulcan",
+        "WS0005": "vulcan",
+        "WS0006": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan",
+        "WS0015": "vulcan",
+        "WS0016": "vulcan",
+        "WS0017": "vulcan",
+        "WS0018": "vulcan"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderAllianceCannon",
+        "WS0002": "SunriderAllianceCannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,25 @@
+{
+  "variantId": "SR_MF_1",
+  "hullId": "SunriderMiningFrigate",
+  "displayName": "Shielded",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "frontshield"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderLaserSmall",
+        "WS0002": "SunriderLaserSmall"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

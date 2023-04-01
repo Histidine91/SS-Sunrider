@@ -1,0 +1,18 @@
+{
+	"id":"SunriderBullet",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":60.0,
+	"hitGlowRadius":180,
+	"width":24.0,
+	"fadeTime":0.2,
+	#"fringeColor":[255,255,255,255],
+	#"coreColor":[255,255,255,255],
+	"fringeColor":[255,255,255,255],
+	"coreColor":[255,255,255,255],	
+	"textureScrollSpeed":164.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/fx/SunriderBullet1.png"
+}

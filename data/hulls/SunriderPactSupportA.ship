@@ -1,0 +1,43 @@
+{
+  "hullName": "Pact Support A",
+  "hullId": "SunriderPactSupportA",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderPactSupport.png",
+  "style": "MIDLINE",
+  "height": 76,
+  "width": 76,
+  "center": [38, 39.5],
+  "collisionRadius": 23,
+  "shieldCenter": [-8, 0],
+  "shieldRadius": 37.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "solar_shielding",
+    "fluxshunt"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [
+    {
+      "location": [-7.5, 5.5],
+      "length": 2.5,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-7.5, -3.5],
+      "length": 2.5,
+      "width": 2,
+      "angle": -180,
+      "contrailSize": 2,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    6, -21,
+    15.5, 17,
+    -6.5, 16,
+    -21.5, -2.5
+  ]
+}

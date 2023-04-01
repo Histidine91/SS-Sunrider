@@ -1,0 +1,29 @@
+{
+  "variantId": "SunriderPirateGrunt_variant",
+  "hullId": "SunriderPirateGrunt",
+  "displayName": "",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderLaserSmall"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderPirateGun"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

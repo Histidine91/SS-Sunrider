@@ -1,0 +1,14 @@
+{
+  "variantId": "SunriderPactSupportB_variant",
+  "hullId": "SunriderPactSupportB",
+  "displayName": "",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

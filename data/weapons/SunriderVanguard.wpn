@@ -1,0 +1,37 @@
+{
+	"id":"SunriderVanguard",
+
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"LARGE",
+	"mountTypeOverride":"ENERGY",
+	"projectileSpecId":"SunriderVanguard",
+
+	"turretSprite":"graphics/weapons/SunriderEmpty.png",
+	"turretGlowSprite":"graphics/weapons/glow/SunriderEmpty.png",
+	"hardpointSprite":"graphics/weapons/SunriderEmpty.png",
+	"hardpointGlowSprite":"graphics/weapons/glow/SunriderEmpty.png",
+	
+	"everyFrameEffect":"data.scripts.weapons.SunriderVanguard",
+	
+	"turretOffsets":[1, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[1, 0],
+	"hardpointAngleOffsets":[0],
+
+	"glowColor":[130,130,250,255],
+
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW_AND_FLASH",
+
+	"muzzleFlashSpec":{"length":10.0,
+					   "spread":1.0,
+					   "particleSizeMin":2.0,
+					   "particleSizeRange":2.0,
+					   "particleDuration":0.25,
+					   "particleCount":25,
+					   "particleColor":[115,185,255,255]},		
+
+	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+	"fireSoundOne":"SunriderVanguardFire"
+}

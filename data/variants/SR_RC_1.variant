@@ -1,0 +1,42 @@
+{
+  "variantId": "SR_RC_1",
+  "hullId": "SunriderRyuvianCruiser",
+  "displayName": "Sniper",
+  "goalVariant": true,
+  "fluxCapacitors": 22,
+  "fluxVents": 30,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "stabilizedshieldemitter",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymauler",
+        "WS0002": "heavymauler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "sabotpod",
+        "WS0004": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "gauss"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

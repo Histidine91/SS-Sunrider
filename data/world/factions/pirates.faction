@@ -1,0 +1,29 @@
+{
+	"hullFrequency":{
+		"hulls":{
+			"SunriderIronhog":0.1,
+			"SunriderPirateFrigate":0.1,
+			"SunriderGunboat":0.1,
+			"SunriderMiningFrigate":0.1,
+		},
+	},
+	"knownShips":{
+		"hulls":[
+			"SunriderIronhog",
+			"SunriderPirateFrigate",
+		],
+	},
+	"knownFighters":{
+		"fighters":[
+			"SunriderPirateGrunt",
+			"SunriderPirateBomber",
+		],
+	},
+	"knownWeapons":{
+		"weapons":[
+			"SunriderPirateCannon",
+			"SunriderLaserSmall",
+		],
+	}	
+}
+

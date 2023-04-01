@@ -1,0 +1,92 @@
+{
+  "variantId": "SR_PBB_2",
+  "hullId": "SunriderPactBattleship",
+  "displayName": "Red",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 50,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "autorepair",
+    "heavyarmor"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "hellbore"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0030": "SunriderBattleshipMissile",
+        "WS0031": "SunriderBattleshipMissile"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0028": "SunriderBreacherBomb",
+        "WS0029": "SunriderBreacherBomb"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0014": "lightac",
+        "WS0015": "lightac",
+        "WS0026": "SunriderLaserLarge",
+        "WS0027": "SunriderLaserLarge"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "lightag",
+        "WS0005": "lightag",
+        "WS0006": "lightag",
+        "WS0007": "lightag",
+        "WS0010": "lightag",
+        "WS0011": "lightag",
+        "WS0012": "lightag",
+        "WS0013": "lightag",
+        "WS0016": "lightag",
+        "WS0017": "lightag",
+        "WS0018": "lightag",
+        "WS0019": "lightag",
+        "WS0020": "lightag",
+        "WS0021": "lightag"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderPactSavior",
+        "WS0002": "SunriderPactSavior",
+        "WS0008": "lightac",
+        "WS0009": "lightac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0022": "vulcan",
+        "WS0023": "vulcan",
+        "WS0024": "vulcan",
+        "WS0025": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

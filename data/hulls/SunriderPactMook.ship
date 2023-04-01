@@ -1,0 +1,55 @@
+{
+  "hullName": "PACT Mook",
+  "hullId": "SunriderPactMook",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderPactMook.png",
+  "style": "MIDLINE",
+  "height": 27,
+  "width": 29,
+  "center": [14.5, 13.5],
+  "collisionRadius": 14.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 14.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "SunriderPactGun",
+    "WS0002": "SunriderPactLaser",
+    "WS0003": "SunriderMookDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 25,
+      "angle": 0,
+      "locations": [1.5, 12]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 25,
+      "angle": 0,
+      "locations": [1.5, -11.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, -0]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    12, -13.5,
+    -11.5, -13.5,
+    -11.5, 13.5,
+    12, 13.5
+  ]
+}

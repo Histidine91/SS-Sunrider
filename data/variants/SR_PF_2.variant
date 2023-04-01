@@ -1,0 +1,26 @@
+{
+  "variantId": "SR_PF_2",
+  "hullId": "SunriderPactFrigate",
+  "displayName": "Fast",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 2,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "eccm",
+    "autorepair"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "SunriderPactMissile",
+        "WS0002": "SunriderPactMissile"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

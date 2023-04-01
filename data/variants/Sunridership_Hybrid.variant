@@ -1,0 +1,85 @@
+{
+  "variantId": "Sunridership_Hybrid",
+  "hullId": "Sunridership",
+  "displayName": "Ballistic",
+  "goalVariant": true,
+  "fluxCapacitors": 17,
+  "fluxVents": 50,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "dedicated_targeting_core",
+    "expanded_deck_crew",
+    "auxiliarythrusters",
+    "magazines",
+    "turretgyros"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0018": "SunriderVanguard"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0015": "hephag",
+        "WS0021": "heavymauler"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "sabot",
+        "WS0010": "sabot"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0023": "SunriderBattleshipMissile",
+        "WS0024": "SunriderBattleshipMissile"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0019": "multineedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0003": "vulcan",
+        "WS0004": "vulcan",
+        "WS0005": "vulcan",
+        "WS0006": "vulcan",
+        "WS0007": "vulcan",
+        "WS0008": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan",
+        "WS0016": "devastator",
+        "WS0017": "devastator",
+        "WS0020": "pdburst"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,40 @@
+{
+	"graphics":{
+		"fx":{
+			"SunriderVanguardTrail1":"graphics/fx/trails/SunriderVanguardTrail1.png",
+			"SunriderVanguardTrail2":"graphics/fx/trails/SunriderVanguardTrail2.png",
+			"SunriderHavocBomb":"graphics/fx/SunriderHavocBomb.png",
+			"SunriderMissile":"graphics/fx/SunriderMissile.png",
+		},
+		"illustrations":{
+			"SunriderDerelict":"graphics/illustrations/SunriderDerelict.png",
+			"SunriderHangar":"graphics/illustrations/SunriderHangar.png",
+			"SunriderNM":"graphics/illustrations/SunriderNM.png",
+			"SunriderSB":"graphics/illustrations/SunriderSB.png",
+			"SunriderEngineering":"graphics/illustrations/SunriderEngineering.png",
+			"SunriderBridge":"graphics/illustrations/SunriderBridge.png",
+			"SunriderQuarters":"graphics/illustrations/SunriderQuarters.png",
+			"SunriderGalaxyMap":"graphics/illustrations/galaxymap.png",
+			"SunriderAvaSalute":"graphics/illustrations/SunriderAvaSalute.png",
+			"SunriderBlush":"graphics/illustrations/SunriderBlush.png",
+			"SunriderBlushTwo":"graphics/illustrations/SunriderBlushTwo.png",
+		},
+		"portraits":{
+			"sunrider_ava":"graphics/portraits/Portrait_Ava.png",
+			"SunriderPrototype":"graphics/portraits/SunriderPrototype.png",
+		},	
+		"blueprint_packages":{
+			"SunriderPactPackage":"graphics/icons/cargo/SunriderPactIcon.png",
+			"SunriderAlliancePackage":"graphics/icons/cargo/SunriderAllianceIcon.png",
+		},
+	},
+	"designTypeColors":
+	{
+	"Holy Ryuvian Empire":[70, 119, 141, 255],
+	"Chigara Lynn Ashada":[96, 123, 198, 255],
+	"Ceran":[186, 190, 205, 255],
+	"Solar Alliance":[24, 79, 64, 255],
+	"PACT":[255, 117, 102, 255],
+	},
+
+}

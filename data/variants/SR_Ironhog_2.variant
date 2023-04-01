@@ -1,0 +1,45 @@
+{
+  "variantId": "SR_Ironhog_2",
+  "hullId": "SunriderIronhog",
+  "displayName": "Combat",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 15,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "autorepair",
+    "armoredweapons",
+    "targetingunit"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightag",
+        "WS0002": "lightag",
+        "WS0005": "lightag",
+        "WS0006": "lightag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "sabotpod",
+        "WS0008": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "lightdualmg",
+        "WS0004": "lightdualmg"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

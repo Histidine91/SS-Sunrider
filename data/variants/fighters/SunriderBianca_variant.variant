@@ -1,0 +1,21 @@
+{
+  "displayName": "Support Ryder",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "SunriderBianca",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SunriderBianca_variant",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderBiancaShotgun"
+      }
+    }
+  ],
+  "wings": []
+}

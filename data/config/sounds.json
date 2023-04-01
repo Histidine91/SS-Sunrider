@@ -1,0 +1,101 @@
+{
+	"SunriderVanguardFire":[
+		{"file": "sounds/effects/SunriderVanguardFire.ogg", "pitch": 1, "volume": 1}
+	],
+	"SunriderSeraphimFire":[
+		{"file": "sounds/effects/SunriderSeraphimFire.ogg", "pitch": 1, "volume": 0.5}
+	],
+	"SunriderLaser":[
+		{"file": "sounds/effects/SunriderLaser.ogg", "pitch": 1, "volume": 0.1}
+	],
+	"SunriderWarp1":[
+		{"file": "sounds/effects/SunriderWarp1.ogg", "pitch": 1, "volume": 1.2}
+	],
+	"SunriderWarp2":[
+		{"file": "sounds/effects/SunriderWarp2.ogg", "pitch": 1, "volume": 1.2},
+	],
+	"SunriderHeavyFire":[
+		{"file": "sounds/effects/SunriderHeavyFire.ogg", "pitch": 1, "volume": 0.3}
+	],
+	"SunriderTorpedo":[
+		{"file": "sounds/effects/SunriderTorpedo.ogg", "pitch": 1, "volume": 0.3}
+	],
+	"SunriderPulser":[
+		{"file": "sounds/effects/SunriderPulser.ogg", "pitch": 1, "volume": 0.2}
+	],
+	"SunriderMissile":[
+		{"file": "sounds/effects/SunriderMissile.ogg", "pitch": 1, "volume": 0.4}
+	],
+	"SunriderStrongLaser":[
+		{"file": "sounds/effects/SunriderStrongLaser.ogg", "pitch": 1, "volume": 0.3}
+	],
+	"SunriderSaviorFire":[
+		{"file": "sounds/effects/SunriderSaviorFire.ogg", "pitch": 1, "volume": 0.07}
+	],
+	"SunriderSaviorLow":[
+		{"file": "sounds/effects/SunriderSaviorFire.ogg", "pitch": 1, "volume": 0.04}
+	],
+	"SunriderNightmarePulser":[
+		{"file": "sounds/effects/SunriderNightmarePulser.ogg", "pitch": 1, "volume": 0.2}
+	],
+	"SunriderGunFire":[
+		{"file": "sounds/effects/SunriderGunFire.ogg", "pitch": 1, "volume": 0.1}
+	],
+	"SunriderHavocGun":[
+		{"file": "sounds/effects/SunriderHavocGun.ogg", "pitch": 1, "volume": 0.07}
+	],
+	"SunriderSuperCannon":[
+		{"file": "sounds/effects/SunriderSuperCannon.ogg", "pitch": 1, "volume": 0.5}
+	],
+	"SunriderBlackJackPulser":[
+		{"file": "sounds/effects/SunriderBlackJackPulser.ogg", "pitch": 1, "volume": 0.2}
+	],
+	
+	"music":{
+		"SunriderBoss":[
+			{"file": "SunriderBoss.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"cbm_SunriderBoss":[
+			{"file": "SunriderBoss.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"SunriderDiscover":[
+			{"file": "SunriderDiscover.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
+		],
+		"SunriderRecover":[
+			{"file": "SunriderRecover.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"SunriderClaude":[
+			{"file": "SunriderClaude.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"cbm_SunriderTheDepartureBattle":[
+			{"file": "SunriderTheDepartureBattle.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"SunriderTheDeparture":[
+			{"file": "SunriderTheDeparture.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"cbm_Epic_Action_Hero":[
+			{"file": "Epic_Action_Hero.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"One_Day_In_August":[
+			{"file": "One_Day_In_August.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
+		],
+		"SunriderAnguish":[
+			{"file": "SunriderAnguish.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
+		],
+		"SunriderTumbrel":[
+			{"file": "SunriderTumbrel.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
+		],
+		"SunriderValve":[
+			{"file": "SunriderValve.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
+		],
+		"SunriderLoveTheme":[
+			{"file": "SunriderLoveTheme.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+		"Monkeys_Spinning_Monkeys":[
+			{"file": "Monkeys_Spinning_Monkeys.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
+		],
+		"Battle_Against_Time":[
+			{"file": "Battle_Against_Time.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
+	}
+}

@@ -1,0 +1,59 @@
+{
+  "id": "SunriderLibertyLaser",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "com.fs.starfarer.api.impl.combat.RiftLanceEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/SunriderLibertyLaser.png",
+  "turretGlowSprite": "graphics/weapons/glow/SunriderNMPulserGlow.png",
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderLaserGlow.png",
+  "glowColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    44,
+    -0.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    12,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    100,
+    60,
+    255,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 20,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  "fireSoundTwo": "SunriderLaser",
+  "coreWidthMult": 0.8
+}

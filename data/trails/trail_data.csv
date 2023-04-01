@@ -1,0 +1,3 @@
+trail,projectile,sprite,minLength,fadeIn,duration,fadeOut,sizeIn,sizeOut,colorIn,colorOut,opacity,textLength,textScroll,distance,dispersion,drift,fadeOnFadeOut,angleAdjustment,additive,velocityIn,velocityOut,randomVelocity,angle,rotationIn,rotationOut,randomRotation,renderBelowExplosions
+SunriderVanguard1,SunriderVanguard,SunriderVanguardTrail1,40,0,0.7,3.5,180,90,"[255,255,255]","[255,255,255]",1,200,-100,0,0,0,TRUE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE
+SunriderVanguard2,SunriderVanguard,SunriderVanguardTrail2,40,0,0.7,3.5,150,180,"[100,0,0]","[100,0,0]",1,200,100,0,0,0,FALSE,FALSE,TRUE,0,0,0,0,0,0,FALSE,FALSE

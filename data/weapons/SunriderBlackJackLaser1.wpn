@@ -1,0 +1,64 @@
+{
+  "id": "SunriderBlackJackLaser1",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "com.fs.starfarer.api.impl.combat.RiftLanceEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/SunriderBlackJackLaser1.png",
+  "turretGlowSprite": "graphics/weapons/glow/SunriderBlackJackLaserGlow.png",
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderLaserGlow2.png",
+  "glowColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    30.5,
+    3,
+    30.5,
+    -3
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    19.5,
+    1.5,
+    19.5,
+    -3.5
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "fringeColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "width": 20,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 5,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  "fireSoundTwo": "SunriderLaser"
+}

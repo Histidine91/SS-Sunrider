@@ -1,0 +1,49 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "SunriderSeraphimFire",
+  "glowColor": [
+    100,
+    150,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderLaserGlow.png",
+  "hardpointOffsets": [
+    18,
+    -0.5
+  ],
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "id": "SunriderSeraphimGun",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [
+      100,
+      150,
+      255,
+      255
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.01,
+    "particleSizeMin": 20,
+    "particleSizeRange": 10,
+    "spread": 15
+  },
+  "projectileSpecId": "cryoblaster_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/weapons/glow/SunriderLaserGlow.png",
+  "turretOffsets": [
+    0,
+    -0.5
+  ],
+  "turretSprite": "graphics/weapons/SunriderEmpty.png",
+  "type": "ENERGY"
+}

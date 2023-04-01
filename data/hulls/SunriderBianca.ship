@@ -1,0 +1,65 @@
+{
+  "hullName": "Bianca",
+  "hullId": "SunriderBianca",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderBianca.png",
+  "style": "OMEGA",
+  "height": 50,
+  "width": 52,
+  "center": [24.5, 17.5],
+  "collisionRadius": 27.5,
+  "shieldCenter": [9, -6.5],
+  "shieldRadius": 33.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "solar_shielding"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderBiancaShotgun",
+    "WS0002": "SunriderBiancaDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 0,
+      "locations": [2, -13.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2.5, -15.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-6.5, -13.5],
+      "length": 6,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-6.5, 7],
+      "length": 6,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -6.5, -26.5,
+    -7, 19,
+    16.5, 19.5,
+    12.5, -27
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "hullName": "Mining Union Frigate",
+  "hullId": "SunriderMiningFrigate",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/SunriderMiningFrigate.png",
+  "style": "LOW_TECH",
+  "height": 192,
+  "width": 61,
+  "center": [30.5, 96.5],
+  "collisionRadius": 95.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 95.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "high_scatter_amp",
+    "targetingunit",
+    "advancedoptics",
+    "fluxbreakers",
+    "civgrade"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderLaserSmall",
+    "WS0002": "SunriderLaserSmall"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [9, -19.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [9, 19.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-76, 21],
+      "length": 21,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-76, -21],
+      "length": 21,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-94.5, 0.5],
+      "length": 30,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -91.5, 14.5,
+    -66.5, 28,
+    6.5, 26.5,
+    13, 14,
+    55.5, 14.5,
+    95, 5,
+    95, -5,
+    55.5, -14.5,
+    13, -14,
+    6.5, -26.5,
+    -66.5, -28,
+    -91.5, -14.5
+  ]
+}

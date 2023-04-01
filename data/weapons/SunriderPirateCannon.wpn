@@ -1,0 +1,59 @@
+{
+  "id": "SunriderPirateCannon",
+  "specClass": "projectile",
+  "projectileSpecId": "heavymauler_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretSprite": "graphics/weapons/SunriderPirateCannon.png",
+  "turretGunSprite": "graphics/weapons/SunriderPirateCannonBarrel.png",
+  "turretUnderSprite": "graphics/weapons/SunriderPirateCannonUnder.png",
+  "hardpointSprite": "graphics/weapons/SunriderPirateCannonHardpoint.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderPirateCannonHardpointBarrel.png",
+  "visualRecoil": 7,
+  "turretOffsets": [
+    30.5,
+    3,
+    30.5,
+    0,
+    30.5,
+    -3
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    44,
+    3,
+    44,
+    0,
+    44,
+    -3
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 3,
+    "particleSizeMin": 5,
+    "particleSizeRange": 8,
+    "particleDuration": 0.5,
+    "particleCount": 4,
+    "particleColor": [
+      255,
+      165,
+      100,
+      200
+    ]
+  },
+  "fireSoundTwo": "SunriderSaviorLow"
+}

@@ -1,0 +1,70 @@
+{
+  "hullName": "Julian",
+  "hullId": "SunriderPactDestroyer",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/SunriderPactDestroyer.png",
+  "style": "MIDLINE",
+  "height": 270,
+  "width": 90,
+  "center": [45, 134.5],
+  "collisionRadius": 133,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 135,
+  "viewOffset": 0,
+  "builtInMods": [
+    "fluxbreakers",
+    "autorepair"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderBreacherBomb",
+    "WS0002": "SunriderBreacherBomb"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [65, 8.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [65, -8.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-132, -0],
+      "length": 65,
+      "width": 40,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    124.5, -13.5,
+    -38.5, -14,
+    -38.5, -21,
+    44, -21,
+    44, -29,
+    -11.5, -44.5,
+    -120, -44.5,
+    -132.5, -9,
+    -132.5, 9,
+    -120, 44.5,
+    -11.5, 44.5,
+    44, 29,
+    44, 21,
+    -38.5, 21,
+    -38.5, 14,
+    124.5, 13.5
+  ]
+}

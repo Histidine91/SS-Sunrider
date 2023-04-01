@@ -1,0 +1,35 @@
+{
+  "variantId": "SR_Corvette_4",
+  "hullId": "SunriderPirateFrigate",
+  "displayName": "Lost",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 4,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "fluxbreakers",
+    "unstable_injector",
+    "safetyoverrides",
+    "frontshield"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderPirateCannon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderLaserSmall",
+        "WS0003": "SunriderLaserSmall"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

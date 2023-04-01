@@ -1,0 +1,27 @@
+{
+  "variantId": "SR_PD_3",
+  "hullId": "SunriderPactDestroyer",
+  "displayName": "Red",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "eccm",
+    "frontshield",
+    "missleracks"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderBreacherBomb",
+        "WS0002": "SunriderBreacherBomb"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

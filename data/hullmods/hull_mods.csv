@@ -1,0 +1,22 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+Ryuvian Afterburners,SunriderRyuvianAfterburners,0,,Holy Ryuvian Empire,"special, engines, offensive, no_drop, no_drop_salvage, restricted","Special, Engines, Requires Dock",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderRyuvianAfterburners,"Ryuvian vessels have unique energy systems.
+
+Increases 0-flux boost speed by %s/%s/%s/%s and allows the zero-flux engine boost to take effect regardless of flux level.
+
+However, it also prevents the use of active venting.",Increases 0-flux boost speed by %s/%s/%s/%s and allows it to take effect regardless of flux level. Prevents the use of active venting.,graphics/hullmods/SunriderRyuvianAfterburners.png
+Ryuvian Engineering,SunriderRyuvianEngineering,0,,Holy Ryuvian Empire,"special, engines, defensive, no_drop, no_drop_salvage, restricted","Weapons, Defenses, Engines, Requires Dock",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderRyuvianEngineering,"Nobody but Ryuvians are worthy of this technology.
+
+Increases weapons durability by %s and engines durability by %s.",Increases weapons durability by %s and engines durability by %s.,graphics/hullmods/SunriderRyuvianEngineering.png
+Short Range Warp,SunriderShortRangeWarp,0,,Chigara Lynn Ashada,"special, offensive, no_drop, no_drop_salvage, restricted","Special, Support",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderShortRangeWarp,"The Sunrider's ultra accurate warp system can be used even on ground invasions, such as the barely successful Wedding Crash. Besides, without this, the Sunrider would cause you to be always identified regardless of transponder.
+
+Increases the effective strength of planetary raids by %s, up to the total number of marines in the fleet.","Increases the effective strength of planetary raids by %s, up to the total number of marines in the fleet.",graphics/hullmods/SunriderShortRangeWarp.png
+Advanced Ceran Engineering,SunriderCeranEngineering,0,,Ceran,"special, engines, defensive, shields, no_drop, no_drop_salvage, restricted","Special, Engines, Shields, Defenses, Support",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderCeranEngineering,"The Sunrider was built with the most modern technologies available at Cera when she was developed, but with upgrades provided by Chigara Lynn Ashada and the Solar Alliance, she became even more modern.
+
+Increases ECM rate by %s, shield unfold and turn rate by %s, and flux dissipation rate, including additional vents by %s.
+
+However, it also prevents the use of active venting and reduces 0-flux top speed by %s. If another hullmod increases 0-flux top speed by a flat amount, the bonus is also affected.","Increases ECM rate by %s, and shield unfold and turn rate by %s.
+
+Prevents the use of active venting and reduces 0-flux top speed by %s.",graphics/hullmods/SunriderCeranEngineering.png
+Sick Bay,SunriderSickBay,0,,Ceran,"special, no_drop, no_drop_salvage, restricted",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderSickBay,"The Sunrider hosts a special infirmary that can recover injuries of her crew members faster.
+
+Reduces crew casualities from hull damage and fighter losses by %s.",Reduces crew casualities from hull damage and fighter losses by %s.,graphics/hullmods/SunriderSickBay.png

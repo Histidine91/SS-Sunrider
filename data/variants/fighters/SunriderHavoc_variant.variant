@@ -1,0 +1,42 @@
+{
+  "displayName": "Bomber Ryder",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "SunriderHavoc",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SunriderHavoc_variant",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "chaingun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "SunriderPirateMissile",
+        "WS0005": "SunriderPirateMissile"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderHavocTorpedo",
+        "WS0003": "SunriderHavocTorpedo"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "wings": []
+}

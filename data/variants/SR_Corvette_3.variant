@@ -1,0 +1,34 @@
+{
+  "variantId": "SR_Corvette_3",
+  "hullId": "SunriderPirateFrigate",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 10,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "heavyarmor",
+    "targetingunit",
+    "reinforcedhull"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderLaserSmall",
+        "WS0003": "SunriderLaserSmall"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

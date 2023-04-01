@@ -1,0 +1,42 @@
+{
+  "variantId": "SR_RC_2",
+  "hullId": "SunriderRyuvianCruiser",
+  "displayName": "Plasma",
+  "goalVariant": true,
+  "fluxCapacitors": 11,
+  "fluxVents": 30,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "stabilizedshieldemitter",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "plasma"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "typhoon",
+        "WS0004": "typhoon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavyneedler",
+        "WS0002": "heavyneedler"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

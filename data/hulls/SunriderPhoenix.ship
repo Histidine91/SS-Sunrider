@@ -1,0 +1,76 @@
+{
+  "hullName": "Phoenix",
+  "hullId": "SunriderPhoenix",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderPhoenix.png",
+  "style": "OMEGA",
+  "height": 80,
+  "width": 80,
+  "center": [41.5, 42],
+  "collisionRadius": 23,
+  "shieldCenter": [-13.5, 1],
+  "shieldRadius": 45,
+  "viewOffset": 0,
+  "builtInMods": [
+    "pointdefenseai"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderPhoenixMachineGun1",
+    "WS0002": "SunriderPhoenixMachineGun2",
+    "WS0003": "SunriderPhoenixDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": 12.5,
+      "locations": [-4.5, 10]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": -12.5,
+      "locations": [-3.5, -9.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-3, -0],
+      "renderOrderMod": 100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-9.5, 5],
+      "length": 3,
+      "width": 3,
+      "angle": 180,
+      "contrailSize": 3,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-9.5, -3.5],
+      "length": 3,
+      "width": 3,
+      "angle": 180,
+      "contrailSize": 3,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -12, 16,
+    -15, -17.5,
+    9.5, -12,
+    16, 10.5
+  ]
+}

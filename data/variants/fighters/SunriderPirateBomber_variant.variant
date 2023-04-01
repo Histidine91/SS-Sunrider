@@ -1,0 +1,39 @@
+{
+  "variantId": "SunriderPirateBomber_variant",
+  "hullId": "SunriderPirateBomber",
+  "displayName": "",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderPirateGun",
+        "WS0002": "SunriderPirateGun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SunriderPirateBomb",
+        "WS0004": "SunriderPirateBomb"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "SunriderPirateMissile",
+        "WS0007": "SunriderPirateMissile"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,378 @@
+{
+  "hullName": "Veniczar",
+  "hullId": "SunriderPactBattleship",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/ships/SunriderPactBattleship.png",
+  "style": "MIDLINE",
+  "height": 770,
+  "width": 230,
+  "center": [115.5, 357],
+  "collisionRadius": 349,
+  "shieldCenter": [28, 0.5],
+  "shieldRadius": 377,
+  "viewOffset": 0,
+  "builtInMods": [
+    "solar_shielding",
+    "advancedshieldemitter"
+  ],
+  "builtInWeapons": {
+    "WS0026": "SunriderLaserLarge",
+    "WS0027": "SunriderLaserLarge",
+    "WS0028": "SunriderBreacherBomb",
+    "WS0029": "SunriderBreacherBomb",
+    "WS0030": "SunriderBattleshipMissile",
+    "WS0031": "SunriderBattleshipMissile"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [243.5, 0.5],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [170.5, 0.5],
+      "renderOrderMod": 8
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [116.5, 0.5],
+      "renderOrderMod": 9
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": 71.5,
+      "locations": [206, 19.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": -71.5,
+      "locations": [206, -18.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": -71.5,
+      "locations": [192, -18.5],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": 71.5,
+      "locations": [192, 19.5],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": -71.5,
+      "locations": [178, -18.5],
+      "renderOrderMod": 2
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 170,
+      "angle": 71.5,
+      "locations": [178, 19.5],
+      "renderOrderMod": 2
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": -63.5,
+      "locations": [164, -18.5],
+      "renderOrderMod": 3
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": 63.5,
+      "locations": [164, 19.5],
+      "renderOrderMod": 3
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -62,
+      "locations": [147, -18.5],
+      "renderOrderMod": 4
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 62,
+      "locations": [147, 19.5],
+      "renderOrderMod": 4
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -59,
+      "locations": [133, -18.5],
+      "renderOrderMod": 5
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 59,
+      "locations": [133, 19.5],
+      "renderOrderMod": 5
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -51.5,
+      "locations": [119, -18.5],
+      "renderOrderMod": 6
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 51,
+      "locations": [118.5, 19.5],
+      "renderOrderMod": 6
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": -41.5,
+      "locations": [105, -18.5],
+      "renderOrderMod": 7
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": 43.5,
+      "locations": [105, 19.5],
+      "renderOrderMod": 7
+    },
+    {
+      "id": "WS0020",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -59.5,
+      "locations": [81, -21.5]
+    },
+    {
+      "id": "WS0021",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": 59.5,
+      "locations": [81, 22.5]
+    },
+    {
+      "id": "WS0022",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": -90,
+      "locations": [70, -21.5]
+    },
+    {
+      "id": "WS0023",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": 90,
+      "locations": [70, 22.5]
+    },
+    {
+      "id": "WS0024",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 128,
+      "angle": -97,
+      "locations": [59, -22.5]
+    },
+    {
+      "id": "WS0025",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 128,
+      "angle": 97,
+      "locations": [59, 22.5]
+    },
+    {
+      "id": "WS0026",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [95.5, 51]
+    },
+    {
+      "id": "WS0027",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [95.5, -50]
+    },
+    {
+      "id": "WS0028",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 34.5,
+      "locations": [41, 51.5]
+    },
+    {
+      "id": "WS0029",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -34.5,
+      "locations": [41, -50.5]
+    },
+    {
+      "id": "WS0030",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 34.5,
+      "locations": [-29.5, 29.5]
+    },
+    {
+      "id": "WS0031",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -34.5,
+      "locations": [-29.5, -28.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-335, 43],
+      "length": 65,
+      "width": 39,
+      "angle": 180,
+      "contrailSize": 39,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-335, -42],
+      "length": 65,
+      "width": 39,
+      "angle": -180,
+      "contrailSize": 39,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-345.5, 0.5],
+      "length": 76,
+      "width": 39,
+      "angle": 180,
+      "contrailSize": 39,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -204, -105.5,
+    -204, -45.5,
+    -331, -65,
+    -346.5, -16.5,
+    -346.5, 17.5,
+    -331, 66,
+    -204, 46.5,
+    -204, 106.5,
+    -119, 93,
+    -105, 57.5,
+    97.5, 58,
+    97.5, 41.5,
+    213.5, 41.5,
+    242, 31,
+    292, 32.5,
+    329.5, 7.5,
+    402, 8.5,
+    402, -8.5,
+    329.5, -7.5,
+    294, -32,
+    242, -31,
+    213.5, -41.5,
+    97.5, -41.5,
+    97.5, -57,
+    -105, -56.5,
+    -119, -92
+  ]
+}

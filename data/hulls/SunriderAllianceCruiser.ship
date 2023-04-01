@@ -1,0 +1,269 @@
+{
+  "hullName": "Agatha Christie",
+  "hullId": "SunriderAllianceCruiser",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/SunriderAllianceCruiser.png",
+  "style": "HIGH_TECH",
+  "height": 497,
+  "width": 164,
+  "center": [82, 248.5],
+  "collisionRadius": 247.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 247.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "armoredweapons",
+    "fluxbreakers",
+    "missleracks"
+  ],
+  "builtInWeapons": {
+    "WS0019": "SunriderLaserMedium",
+    "WS0020": "SunriderLaserMedium",
+    "WS0021": "SunriderAllianceMissile",
+    "WS0022": "SunriderAllianceMissile"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [57.5, -0],
+      "renderOrderMod": 2
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [98.5, -0],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": 42.5,
+      "locations": [205.5, 12]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": -42.5,
+      "locations": [205.5, -12]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": 42.5,
+      "locations": [186.5, 12]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": -42.5,
+      "locations": [186.5, -12]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": 42.5,
+      "locations": [167.5, 12]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": -42.5,
+      "locations": [167.5, -12]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": 42.5,
+      "locations": [148, 12]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 236,
+      "angle": -42.5,
+      "locations": [148, -12]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 184,
+      "angle": 89,
+      "locations": [-104, 39]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 184,
+      "angle": -89,
+      "locations": [-104, -39]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 165,
+      "angle": 80.5,
+      "locations": [-80.5, 38]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 165,
+      "angle": -80.5,
+      "locations": [-80.5, -38]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 167,
+      "angle": 78.5,
+      "locations": [-58, 37.5]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 167,
+      "angle": -78.5,
+      "locations": [-58, -37.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 168,
+      "angle": 78,
+      "locations": [-34, 38]
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 168,
+      "angle": -78,
+      "locations": [-34, -38]
+    },
+    {
+      "id": "WS0019",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [38, -40.5]
+    },
+    {
+      "id": "WS0020",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [38, 40.5]
+    },
+    {
+      "id": "WS0021",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [12, 44]
+    },
+    {
+      "id": "WS0022",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [12, -44]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-247.5, -0],
+      "length": 72,
+      "width": 33,
+      "angle": 180,
+      "contrailSize": 33,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-247.5, 0],
+      "length": 72,
+      "width": 33,
+      "angle": -180,
+      "contrailSize": 33,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -246.5, -25.5,
+    -168.5, -70.5,
+    -118, -80,
+    -100, -64,
+    -83, -81.5,
+    -14, -72,
+    8.5, -53,
+    55.5, -36.5,
+    183, -35.5,
+    188.5, -16,
+    238.5, -14.5,
+    238.5, 14.5,
+    188.5, 16,
+    183, 35.5,
+    55.5, 36.5,
+    8.5, 53,
+    -14, 72,
+    -83, 81.5,
+    -100, 64,
+    -118, 80,
+    -168.5, 70.5,
+    -246.5, 25.5
+  ]
+}

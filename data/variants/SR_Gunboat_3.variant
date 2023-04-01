@@ -1,0 +1,42 @@
+{
+  "variantId": "SR_Gunboat_3",
+  "hullId": "SunriderGunboat",
+  "displayName": "Fast",
+  "goalVariant": true,
+  "fluxCapacitors": 1,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "frontshield",
+    "targetingunit",
+    "unstable_injector"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightag",
+        "WS0002": "lightag"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "lightdualac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "lightdualmg",
+        "WS0004": "lightdualmg"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,60 @@
+{
+  "variantId": "SR_PC_2",
+  "hullId": "SunriderPactCruiser",
+  "displayName": "Red",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 26,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "autorepair",
+    "hardenedshieldemitter",
+    "unstable_injector"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0013": "heavymortar",
+        "WS0014": "heavymortar"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0015": "SunriderLaserMedium",
+        "WS0016": "SunriderLaserMedium"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "railgun",
+        "WS0004": "railgun",
+        "WS0005": "lightdualac",
+        "WS0006": "lightdualac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vulcan",
+        "WS0002": "vulcan",
+        "WS0007": "vulcan",
+        "WS0008": "vulcan",
+        "WS0009": "vulcan",
+        "WS0010": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

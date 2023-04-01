@@ -1,0 +1,39 @@
+{
+  "variantId": "SR_RC_3",
+  "hullId": "SunriderRyuvianCruiser",
+  "displayName": "X",
+  "goalVariant": true,
+  "fluxCapacitors": 12,
+  "fluxVents": 30,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "stabilizedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymauler",
+        "WS0002": "heavymauler",
+        "WS0003": "sabotpod",
+        "WS0004": "sabotpod",
+        "WS0005": "plasma"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

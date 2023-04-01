@@ -1,0 +1,44 @@
+{
+  "variantId": "SunriderBlackJack_variant",
+  "hullId": "SunriderBlackJack",
+  "displayName": "Combat Ryder",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderBlackJackLaser2",
+        "WS0007": "SunriderBlackJackLaser1"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SunriderRyderMissile"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "SunriderBlackJackMachineGun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "SunriderBlackJackPulser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,24 @@
+{
+	"id":"Sunrider", # internal id
+	"name":"Sunrider", # displayed to the player
+	"author":"Alex Sans",
+	"version":"0.3.0",
+	"description":"A unique Ceran Assault Carrier has slipped into the Persean Sector.",
+	"gameVersion":"0.95.1a-RC6",
+	"modPlugin":"data.scripts.SunriderModPlugin",
+	"jars":["jars/Sunrider.jar"],
+	"dependencies": [
+        {
+            "id": "lw_lazylib",
+            "name": "LazyLib",
+        },
+        {
+            "id": "MagicLib",
+            "name": "MagicLib",
+        },
+		{
+            "id": "shaderLib",
+            "name": "GraphicsLib",
+        },
+    ],
+}

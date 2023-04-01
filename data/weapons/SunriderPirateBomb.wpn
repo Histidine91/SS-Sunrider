@@ -1,0 +1,43 @@
+{
+  "id": "SunriderPirateBomb",
+  "specClass": "projectile",
+  "projectileSpecId": "SunriderBlackBomb",
+  "type": "MISSILE",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/SunriderPirateBomb.png",
+  "hardpointSprite": "",
+  "turretOffsets": [
+    -0.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 10,
+    "particleSizeRange": 12,
+    "cloudParticleCount": 5,
+    "cloudDuration": 1.5,
+    "cloudRadius": 1,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 15,
+    "blowbackSpread": 10,
+    "particleColor": [
+      237,
+      94,
+      0,
+      30
+    ]
+  },
+  "fireSoundTwo": "SunriderTorpedo"
+}

@@ -1,0 +1,76 @@
+{
+    "sunrider_sunriderBounty":{
+        #TRIGGERS (ALL OPTIONAL)
+        "trigger_marketFaction_none": ["independent"],
+        "trigger_player_minLevel": 5,
+        "trigger_min_fleet_size": 150,
+        "trigger_memKeys_all": {"$sunrider_bountyEnabled":true,},
+        
+        #BOUNTY DESCRIPTION
+        
+        "job_name": "Final Ride of the Sun",
+        "job_description": "In recent cycles, an emergent armed force has waged a guerrilla war against the major 'imperialistic' powers of the Sector, as well as striking at the pirates and Luddic Path. This movement is led by one ==$name==, a military officer of mysterious background. ^$heSheThey commands an even more mysterious ship, the ==$shipName==, said to originate from a polity beyond the old Domain.\nRemarkably, $hisHerTheir efforts have proven so devastating that the major factions have come together to put a sizable bounty on $hisHerTheir head. Whoever puts down this troublemaker before $heSheThey can give rise to a genuine revolutionary movement shall be well-rewarded indeed.\nThe $shipName is a symbol of the new movement and ==must be annihilated==.",
+        "job_comm_reply": "\"I did not choose to come to this part of the universe. I did not choose to be separated from my friends, or to take up this mantle. But I have found myself in a distant yet all-too-familiar world, one where the strong trample upon the weak, where conquerors raze a dozen worlds for their own power and glory.\n\n\"I may never truly put an end to such things, but I must try all the same. It's what he would do.\n\n\"On this day, the Sunrider will stand her ground!\"",
+        "job_intel_success": "You have defeated $name and the famed Sunrider, earning yourself a sizable reward in both monetary and fame terms. Whether it was worth it is up to you.",
+        "job_intel_failure": "By recovering the enemy flagship, you have breached the terms of the contract. Your payment may be denied, but the legend of the Sunrider lives on.",
+        #"job_intel_expired": "",
+        #"job_forFaction": "",
+        #"job_deadline": 0,
+        "job_credit_reward": 500000,	# 500k
+        "job_reward_scaling": 0.25,
+        "job_reputation_reward":0,
+        #"job_item_reward": {"item":0},
+        "job_type":"destruction",#"assassination",
+        "job_show_type": true,
+        "job_show_fleet": "flagshipText",
+        "job_show_distance": "vague",
+        "job_difficultyDescription": "auto",
+        
+        #"existing_target_memkey":"$memKey",
+
+        #TARGET COMMANDER (OPTIONAL)
+        
+        "target_first_name":"Ava",
+        "target_last_name":"Crescentia",
+        "target_portrait":"graphics/portraits/Portrait_Ava.png",
+        "target_gender":"FEMALE",
+        "target_rank": "spaceCommander",
+        "target_post": "officer",
+        "target_personality": "steady",
+        "target_skills": {
+            "helmsmanship":2,
+            "combat_endurance":2,
+            "field_modulation":2,
+            "point_defense":2,
+            "ballistic_mastery":2,
+            "gunnery_implants":2,
+            "polarized_armor":2,
+            "ordnance_expert":2,
+            "tactical_drills":1,
+        },
+    
+        #TARGET FLEET
+        
+        "fleet_name":"Kayto's Legacy",
+        "fleet_faction": "independent",
+        "fleet_flagship_variant":"Sunridership_Hybrid",
+        "fleet_flagship_name":"Sunrider",
+        "fleet_flagship_recoverable": true,
+        "fleet_flagship_autofit": true,
+        "fleet_scaling_multiplier": 0.75,
+        "fleet_min_FP": 150,
+        "fleet_composition_faction": "mercenary",
+        "fleet_composition_quality": 3,
+        "fleet_no_retreat": false,
+        "fleet_behavior": "GUARDED",
+        
+        #LOCATION
+        
+        #"location_marketFactions": ["independent"],
+        "location_distance": "CLOSE",
+        "location_themes": ["procgen_no_theme", "procgen_no_theme_pulsar_blackhole"],
+        "location_themes_blacklist": ["theme_already_occupied", "theme_already_colonized", "theme_hidden", "no_pulsar_blackhole"],
+        #"location_prioritizeUnexplored": false,
+        "location_defaultToAnyEntity": true,
+    },
+}

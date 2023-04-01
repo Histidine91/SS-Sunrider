@@ -1,0 +1,85 @@
+{
+  "id": "SunriderBiancaShotgun",
+  "specClass": "projectile",
+  "projectileSpecId": "SunriderBiancaShotgun_shot",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "displayArcRadius": 600,
+  "turretSprite": "graphics/weapons/SunriderBiancaShotgun.png",
+  "turretGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "specialWeaponGlowHeight": 30,
+  "specialWeaponGlowWidth": 12,
+  "visualRecoil": 7,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "turretOffsets": [
+    40,
+    0,
+    36.5,
+    1,
+    37.5,
+    -2,
+    33.5,
+    2.5,
+    35,
+    -2.5,
+    30.5,
+    4.5,
+    31.5,
+    -4
+  ],
+  "turretAngleOffsets": [
+    0,
+    1.5,
+    -1.5,
+    3,
+    -3,
+    4.5,
+    -4.5
+  ],
+  "hardpointOffsets": [
+    39,
+    0,
+    35.5,
+    2,
+    36,
+    -2,
+    32.5,
+    3,
+    33,
+    -3,
+    29.5,
+    4,
+    30,
+    -4
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    1.5,
+    -1.5,
+    3,
+    -3,
+    4.5,
+    -4.5
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 10,
+    "spread": 28,
+    "particleSizeMin": 12,
+    "particleSizeRange": 14,
+    "particleDuration": 0.2,
+    "particleCount": 18,
+    "particleColor": [
+      165,
+      225,
+      185,
+      175
+    ]
+  },
+  "fireSoundTwo": "SunriderHeavyFire"
+}

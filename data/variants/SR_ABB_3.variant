@@ -1,0 +1,92 @@
+{
+  "variantId": "SR_ABB_3",
+  "hullId": "SunriderAllianceBattleship",
+  "displayName": "Hero",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 48,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "reinforcedhull",
+    "blast_doors"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0030": "SunriderSuperCannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderLaserLarge",
+        "WS0002": "SunriderLaserLarge"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SunriderBattleshipMissile",
+        "WS0004": "SunriderBattleshipMissile"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "lightag",
+        "WS0006": "lightag"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0025": "devastator",
+        "WS0026": "devastator"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0027": "SunriderAllianceSavior",
+        "WS0028": "SunriderAllianceSavior",
+        "WS0029": "SunriderAllianceSavior",
+        "WS0031": "SunriderAllianceSavior"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "lightdualmg",
+        "WS0008": "lightdualmg",
+        "WS0009": "lightdualmg",
+        "WS0010": "lightdualmg",
+        "WS0011": "lightdualmg",
+        "WS0012": "lightdualmg",
+        "WS0013": "lightdualmg",
+        "WS0014": "lightdualmg",
+        "WS0015": "lightdualmg",
+        "WS0016": "lightdualmg",
+        "WS0017": "lightdualmg",
+        "WS0018": "lightdualmg",
+        "WS0019": "lightdualmg",
+        "WS0020": "lightdualmg",
+        "WS0021": "lightdualmg",
+        "WS0022": "lightdualmg",
+        "WS0023": "lightdualmg",
+        "WS0024": "lightdualmg"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

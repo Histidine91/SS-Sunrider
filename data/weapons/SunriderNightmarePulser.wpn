@@ -1,0 +1,52 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundOne": "thumper_spinup",
+  "fireSoundTwo": "SunriderNightmarePulser",
+  "glowColor": [
+    100,
+    150,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderNMPulserGlow.png",
+  "hardpointOffsets": [
+    71,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SunriderNightmarePulser.png",
+  "id": "SunriderNightmarePulser",
+  "interruptibleBurst": false,
+  "muzzleFlashSpec": {
+    "length": 33,
+    "particleColor": [
+      100,
+      200,
+      255,
+      255
+    ],
+    "particleCount": 7,
+    "particleDuration": 0.12,
+    "particleSizeMin": 15,
+    "particleSizeRange": 17,
+    "spread": 15
+  },
+  "projectileSpecId": "ionpulser_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/weapons/glow/SunriderNMPulserGlow.png",
+  "turretOffsets": [
+    47,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SunriderNightmarePulser.png",
+  "type": "ENERGY"
+}

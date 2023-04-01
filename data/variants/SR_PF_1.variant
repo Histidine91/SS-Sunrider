@@ -1,0 +1,26 @@
+{
+  "variantId": "SR_PF_1",
+  "hullId": "SunriderPactFrigate",
+  "displayName": "Shield",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 5,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "frontshield",
+    "eccm"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "SunriderPactMissile",
+        "WS0002": "SunriderPactMissile"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,43 @@
+{
+	"hullFrequency":{
+		"hulls":{
+			"SunriderPactBattleship":0.1,
+			"SunriderPactCruiser":0.1,
+			"SunriderGunboat":0.1,
+			"SunriderMiningFrigate":0.1,
+		},
+	},
+	"knownShips":{
+		"tags":["srp_bp"],
+		"hulls":[
+			"SunriderPactBattleship",
+			"SunriderPactCruiser",
+		],
+	},
+	"priorityShips":{
+		"hulls":[
+			"SunriderPactBattleship",
+		],
+	},
+	"knownFighters":{
+		"tags":["srp_bp"],
+		"fighters":[
+			"SunriderPactMook",
+			"SunriderPactBomber",
+			"SunriderPactElite",
+		],
+	},
+	"knownWeapons":{
+		"tags":["srp_bp"],
+		"weapons":[
+			"SunriderPactMissile",
+			"SunriderPactCannon",
+			"SunriderPactSavior",
+			"SunriderBattleshipMissile",
+			"SunriderBreacherBomb",
+			"heavymauler",
+		],
+	},
+},
+
+

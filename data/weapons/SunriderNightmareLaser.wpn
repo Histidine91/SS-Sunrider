@@ -1,0 +1,85 @@
+{
+  "id": "SunriderNightmareLaser",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "beamEffect": "data.scripts.weapons.SunriderNightmareBeam",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/SunriderNightmareLaser.png",
+  "turretGlowSprite": "graphics/weapons/glow/SunriderNMLaserGlow.png",
+  "turretGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "hardpointSprite": "graphics/weapons/SunriderNightmareLaser.png",
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderNMLaserGlow.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderEmpty.png",
+  "glowColor": [
+    115,
+    135,
+    185,
+    230
+  ],
+  "hitGlowRadius": 40,
+  "turretOffsets": [
+    7.5,
+    -10,
+    7.5,
+    -16,
+    7.5,
+    -22
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    28.5,
+    -8.5,
+    28.5,
+    -13.5,
+    28.5,
+    -16.5,
+    28.5,
+    -22.5,
+    28.5,
+    -11.5,
+    28.5,
+    -19.5
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "fringeColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "coreColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "width": 5,
+  "textureType": [
+    "graphics/fx/SunriderLaserTrail.png",
+    "graphics/fx/SunriderLaserTrail.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 1,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF,
+    FIGHTER
+  ],
+  "fireSoundOne": "SunriderStrongLaser"
+}

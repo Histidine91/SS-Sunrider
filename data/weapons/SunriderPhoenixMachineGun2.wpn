@@ -1,0 +1,49 @@
+{
+  "id": "SunriderPhoenixMachineGun2",
+  "specClass": "projectile",
+  "projectileSpecId": "heavymg_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "displayArcRadius": 300,
+  "turretSprite": "graphics/weapons/SunriderPhoenixGun2.png",
+  "turretGunSprite": "graphics/weapons/SunriderPhoenixGun2.png",
+  "hardpointSprite": "graphics/weapons/SunriderPhoenixGun2.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderPhoenixGun2.png",
+  "specialWeaponGlowHeight": 25,
+  "specialWeaponGlowWidth": 15,
+  "visualRecoil": 3,
+  "turretOffsets": [
+    25.5,
+    -1.5,
+    25.5,
+    -5.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING_BURST",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 6,
+    "particleSizeMin": 7,
+    "particleSizeRange": 9,
+    "particleDuration": 0.15,
+    "particleCount": 11,
+    "particleColor": [
+      255,
+      120,
+      105,
+      250
+    ]
+  },
+  "fireSoundTwo": "SunriderGunFire"
+}

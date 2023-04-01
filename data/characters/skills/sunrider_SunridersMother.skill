@@ -1,0 +1,25 @@
+{
+	"id":"sunrider_SunridersMother",
+	"governingAptitude":"combat",
+	"compressHullmods":false,
+	"elite":true,
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"com.sunrider.skills.SunridersMother$Level1"},
+				{"type":"SHIP", "script":"com.sunrider.skills.SunridersMother$Level2"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP_FIGHTERS", "script":"com.sunrider.skills.SunridersMother$Level4"},
+				{"type":"SHIP_FIGHTERS", "script":"com.sunrider.skills.SunridersMother$Level3"},
+			]
+		},
+	],
+}

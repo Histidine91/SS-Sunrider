@@ -1,0 +1,91 @@
+{
+  "hullName": "Shikire",
+  "hullId": "SunriderRyuvianCruiser",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/SunriderRyuvianCruiser.png",
+  "style": "OMEGA",
+  "height": 420,
+  "width": 210,
+  "center": [105, 207.5],
+  "collisionRadius": 208.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 208.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "solar_shielding",
+    "ecm",
+    "SunriderRyuvianAfterburners"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 213,
+      "angle": -46,
+      "locations": [46, -11]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 213,
+      "angle": 46,
+      "locations": [46, 11]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 26,
+      "angle": -5.5,
+      "locations": [-53.5, -65]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 26,
+      "angle": 5.5,
+      "locations": [-53.5, 65]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [140, 0.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-200, 44.5],
+      "length": 50,
+      "width": 29,
+      "angle": 180,
+      "contrailSize": 29,
+      "style": "OMEGA"
+    },
+    {
+      "location": [-200, -44.5],
+      "length": 50,
+      "width": 29,
+      "angle": -180,
+      "contrailSize": 29,
+      "style": "OMEGA"
+    }
+  ],
+  "bounds": [
+    -144.5, -104.5,
+    -200, -66.5,
+    -200, 66.5,
+    -142.5, 104.5,
+    207.5, 0.5
+  ]
+}

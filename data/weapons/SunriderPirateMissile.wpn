@@ -1,0 +1,50 @@
+{
+  "animationType": "SMOKE",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "SunriderMissile",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    8,
+    -4,
+    8,
+    4
+  ],
+  "hardpointSprite": "graphics/weapons/SunriderEmpty.png",
+  "id": "SunriderPirateMissile",
+  "projectileSpecId": "SunriderMissile",
+  "size": "SMALL",
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 22,
+    "blowbackParticleCount": 4,
+    "blowbackSpread": 15,
+    "cloudDuration": 1.5,
+    "cloudParticleCount": 6,
+    "cloudRadius": 10,
+    "particleColor": [
+      125,
+      75,
+      25,
+      105
+    ],
+    "particleSizeMin": 12,
+    "particleSizeRange": 12
+  },
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretOffsets": [
+    3,
+    -4,
+    3,
+    4
+  ],
+  "turretSprite": "graphics/weapons/SunriderEmpty.png",
+  "type": "MISSILE"
+}

@@ -1,0 +1,65 @@
+{
+  "hullName": "Liberty",
+  "hullId": "SunriderLiberty",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderLiberty.png",
+  "style": "OMEGA",
+  "height": 62,
+  "width": 60,
+  "center": [29.5, 16.5],
+  "collisionRadius": 33,
+  "shieldCenter": [13.5, -4.5],
+  "shieldRadius": 42,
+  "viewOffset": 0,
+  "builtInMods": [
+    "solar_shielding",
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderLibertyLaser",
+    "WS0002": "SunriderLibertyDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 75,
+      "angle": -10,
+      "locations": [2, -10.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, -10]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-5.5, 4.5],
+      "length": 3,
+      "width": 3,
+      "angle": 180,
+      "contrailSize": 3,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-5.5, -4.5],
+      "length": 3,
+      "width": 3,
+      "angle": 180,
+      "contrailSize": 3,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -14, 31.5,
+    -12, -35,
+    22, 12.5
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "SunriderEliteLaser",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "beamEffect": "com.fs.starfarer.api.impl.combat.RiftLanceEffect",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/weapons/SunriderEliteLaser.png",
+  "turretGlowSprite": "graphics/weapons/glow/SunriderNMPulserGlow.png",
+  "hardpointSprite": "",
+  "glowColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    49,
+    -0.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "coreColor": [
+    68,
+    131,
+    174,
+    255
+  ],
+  "width": 10,
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "SunriderLaser"
+}

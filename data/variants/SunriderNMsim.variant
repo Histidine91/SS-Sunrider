@@ -1,0 +1,49 @@
+{
+  "displayName": "Ryuvian",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "SunriderNightmare",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SunriderNMsim",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderNightmarePulser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SunriderNightmareLaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "Sunridershockrepeater"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "Sunridershockrepeater"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "SunriderNightmareMissile"
+      }
+    }
+  ],
+  "wings": []
+}

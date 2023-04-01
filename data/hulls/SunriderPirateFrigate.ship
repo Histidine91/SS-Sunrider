@@ -1,0 +1,85 @@
+{
+  "hullName": "Kakapo",
+  "hullId": "SunriderPirateFrigate",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/SunriderCorvette.png",
+  "style": "LOW_TECH",
+  "height": 131,
+  "width": 62,
+  "center": [31, 65],
+  "collisionRadius": 66.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 66.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "fluxbreakers",
+    "advancedoptics"
+  ],
+  "builtInWeapons": {
+    "WS0002": "SunriderLaserSmall",
+    "WS0003": "SunriderLaserSmall"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-14, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-3.5, 23]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-3.5, -23]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-61, 22.5],
+      "length": 20,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-61, -22.5],
+      "length": 20,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-64, -0],
+      "length": 35,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    64.5, -6,
+    -13.5, -30,
+    -61, -30,
+    -61, 30,
+    -13.5, 30,
+    64.5, 6
+  ]
+}

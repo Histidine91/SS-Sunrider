@@ -1,0 +1,104 @@
+{
+  "hullName": "Havoc",
+  "hullId": "SunriderHavoc",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderHavoc.png",
+  "style": "OMEGA",
+  "height": 55,
+  "width": 55,
+  "center": [28, 23.5],
+  "collisionRadius": 34.5,
+  "shieldCenter": [-1, 0.5],
+  "shieldRadius": 34.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "SunriderHavocGun",
+    "WS0002": "SunriderHavocTorpedo",
+    "WS0003": "SunriderHavocTorpedo",
+    "WS0004": "SunriderPirateMissile",
+    "WS0005": "SunriderPirateMissile",
+    "WS0006": "SunriderHavocDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [-12.5, 25.5],
+      "renderOrderMod": 9
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [-15, -23],
+      "renderOrderMod": 9
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 45,
+      "angle": 0,
+      "locations": [-5.5, -15]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [4.5, 5.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [4.5, -5.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 30,
+      "angle": 0,
+      "locations": [-2, -13]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-13.5, 5.5],
+      "length": 6.5,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-13.5, -4.5],
+      "length": 6.5,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -16, -23.5,
+    -14.5, 24.5,
+    13, 16.5,
+    9.5, -20
+  ]
+}

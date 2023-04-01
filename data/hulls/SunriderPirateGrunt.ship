@@ -1,0 +1,56 @@
+{
+  "hullName": "Pirate Grunt",
+  "hullId": "SunriderPirateGrunt",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderPirateGrunt.png",
+  "style": "LOW_TECH",
+  "height": 47,
+  "width": 42,
+  "center": [18.5, 21.5],
+  "collisionRadius": 25.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 25.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "SunriderLaserSmall",
+    "WS0002": "SunriderPirateGun",
+    "WS0003": "SunriderGruntDeco"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [23.5, 4.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 28,
+      "angle": 0,
+      "locations": [-5, -20]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-4, -18.5]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -4, -24.5,
+    -19, -17,
+    -20.5, 15.5,
+    -4.5, 18.5,
+    25, 4.5
+  ]
+}

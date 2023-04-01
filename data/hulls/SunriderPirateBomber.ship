@@ -1,0 +1,164 @@
+{
+  "hullName": "Pirate Bomber",
+  "hullId": "SunriderPirateBomber",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/fighters/SunriderPirateBomber.png",
+  "style": "LOW_TECH",
+  "height": 31,
+  "width": 40,
+  "center": [20, 12.5],
+  "collisionRadius": 22.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 22.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0001": "SunriderPirateGun",
+    "WS0002": "SunriderPirateGun",
+    "WS0003": "SunriderPirateBomb",
+    "WS0004": "SunriderPirateBomb",
+    "WS0005": "SunriderPirateBomberDeco",
+    "WS0006": "SunriderPirateMissile",
+    "WS0007": "SunriderPirateMissile"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 26,
+      "angle": 0,
+      "locations": [4, 13.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 26,
+      "angle": 0,
+      "locations": [4, -13.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-10, -19],
+      "renderOrderMod": 12
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-9, 19],
+      "renderOrderMod": 12
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [3, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 0,
+      "locations": [14.5, 5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -0,
+      "locations": [14.5, -5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-5.5, -5.5],
+      "length": 2,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, 4.5],
+      "length": 2,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, -6.5],
+      "length": 2,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, 5.5],
+      "length": 2,
+      "width": 2,
+      "angle": -180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, -7.5],
+      "length": 2,
+      "width": 2,
+      "angle": 180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-5.5, 6.5],
+      "length": 2,
+      "width": 2,
+      "angle": -180,
+      "contrailSize": 2,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-2.5, -15.5],
+      "length": 1.5,
+      "width": 1,
+      "angle": 180,
+      "contrailSize": 1,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-1.5, 15.5],
+      "length": 1.5,
+      "width": 1,
+      "angle": 180,
+      "contrailSize": 1,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    7.5, -17.5,
+    -11.5, -20,
+    -11, 19.5,
+    5.5, 18.5,
+    16.5, 8.5,
+    16.5, -8
+  ]
+}

@@ -1,0 +1,20 @@
+id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
+SunriderBianca,SunriderBianca_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,4000,1000,500,1,FIGHTER,Support,21,100000,,,,,,,,,,,,,100
+SunriderBlackJack,SunriderBlackJack_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,4000,1000,500,1,FIGHTER,Heavy Fighter,25,100000,,,,,,,,,,,,,101
+SunriderHavoc,SunriderHavoc_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,2000,1000,500,1,BOMBER,Heavy Bomber,30,100000,,,,,,,,,,,,,102
+SunriderLiberty,SunriderLiberty_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,4000,1000,500,1,FIGHTER,Jammer,24,100000,,,,,,,,,,,,,103
+SunriderPaladin,SunriderPaladin_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,3000,1000,500,1,FIGHTER,Heavy Fighter,33,100000,,,,,,,,,,,,,104
+SunriderPhoenix,SunriderPhoenix_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,8000,1000,500,1,INTERCEPTOR,Interceptor,5,100000,,,,,,,,,,,,,105
+SunriderSeraphim,SunriderSeraphim_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,0,2200,1000,1,SUPPORT,Sniper,15,100000,,,,,,,,,,,,,106
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SunriderAllianceTrooper,SunriderAllianceTrooper_variant,sralliance_bp,1,0.3,1,16,V,4000,900,500,2,FIGHTER,Fighter,15,35000,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SunriderPirateGrunt,SunriderPirateGrunt_variant,pirate_bp,1,0.3,1,7,V,4000,700,500,3,INTERCEPTOR,Interceptor,7,8000,,,,,,,,,,,,,
+SunriderPirateBomber,SunriderPirateBomber_variant,pirate_bp,1,0.5,1,15,V,4000,1300,500,1,BOMBER,Heavy Bomber,20,12000,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+SunriderPactMook,SunriderPactMook_variant,srp_bp,1,0.8,1,8,V,4000,800,500,3,INTERCEPTOR,Interceptor,8,10000,,,,,,,,,,,,,
+SunriderPactSupportA,SunriderPactSupportA_variant,"no_bp_drop, no_drop, no_sell",3,,1,30,V,500,1500,1000,1,FIGHTER,Support,50,1000000,,,,,,,,,,,,,107
+SunriderPactSupportB,SunriderPactSupportB_variant,"no_bp_drop, no_drop, no_sell",3,,1,30,V,500,1500,1000,1,FIGHTER,Support,50,1000000,,,,,,,,,,,,,108
+SunriderPactBomber,SunriderPactBomber_variant,srp_bp,1,0.5,1,11,V,4000,1300,500,1,BOMBER,Heavy Bomber,14,10000,,,,,,,,,,,,,
+SunriderPactElite,SunriderPactElite_variant,srp_bp,1,0.8,1,20,V,4000,1100,500,1,FIGHTER,Heavy Fighter,27,100000,,,,,,,,,,,,,
+SunriderArcadius,SunriderArcadius_variant,"no_bp_drop, no_drop, no_sell",1,,1,30,V,6000,1300,500,1,FIGHTER,Heavy Fighter,35,400000,,,,,,,,,,,,,

@@ -1,0 +1,51 @@
+{
+  "variantId": "SunriderPaladin_variant",
+  "hullId": "SunriderPaladin",
+  "displayName": "Assault Ryder",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderPaladinCannon1",
+        "WS0002": "SunriderPaladinCannon1"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "SunriderPaladinCannon2"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "SunriderPaladinCannon2"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "SunriderAllianceGun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SunriderAllianceMissile"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
