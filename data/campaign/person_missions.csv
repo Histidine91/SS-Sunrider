@@ -2,4 +2,5 @@ mission id,person id,tagsAll,tagsAny,tagsNotAny,tags,freq,min timeout,max timeou
 # Remnant story missions,,,,,,,,,,,,,,,,
 sunrider_findSunrider,,,,,"priority, non_repeatable",,,,,,,,,,graphics/portraits/Portrait_Ava.png,com.sunrider.missions.FindSunrider
 sunrider_mission2,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/cera.png,com.sunrider.missions.SRMission2
-sunrider_mission3,,,,,"priority, non_repeatable",,,,,,,,,,,com.sunrider.missions.SRMission3
+sunrider_mission3,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_nightmare_icon.png,com.sunrider.missions.SRMission3
+sunrider_mission4,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_allianceCruiser_icon.png,com.sunrider.missions.SRMission4

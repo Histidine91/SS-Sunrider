@@ -6,15 +6,15 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
+import com.sunrider.SRPeople;
 import com.sunrider.SunriderSatBombListener;
-import com.sunrider.missions.FindSunrider;
 
 public class SunriderModPlugin extends BaseModPlugin {
 	
 	@Override
 	public void onGameLoad(boolean newGame) {
 		reverseCompatibility();
-		FindSunrider.createAvaIfNeeded();
+		SRPeople.createAvaIfNeeded();
 		SunriderSatBombListener.addIfNeeded();
 	}
 	
@@ -29,7 +29,7 @@ public class SunriderModPlugin extends BaseModPlugin {
 			}
 		}
 		
-		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
 		if (ava != null && ava.getStats().getSkillLevel("sunrider_SunridersMother") == 0) {
 			ava.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 0);
 			ava.getStats().setSkillLevel("sunrider_SunridersMother", 2);

@@ -10,7 +10,6 @@ import com.fs.starfarer.api.campaign.TextPanelAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.listeners.CurrentLocationChangedListener;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.MutableCharacterStatsAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
@@ -19,17 +18,15 @@ import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin.DerelictShipData;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.HullMods;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.impl.campaign.ids.Voices;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.missions.hub.ReqMode;
 import com.fs.starfarer.api.impl.campaign.plog.PlaythroughLog;
 import com.fs.starfarer.api.impl.campaign.rulecmd.AddRemoveCommodity;
 import com.fs.starfarer.api.impl.campaign.rulecmd.AddShip;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
+import static com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions.getString;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.VariantSource;
@@ -37,6 +34,7 @@ import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.sunrider.AvaLeaveEveryFrameScript;
+import com.sunrider.SRPeople;
 import com.sunrider.SunriderSatBombListener;
 import java.awt.Color;
 import java.util.List;
@@ -47,9 +45,7 @@ import java.util.Map;
  * @author Histidine
  */
 public class FindSunrider extends HubMissionWithSearch implements CurrentLocationChangedListener, SunriderMissionInterface 
-{	
-	public static final String AVA_ID = "sunrider_ava";
-	public static final String SALVAGER_ID = "sunrider_suzuki";
+{
 	public static final String MISSION_REF = "$sunrider_findSunrider_ref";
 	// I accidentally made it set both in different places, but not sure the non-alt version is actually being set?
 	// even though it looks like it should be
@@ -92,7 +88,8 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		salvagerMarket = pickMarket();
 		if (salvagerMarket == null) return false;
 		
-		this.requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_UNSAFE, Tags.THEME_CORE_POPULATED);
+		requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_UNSAFE, Tags.THEME_CORE_POPULATED, 
+				Tags.TRANSIENT, Tags.SYSTEM_CUT_OFF_FROM_HYPER, Tags.THEME_HIDDEN);
 		requireSystemNotHasPulsar();
 		// try at least 25 LY but not more than 40
 		preferSystemOutsideRangeOf(salvagerMarket.getContainingLocation().getLocation(), 25);
@@ -101,8 +98,8 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		if (wreckLoc == null) return false;
 		
 		//createAvaIfNeeded();	// mission isn't generated until after the bar encounter, so we need to make her on game load
-		ava = Global.getSector().getImportantPeople().getPerson(AVA_ID);
-		salvager = createSalvager();
+		ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
+		salvager = SRPeople.createSalvager();
 		Misc.makeStoryCritical(salvagerMarket, "sunrider_findSunrider");
 		
 		personOverride = ava;
@@ -113,9 +110,10 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		addSuccessStages(Stage.COMPLETED);
 		addFailureStages(Stage.FAILED);
 		
-		beginStageTrigger(Stage.COMPLETED);
-		triggerSetGlobalMemoryValue(MEM_FLAG_COMPLETE, true);
-		endTrigger();
+		// don't use a completion stage trigger, it can't be trusted https://fractalsoftworks.com/forum/index.php?topic=5061.msg392175#msg392175
+		//beginStageTrigger(Stage.COMPLETED);
+		//triggerSetGlobalMemoryValuePermanent(MEM_FLAG_COMPLETE, true);
+		//endTrigger();
 		
 		setStageOnMemoryFlag(Stage.FAILED, Global.getSector().getMemoryWithoutUpdate(), "$sunrider_avaLeft");
 		
@@ -155,9 +153,7 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		- end of salvage interaction: hire Ava, add Sunrider to fleet, end mission
 	*/
 	@Override
-	public boolean callEvent(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
-		String action = params.get(0).getString(memoryMap);
-		
+	public boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {		
 		switch (action) {
 			case "talkedToPirate":
 				salvagerMarket.addPerson(salvager);
@@ -189,7 +185,7 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 				completeMission(dialog, params, memoryMap);
 				return true;
 		}
-		return super.callEvent(ruleId, dialog, params, memoryMap);
+		return false;
 	}
 	
 	// intel text in intel screen description
@@ -316,6 +312,7 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		
 		PlaythroughLog.getInstance().addEntry(getString("findSunrider_playthroughLogText"), true);
 		
+		Global.getSector().getMemoryWithoutUpdate().set(MEM_FLAG_COMPLETE, true);
 		Global.getSector().getMemoryWithoutUpdate().set(MEM_FLAG_COMPLETE_ALT, true);
 		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission2_delay", true, SRMission2.DELAY_BEFORE_AVAILABLE);
 		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission3_delay", true, SRMission3.DELAY_BEFORE_AVAILABLE);
@@ -335,64 +332,5 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		if (curr == wreckLoc && Sunrider_MiscFunctions.doesAvaWantToLeave()) {
 			AvaLeaveEveryFrameScript.addScript(false);
 		}
-	}
-	
-	// =========================================================================
-	// =========================================================================
-	
-	public static String getString(String id) {
-		return Global.getSettings().getString("sunrider_missions", id);
-	}
-	
-	public static PersonAPI createAvaIfNeeded() {
-		PersonAPI person = Global.getSector().getImportantPeople().getPerson(AVA_ID);
-		if (person != null) return person;
-		
-		person = Global.getFactory().createPerson();
-		person.setId(AVA_ID);
-		person.setVoice(Voices.SOLDIER);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.FEMALE);
-		person.setRankId(Ranks.SPACE_COMMANDER);
-		person.setPostId(Ranks.POST_OFFICER);
-		person.getName().setFirst(getString("avaNameFirst"));
-		person.getName().setLast(getString("avaNameLast"));
-		person.setPortraitSprite("graphics/portraits/Portrait_Ava.png");
-		person.getMemoryWithoutUpdate().set("$chatterChar", "sunrider_ava");
-		person.getMemoryWithoutUpdate().set("$nex_noOfficerDeath", true);	// waifus do not die when killed
-		
-		// set skills (8 combat skills)
-		person.getStats().setLevel(8);
-		person.getStats().setSkillLevel(Skills.HELMSMANSHIP, 2);
-		person.getStats().setSkillLevel(Skills.COMBAT_ENDURANCE, 2);
-		person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
-		person.getStats().setSkillLevel(Skills.POINT_DEFENSE, 2);
-		person.getStats().setSkillLevel(Skills.BALLISTIC_MASTERY, 2);
-		person.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 2);
-		//person.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 2);
-		person.getStats().setSkillLevel(Skills.ORDNANCE_EXPERTISE, 2);
-		person.getStats().setSkillLevel("sunrider_SunridersMother", 2);
-		person.getStats().setSkillLevel(Skills.TACTICAL_DRILLS, 1);	// bonus
-		
-		Global.getSector().getImportantPeople().addPerson(person);
-		return person;
-	}
-	
-	public static PersonAPI createSalvager() {
-		PersonAPI person = Global.getSector().getImportantPeople().getPerson(SALVAGER_ID);
-		if (person != null) return person;
-		
-		person = Global.getFactory().createPerson();
-		person.setId(SALVAGER_ID);
-		person.setVoice(Voices.SPACER);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.MALE);
-		person.setRankId(Ranks.SPACE_CAPTAIN);
-		person.setPostId(Ranks.POST_SPACER);
-		person.getName().setFirst(getString("salvagerNameFirst"));
-		person.getName().setLast(getString("salvagerNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait31.png");
-		Global.getSector().getImportantPeople().addPerson(person);
-		return person;
 	}
 }

@@ -23,11 +23,11 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.campaign.procgen.SalvageEntityGenDataSpec.DropData;
 import static com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin.getEntityMemory;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageGenFromSeed.SDMParams;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageGenFromSeed.SalvageDefenderModificationPlugin;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.Misc.Token;
-import com.sunrider.missions.FindSunrider;
 
 /**
  *	Modded SalvageDefenderInteraction specifically for the Nightmare encounter in Sunrider recovery
@@ -60,9 +60,9 @@ public class SunriderSalvageDefenderInteraction extends SalvageDefenderInteracti
 		config.pullInStations = false;
 		config.lootCredits = false;
 		
-		config.firstTimeEngageOptionText = FindSunrider.getString("firstTimeEngageOptionText");
-		config.afterFirstTimeEngageOptionText = FindSunrider.getString("afterFirstTimeEngageOptionText");
-		config.noSalvageLeaveOptionText = FindSunrider.getString("noSalvageLeaveOptionText");
+		config.firstTimeEngageOptionText = Sunrider_MiscFunctions.getString("firstTimeEngageOptionText");
+		config.afterFirstTimeEngageOptionText = Sunrider_MiscFunctions.getString("afterFirstTimeEngageOptionText");
+		config.noSalvageLeaveOptionText = Sunrider_MiscFunctions.getString("noSalvageLeaveOptionText");
 		
 		config.dismissOnLeave = false;
 		config.printXPToDialog = true;

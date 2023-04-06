@@ -24,19 +24,24 @@ import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
+import com.fs.starfarer.api.impl.campaign.intel.bar.events.BarEventManager;
 import com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission;
+import com.fs.starfarer.api.impl.campaign.missions.hub.HubMission;
 import com.fs.starfarer.api.impl.campaign.rulecmd.AddRemoveCommodity;
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin;
 import static com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin.getEntityMemory;
 import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
+import com.fs.starfarer.api.loading.PersonMissionSpec;
 import com.fs.starfarer.api.util.DelayedActionScript;
 import com.fs.starfarer.api.util.Misc;
 import com.sunrider.NexUtils;
+import com.sunrider.SRPeople;
 import com.sunrider.missions.FindSunrider;
 import com.sunrider.missions.SunriderMissionInterface;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import org.apache.log4j.Logger;
 
 /**
@@ -56,6 +61,10 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		switch (arg) {
 			case "haveSunrider":
 				return haveSunrider();
+			case "isAvaInParty":
+				return isAvaInParty();
+			case "createMission":
+				return createMission(dialog, params.get(1).getString(memoryMap));
 			case "declineMission":
 				addBountyDelayedScript(getBountyDelayTime());
 				break;
@@ -90,6 +99,48 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		
 		return false;
     }
+	
+	// same as BeginMission except for not accepting the mission immediately
+	protected static boolean createMission(InteractionDialogAPI dialog, String missionId) {
+		
+		PersonMissionSpec spec = Global.getSettings().getMissionSpec(missionId);
+		if (spec == null) {
+			throw new RuntimeException("Mission with spec [" + missionId + "] not found");
+		}
+		
+		HubMission mission = spec.createMission();
+		
+		SectorEntityToken entity = dialog.getInteractionTarget();
+		PersonAPI person = entity.getActivePerson();
+		
+		if (person == null) {
+//			throw new RuntimeException("Attempting to BeginMission " + missionId + 
+//									   " in interaction with entity.getActivePerson() == null");
+//			String key = "$beginMission_seedExtra";
+//			String extra = person.getMemoryWithoutUpdate().getString(key);
+			String extra = "";
+			long seed = BarEventManager.getInstance().getSeed(null, person, extra);
+//			person.getMemoryWithoutUpdate().set(key, "" + seed); // so it's not the same seed for multiple missions
+			mission.setGenRandom(new Random(seed));
+			
+		} else {
+			mission.setPersonOverride(person);
+			//mission.setGenRandom(new Random(Misc.getSalvageSeed(entity)));
+			String key = "$beginMission_seedExtra";
+			String extra = person.getMemoryWithoutUpdate().getString(key);
+			long seed = BarEventManager.getInstance().getSeed(null, person, extra);
+			person.getMemoryWithoutUpdate().set(key, "" + seed); // so it's not the same seed for multiple missions
+			mission.setGenRandom(new Random(seed));
+		}
+		
+		mission.createAndAbortIfFailed(entity.getMarket(), false);
+
+		if (mission.isMissionCreationAborted()) {
+			return false;
+		}
+		
+		return true;
+	}
 	
 	// runcode com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions.addBountyDelayedScript(0);
 	/**
@@ -184,7 +235,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 	
 	protected static void removeAva(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap, boolean unsetCaptain, boolean repImpact) 
 	{
-		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
 		if (ava == null) return;
 		
 		CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
@@ -220,7 +271,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 	}
 	
 	public static boolean isAvaInParty() {
-		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
 		if (ava == null) return false;
 		
 		boolean missionOngoing = Global.getSector().getMemoryWithoutUpdate().contains(FindSunrider.MISSION_REF);
@@ -312,7 +363,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 	
 	public CampaignFleetAPI generateAvaFleet(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
 		CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet(Factions.INDEPENDENT, FleetTypes.MERC_PRIVATEER, null);
-		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
 		
 		CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
 		FleetMemberAPI member = getAvasFleetMember();
@@ -409,7 +460,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 	 * @return
 	 */
 	public static FleetMemberAPI getAvasFleetMember() {
-		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);
 		CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
 		for (FleetMemberAPI member : pf.getFleetData().getMembersListCopy()) {
 			if (member.getCaptain() == ava) {
@@ -423,5 +474,9 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		dialog.getOptionPanel().setEnabled(FleetInteractionDialogPluginImpl.OptionId.CLEAN_DISENGAGE, false);
         dialog.getOptionPanel().setTooltip(FleetInteractionDialogPluginImpl.OptionId.CLEAN_DISENGAGE, 
 				Global.getSettings().getString("sunrider", "mutinyBlockSPDisengageTooltip"));
+	}
+	
+	public static String getString(String id) {
+		return Global.getSettings().getString("sunrider_missions", id);
 	}
 }

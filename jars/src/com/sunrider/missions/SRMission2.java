@@ -1,6 +1,7 @@
 package com.sunrider.missions;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.Script;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
@@ -15,9 +16,11 @@ import com.fs.starfarer.api.impl.campaign.ids.People;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.plog.PlaythroughLog;
 import com.fs.starfarer.api.impl.campaign.rulecmd.AddRemoveCommodity;
+import static com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions.getString;
 import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import com.sunrider.SRPeople;
 import java.awt.Color;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +48,7 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 			return false;
 		}
 		
-		personOverride = Global.getSector().getImportantPeople().getPerson(FindSunrider.AVA_ID);		
+		personOverride = Global.getSector().getImportantPeople().getPerson(SRPeople.AVA_ID);		
 		
 		setStoryMission();
 		setStartingStage(Stage.RECOVER_DATA);
@@ -55,10 +58,9 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 		setRepPersonChangesMedium();
 		setRepFactionChangesNone();
 		
+		// don't use a completion stage trigger, it can't be trusted https://fractalsoftworks.com/forum/index.php?topic=5061.msg392175#msg392175
 		beginStageTrigger(Stage.COMPLETED);
-		triggerSetGlobalMemoryValue("$sunrider_mission2_missionCompleted", true);
-		triggerSetGlobalMemoryValue("$sunrider_mission2_doneOrSkipped", true);
-		
+		triggerSetGlobalMemoryValuePermanent("$sunrider_wolololo", true);
 		endTrigger();
 		
 		setStageOnMemoryFlag(Stage.FAILED, Global.getSector().getMemoryWithoutUpdate(), "$sunrider_avaLeft");
@@ -72,9 +74,7 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 	}
 	
 	@Override
-	public boolean callEvent(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
-		String action = params.get(0).getString(memoryMap);
-		
+	public boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {		
 		switch (action) {
 			case "addBlueprint":
 				SpecialItemData special = new SpecialItemData("weapon_bp", "SunriderSavior");
@@ -89,7 +89,7 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 				completeMission(dialog, params, memoryMap);
 				return true;
 		}
-		return super.callEvent(ruleId, dialog, params, memoryMap);
+		return false;
 	}
 	
 	// intel text in intel screen description
@@ -159,18 +159,14 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 	{
 		setCurrentStage(Stage.COMPLETED, dialog, memoryMap);
 		PlaythroughLog.getInstance().addEntry(getString("findSunrider_playthroughLogText"), true);
+		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission4_delay", true, SRMission4.DELAY_BEFORE_AVAILABLE);
+		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission2_missionCompleted", true);
+		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission2_doneOrSkipped", true);	
 	}
 	
 	@Override
 	protected void updateInteractionDataImpl() {
 		set("$sunrider_mission2_recoverCreditsStr", Misc.getWithDGS(RECOVER_COST));
 		set("$sunrider_mission2_recoverCredits", RECOVER_COST);
-	}
-	
-	// =========================================================================
-	// =========================================================================
-	
-	public static String getString(String id) {
-		return Global.getSettings().getString("sunrider_missions", id);
 	}
 }

@@ -1,5 +1,5 @@
 id,trigger,conditions,script,text,options,notes
-#RULESET_NAME Sunrider,,,,,,
+"#RULESET_NAME Sunrider",,,,,,
 ,,,,,,
 # Ava quest,,,,,,
 sunrider_findSunrider_barOpt,AddBarEvents,"$global.daysSinceStart > 270
@@ -10,54 +10,54 @@ $faction.id != luddic_path
 sunrider_findSunrider_barOptDev,AddBarEvents,"!$global.sunrider_findSunrider_seenMission
 $global.isDevMode
 $global.daysSinceStart <= 270","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
-sunrider_findSunrider_intro,DialogOptionSelected,$option == sunrider_findSunrider_barEvent,"$global.sunrider_findSunrider_seenMission = true
+sunrider_findSunrider_intro,DialogOptionSelected,"$option == sunrider_findSunrider_barEvent","$global.sunrider_findSunrider_seenMission = true
 ShowPersonVisual true sunrider_ava","The brunette slowly approaches, an eyepatch adorning her face. Seemingly un-phased by the presence of your towering bodyguards, she continues closing. Your guards start reaching for their sidearms...
 
 ""Captain $playerName, I suppose"".","sunrider_findSunrider_intro2:""The one and only.""
 sunrider_findSunrider_introLeaveEarly:""No, you confused me with someone else.""
 ",
-sunrider_findSunrider_introLeave,DialogOptionSelected,$option == sunrider_findSunrider_introLeave,Sunrider_MiscFunctions declineMission,"""I see, sorry to bother you."" She turns and disappears into the crowd.",backToBar:Return to the bar,
-sunrider_findSunrider_introLeaveRude,DialogOptionSelected,$option == sunrider_findSunrider_introLeaveRude,Sunrider_MiscFunctions declineMission,"""Oh, good luck finding it. Too bad you never will without me or access to the code of the universe itself!""
+sunrider_findSunrider_introLeave,DialogOptionSelected,"$option == sunrider_findSunrider_introLeave","Sunrider_MiscFunctions declineMission","""I see, sorry to bother you."" She turns and disappears into the crowd.","backToBar:Return to the bar",
+sunrider_findSunrider_introLeaveRude,DialogOptionSelected,"$option == sunrider_findSunrider_introLeaveRude","Sunrider_MiscFunctions declineMission","""Oh, good luck finding it. Too bad you never will without me or access to the code of the universe itself!""
 
-She turns on her heel and walks off, muttering something you don't quite catch.",backToBar:Return to the bar,
-sunrider_findSunrider_introLeaveEarly,DialogOptionSelected,$option == sunrider_findSunrider_introLeaveEarly,Sunrider_MiscFunctions declineMission,"Even though she doesn’t seem to believe it, she says ""I see, apologies for bothering you,"" and disappears into the crowd.",backToBar:Return to the bar,
-sunrider_findSunrider_intro2,DialogOptionSelected,$option == sunrider_findSunrider_intro2,,"You lift a hand, and your bodyguards relax a little.
+She turns on her heel and walks off, muttering something you don't quite catch.","backToBar:Return to the bar",
+sunrider_findSunrider_introLeaveEarly,DialogOptionSelected,"$option == sunrider_findSunrider_introLeaveEarly","Sunrider_MiscFunctions declineMission","Even though she doesn’t seem to believe it, she says ""I see, apologies for bothering you,"" and disappears into the crowd.","backToBar:Return to the bar",
+sunrider_findSunrider_intro2,DialogOptionSelected,"$option == sunrider_findSunrider_intro2",,"You lift a hand, and your bodyguards relax a little.
 
 ""Thank you,"" she says, ""My name is Ava Crescentia. Pleased to meet you.""
 
 You notice she is only wearing one glove. On the same side as the eyepatch, as it happens.","sunrider_findSunrider_intro3:Shake her hand
 sunrider_findSunrider_intro3Alt:Ask if she is a pirate out of curiosity",
-sunrider_findSunrider_intro3,DialogOptionSelected,$option == sunrider_findSunrider_intro3,Highlight Sunrider,"""I’d like to ask you something. I am..."" she pauses for a moment to correct herself, but with clear sadness in her face. 
+sunrider_findSunrider_intro3,DialogOptionSelected,"$option == sunrider_findSunrider_intro3","Highlight Sunrider","""I’d like to ask you something. I am..."" she pauses for a moment to correct herself, but with clear sadness in her face. 
 
 ""I was the first officer of an assault carrier, the Sunrider. The salvage fleet that found me could not recover it.""","sunrider_findSunrider_intro4_doit:""I guess you want me to do it instead.""
 sunrider_findSunrider_intro4_payment:""What's the payment?""
 sunrider_findSunrider_introLeave:Decline",
-sunrider_findSunrider_intro3Alt,DialogOptionSelected,$option == sunrider_findSunrider_intro3Alt,"$option = sunrider_findSunrider_intro3
+sunrider_findSunrider_intro3Alt,DialogOptionSelected,"$option == sunrider_findSunrider_intro3Alt","$option = sunrider_findSunrider_intro3
 FireBest DialogOptionSelected","""No, I am not. These are scars of war,"" apparently indicating the single glove and eyepatch. ""But that doesn't matter right now, because...""",,
-sunrider_findSunrider_intro4_doit,DialogOptionSelected,$option == sunrider_findSunrider_intro4_doit,,"""That's right. The problem is... I don’t know the location of the Sunrider or the salvage fleet, but I know the name of the captain. It’s Jinta Suzuki.""","sunrider_findSunrider_intro5:""Then how are we supposed to find them?""",
-sunrider_findSunrider_intro4_payment,DialogOptionSelected,$option == sunrider_findSunrider_intro4_payment,,"""The ship itself will be yours, and I may even work under your wing if you desire.
+sunrider_findSunrider_intro4_doit,DialogOptionSelected,"$option == sunrider_findSunrider_intro4_doit",,"""That's right. The problem is... I don’t know the location of the Sunrider or the salvage fleet, but I know the name of the captain. It’s Jinta Suzuki.""","sunrider_findSunrider_intro5:""Then how are we supposed to find them?""",
+sunrider_findSunrider_intro4_payment,DialogOptionSelected,"$option == sunrider_findSunrider_intro4_payment",,"""The ship itself will be yours, and I may even work under your wing if you desire.
 
 ""The problem is... I don’t know the location of the Sunrider or the salvage fleet. I only have the captain's name, one Jinta Suzuki.""","sunrider_findSunrider_intro5:""Then how are we supposed to find them?""",
-sunrider_findSunrider_intro5,DialogOptionSelected,$option == sunrider_findSunrider_intro5,,"For a heartbeat, her face flickers with... what looked like distaste.
+sunrider_findSunrider_intro5,DialogOptionSelected,"$option == sunrider_findSunrider_intro5",,"For a heartbeat, her face flickers with... what looked like distaste.
 
 ""I think we’ll have to ask the pirates, I'm afraid. They're a good source of information after all. Besides, scavenge and salvage fleets may do... questionable things if they’re far away from civilization, right? 
 
 ""But before that, I want to make a deal.""","sunrider_findSunrider_intro6:""What deal?""
 sunrider_findSunrider_introLeave:Decline",
-sunrider_findSunrider_intro6,DialogOptionSelected,$option == sunrider_findSunrider_intro6,"Highlight ""10,000""","""I help you get the information you need out of the salvage fleet's captain, and tell you everything I know about the Sunrider herself. As stated before, she'll be yours to keep. But in exchange, I want to see her recovery with my own eyes... eye, and an officer’s contract with a hiring bonus of 10,000 credits. How does that sound? Oh, and before I forget, I can also help you with paperwork anytime until we find my ship.""","sunrider_findSunrider_introAccept:Accept
+sunrider_findSunrider_intro6,DialogOptionSelected,"$option == sunrider_findSunrider_intro6","Highlight ""10,000""","""I help you get the information you need out of the salvage fleet's captain, and tell you everything I know about the Sunrider herself. As stated before, she'll be yours to keep. But in exchange, I want to see her recovery with my own eyes... eye, and an officer’s contract with a hiring bonus of 10,000 credits. How does that sound? Oh, and before I forget, I can also help you with paperwork anytime until we find my ship.""","sunrider_findSunrider_introAccept:Accept
 sunrider_findSunrider_introLeaveRude:""No, I will find it myself. Get out of here!""
 sunrider_findSunrider_introLeave:Decline",
-sunrider_findSunrider_introAccept,DialogOptionSelected,$option == sunrider_findSunrider_introAccept,"Highlight pirate ""Jinta Suzuki""
+sunrider_findSunrider_introAccept,DialogOptionSelected,"$option == sunrider_findSunrider_introAccept","Highlight pirate ""Jinta Suzuki""
 BeginMission sunrider_findSunrider","She looks glad as you accept her offer and welcome her as a guest on your fleet. 
 
-Now you need to inquire with some pirate officials if they know a salvage captain named Jinta Suzuki.",backToBar:Return to the bar,
+Now you need to inquire with some pirate officials if they know a salvage captain named Jinta Suzuki.","backToBar:Return to the bar",
 sunrider_findSunrider_pirateOpt,PopulateOptions,"$isPerson
 $personFaction.id == pirates
 $postId == administrator
 $global.sunrider_findSunrider_ref != null
 Call $global.sunrider_findSunrider_ref updateData
-$sunrider_findSunrider_stage == TALK_TO_PIRATE",,,sunrider_findSunrider_pirate1:Inquire about a salvage captain named Jinta Suzuki,
-sunrider_findSunrider_pirate1,DialogOptionSelected,$option == sunrider_findSunrider_pirate1,,"$personName raises an eyebrow. ""Why would I know anything about that?""","sunrider_findSunrider_pirate2:""Because I have credits, of course"".
+$sunrider_findSunrider_stage == TALK_TO_PIRATE",,,"sunrider_findSunrider_pirate1:Inquire about a salvage captain named Jinta Suzuki",
+sunrider_findSunrider_pirate1,DialogOptionSelected,"$option == sunrider_findSunrider_pirate1",,"$personName raises an eyebrow. ""Why would I know anything about that?""","sunrider_findSunrider_pirate2:""Because I have credits, of course"".
 cutCommLink:Cut the comm link",
 sunrider_findSunrider_pirate2,DialogOptionSelected,"$option == sunrider_findSunrider_pirate2
 $player.credits >= 100000","Highlight 100,000 $player.creditsStr","""Now you’re speaking my language."" The pirate smirks.
@@ -78,25 +78,25 @@ $HeOrShe puts $hisOrHer hands together to support $hisOrHer chin. ""Do we have a
 
 You have $player.creditsStr credits.","sunrider_findSunrider_pirate3NotEnough:""I don't have that much.""
 cutCommLink:Decline and cut the comm link",
-sunrider_findSunrider_pirate3,DialogOptionSelected,$option == sunrider_findSunrider_pirate3,"Highlight $sunrider_findSunrider_salvagerMarket $sunrider_findSunrider_salvagerSystem
+sunrider_findSunrider_pirate3,DialogOptionSelected,"$option == sunrider_findSunrider_pirate3","Highlight $sunrider_findSunrider_salvagerMarket $sunrider_findSunrider_salvagerSystem
 AddCredits -100000
 Call $global.sunrider_findSunrider_ref talkedToPirate","$HisOrHer eyes light up as the transfer goes through. ""Excellent.
 
 ""Now I happen to know that our old pal Suzuki is currently dwelling $onOrAt $sunrider_findSunrider_salvagerMarket. That's in the $sunrider_findSunrider_salvagerSystem.
 
-""Thanks for funding my own retirement, captain. Oh, and this conversation never happened"".",cutCommLink:Thank $himOrHer and cut the comm link,
-sunrider_findSunrider_pirate3NotEnough,DialogOptionSelected,$option == sunrider_findSunrider_pirate3NotEnough,"EndConversation
+""Thanks for funding my own retirement, captain. Oh, and this conversation never happened"".","cutCommLink:Thank $himOrHer and cut the comm link",
+sunrider_findSunrider_pirate3NotEnough,DialogOptionSelected,"$option == sunrider_findSunrider_pirate3NotEnough","EndConversation
 ShowDefaultVisual","""Well, that's just too bad then, isn't it? Guess you'll have to find another snitch. Goodbye, captain.""
 
 $HeOrShe terminates the comm link abruptly.",,
-sunrider_findSunrider_salvager1,PickGreeting,$id == sunrider_suzuki score:1000,"ShowPersonVisual
+sunrider_findSunrider_salvager1,PickGreeting,"$id == sunrider_suzuki score:1000","ShowPersonVisual
 Call $global.sunrider_findSunrider_ref updateData","""Hello, may I help you?""","sunrider_findSunrider_salvager2:""Yes, can you tell me where the Sunrider is?""",
-sunrider_findSunrider_salvager2,DialogOptionSelected,$option == sunrider_findSunrider_salvager2,,"Confused, he asks ""The what? I honestly don’t know what you’re talking about.""","sunrider_findSunrider_salvagerPay:""Will some credits refresh your memory?""
+sunrider_findSunrider_salvager2,DialogOptionSelected,"$option == sunrider_findSunrider_salvager2",,"Confused, he asks ""The what? I honestly don’t know what you’re talking about.""","sunrider_findSunrider_salvagerPay:""Will some credits refresh your memory?""
 sunrider_findSunrider_salvagerAva:Put Ava on the comm",
-sunrider_findSunrider_salvagerPay,DialogOptionSelected,$option == sunrider_findSunrider_salvagerPay,,"""What do I need more credits for?"" He looks slightly annoyed. 
+sunrider_findSunrider_salvagerPay,DialogOptionSelected,"$option == sunrider_findSunrider_salvagerPay",,"""What do I need more credits for?"" He looks slightly annoyed. 
 
-""I already retired and got all I want for the rest of my life. And even if I didn't, credits can't make me tell you what I don't know.""",sunrider_findSunrider_salvagerAva:Put Ava on the comm,
-sunrider_findSunrider_salvagerAva,DialogOptionSelected,$option == sunrider_findSunrider_salvagerAva,ShowSecondPerson sunrider_ava,"Ava steps into view of the camera, her uniform pristine, hands behind her back. ""Hello, Jinta.""
+""I already retired and got all I want for the rest of my life. And even if I didn't, credits can't make me tell you what I don't know.""","sunrider_findSunrider_salvagerAva:Put Ava on the comm",
+sunrider_findSunrider_salvagerAva,DialogOptionSelected,"$option == sunrider_findSunrider_salvagerAva","ShowSecondPerson sunrider_ava","Ava steps into view of the camera, her uniform pristine, hands behind her back. ""Hello, Jinta.""
 
 It has exactly the intended effect. 
 
@@ -104,59 +104,59 @@ It has exactly the intended effect.
 
 Ava answers with extreme formality ""I’m fine, thank you for asking. And I see you’re enjoying your retirement.""
 
-""That I am. But what brings you... ah, I see.""",sunrider_findSunrider_salvager3:Continue,
-sunrider_findSunrider_salvager3,DialogOptionSelected,$option == sunrider_findSunrider_salvager3,"$sunrider_findSunrider_systemName
+""That I am. But what brings you... ah, I see.""","sunrider_findSunrider_salvager3:Continue",
+sunrider_findSunrider_salvager3,DialogOptionSelected,"$option == sunrider_findSunrider_salvager3","$sunrider_findSunrider_systemName
 Call $global.sunrider_findSunrider_ref talkedToSalvager","Jinta looks up and puts a finger on his chin for a few seconds, then says ""If my memory doesn’t fail me, we rescued you in the $sunrider_findSunrider_systemName. Wait, are you really going for it?"" 
 
 ""Yes, we are,"" Ava says. ""Thank you, Jinta."" 
 
-""I see. In that case, good luck."" He seems to be about to cut the comm link, then pauses. ""Now I'm going to excuse myself. Burn bright, Ava... and captain.""",cutCommLink:Say goodbye and cut the comm link,
+""I see. In that case, good luck."" He seems to be about to cut the comm link, then pauses. ""Now I'm going to excuse myself. Burn bright, Ava... and captain.""","cutCommLink:Say goodbye and cut the comm link",
 sunrider_findSunrider_wreckStart,OpenInteractionDialog,"$sunrider_findSunrider_target score:1000
 !$sunrider_findSunrider_seenNightmares","ShowImageVisual SunriderDerelict
 Sunrider_PlayInteractionMusic SunriderDiscover true","Your $shipOrFleet approaches what seems to have been another battlefield, but with exclusively green and red pieces of destroyed armor. Apparently, these ships were broken apart so badly that you can't even tell if they were frigates or cruisers, however, one recognizable capital-sized vessel can be seen in the distance.
 
 Although there are ships in Sector service today have been fixed from worse, it's not a design your TriPad knows of. Whatever brought her here was... pretty rough on the hull, but certainly not as merciless as it was on everything else around her.
 
-",sunrider_findSunrider_wreck1:Continue,
-sunrider_findSunrider_wreck1,DialogOptionSelected,$option == sunrider_findSunrider_wreck1,,"With Ava in your bridge, you ask her ""is this your ship?"" 
+","sunrider_findSunrider_wreck1:Continue",
+sunrider_findSunrider_wreck1,DialogOptionSelected,"$option == sunrider_findSunrider_wreck1",,"With Ava in your bridge, you ask her ""is this your ship?"" 
 
 She doesn’t answer, then you soon notice that she's wiping a tear from her eye.","sunrider_findSunrider_wreck2:""Ava?""",
-sunrider_findSunrider_wreck2,DialogOptionSelected,$option == sunrider_findSunrider_wreck2,,"She recovers her composure and answers ""Yes, that is the Sunrider. I’m sorry, but she is looking worse than I can remember."" 
+sunrider_findSunrider_wreck2,DialogOptionSelected,"$option == sunrider_findSunrider_wreck2",,"She recovers her composure and answers ""Yes, that is the Sunrider. I’m sorry, but she is looking worse than I can remember."" 
 
-Even as a silent, fractured wreck, the ship bears a regal dignity; you can sense some of the spirit she had in life. She might be one of a kind.",sunrider_findSunrider_wreck3:Continue,
-sunrider_findSunrider_wreck3,DialogOptionSelected,$option == sunrider_findSunrider_wreck3,"$sunrider_findSunrider_seenNightmares = true
+Even as a silent, fractured wreck, the ship bears a regal dignity; you can sense some of the spirit she had in life. She might be one of a kind.","sunrider_findSunrider_wreck3:Continue",
+sunrider_findSunrider_wreck3,DialogOptionSelected,"$option == sunrider_findSunrider_wreck3","$sunrider_findSunrider_seenNightmares = true
 ShowImageVisual SunriderNM
 Sunrider_PlayInteractionMusic SunriderBoss true","As you’re about to give orders to your salvage team, your sensor officer reports ""$PlayerSirOrMadam, we detected a couple of small units emerging from the wreck."" 
 
 The screen displays what appears to be a pair red humanoid machines with up to four weapons. Frigate-sized, presumably not much of a threat to your $shipOrFleet —
 
 ""Captain, watch out!"" Ava shouts urgently, her eye going wide.","sunrider_findSunrider_wreck4:""What?""",
-sunrider_findSunrider_wreck4,DialogOptionSelected,$option == sunrider_findSunrider_wreck4,"SunriderSalvageDefenderInteraction
+sunrider_findSunrider_wreck4,DialogOptionSelected,"$option == sunrider_findSunrider_wreck4","SunriderSalvageDefenderInteraction
 $hasDefenders = true","""Those are Nightmares, $playerSirOrMadam! Standard automated Ryuvian infantry. It doesn’t look like a real threat due to its size, but I've faced these monstrosities before... they can sink a battleship effortlessly!""
 
 With one eye on the sensor display, you realize you have now need to decide whether to engage or retreat right now.",,
 sunrider_findSunrider_wreckRematch1,OpenInteractionDialog,"$sunrider_findSunrider_target score:1000
 $sunrider_findSunrider_seenNightmares
-!$defenderFleetDefeated",ShowImageVisual SunriderNM,"Your $shipOrFleet approaches the Sunrider.
+!$defenderFleetDefeated","ShowImageVisual SunriderNM","Your $shipOrFleet approaches the Sunrider.
 
-The Nightmares appear to be holding position beside the ship. You could take them on now, if you're feeling confident.",sunrider_findSunrider_wreckRematch2:Continue,
-sunrider_findSunrider_wreckRematch2,DialogOptionSelected,$option == sunrider_findSunrider_wreckRematch2,SunriderSalvageDefenderInteraction,"You order your $shipOrFleet to get closer to the wreck. The Nightmares move to intercept.
+The Nightmares appear to be holding position beside the ship. You could take them on now, if you're feeling confident.","sunrider_findSunrider_wreckRematch2:Continue",
+sunrider_findSunrider_wreckRematch2,DialogOptionSelected,"$option == sunrider_findSunrider_wreckRematch2","SunriderSalvageDefenderInteraction","You order your $shipOrFleet to get closer to the wreck. The Nightmares move to intercept.
 
 Beside you, Ava gazes calmly at the tactical display.",,
-sunrider_findSunrider_wreckWin,BeatDefendersContinue,$sunrider_findSunrider_target score:1000,Sunrider_PlayInteractionMusic,"Your entire crew is impressed, some of them don't even know how to react at something so small and easily underestimated, but unexpectedly powerful and difficult to destroy.
+sunrider_findSunrider_wreckWin,BeatDefendersContinue,"$sunrider_findSunrider_target score:1000","Sunrider_PlayInteractionMusic","Your entire crew is impressed, some of them don't even know how to react at something so small and easily underestimated, but unexpectedly powerful and difficult to destroy.
 
 However, the whole situation sounds even more bizarre when Ava says ""well, at least they were malfunctioning and missing the blade.""","sunrider_findSunrider_wreckWin2:""They. What?""",
-sunrider_findSunrider_wreckWin2,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin2,,"Literally everyone that heard this stares at her and she nods at you, ""The ones I fought before were more terrifying than this. They had a much larger shield that was immune to energy damage and could cover multiple units, a point-defense system that would stop every single missile or torpedo and a sharp blade that could cut even through heavy armor."" She looks dead serious as she tells you that.
+sunrider_findSunrider_wreckWin2,DialogOptionSelected,"$option == sunrider_findSunrider_wreckWin2",,"Literally everyone that heard this stares at her and she nods at you, ""The ones I fought before were more terrifying than this. They had a much larger shield that was immune to energy damage and could cover multiple units, a point-defense system that would stop every single missile or torpedo and a sharp blade that could cut even through heavy armor."" She looks dead serious as she tells you that.
 
 You want to say something, but all you can do right now is put your hands on your forehead and wonder: what in Ludd’s name did you just fight and if this woman is not joking, how did she survive previous encounters against machines worse than that? 
 
-After taking a few seconds to digest this information, you’re safe to start the Sunrider’s recovery.",sunrider_findSunrider_wreckWin3:Continue,
-sunrider_findSunrider_wreckWin3,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin3,ShowImageVisual SunriderDerelict,"After the salvor drones look over the hull and your chief engineer examines the scan data with help from Ava, a report is ready for you within the hour.
+After taking a few seconds to digest this information, you’re safe to start the Sunrider’s recovery.","sunrider_findSunrider_wreckWin3:Continue",
+sunrider_findSunrider_wreckWin3,DialogOptionSelected,"$option == sunrider_findSunrider_wreckWin3","ShowImageVisual SunriderDerelict","After the salvor drones look over the hull and your chief engineer examines the scan data with help from Ava, a report is ready for you within the hour.
 
 ""You don't ask for much, do you, commander? To begin with, this thing isn't even Domain, meaning we don't exactly have any blueprints for this, or even any safe assumptions about how it's built.
 
-Ava nods. ""That was part of why Jinta didn't recover it himself. That, and his fleet was configured for phase operations at the time, not salvage and recovery.""",sunrider_findSunrider_wreckWin4:Continue,
-sunrider_findSunrider_wreckWin4,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin4,"Highlight 250
+Ava nods. ""That was part of why Jinta didn't recover it himself. That, and his fleet was configured for phase operations at the time, not salvage and recovery.""","sunrider_findSunrider_wreckWin4:Continue",
+sunrider_findSunrider_wreckWin4,DialogOptionSelected,"$option == sunrider_findSunrider_wreckWin4","Highlight 250
 FireBest SunriderRecoverOptions","""Still, it can be done. Especially with Commander Crescentia here,"" a nod at Ava, ""helping us figure it out. I've got my team working out a detailed plan now... but it's gonna cost 250 supplies"".
 
 Your bridge crew and guest look at you, all awaiting your decision.","sunrider_findSunrider_recover1:Order recovery operation
@@ -169,126 +169,126 @@ FireAll SunriderRecoverOptions","Your $shipOrFleet approaches the ship.
 
 The wreckage of the Sunrider is still here. It's going to need 250 supplies to recover.","sunrider_findSunrider_recover1:Order recovery operation
 defaultLeave:Leave",
-sunrider_findSunrider_recoverOpts,SunriderRecoverOptions,$player.supplies < 250,"SetEnabled sunrider_findSunrider_recover1 false
+sunrider_findSunrider_recoverOpts,SunriderRecoverOptions,"$player.supplies < 250","SetEnabled sunrider_findSunrider_recover1 false
 SetTooltip sunrider_findSunrider_recover1 ""You only have $player.supplies supplies.""
 SetTooltipHighlightColors sunrider_findSunrider_recover1 bad
 SetTooltipHighlights sunrider_findSunrider_recover1 $player.supplies",,,
-sunrider_findSunrider_recover1,DialogOptionSelected,$option == sunrider_findSunrider_recover1,"AddCommodity supplies -250
+sunrider_findSunrider_recover1,DialogOptionSelected,"$option == sunrider_findSunrider_recover1","AddCommodity supplies -250
 Sunrider_PlayInteractionMusic SunriderRecover true","Stitching together a bisected ship remains more an art than a technical discipline, but your crew know their business and get to work. Actually reconnecting the hull segments will take some time, but it's not long before they have power and air in the main compartments.
 
 Ava asks your permission to go inside. Since she knows the Sunrider better than anyone, it should not be a bad idea.","sunrider_findSunrider_recover2Short:Detach a small team to accompany her [fast dialog]
 sunrider_findSunrider_recover2:Offer to go with her
 sunrider_findSunrider_recover2Lewd:Take her hand",
-sunrider_findSunrider_recover2,DialogOptionSelected,$option == sunrider_findSunrider_recover2,"$option = sunrider_findSunrider_recover3
+sunrider_findSunrider_recover2,DialogOptionSelected,"$option == sunrider_findSunrider_recover2","$option = sunrider_findSunrider_recover3
 FireBest DialogOptionSelected","Your offer takes her by some surprise, but then she says ""as you wish, $playerSirOrMadam.""",,
-sunrider_findSunrider_recover2Short,DialogOptionSelected,$option == sunrider_findSunrider_recover2Short,ShowImageVisual SunriderAvaSalute,"You give the order, and a couple of crew members are sent up to accompany Ava over to the ship.
+sunrider_findSunrider_recover2Short,DialogOptionSelected,"$option == sunrider_findSunrider_recover2Short","ShowImageVisual SunriderAvaSalute","You give the order, and a couple of crew members are sent up to accompany Ava over to the ship.
 
 Several hours later, your crew reports that the ship and the odd-looking mech ""fighters"" inside its hangar bays can probably fly right now, despite the difficulties of dealing with foreign technology. However, some of the weapons in the ship could not be recovered; with a curious exception: the very large spinal beam weapon.
 
 A few more minutes later, the ship starts up and hails you. As you open the comm link, Ava appears and salutes you sharply.
 
 ""The Sunrider is at your disposal, captain.""","sunrider_findSunrider_contract1:""Welcome to my fleet, Sunrider.""",
-sunrider_findSunrider_recover2Lewd,DialogOptionSelected,$option == sunrider_findSunrider_recover2Lewd,"ShowImageVisual SunriderBlush
-AdjustRepPerson sunrider_ava FAVORABLE 5","You turn slightly towards her and take her gloved hand in yours. ""Shall we?""
+sunrider_findSunrider_recover2Lewd,DialogOptionSelected,"$option == sunrider_findSunrider_recover2Lewd","ShowImageVisual SunriderBlush
+AdjustRepPerson sunrider_ava WELCOMING 5","You turn slightly towards her and take her gloved hand in yours. ""Shall we?""
 
 For the first time since you met her, she blushes. After a few seconds, she hastily turns her crimson-tinged face away, muttering, but not pulling her hand away.
 
-""...Dummy.""",sunrider_findSunrider_recover3:Continue,
-sunrider_findSunrider_recover3,DialogOptionSelected,$option == sunrider_findSunrider_recover3,ShowImageVisual SunriderDerelict,"You accompany her down to the shuttle bay, then on the ride to the Sunrider.
+""...Dummy.""","sunrider_findSunrider_recover3:Continue",
+sunrider_findSunrider_recover3,DialogOptionSelected,"$option == sunrider_findSunrider_recover3","ShowImageVisual SunriderDerelict","You accompany her down to the shuttle bay, then on the ride to the Sunrider.
 
-It's not clear whether the pilot is intentonally looping part way around the ship, but this gives the both of you a good look at the once-magnificent vessel. Ava stares quietly out the window all the way in.",sunrider_findSunrider_recover4:Continue,
-sunrider_findSunrider_recover4,DialogOptionSelected,$option == sunrider_findSunrider_recover4,ShowImageVisual SunriderBridge,"The two of you arrive on the bridge, where a team of technicians is trying to get the computers working again. This might be a good time to ask her just what happened here.
+It's not clear whether the pilot is intentonally looping part way around the ship, but this gives the both of you a good look at the once-magnificent vessel. Ava stares quietly out the window all the way in.","sunrider_findSunrider_recover4:Continue",
+sunrider_findSunrider_recover4,DialogOptionSelected,"$option == sunrider_findSunrider_recover4","ShowImageVisual SunriderBridge","The two of you arrive on the bridge, where a team of technicians is trying to get the computers working again. This might be a good time to ask her just what happened here.
 
 Ava tells you that the Sunrider, along with a few ""Alliance"" and ""PACT"" ships were investigating strange activity within ""Ryuvian"" derelict site, but were ambushed by automated defenses. You can’t help but wonder what those names are about since this is the first time you've heard them and can only think that they were defeated by more Nightmares.
 
 ""The fighting was chaotic,"" she says, perhaps more to herself than to you. ""And just when I thought we were done for, there was an... anomaly from the site itself. Would explain how the ship, and I, ended up here."" 
 
-She looks away wistfully. ""It seems we should have left well enough alone. Ancient lost technology... may as well have been magic, to fallen ones like us...""",sunrider_findSunrider_recover5:Continue,
-sunrider_findSunrider_recover5,DialogOptionSelected,$option == sunrider_findSunrider_recover5,,"Once everything is (mostly) wired together again, they boot everything up. Unfortunately, Ava doesn’t seem to remember more than what she already told you and the ship had a partial loss of logs. 
+She looks away wistfully. ""It seems we should have left well enough alone. Ancient lost technology... may as well have been magic, to fallen ones like us...""","sunrider_findSunrider_recover5:Continue",
+sunrider_findSunrider_recover5,DialogOptionSelected,"$option == sunrider_findSunrider_recover5",,"Once everything is (mostly) wired together again, they boot everything up. Unfortunately, Ava doesn’t seem to remember more than what she already told you and the ship had a partial loss of logs. 
 
 After some investigation, your crew can only assume that the ship was evacuated months, or maybe a few cycles ago, and the fact that the Sunrider’s escape pod bays are empty reinforces this theory. 
 
-""It does look like everyone escaped, except me,"" she says. ""Jinta’s crew said that there wasn’t a single dead body in or around the ship and I was unconscious, but still alive in the only room that was not exposed to the vacuum.""",sunrider_findSunrider_recover6:Continue,
-sunrider_findSunrider_recover6,DialogOptionSelected,$option == sunrider_findSunrider_recover6,ShowImageVisual SunriderQuarters,"You move on with your tour of the mostly-deserted ship.
+""It does look like everyone escaped, except me,"" she says. ""Jinta’s crew said that there wasn’t a single dead body in or around the ship and I was unconscious, but still alive in the only room that was not exposed to the vacuum.""","sunrider_findSunrider_recover6:Continue",
+sunrider_findSunrider_recover6,DialogOptionSelected,"$option == sunrider_findSunrider_recover6","ShowImageVisual SunriderQuarters","You move on with your tour of the mostly-deserted ship.
 
 In the captain's quarters, strewn with the ruins of what was once a man's home, Ava places her live hand on the desk table. ""Kayto, Asaga, Icari... I will never see them again,"" she whispers. ""Sola, Kryska...""
 
 She suddenly freezes and death stares at a tall pile of paper in a tray named ""to do"" near a small pile in the other tray named ""done,"" then speaks slowly and in an unusual manner ""He. Did. Not. Finish. The. Paperwork!""
 
-You put a hand on her shoulder and ask ""Are you okay, Ava?"" She answers ""Yeah, apologies. That was out of habit.""",sunrider_findSunrider_recover7:Continue,
-sunrider_findSunrider_recover7,DialogOptionSelected,$option == sunrider_findSunrider_recover7,,"Your crew reports that the ship and the mech-looking fighters inside her hangar bays can probably fly right now despite their difficulty dealing with the unusual technology. However, many of the ship’s weapons could not be recovered, with a curious exception: the very large spinal weapon. 
+You put a hand on her shoulder and ask ""Are you okay, Ava?"" She answers ""Yeah, apologies. That was out of habit.""","sunrider_findSunrider_recover7:Continue",
+sunrider_findSunrider_recover7,DialogOptionSelected,"$option == sunrider_findSunrider_recover7",,"Your crew reports that the ship and the mech-looking fighters inside her hangar bays can probably fly right now despite their difficulty dealing with the unusual technology. However, many of the ship’s weapons could not be recovered, with a curious exception: the very large spinal weapon. 
 
 Ava's eye flickers at the mention of this, but she waits for the report to conclude. Once it’s done, she asks ""did they fix the Vanguard Cannon?""
 
 ""Vanguard Cannon?""
 
-She explains that this is the most powerful weapon of the Sunrider, capable of piercing through multiple enemy units and that it sunk the ""Super Dreadnought Legion."" You guess that she's not talking about the Domain's Legion-class battlecarrier, but that’s a story for another game.",sunrider_findSunrider_recover8:Continue,
-sunrider_findSunrider_recover8,DialogOptionSelected,$option == sunrider_findSunrider_recover8,"ShowImageVisual SunriderSB
-Sunrider_PlayInteractionMusic SunriderClaude true","As you walk a bit more, you find the sick bay. Ava whispers ""Claude..."" and when you look at her, she shakes her head, ""she was just a perverted weirdo,"" but then whispers again, ""I hate to admit it, but I miss her too.""",sunrider_findSunrider_recover9:Explore the sick bay,
-sunrider_findSunrider_recover9,DialogOptionSelected,$option == sunrider_findSunrider_recover9,,"Everything in the sick bay looks remarkably intact. The medical equipment looks as exotic as the rest of the ship, but they’re probably replaceable if they run out or break, but only time will tell. 
+She explains that this is the most powerful weapon of the Sunrider, capable of piercing through multiple enemy units and that it sunk the ""Super Dreadnought Legion."" You guess that she's not talking about the Domain's Legion-class battlecarrier, but that’s a story for another game.","sunrider_findSunrider_recover8:Continue",
+sunrider_findSunrider_recover8,DialogOptionSelected,"$option == sunrider_findSunrider_recover8","ShowImageVisual SunriderSB
+Sunrider_PlayInteractionMusic SunriderClaude true","As you walk a bit more, you find the sick bay. Ava whispers ""Claude..."" and when you look at her, she shakes her head, ""she was just a perverted weirdo,"" but then whispers again, ""I hate to admit it, but I miss her too.""","sunrider_findSunrider_recover9:Explore the sick bay",
+sunrider_findSunrider_recover9,DialogOptionSelected,"$option == sunrider_findSunrider_recover9",,"Everything in the sick bay looks remarkably intact. The medical equipment looks as exotic as the rest of the ship, but they’re probably replaceable if they run out or break, but only time will tell. 
 
 The doctor’s office is looking quite a mess; likely caused by gravity, and coincidentally enough, a bottle of medicine falls off a half-open shelf in the wall shortly after you enter the room.","sunrider_findSunrider_recover10:Leave the sick bay
-sunrider_findSunrider_recoverDildo:Open the shelf out of curiosity",
-sunrider_findSunrider_recoverDildo,DialogOptionSelected,$option == sunrider_findSunrider_recoverDildo,,"When you open the shelf, you see a rubbery item that makes you instantly close it and regret your decision. 
+sunrider_findSunrider_recoverClaudeSpecial:Open the shelf out of curiosity",
+sunrider_findSunrider_recoverClaudeSpecial,DialogOptionSelected,"$option == sunrider_findSunrider_recoverClaudeSpecial",,"You open the shelf. It seems to contain this Claude's most prized personal possession. You close the shelf.
 
-You look at Ava... she is facepalming and says in a lower voice ""don't even ask"" when she notices your awkward gaze. Whoever ""Claude"" is or was, the short description she gave to them just now was accurate.",sunrider_findSunrider_recover10:Continue,
-sunrider_findSunrider_recover10,DialogOptionSelected,$option == sunrider_findSunrider_recover10,"ShowImageVisual SunriderEngineering
+You look at Ava... she is facepalming and says in a lower voice ""don't even ask"" when she notices your awkward gaze.","sunrider_findSunrider_recover10:Continue",
+sunrider_findSunrider_recover10,DialogOptionSelected,"$option == sunrider_findSunrider_recover10","ShowImageVisual SunriderEngineering
 Sunrider_PlayInteractionMusic SunriderRecover true","As you continue, you find the engineering section, battered but still serviceable, Ava puts a hand on her chin and examines the room for a while. ""My goodness,"" she says. ""The warp is still functional.""
 
 ""Warp?""
 
-Ava gives details about the ""ultra-accurate Short-Range Warp"" system, which to you, sounds like a more potent version of the Hyperion’s Phase Teleporter.",sunrider_findSunrider_recover11:Continue,
-sunrider_findSunrider_recover11,DialogOptionSelected,$option == sunrider_findSunrider_recover11,ShowImageVisual SunriderHangar,"The last interesting stop on your tour is the hangar bay. Seven humanoid mechs stand in their respective cradles, tall and magnificent.
+Ava gives details about the ""ultra-accurate Short-Range Warp"" system, which to you, sounds like a more potent version of the Hyperion’s Phase Teleporter.","sunrider_findSunrider_recover11:Continue",
+sunrider_findSunrider_recover11,DialogOptionSelected,"$option == sunrider_findSunrider_recover11","ShowImageVisual SunriderHangar","The last interesting stop on your tour is the hangar bay. Seven humanoid mechs stand in their respective cradles, tall and magnificent.
 
 Ava is taken aback at the sight. ""I don't understand,"" she says. ""They should all have been launched in combat.""
 
 She shakes her head, then explains that these are the ""ryders"" that joined the Sunrider one by one in her journey. Black Jack, Liberty, Phoenix, Bianca, Seraphim, Paladin, Havoc... now they're yours to command. 
 
 Thankfully, there are enough logs about them for your fighter pilots to try them out in the simulator, thus using them in battle will probably not be a problem. However, you realize that the hangar has room for up to twelve of these.","sunrider_findSunrider_recover12:""Where are the other five?""",
-sunrider_findSunrider_recover12,DialogOptionSelected,$option == sunrider_findSunrider_recover12,,"""We never had more than seven. But I'm not sure if the technology in this sector will be able to maintain even these, nor if the Sunrider is compatible with this sector’s fighters.""
+sunrider_findSunrider_recover12,DialogOptionSelected,"$option == sunrider_findSunrider_recover12",,"""We never had more than seven. But I'm not sure if the technology in this sector will be able to maintain even these, nor if the Sunrider is compatible with this sector’s fighters.""
 
-The two of you consider this for a while. After conferring with your engineering chief, you decide to use the remaining five bays for spares and equipment to support the existing ryders. Seven should be plenty to get the job done.",sunrider_findSunrider_contract1:Continue,
-sunrider_findSunrider_contract1,DialogOptionSelected,$option == sunrider_findSunrider_contract1,"ShowPersonVisual true sunrider_ava
+The two of you consider this for a while. After conferring with your engineering chief, you decide to use the remaining five bays for spares and equipment to support the existing ryders. Seven should be plenty to get the job done.","sunrider_findSunrider_contract1:Continue",
+sunrider_findSunrider_contract1,DialogOptionSelected,"$option == sunrider_findSunrider_contract1","ShowPersonVisual true sunrider_ava
 Call $global.sunrider_findSunrider_ref printSkills","It's time to negotiate an officer's contract with Ava, as promised.
 
 Along the way, you ask: ""Why do you want to work for me?""
 
-She pauses for a moment, then looks you in the eye. ""First of all, no matter what planet, galaxy or universe, we all need to make a living, don't we? And after seeing what fate had in store for me, I can't just let my talents go to waste. I may look young, but I have experience commanding an assault carrier. Not to brag, but I think I ran the Sunrider quite well."" Even though it's slight and hardly noticeable, you see her smile for the first time before she continues. ""Secondly, I see something in you, $playerSirOrMadam, something I saw in my former captain, Kayto Shields.""",sunrider_findSunrider_contract2:Hire Ava,
-sunrider_findSunrider_contract2,DialogOptionSelected,$option == sunrider_findSunrider_contract2,Call $global.sunrider_findSunrider_ref complete,"""Thank you very much, captain $playerName."" She salutes. ""I will serve you to the best of my ability, on my honor as an officer of the Cera Space Force.""",sunrider_findSunrider_dismissDialog:Complete the recovery and depart,
-sunrider_findSunrider_dismissDialog,DialogOptionSelected,$option == sunrider_findSunrider_dismissDialog,"Sunrider_PlayInteractionMusic
+She pauses for a moment, then looks you in the eye. ""First of all, no matter what planet, galaxy or universe, we all need to make a living, don't we? And after seeing what fate had in store for me, I can't just let my talents go to waste. I may look young, but I have experience commanding an assault carrier. Not to brag, but I think I ran the Sunrider quite well."" Even though it's slight and hardly noticeable, you see her smile for the first time before she continues. ""Secondly, I see something in you, $playerSirOrMadam, something I saw in my former captain, Kayto Shields.""","sunrider_findSunrider_contract2:Hire Ava",
+sunrider_findSunrider_contract2,DialogOptionSelected,"$option == sunrider_findSunrider_contract2","Call $global.sunrider_findSunrider_ref complete","""Thank you very much, captain $playerName."" She salutes. ""I will serve you to the best of my ability, on my honor as an officer of the Cera Space Force.""","sunrider_findSunrider_dismissDialog:Complete the recovery and depart",
+sunrider_findSunrider_dismissDialog,DialogOptionSelected,"$option == sunrider_findSunrider_dismissDialog","Sunrider_PlayInteractionMusic
 DismissDialog",,,
-#END Ava quest,,,,,,
+"#END Ava quest",,,,,,
 ,,,,,,
 # Ava quest 2,,,,,,
 sunrider_mission2_barOpt,AddBarEvents,"!$global.sunrider_seenMission2
 !$global.sunrider_mission2_delay
 Sunrider_MiscFunctions canShowMission2","AddBarEvent sunrider_mission2_barEvent ""Consider calling Ava down for a chat"" ""You've got some time to have a talk with Ava Crescentia. This looks like a good setting for it."" highlight",,,
-sunrider_mission2_intro0,DialogOptionSelected,$option == sunrider_mission2_barEvent,$global.sunrider_seenMission2 = true,"Previously, you helped Ava Crescentia recover the Sunrider, but many things are yet unexplained. The unique ship and automated defenses, her unique uniform, and the names she mentioned... names that nobody in your fleet, or anywhere in the Sector have heard about before. 
+sunrider_mission2_intro0,DialogOptionSelected,"$option == sunrider_mission2_barEvent","$global.sunrider_seenMission2 = true","Previously, you helped Ava Crescentia recover the Sunrider, but many things are yet unexplained. The unique ship and automated defenses, her unique uniform, and the names she mentioned... names that nobody in your fleet, or anywhere in the Sector have heard about before. 
 
 In addition, you ran a background check because such a talented officer wouldn’t be anonymous for long. Yet it’s like she didn’t exist until she was rescued by a former salvage captain, now retired.","sunrider_mission2_intro1:Call Ava
 sunrider_mission2_introAbort:Put it out of your mind [terminates quest]",
-sunrider_mission2_intro1,DialogOptionSelected,$option == sunrider_mission2_intro1,"ShowPersonVisual true sunrider_ava
+sunrider_mission2_intro1,DialogOptionSelected,"$option == sunrider_mission2_intro1","ShowPersonVisual true sunrider_ava
 SetStoryOption sunrider_mission2_intro2c 0 bonusXP_fake_opt_id ui_char_spent_story_point ""Made a metatextual reference in a conversation""","After taking a shuttle down to the local spaceport, Ava arrives at the bar and takes a spot opposite yours at the table. Two glasses are waiting.
 
 She picks up a glass, brings it halfway to her lips, then stops. ""Oh, pardon my rudeness... cheers!""","sunrider_mission2_intro2a:Say ""cheers"" too
 sunrider_mission2_intro2b:Compliment her
 sunrider_mission2_intro2c:Compliment her in a metafictional manner
 #sunrider_mission2_intro3:Ask where she comes from",
-sunrider_mission2_intro2a,DialogOptionSelected,$option == sunrider_mission2_intro2a,AdjustRepPerson sunrider_ava FAVORABLE 1,"Your glasses meet, and you imbibe the alcoholic beverage as Ava does the same.
+sunrider_mission2_intro2a,DialogOptionSelected,"$option == sunrider_mission2_intro2a","AdjustRepPerson sunrider_ava WELCOMING 1","Your glasses meet, and you imbibe the alcoholic beverage as Ava does the same.
 
-With the ice broken, it's time to get to the point...",sunrider_mission2_intro3:Ask where she comes from,
-sunrider_mission2_intro2b,DialogOptionSelected,$option == sunrider_mission2_intro2b,AdjustRepPerson sunrider_ava FAVORABLE 3,"You praise Ava’s capabilities and say that it’s unusual to find a young-looking lady more skilled at commanding a ship than most officers known in the sector
+With the ice broken, it's time to get to the point...","sunrider_mission2_intro3:Ask where she comes from",
+sunrider_mission2_intro2b,DialogOptionSelected,"$option == sunrider_mission2_intro2b","AdjustRepPerson sunrider_ava WELCOMING 3","You praise Ava’s capabilities and say that it’s unusual to find a young-looking lady more skilled at commanding a ship than most officers known in the sector
 
-She bows her head slightly and says ""Thank you, but just doing my work as your officer, captain.""",sunrider_mission2_intro3:Ask where she comes from,
-sunrider_mission2_intro2c,DialogOptionSelected,$option == sunrider_mission2_intro2c,AdjustRepPerson sunrider_ava FAVORABLE 3,"You compliment Ava’s capabilities and say that it’s not usual to find a level 8 young-looking officer with eight elite skills. That's as good as an integrated Alpha Core. 
+She bows her head slightly and says ""Thank you, but just doing my work as your officer, captain.""","sunrider_mission2_intro3:Ask where she comes from",
+sunrider_mission2_intro2c,DialogOptionSelected,"$option == sunrider_mission2_intro2c","AdjustRepPerson sunrider_ava WELCOMING 3","You compliment Ava’s capabilities and say that it’s not usual to find a level 8 young-looking officer with eight elite skills. That's as good as an integrated Alpha Core. 
 
-She chuckles and looks around, saying ""No, no, no! Don't break the fourth wall here. If someone eavesdrops on us, they’ll think we’re weirdos."" You look around as well and notice that a random person did hear you because they make a weird face at both of you, mumbling ""wtf?"" before walking away.",sunrider_mission2_intro3:Ask where she comes from,
-sunrider_mission2_intro3,DialogOptionSelected,$option == sunrider_mission2_intro3,,"You decide to get to the point, asking about her origins from a place no-one has heard of. Perhaps another galaxy entirely.
+She chuckles and looks around, saying ""No, no, no! Don't break the fourth wall here. If someone eavesdrops on us, they’ll think we’re weirdos."" You look around as well and notice that a random person did hear you because they make a weird face at both of you, mumbling ""wtf?"" before walking away.","sunrider_mission2_intro3:Ask where she comes from",
+sunrider_mission2_intro3,DialogOptionSelected,"$option == sunrider_mission2_intro3",,"You decide to get to the point, asking about her origins from a place no-one has heard of. Perhaps another galaxy entirely.
 
 She sighs. ""I don't know what I can tell you, captain. I can describe the world I came from, and all the other worlds I've been to, and the powers that ruled them, but... will that mean anything to you, here in the Sector?""
 
-This is true, but it still seems important to know about wherever she came from. Especially if people and ships -- including hostile ones -- could travel from there to here.",sunrider_mission2_intro4:Continue,
-sunrider_mission2_intro4,DialogOptionSelected,$option == sunrider_mission2_intro4,BeginMission sunrider_mission2,"She thinks for a while. ""There were some corrupted sectors in the Sunrider's memory core. If we had an expert data recovery team do a deep analysis on them, we might find some useful information. A map, or even a stored encyclopedia.""
+This is true, but it still seems important to know about wherever she came from. Especially if people and ships -- including hostile ones -- could travel from there to here.","sunrider_mission2_intro4:Continue",
+sunrider_mission2_intro4,DialogOptionSelected,"$option == sunrider_mission2_intro4","BeginMission sunrider_mission2","She thinks for a while. ""There were some corrupted sectors in the Sunrider's memory core. If we had an expert data recovery team do a deep analysis on them, we might find some useful information. A map, or even a stored encyclopedia.""
 
 That's worth a shot, at least.
 
@@ -298,23 +298,24 @@ The two of you nurse your drinks while mulling this over.
 
 ""With your leave, commander, I'd like to return to my ship and make the necessary preparations,"" Ava says, a bit after emptying her glass. ""Thank you for the drink.""","sunrider_mission2_intro5:See her off
 sunrider_mission2_intro5Lewd:Take her arm and escort her to the shuttle",
-sunrider_mission2_intro5,DialogOptionSelected,$option == sunrider_mission2_intro5,BarCMD returnFromEvent false,"Ava turns around and departs the bar, leaving you to continue scouting the bar for opportunities.",,
-sunrider_mission2_intro5Lewd,DialogOptionSelected,$option == sunrider_mission2_intro5Lewd,AdjustRepPerson sunrider_ava FAVORABLE 5,"Daring today, aren’t we?
+sunrider_mission2_intro5,DialogOptionSelected,"$option == sunrider_mission2_intro5","BarCMD returnFromEvent false","Ava turns around and departs the bar, leaving you to continue scouting the bar for opportunities.",,
+sunrider_mission2_intro5Lewd,DialogOptionSelected,"$option == sunrider_mission2_intro5Lewd","AdjustRepPerson sunrider_ava WELCOMING 5
+$player.sunrider_coomerPoints++","Daring today, aren’t we?
 
 When you take Ava’s arm in yours, her eye opens wide as she blushes, but she lets you pull her along to the bar’s entrance. 
 
 ""Y... you dummy!""
 
-Not only do you realize that this action drew attention to yourself, but you also barely hear your bodyguards behind you whispering to each other ""I think the captain got a girlfriend,"" and ""I don’t blame $playerHimOrHer... the girl looks nice,"" followed by a small giggle.",sunrider_mission2_intro6:Leave the bar,
-sunrider_mission2_intro6,DialogOptionSelected,$option == sunrider_mission2_intro6,"EndConversation DO_NOT_FIRE
+Not only do you realize that this action drew attention to yourself, but you also barely hear your bodyguards behind you whispering to each other ""I think the captain got a girlfriend,"" and ""I don’t blame $playerHimOrHer... the girl looks nice,"" followed by a small giggle.","sunrider_mission2_intro6:Leave the bar",
+sunrider_mission2_intro6,DialogOptionSelected,"$option == sunrider_mission2_intro6","EndConversation DO_NOT_FIRE
 BarCMD leaveBar",,,
-sunrider_mission2_introAbort,DialogOptionSelected,$option == sunrider_mission2_introAbort,"$global.sunrider_mission2_doneOrSkipped = true
+sunrider_mission2_introAbort,DialogOptionSelected,"$option == sunrider_mission2_introAbort","$global.sunrider_mission2_doneOrSkipped = true
 BarCMD showOptions",,,
 sunrider_mission2_scanOptPlayer,PopulateOptions,"$isPerson
 $faction.id == player score:10
 Sunrider_MiscFunctions mission2CanScan true
 Call $global.sunrider_mission2_ref updateData
-$sunrider_mission2_stage == RECOVER_DATA",,,0:sunrider_mission2_scanStart1:Ask $himOrHer for a data recovery team,
+$sunrider_mission2_stage == RECOVER_DATA",,,"0:sunrider_mission2_scanStart1:Ask $himOrHer for a data recovery team",
 sunrider_mission2_scanOptGargoyle,PopulateOptions,"$isPerson
 $id == gargoyle score:10
 $market.id == ga_market
@@ -325,7 +326,7 @@ sunrider_mission2_scanOptTT,PopulateOptions,"$isPerson
 $faction.id == tritachyon score:10
 Sunrider_MiscFunctions mission2CanScan true
 Call $global.sunrider_mission2_ref updateData
-$sunrider_mission2_stage == RECOVER_DATA",,,0:sunrider_mission2_scanStart1:Inquire about advanced data recovery services,
+$sunrider_mission2_stage == RECOVER_DATA",,,"0:sunrider_mission2_scanStart1:Inquire about advanced data recovery services",
 sunrider_mission2_scanOptKween,PopulateOptions,"$isPerson
 $id == sfckween score:10
 Sunrider_MiscFunctions mission2CanScan false
@@ -353,23 +354,23 @@ ShowSecondPerson sunrider_ava","""A favor, eh?"" The hacker leans back with wagg
 
 You explain the job you need to Gargoyle, involving a memory core from a ship of presumed extra-Domain origin. You present Ava, who will provide needed semi-technical assistance. You also emphasize the need for complete discretion.
 
-""An alien ship!"" The hacker mimes exaggerated shock. ""And so you thought of your good friend Gargoyle, of course.""",sunrider_mission2_scanStartGargoyle2:Continue,
-sunrider_mission2_scanStartGargoyle2,DialogOptionSelected,$option == sunrider_mission2_scanStartGargoyle2,,"Gargoyle holds up two fingers in a gesture of indeterminate meaning. ""Well, aren't you the lucky one today! I just happen to be bored enough to do this little favor, as you so succintly put it. All for my favorite starship captain!
+""An alien ship!"" The hacker mimes exaggerated shock. ""And so you thought of your good friend Gargoyle, of course.""","sunrider_mission2_scanStartGargoyle2:Continue",
+sunrider_mission2_scanStartGargoyle2,DialogOptionSelected,"$option == sunrider_mission2_scanStartGargoyle2",,"Gargoyle holds up two fingers in a gesture of indeterminate meaning. ""Well, aren't you the lucky one today! I just happen to be bored enough to do this little favor, as you so succintly put it. All for my favorite starship captain!
 
 ""In fact, I'm so magnanimous today, I won't even charge you for the service. I need the mental stimulation, anyway; it'll be a nice change of pace from the dreary makework the faculty saddles me with.""
 
-The hacker puts a hand to chin. ""And don't worry about Queen B and the others. What they don't know about won't hurt them.""",sunrider_mission2_scanStartGargoyle3:Continue,
-sunrider_mission2_scanStartGargoyle3,DialogOptionSelected,$option == sunrider_mission2_scanStartGargoyle3,"ShowDefaultVisual
+The hacker puts a hand to chin. ""And don't worry about Queen B and the others. What they don't know about won't hurt them.""","sunrider_mission2_scanStartGargoyle3:Continue",
+sunrider_mission2_scanStartGargoyle3,DialogOptionSelected,"$option == sunrider_mission2_scanStartGargoyle3","ShowDefaultVisual
 UpdateMemory","Ava looks at you, but doesn't say anything. ""By your leave, captain?"" she asks after a few moments.
 
-You arrange a quiet appointment and order a shuttle to send her over to the Academy. Hopefully she can survive a few hours of interacting with Gargoyle... ah, who are you kidding?",sunrider_mission2_scanCompleteGargoyle1:Wait for them to finish,
+You arrange a quiet appointment and order a shuttle to send her over to the Academy. Hopefully she can survive a few hours of interacting with Gargoyle... ah, who are you kidding?","sunrider_mission2_scanCompleteGargoyle1:Wait for them to finish",
 sunrider_mission2_scanStartKweenLow,DialogOptionSelected,"$option == sunrider_mission2_scanStart1
 $id == sfckween score:10
-$rel < 0.5",$sunrider_mission2_kween = true 0,"$personLastName eyes you carefully as you explain the job you need done, explaining it away as something being a memory core from a ship with a non-standard design.  You refrain from explaining just how or why the systems are non-standard. You present Ava, who will provide needed semi-technical assistance. You also emphasize the need for complete discretion.
+$rel < 0.5","$sunrider_mission2_kween = true 0","$personLastName eyes you carefully as you explain the job you need done, explaining it away as something being a memory core from a ship with a non-standard design.  You refrain from explaining just how or why the systems are non-standard. You present Ava, who will provide needed semi-technical assistance. You also emphasize the need for complete discretion.
 
 The $personPost frowns after you finish. ""Captain, you know very well what kind of person I am. You think I have the liberty to do such a request? No... I'm afraid I shall decline this request. I unfortunately have more important things to do right now.""
 
-$personLastName glances away from you for a moment, perhaps looking at some other information. ""So is there something else you need, Captain? Or was this all you needed from me?""",sunrider_mission2_scanStartKween2:Plead with Kween,
+$personLastName glances away from you for a moment, perhaps looking at some other information. ""So is there something else you need, Captain? Or was this all you needed from me?""","sunrider_mission2_scanStartKween2:Plead with Kween",
 sunrider_mission2_scanStartKweenLow2,DialogOptionSelected,"$option == sunrider_mission2_scanStartKween2
 $rel < 0.5","$sunrider_mission2_kween = true 0
 Highlight ""1 Gamma Core""
@@ -389,51 +390,51 @@ $personLastName sends a message over to your TriPad, noting what she's requestin
 sunrider_mission2_scanAbort:Decline",
 sunrider_mission2_scanStartKweenFriend,DialogOptionSelected,"$option == sunrider_mission2_scanStart1
 $id == sfckween score:10
-$kweeniapetusship score:10",$sunrider_mission2_kween = true 0,"As soon as you begin your request, $personLastName's grin widens, intrigued by the parameters of your request. Before you and Ava can finish explaining about the memory core, $personLastName clears $hisOrHer throat.
+$kweeniapetusship score:10","$sunrider_mission2_kween = true 0","As soon as you begin your request, $personLastName's grin widens, intrigued by the parameters of your request. Before you and Ava can finish explaining about the memory core, $personLastName clears $hisOrHer throat.
   
 ""Non-standard design? Come now, Captain. You and I know that there's more to what you're requesting than is something simply non-standard. There is no need for secrecy here, my assistant. I promise you, anything discussed between us is strictly confidential.""
   
-$personLastName continues to give you that eerie smile of hers as she taps away at an offscreen TriPad. ""Of course, I don't want to just see this memory core... I want to see the ship attached to it. Indulge me in my desires to see it with my own two eyes, and I'll promise you I'll get your little request done.""",sunrider_mission2_scanCompleteKween1:Accept her offer,
+$personLastName continues to give you that eerie smile of hers as she taps away at an offscreen TriPad. ""Of course, I don't want to just see this memory core... I want to see the ship attached to it. Indulge me in my desires to see it with my own two eyes, and I'll promise you I'll get your little request done.""","sunrider_mission2_scanCompleteKween1:Accept her offer",
 ,,,,,,
-sunrider_mission2_scanPayCheck,Sunrider_Mission2_ScanPayCheck,$player.credits < $sunrider_mission2_recoverCredits,"SetTextHighlightColors h bad
+sunrider_mission2_scanPayCheck,Sunrider_Mission2_ScanPayCheck,"$player.credits < $sunrider_mission2_recoverCredits","SetTextHighlightColors h bad
 Highlight $sunrider_mission2_recoverCreditsStr $player.creditsStr
 SetEnabled sunrider_mission2_scanComplete1 false",,,
 sunrider_mission2_scanPayCheckKween,Sunrider_Mission2_ScanPayCheck,"$id == sfckween score:10
 !Sunrider_MiscFunctions hasItem gamma_core 1","SetTextHighlightColors bad
 Highlight ""1 Gamma Core""
 SetEnabled sunrider_mission2_scanCompleteKween1 false",,,
-sunrider_mission2_scanAbort,DialogOptionSelected,$option == sunrider_mission2_scanAbort,FireAll PopulateOptions,"The $personPost shakes $hisOrHer head. ""Anything else, then?""",,
+sunrider_mission2_scanAbort,DialogOptionSelected,"$option == sunrider_mission2_scanAbort","FireAll PopulateOptions","The $personPost shakes $hisOrHer head. ""Anything else, then?""",,
 sunrider_mission2_scanAbortKween,DialogOptionSelected,"$option == sunrider_mission2_scanAbort
-$id == sfckween score:5",FireAll PopulateOptions,"$personLastName looks at you with disappointment. ""Ah, oh well. But my offer still stands.""",,
+$id == sfckween score:5","FireAll PopulateOptions","$personLastName looks at you with disappointment. ""Ah, oh well. But my offer still stands.""",,
 ,,,,,,
-sunrider_mission2_scanComplete1,DialogOptionSelected,$option == sunrider_mission2_scanComplete1,"AddCredits -$sunrider_mission2_recoverCredits
+sunrider_mission2_scanComplete1,DialogOptionSelected,"$option == sunrider_mission2_scanComplete1","AddCredits -$sunrider_mission2_recoverCredits
 ShowDefaultVisual
-UpdateMemory","You make the payment, the $personPost nods in approval and makes the necessary arrangements. Ava heads off to help out.",sunrider_mission2_scanComplete2:Continue,
-sunrider_mission2_scanComplete2,DialogOptionSelected,$option == sunrider_mission2_scanComplete2,,"A few hours later, Ava returns with the results. The manifest the tech team supplied include a map, and a restored copy of a weapon blueprint.",sunrider_mission2_scanComplete3:Continue,
-sunrider_mission2_scanCompleteGargoyle1,DialogOptionSelected,$option == sunrider_mission2_scanCompleteGargoyle1,"ShowPersonVisual true gargoyle
+UpdateMemory","You make the payment, the $personPost nods in approval and makes the necessary arrangements. Ava heads off to help out.","sunrider_mission2_scanComplete2:Continue",
+sunrider_mission2_scanComplete2,DialogOptionSelected,"$option == sunrider_mission2_scanComplete2",,"A few hours later, Ava returns with the results. The manifest the tech team supplied include a map, and a restored copy of a weapon blueprint.","sunrider_mission2_scanComplete3:Continue",
+sunrider_mission2_scanCompleteGargoyle1,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteGargoyle1","ShowPersonVisual true gargoyle
 ShowSecondPerson sunrider_ava","Your comm chimes just short of three hours later. Two familiar faces appear on your display.
 
 ""It,"" Gargoyle holds out both hands for dramatic effect, ""is done!""
 
 ""We've recovered the entire database, captain,"" Ava says. ""Including a map, and a weapon blueprint I think will interest you.""
 
-""That was just the diversion I needed, my good $playerFirstName,"" the hacker adds. ""If you need any other alien artifacts cracked with the help of mysterious women, be sure to send them my way, will you?""",sunrider_mission2_scanCompleteGargoyle2:Thank Gargoyle and have Ava return to the $shipOrFleet,
-sunrider_mission2_scanCompleteGargoyle2,DialogOptionSelected,$option == sunrider_mission2_scanCompleteGargoyle2,"ShowPersonVisual true sunrider_ava
+""That was just the diversion I needed, my good $playerFirstName,"" the hacker adds. ""If you need any other alien artifacts cracked with the help of mysterious women, be sure to send them my way, will you?""","sunrider_mission2_scanCompleteGargoyle2:Thank Gargoyle and have Ava return to the $shipOrFleet",
+sunrider_mission2_scanCompleteGargoyle2,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteGargoyle2","ShowPersonVisual true sunrider_ava
 HideSecondPerson","It's not long before Ava is back on the bridge. As she steps next to you, you lean over and inquire how she found Gargoyle.
 
 She seems to choke for a moment. ""He's, um, quite the character. I've dealt with some... eccentric figures back on the old Sunrider, too, but none quite like this.""
 
-Well, at least she survived the experience. You briefly wonder just what her old crew must have been like.",sunrider_mission2_scanComplete3:Load the data,
-sunrider_mission2_scanCompleteKween1,DialogOptionSelected,$option == sunrider_mission2_scanCompleteKween1,"AddRemoveCommodity gamma_core -1
+Well, at least she survived the experience. You briefly wonder just what her old crew must have been like.","sunrider_mission2_scanComplete3:Load the data",
+sunrider_mission2_scanCompleteKween1,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKween1","AddRemoveCommodity gamma_core -1
 ShowDefaultVisual","$personLastName grins as you send over the requested material. ""Very good, Captain! I shall begin immediately. Now just leave everything to me and I shall ensure every little secret stays per-fect-ly safe.""
 
-$personLastName closes the commlink. Ava afterwards takes a shuttle down to Sindria, to assist with the operation.",sunrider_mission2_scanCompleteKween2:Continue,
+$personLastName closes the commlink. Ava afterwards takes a shuttle down to Sindria, to assist with the operation.","sunrider_mission2_scanCompleteKween2:Continue",
 sunrider_mission2_scanCompleteKween1Friend,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKween1
-$kweeniapetusship score:10",ShowDefaultVisual,"$personLastName is absolutely giddy with excitement, her smile unerringly wide. ""Good... good!"" She says. ""I shall be heading up to see this personally. And don't you worry, I promise I won't break anything during my visit.""
+$kweeniapetusship score:10","ShowDefaultVisual","$personLastName is absolutely giddy with excitement, her smile unerringly wide. ""Good... good!"" She says. ""I shall be heading up to see this personally. And don't you worry, I promise I won't break anything during my visit.""
 
-$personLastName closes the comm link on $hisOrHer end, leaving you and Ava to wait for the $personPost to arrive. After a bit of waiting, a shuttle arrives to dock to the Sunrider. Ava departs to join $personLastName and to assist. Part of you wonders if you should join the two, but decide that it would be for the best to not involve yourself.",sunrider_mission2_scanCompleteKween2:Continue,
-sunrider_mission2_scanCompleteKween2,DialogOptionSelected,$option == sunrider_mission2_scanCompleteKween2,"ShowPersonVisual true sfckween
-$player.sfckweenfavor++","$personLastName recontacts with you, Ava standing next to the $personPost. ""Ah, truly that was something interesting. Everything is accounted for, and your friend here was of enough help. I shall leave you to it now.""",sunrider_mission2_scanCompleteKweenPost:Thank Kween and have Ava return to the $shipOrFleet,
+$personLastName closes the comm link on $hisOrHer end, leaving you and Ava to wait for the $personPost to arrive. After a bit of waiting, a shuttle arrives to dock to the Sunrider. Ava departs to join $personLastName and to assist. Part of you wonders if you should join the two, but decide that it would be for the best to not involve yourself.","sunrider_mission2_scanCompleteKween2:Continue",
+sunrider_mission2_scanCompleteKween2,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKween2","ShowPersonVisual true sfckween
+$player.sfckweenfavor++","$personLastName recontacts with you, Ava standing next to the $personPost. ""Ah, truly that was something interesting. Everything is accounted for, and your friend here was of enough help. I shall leave you to it now.""","sunrider_mission2_scanCompleteKweenPost:Thank Kween and have Ava return to the $shipOrFleet",
 sunrider_mission2_scanCompleteKween2Friend,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKween2
 $kweeniapetusship score:10","ShowPersonVisual true sfckween
 SetEnabled sunrider_mission2_scanCompleteKween3Alt false
@@ -446,34 +447,37 @@ Before you can respond, you receive a message on your TriPad, $personLastName's 
   
 ""Well?""","sunrider_mission2_scanCompleteKween3Alt:Accept
 sunrider_mission2_scanCompleteKween3:Decline",
-sunrider_mission2_scanCompleteKween3,DialogOptionSelected,$option == sunrider_mission2_scanCompleteKween3,,"$personLastName looks at you with disappointment, but nonetheless does $hisOrHer best to hide it. ""Very well, I understand. Still, I appreciate you providing me the opportunity to see this. Ah, and the scan is complete, took only a few hours to get done. Anyway, farewell, Captain. I hope to see you again soon.""",sunrider_mission2_scanCompleteKweenPost:Thank Kween and have Ava return to the $shipOrFleet,
-sunrider_mission2_scanCompleteKweenPost,DialogOptionSelected,$option == sunrider_mission2_scanCompleteKweenPost,ShowPersonVisual true sunrider_ava,"It's not long before Ava is back on the bridge. As she steps next to you, you lean over and inquire how she found Kween.
+sunrider_mission2_scanCompleteKween3,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKween3",,"$personLastName looks at you with disappointment, but nonetheless does $hisOrHer best to hide it. ""Very well, I understand. Still, I appreciate you providing me the opportunity to see this. Ah, and the scan is complete, took only a few hours to get done. Anyway, farewell, Captain. I hope to see you again soon.""","sunrider_mission2_scanCompleteKweenPost:Thank Kween and have Ava return to the $shipOrFleet",
+sunrider_mission2_scanCompleteKweenPost,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteKweenPost","ShowPersonVisual true sunrider_ava
+FireAll Sunrider_mission2_scanCompleteKweenPostCheck","It's not long before Ava is back on the bridge. As she steps next to you, you lean over and inquire how she found Kween.
 
-""She..."" Ava seems to be choosing her words carefully. ""I will be honest; Dr. Kween's manners were excellent on the surface, but I felt something wrong about her. Like a deep hunger, the object of which I do not know. And..."" she covers her eyepatch with a hand, ""she will stop at nothing to sate it.""
-
-She's not wrong. You've been around Yunris long enough to know that. But for now, does it matter?",sunrider_mission2_scanComplete3:Put it out of your mind and load the data,
+""She..."" Ava seems to be choosing her words carefully. ""I will be honest; Dr. Kween's manners were excellent on the surface, but I felt something wrong about her. Like a deep hunger for something I don't know,"" she covers her eyepatch with a hand, ""one which she will stop at nothing to sate.""","sunrider_mission2_scanComplete3:Put it out of your mind and load the data",
+sunrider_mission2_scanCompleteKweenPostCheckLowRep,Sunrider_mission2_scanCompleteKweenPostCheck,"$rel < 0.3",,"You don't know Kween well enough to say whether Ava's right. At least, either way, she's done as you asked.",,
+sunrider_mission2_scanCompleteKweenPostCheckHighRep,Sunrider_mission2_scanCompleteKweenPostCheck,"$rel >= 0.3",,"She's not wrong. You've been around Yunris long enough to know that. But for now, does it matter?",,
 ,,,,,,
-sunrider_mission2_scanComplete3,DialogOptionSelected,$option == sunrider_mission2_scanComplete3,"ShowPersonVisual true sunrider_ava
-Call $global.sunrider_mission2_ref addBlueprint","""The Savior,"" Ava says, looking at the distorted image projected before the two of you. ""The Sunrider's primary armament after the Vanguard Cannon. Triple-barrel anti-armor batteries, able to slag a cruiser in a few volleys. Even battleships will break with sustained fire.""",sunrider_mission2_scanComplete4:Continue,TODO: Show a fake Savior blueprint here?
-sunrider_mission2_scanComplete4,DialogOptionSelected,$option == sunrider_mission2_scanComplete4,ShowImageVisual SunriderGalaxyMap,"You set aside the blueprints and look at the map.
+sunrider_mission2_scanComplete3,DialogOptionSelected,"$option == sunrider_mission2_scanComplete3","ShowPersonVisual true sunrider_ava
+Call $global.sunrider_mission2_ref addBlueprint
+Sunrider_PlayInteractionMusic SunriderRecover true","""The Savior,"" Ava says, looking at the distorted image projected before the two of you. ""The Sunrider's primary armament after the Vanguard Cannon. Triple-barrel anti-armor batteries, able to slag a cruiser in a few volleys. Even battleships will break with sustained fire.""","sunrider_mission2_scanComplete4:Continue","TODO: Show a fake Savior blueprint here?"
+sunrider_mission2_scanComplete4,DialogOptionSelected,"$option == sunrider_mission2_scanComplete4","ShowImageVisual SunriderGalaxyMap","You set aside the blueprints and look at the map.
 
 From this view along the galactic axis, it looks just like the Milky Way, but none of the polities or locations marked on it are ones you've ever heard of, except from Ava. And conversely, nothing of the Domain is indicated on it, including the Persean Sector.
 
-Colors filling the space between the stars marks the territory of powers great and small: PACT, the Solar Alliance, the Neutral Rim, the Mining Union and the fallen Holy Ryuvian Empire. Ava marks planets and star systems of note, places with names like Cera, Ryuvia Prime, Far Port, Tydaria and Ongess.",sunrider_mission2_scanComplete5:Continue,
-sunrider_mission2_scanComplete5,DialogOptionSelected,$option == sunrider_mission2_scanComplete5,,"""This map is authentic, right?"" you ask. ""Or is there a possibility of tampering or corruption?""
+Colors filling the space between the stars marks the territory of powers great and small: PACT, the Solar Alliance, the Neutral Rim, the Mining Union and the fallen Holy Ryuvian Empire. Ava marks planets and star systems of note, places with names like Cera, Ryuvia Prime, Far Port, Tydaria and Ongess.","sunrider_mission2_scanComplete5:Continue",
+sunrider_mission2_scanComplete5,DialogOptionSelected,"$option == sunrider_mission2_scanComplete5",,"""This map is authentic, right?"" you ask. ""Or is there a possibility of tampering or corruption?""
 
-Ava shakes her head. ""Everything is exactly as I remembered it, Captain. This is the map of the galaxy I came from.""",sunrider_mission2_scanComplete6:Take a deep breath,
-sunrider_mission2_scanComplete6,DialogOptionSelected,$option == sunrider_mission2_scanComplete6,ShowPersonVisual true sunrider_ava,"""Ava, I can only conclude that you and your ship were warped from a galaxy so distant we won’t ever be able to see it.""
+Ava shakes her head. ""Everything is exactly as I remembered it, Captain. This is the map of the galaxy I came from.""","sunrider_mission2_scanComplete6:Take a deep breath",
+sunrider_mission2_scanComplete6,DialogOptionSelected,"$option == sunrider_mission2_scanComplete6","ShowPersonVisual true sunrider_ava","""Ava, I can only conclude that you and your ship were warped from a galaxy so distant we won’t ever be able to see it.""
 
 It is even stranger that she doesn’t look surprised or shaken. Perhaps her good eye shimmers, for just an instant... or is it merely a trick of the light?
 
-Her voice is emotionless. ""I started thinking the same weeks before I met you, $PlayerSirOrMadam. Looks like your curiosity about me just confirmed it.""",sunrider_mission2_scanCompleteEnd:Continue,
-sunrider_mission2_scanCompleteEnd,DialogOptionSelected,$option == sunrider_mission2_scanCompleteEnd,"AddStoryPoints 1
+Her voice is emotionless. ""I started thinking the same weeks before I met you, $PlayerSirOrMadam. Looks like your curiosity about me just confirmed it.""","sunrider_mission2_scanCompleteEnd:Continue",
+sunrider_mission2_scanCompleteEnd,DialogOptionSelected,"$option == sunrider_mission2_scanCompleteEnd","AddStoryPoints 1
 Call $global.sunrider_mission2_ref complete
 EndConversation
 ShowDefaultVisual
-FireAll PopulateOptions","""But don’t worry, I’m fine. I already accepted the fact that I'll never see my friends or family again. There’s nothing to be done, captain.""",,
-#END Ava quest 2,,,,,,
+FireAll PopulateOptions
+Sunrider_PlayInteractionMusic","""But don’t worry, I’m fine. I already accepted the fact that I'll never see my friends or family again. There’s nothing to be done, captain.""",,
+"#END Ava quest 2",,,,,,
 ,,,,,,
 # Ava quest 3,,,,,,
 sunrider_mission3_prompt,MarketPostDock,"!$global.sunrider_seenMission3
@@ -482,68 +486,487 @@ Sunrider_MiscFunctions canShowMission2","ShowPersonVisual true sunrider_ava
 $global.sunrider_seenMission3 = true
 BeginMission sunrider_mission3","As your $shipOrFleet docks at $name, you receive a message from Ava Crescentia.
 
-""I've reviewed the battle data from our Nightmare encounter, Captain. I'd like to discuss tactics when you have the time.""",sunrider_mission3_promptContinue:Continue,
-sunrider_mission3_promptContinue,DialogOptionSelected,$option == sunrider_mission3_promptContinue,"ShowDefaultVisual
+""I've reviewed the battle data from our Nightmare encounter, Captain. I'd like to discuss tactics when you have the time.""","sunrider_mission3_promptContinue:Continue",
+sunrider_mission3_promptContinue,DialogOptionSelected,"$option == sunrider_mission3_promptContinue","ShowDefaultVisual
 EndConversation DO_NOT_FIRE
 FireBest MarketPostDock",,,
-sunrider_mission3_convo1,DialogOptionSelected,$option == sunrider_mission3_convo1,ShowPersonVisual true sunrider_ava,"You notify Ava to join you in your office.
+sunrider_mission3_convo1,DialogOptionSelected,"$option == sunrider_mission3_convo1","ShowPersonVisual true sunrider_ava","You notify Ava to join you in your office.
 
-She shows up on schedule to the second, her officer's uniform and her salute crisp as ever. ""I've brought that briefing you requested, captain.""",sunrider_mission3_convo2:Invite her to take a seat,
-sunrider_mission3_convo2,DialogOptionSelected,$option == sunrider_mission3_convo2,,"She sits down and turns on the projection function on her TriPad. ""Comparing my encounters with yours, they were not only visibly, but also tactically crippled. Their missing sword and reduced shielding and point defense were the most notable differences, but I also noticed that they have weaknesses that can be easily exploited by this sector’s ships and weapons.""","sunrider_mission3_convo3:Ask her to elaborate
+She shows up on schedule to the second, her officer's uniform and her salute crisp as ever. ""I've brought that briefing you requested, captain.""","sunrider_mission3_convo2:Invite her to take a seat",
+sunrider_mission3_convo2,DialogOptionSelected,"$option == sunrider_mission3_convo2",,"She sits down and turns on the projection function on her TriPad. ""Comparing my encounters with yours, they were not only visibly, but also tactically crippled. Their missing sword and reduced shielding and point defense were the most notable differences, but I also noticed that they have weaknesses that can be easily exploited by this sector’s ships and weapons.""","sunrider_mission3_convo3:Ask her to elaborate
 sunrider_mission3_convo_workHard1:""You've worked all this out already?""",
-sunrider_mission3_convo_workHard1,DialogOptionSelected,$option == sunrider_mission3_convo_workHard1,,"""Well, I've been studying the ships and weapons of this universe since I arrived, even before joining your fleet. I've also gone over the battles I've fought while under your command. I think I now have an adequate grasp of the capabilities of your military technology and how it might be best applied against those of my universe.""","sunrider_mission3_convo_workHard2:""Aren’t you pushing yourself a little too hard?""
+sunrider_mission3_convo_workHard1,DialogOptionSelected,"$option == sunrider_mission3_convo_workHard1",,"""Well, I've been studying the ships and weapons of this universe since I arrived, even before joining your fleet. I've also gone over the battles I've fought while under your command. I think I now have an adequate grasp of the capabilities of your military technology and how it might be best applied against those of my universe.""","sunrider_mission3_convo_workHard2:""Aren’t you pushing yourself a little too hard?""
 sunrider_mission3_convo3:Let her continue",
-sunrider_mission3_convo_workHard2,DialogOptionSelected,$option == sunrider_mission3_convo_workHard2,AdjustRepPerson sunrider_ava FAVORABLE 2,"She looks surprised. ""It is part of my work as your officer, isn’t it?""
+sunrider_mission3_convo_workHard2,DialogOptionSelected,"$option == sunrider_mission3_convo_workHard2","AdjustRepPerson sunrider_ava WELCOMING 2","She looks surprised. ""It is part of my work as your officer, isn’t it?""
 
 ""Ava, you are an excessive workaholic in comparison to anyone else in the crew. You already do more than what you are paid for. Just relax a little. I don’t know how it was like in the old Sunrider, but take it easier here, will you?""
 
-She looks away for a second, then nods and quietly says ""As you wish, $playerSirOrMadam... I will try."" You catch her muttering under her breath ""...just like him.""",sunrider_mission3_convo3:Continue with the briefing,
-sunrider_mission3_convo3,DialogOptionSelected,$option == sunrider_mission3_convo3,"Call $global.sunrider_mission3_ref showNightmare
+She looks away for a second, then nods and quietly says ""As you wish, $playerSirOrMadam... I will try."" You catch her muttering under her breath ""...just like him.""","sunrider_mission3_convo3:Continue with the briefing",
+sunrider_mission3_convo3,DialogOptionSelected,"$option == sunrider_mission3_convo3","Call $global.sunrider_mission3_ref showNightmare
 Highlight ""High Explosive"" ""Kinetics"" ""Tachyon Lance""","""First, the basics. Due to their thin armor rating, High Explosive weapons are not the most useful against them. They'll still hurt if they connect, of course, but...""
 
 She thumps a hand on the desk for effect. ""Kinetics. Lots and lots of kinetics. It'll overwhelm their shields. Then when they're vulnerable, I believe the Tachyon Lance will be particularly effective.
 
 ""The Liberty and your Harbinger-class destroyer can also briefly overload their shields. It's not much of a window of opportunity, but it might help since their engines stop functioning when they get overloaded.""","sunrider_mission3_convo4:""Anything else?""",
-sunrider_mission3_convo4,DialogOptionSelected,$option == sunrider_mission3_convo4,Highlight Fighters,"""Another key danger of the Nightmares is the massive damage they can inflict on even capital ships. However, if we do not present them with such high-value targets... Fighters, captain. Swamp them enough and they'll be too busy to kill our ships.""","sunrider_mission3_convo5:""That'll be pretty hard on the fighter pilots.""",
-sunrider_mission3_convo5,DialogOptionSelected,$option == sunrider_mission3_convo5,,"Her eye shows no hint of apology. ""Better to lose ten or a hundred Broadswords than a Paragon, captain.""
+sunrider_mission3_convo4,DialogOptionSelected,"$option == sunrider_mission3_convo4","Highlight Fighters","""Another key danger of the Nightmares is the massive damage they can inflict on even capital ships. However, if we do not present them with such high-value targets... Fighters, captain. Swamp them enough and they'll be too busy to kill our ships.""","sunrider_mission3_convo5:""That'll be pretty hard on the fighter pilots.""",
+sunrider_mission3_convo5,DialogOptionSelected,"$option == sunrider_mission3_convo5",,"Her eye shows no hint of apology. ""Better to lose ten or a hundred Broadswords than a Paragon, captain.""
 
 Cold-blooded, but the military logic is undeniable. If you don't like it, well, it's time to cease doing any job in the Sector that requires combat.","sunrider_mission3_convoEnd:Thank her for the briefing
 sunrider_mission3_convo6:""Do you think that there are more of them in the sector?""",
-sunrider_mission3_convo6,DialogOptionSelected,$option == sunrider_mission3_convo6,ShowPersonVisual true sunrider_ava,"""I don’t know... but if there are more, I’d like to be prepared."" She takes a deep breath and looks at the far bulkhead for a moment. ""We never know what to expect from Ryuvian lost technology.""","sunrider_mission3_convo7:""What is the worst of this Ryuvian technology?""
+sunrider_mission3_convo6,DialogOptionSelected,"$option == sunrider_mission3_convo6","ShowPersonVisual true sunrider_ava","""I don’t know... but if there are more, I’d like to be prepared."" She takes a deep breath and looks at the far bulkhead for a moment. ""We never know what to expect from Ryuvian lost technology.""","sunrider_mission3_convo7:""What is the worst of this Ryuvian technology?""
 sunrider_mission3_convoEnd:Thank her for the briefing",
-sunrider_mission3_convo7,DialogOptionSelected,$option == sunrider_mission3_convo7,,"""I'm not sure if I have seen THE worst, but the ancient Ryuvians, well... borrowing Sola di Ryuvia's words... they possessed the power to not only destroy themselves, but to collapse the entire universe into a singularity. The superdreadnought Sharr'Lac could activate its Final Tear weapon to destroy almost anything within a half-light-year radius – excepting itself.""
+sunrider_mission3_convo7,DialogOptionSelected,"$option == sunrider_mission3_convo7",,"""I'm not sure if I have seen THE worst, but the ancient Ryuvians, well... borrowing Sola di Ryuvia's words... they possessed the power to not only destroy themselves, but to collapse the entire universe into a singularity. The superdreadnought Sharr'Lac could activate its Final Tear weapon to destroy almost anything within a half-light-year radius – excepting itself.""
 
 ""Honestly, this is not very easy to believe,"" you say.
 
 ""True. But how many of the people here would believe that you fought a pair of frigate-sized units that, even when not at full power, were about as tough as an Onslaught and capable of ripping one apart in a matter of seconds?""","sunrider_mission3_convoEnd:""You have a point, I guess. Thank you for the report.""
 sunrider_mission3_convo8:""Any chance we could have recovered one of these Nightmares?""
 ",
-sunrider_mission3_convo8,DialogOptionSelected,$option == sunrider_mission3_convo8,,"""There is no record of anyone ever having taken a Nightmare in one piece, captain.""",sunrider_mission3_convoEnd:End,
-sunrider_mission3_convoEnd,DialogOptionSelected,$option == sunrider_mission3_convoEnd,"Call $global.sunrider_mission3_ref complete
+sunrider_mission3_convo8,DialogOptionSelected,"$option == sunrider_mission3_convo8",,"""There is no record of anyone ever having taken a Nightmare in one piece, captain.""","sunrider_mission3_convoEnd:End",
+sunrider_mission3_convoEnd,DialogOptionSelected,"$option == sunrider_mission3_convoEnd","Call $global.sunrider_mission3_ref complete
 DismissDialog",,,
-#END Ava quest 3,,,,,,
+"#END Ava quest 3",,,,,,
+,,,,,,
+# Ava quest 4,,,,,,
+sunrider_mission4_introOpt,AddBarEvents,"Sunrider_MiscFunctions isAvaInParty
+$global.sunrider_mission2_doneOrSkipped
+!$global.sunrider_mission4_delay
+!$global.sunrider_mission4_seenMission","AddBarEvent sunrider_mission4_intro1 ""Go help Ava out"" ""Someone seems to be harassing Ava Crescentia. This might require intervention."" highlight",,,
+sunrider_mission4_intro1,DialogOptionSelected,"$option == sunrider_mission4_intro1","Sunrider_MiscFunctions createMission sunrider_mission4
+BeginConversation sunrider_bumble true false
+Call $global.sunrider_mission4_ref updateData
+ShowSecondPerson sunrider_ava
+$global.sunrider_mission4_seenMission = true","When you get there, Ava looks like she's about to yell, punch someone, or most probably both. Luckily, she sees you approaching and quickly takes a step back, nodding.
+
+You turn to the drunk man, not yet reaching for your sidearm. ""What's going on here?""
+
+Despite his clear inebriation, he seems to quickly realize the implications of your presence, or perhaps that of the bodyguards trailing you. ""Eh? B-Begging your pardon, $playerSirOrMadam, I didn't mean to-""
+
+He puts on a ragged smile. ""Name's Garney Bumble. Let me~ hic~ buy you a drink, eh? As a token of my apology.""","sunrider_mission4_intro2Skip:Accept
+sunrider_mission4_intro2:Tell him to leave Ava alone",
+sunrider_mission4_intro2,DialogOptionSelected,"$option == sunrider_mission4_intro2","HideSecondPerson","""Oh, I'm sorry about that. I just~ hic! Need someone to talk to... my days travelling the stars have come to an end.""
+
+It's starting to look like a wonder that he can speak or even stand.
+
+""So how about that drink, eh?""","sunrider_mission4_intro3:Accept
+sunrider_mission4_introAbort:Warn him off and leave [terminates quest]",
+sunrider_mission4_intro2Skip,DialogOptionSelected,"$option == sunrider_mission4_intro2Skip","ShowPersonVisual true sunrider_bumble
+HideSecondPerson
+$option = sunrider_mission4_intro3 0
+FireBest DialogOptionSelected",,,
+sunrider_mission4_intro3,DialogOptionSelected,"$option == sunrider_mission4_intro3",,"The order he passes to the bartender is for the cheapest booze in the joint. It barely qualifies as a beverage, even; more of an industrial solvent. Ava flatly refuses when $personLastName tries to offer her one as well.
+
+""If you came~ hic! Earlier, I'd have challenged you to a duel because you look like a tough fellow spacer."" He swills his beer. ""Ah, but that's in the past now.""","sunrider_mission4_intro4:Raise an eyebrow
+sunrider_mission4_intro4Alt:Wait for him to elaborate",
+sunrider_mission4_intro4,DialogOptionSelected,"$option == sunrider_mission4_intro4","Highlight $sunrider_mission4_targetSystem","""I... I lost my fleet, destroyed by a pirate... the only thing that esca~ hic! Was my shuttle."" 
+
+He empties an entire glass with one sip. There's no stopping this one and now you know why.
+
+""I think the one in charge was called Yosh... somethi~ hic! I don’t know... All I remember is that it happened in the $sunrider_mission4_targetSystem system. Horde of ships, not like anything in the Sector. Green ships, red ships...""
+
+""Look, I'm not aski~ hic! You to avenge me, I'm just... ugh, never mind, excuse me..."" 
+
+It seems that he’s already over his limit as he covers his mouth and rushes to the nearest restroom. ","sunrider_mission4_intro5:Continue",
+sunrider_mission4_intro4Alt,DialogOptionSelected,"$option == sunrider_mission4_intro4Alt","$option = sunrider_mission4_intro4 0
+FireBest DialogOptionSelected",,,
+sunrider_mission4_intro5,DialogOptionSelected,"$option == sunrider_mission4_intro5","ShowPersonVisual true sunrider_ava","You don’t know what to make of the fact that he could remember where he lost his fleet despite being so drunk and depressed. 
+
+Ava approaches you with annoyance in her face. ""Good grief,"" she says, sighing.","sunrider_mission4_intro6a:""Are you alright?""
+sunrider_mission4_intro6b:""Did he touch you?""
+",
+sunrider_mission4_intro6a,DialogOptionSelected,"$option == sunrider_mission4_intro6a","$option = sunrider_mission4_intro6c 0
+FireBest DialogOptionSelected","""Yes, thank you again, captain.""",,
+sunrider_mission4_intro6b,DialogOptionSelected,"$option == sunrider_mission4_intro6b","$option = sunrider_mission4_intro6c 0
+FireBest DialogOptionSelected","""If he had, he'd be in an ambulance right now."" She rubs the knuckles of her gloved hand, pseudoleather over composite matrix.",,
+sunrider_mission4_intro6c,DialogOptionSelected,"$option == sunrider_mission4_intro6c",,"Her expression goes neutral. ""Although something he said, about derelict green and red ships, not of this Sector... I have my suspicions. Do you think it’s worth checking out?""
+
+Even if there's nothing more to it, taking out a marauding salvage fleet may be worthwhile in itself.","sunrider_mission4_introAccept:Log the location of the supposed battle
+sunrider_mission4_introAbort2:""No, let’s forget about this."" [terminates quest]
+",
+sunrider_mission4_introAccept,DialogOptionSelected,"$option == sunrider_mission4_introAccept","Call $global.sunrider_mission4_ref accept
+EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions","You have Ava record the details. $sunrider_mission4_targetSystem... you'll check it out when you have the time.",,
+sunrider_mission4_introAbort,DialogOptionSelected,"$option == sunrider_mission4_introAbort","$global.sunrider_mission4_doneOrSkipped = true
+EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions","""If you bother any of my people again...""
+
+There's no real need to finish the threat. You turn away, leaving the trembling spacer, Ava falling in by your side.",,
+sunrider_mission4_introAbort2,DialogOptionSelected,"$option == sunrider_mission4_introAbort2","$global.sunrider_mission4_doneOrSkipped = true
+EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions","The ramblings of a drunk are no basis for an expedition into the fringe. You put the encounter out of your mind.",,
+sunrider_mission4_encounterHail,Sunrider_M4Hail,,"$entity.ignorePlayerCommRequests = true
+Call $global.sunrider_mission4 updateData
+FireAll Sunrider_M4PostHail","""Hello there, $playerName. You don’t know me, but my dad said you visited him with a certain one-eyed... erm... I mean, a brown-haired girl to recover her alien white ship. I insisted that he should recover it, but no... he left and sold his phase fleet, the doddering old fool.
+
+""But now I finally have the chance and power to get it myself. How about you hand both over to me and nobody gets hurt?"" 
+
+He moves his glasses down and leans his head forward, waiting for your response.","sunrider_mission4_encounter2a:""I have no idea what you’re talking about.""
+sunrider_mission4_encounter2b:""Very demanding, aren’t we?""
+sunrider_mission4_encounter2c:(lie) ""Do you mean Ava Crescentia and the Sunrider? They’re not even here.""
+sunrider_mission4_encounterEnd:Refuse",
+sunrider_mission4_encounterHailCannotLie,Sunrider_M4PostHail,"Sunrider_MiscFunctions haveSunrider","SetEnabled sunrider_mission4_encounter2c false
+SetTooltip sunrider_mission4_encounter2c ""He can clearly see the Sunrider in your fleet.""",,,
+sunrider_mission4_encounter2a,DialogOptionSelected,"$option == sunrider_mission4_encounter2a","FireAll Sunrider_M4PostHail","He leans back. ""In that case, let me make it clear for you. I want Ava Crescentia and the ship with 'Sunrider' written on its sides under my custody.""","sunrider_mission4_encounter2b:""Very demanding, aren’t we?""
+sunrider_mission4_encounter2c:(lie) ""They’re not even here.""
+sunrider_mission4_encounter3:""What do you want with them anyway?""
+sunrider_mission4_encounterEnd:Refuse",
+sunrider_mission4_encounter2b,DialogOptionSelected,"$option == sunrider_mission4_encounter2b",,"""Look, friend,"" he leans back , ""my dad found them first, so I’m in all my rights to claim them for myself. So, are you handing them to me or not?"" 
+
+It becomes more and more visible that something is clearly wrong with this guy, and he doesn’t seem to want to leave you alone.","sunrider_mission4_encounter3:""What do you want with them anyway?""
+sunrider_mission4_encounterEnd:Refuse",
+sunrider_mission4_encounter2c,DialogOptionSelected,"$option == sunrider_mission4_encounter2c",,"""How unfortunate. You will take me to them, then?""
+
+You can’t tell if he doesn’t believe you or just wants to make fun of you. Either way, it becomes more and more visible that something is clearly wrong with this guy, and he doesn’t seem to want to leave you alone.","sunrider_mission4_encounter3:""What do you want with them anyway?""
+sunrider_mission4_encounterEnd:Refuse",
+sunrider_mission4_encounter3,DialogOptionSelected,"$option == sunrider_mission4_encounter3","ShowSecondPerson sunrider_ava","""That’s none of your business, $playerName.""
+
+Before you reply, a third party joins the comm link; it’s Ava.
+
+""Hello, $personFirstName,"" she says with the tone of a cryovolcanic world. ""What a surprise meeting you here.""","sunrider_mission4_encounter4:Continue",
+sunrider_mission4_encounter4,DialogOptionSelected,"$option == sunrider_mission4_encounter4",,"At this sight, $personLastName's careful facade of calm calculation collapses.
+
+""It's you, damned whore! I saved your life, and this is how you show your gratitude?! I will teach you respect! But first, I will kill every single one of your friends and it will be all your fault!""
+
+Ava smiles, if a wolf's bare fangs can be called a smile. ""You're welcome to try, $personFirstName."" Her image winks out as her hand comes down hard on the disconnect button. ","cutCommLink:Cut the comm link and go to battle stations",
+sunrider_mission4_encounterEnd,DialogOptionSelected,"$option == sunrider_mission4_encounterEnd","ShowDefaultVisual
+EndConversation"," ""Oh, how unfortunate, and such a waste. Ah well...""
+
+He cuts the comm link. Your fleet goes to battle stations.",,
+sunrider_mission4_encounterReportWin,Sunrider_Mission4_FleetDefeated,,"Call $global.sunrider_mission4_ref wonEncounter",,,
+sunrider_mission4_encounterAfter1,Sunrider_Mission4_PostEncounterDialogStart,,"Call $global.sunrider_mission4_ref postEncounterDialog
+ShowImageVisual space_wreckage","Yoshio's fleet was indeed comprised of ships from Ava's galaxy, from the polities named 'PACT' and 'Solar Alliance'. Your salvor teams consult with her as they work their way across what remains of the said fleet; she's more experienced with these systems than anyone in the Sector.
+
+During a brief lull in the comm chatter, you receive a transmission from Ava. She asks to speak to you in person. Alone.","sunrider_mission4_encounterAfter2:Meet with Ava",
+sunrider_mission4_encounterAfter2,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter2","BeginConversation sunrider_ava true false","As soon as you two are alone, she doesn’t waste time after her usual salute. 
+
+""Do you remember Jinta Suzuki? That guy we just blew up was Yoshio Suzuki, his son.""","sunrider_mission4_encounterAfter3:""So, you knew him.""",
+sunrider_mission4_encounterAfter3,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter3",,"""Yes. While I was still in Jinta’s fleet, Yoshio was the second in command. He not only claimed to have personally saved me, which the crew always denied, but also kept hitting on me until Jinta dropped me where you and I first met.""","sunrider_mission4_encounterAfter4:""That must’ve been annoying.""",
+sunrider_mission4_encounterAfter4,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter4",,"""Indeed. I knew he was out of his mind from the start, but not to this level. To be honest, I'm not even sorry for Jinta for losing such an obsessive creep of a son.""
+
+""Do you know why he wanted you and your ship?""
+
+""I do not."" She makes a face. ""And to be honest, I don’t want to know.""","sunrider_mission4_encounterAfter5:""Should we tell Jinta?""
+sunrider_mission4_encounterAfter6:Say nothing",
+sunrider_mission4_encounterAfter5,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter5","$option = sunrider_mission4_encounterAfter6
+FireBest DialogOptionSelected","""'Your son freaked out and we had to kill him.'"" She shakes her head. ""Let’s just not do that. I don’t think it’d be a good idea, no matter what words you’d want to use.""
+
+It's certainly not a conversation you'd want to have.",,
+sunrider_mission4_encounterAfter6,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter6",,"""That's all I wanted to say, $playerSirOrMadam."" She salutes again. ""We should return to the salvage operation.""","sunrider_mission4_encounterAfter7:Leave",
+sunrider_mission4_encounterAfter7,DialogOptionSelected,"$option == sunrider_mission4_encounterAfter7","Call $global.sunrider_mission4_ref afterPostEncounterDialog
+EndConversation
+DismissDialog",,,
+sunrider_mission4_salvage1,OpenInteractionDialog,"$sunrider_mission4_carrier score:1000","Call $global.sunrider_mission4_ref updateData
+ShowImageVisual space_wreckage
+Call $global.sunrider_mission4_ref addPACTSupports","Your $shipOrFleet approaches the derelict.
+
+This carrier was being towed in Yoshio's fleet. It's barely distinguishable from a dead hulk; why he bothered at all is unclear.
+
+Salvage teams find no crew aboard. They do locate a pair of red ryders with big rings attached to their shoulders. Look like the shield emitters on the Liberty and Bianca. The ship itself should also yield a fair number of resources.","sunrider_mission4_salvage2:Continue",
+sunrider_mission4_salvage1Dev,OpenInteractionDialog,"$sunrider_mission4_carrier score:1000
+$global.isDevMode","Call $global.sunrider_mission4_ref updateData
+ShowImageVisual space_wreckage
+Call $global.sunrider_mission4_ref addPACTSupports","Your $shipOrFleet approaches the derelict.
+
+This carrier was being towed in Yoshio's fleet. It's barely distinguishable from a dead hulk; why he bothered at all is unclear.
+
+Salvage teams find no crew aboard. They do locate a pair of red ryders with big rings attached to their shoulders. Look like the shield emitters on the Liberty and Bianca.","sunrider_mission4_salvage2:Continue
+sunrider_mission4_salvage19:>> (dev) Skip to romance scene",
+sunrider_mission4_salvage2,DialogOptionSelected,"$option == sunrider_mission4_salvage2","ShowPersonVisual true sunrider_ava","In the shuttle bay, you watch a salvage team unload a sealed cryopod. The opaque cover gives no hint of who might be inside.
+
+""Found it in a sealed emergency compartment, $playerSirOrMadam,"" the crew chief says. ""Suzuki's people were pretty sloppy or they would have found it.""
+
+You give Ava standing beside you a glance. Could this be someone else from her own galaxy?","sunrider_mission4_salvage3:Open sesame",
+sunrider_mission4_salvage3,DialogOptionSelected,"$option == sunrider_mission4_salvage3","ShowPersonVisual true sunrider_celia
+Sunrider_PlayInteractionMusic SunriderAnguish true","The pod cycles through warm-up, and the pod exhales white puffs as its cover slides back to reveal a petite young woman with short periwinkle hair, wearing a black armored bodysuit.
+
+You hear a startled gasp next to you, and see that Ava has drawn her sidearm.","sunrider_mission4_salvage4:""Ava, what—""",
+sunrider_mission4_salvage4,DialogOptionSelected,"$option == sunrider_mission4_salvage4","ShowSecondPerson sunrider_ava","""Captain, you must detain that woman at once. She is extremely dangerous and not to be trusted under any circumstances.""
+
+The stirring girl's languid motions seem to make a mockery of Ava's fears. Her grey-blue eyes flutter open, and she starts to sit up, but seems to lack the strength to get all the way upright.
+
+""Where am I?"" Her voice is almost a whisper.","sunrider_mission4_salvage5a:Introduce yourself
+sunrider_mission4_salvage5b:""In a shuttle bay, on a ship.""",
+sunrider_mission4_salvage5a,DialogOptionSelected,"$option == sunrider_mission4_salvage5a",,"You explain that you are $playerName, a starfarer of the Persean Sector. You recovered her from a derelict carrier in the $sunrider_mission4_targetSystem system.
+
+She brings a hand to her temple. ""I do not know this Persean Sector you speak of. I would consult the mindstream, but it is silent... and that, alone, may say more than I wished to know.""
+
+Her head turns slowly, ever so delicately. ""...It seems the ex-girlfriend is here, too. Did Shields kick you out of the harem, in the end?""
+
+The only sound in the room is Ava racking the slide on her pistol. She points it at the girl, finger inside the guard.","sunrider_mission4_salvage6:Order Ava to stand down",
+sunrider_mission4_salvage5b,DialogOptionSelected,"$option == sunrider_mission4_salvage5b",,"""Ah, a comedian."" She starts to laugh, but it turns into a coughing fit. ""Well, your uniforms certainly aren't Alliance or PACT. And the mindstream... is silent.""
+
+Her head turns slowly, ever so delicately. ""...It seems the ex-girlfriend is here, too. Did Shields kick you out of the harem, in the end?""
+
+The only sound in the room is Ava racking the slide on her pistol. She points it at the girl, finger inside the trigger guard.","sunrider_mission4_salvage6:Order Ava to stand down",
+sunrider_mission4_salvage6,DialogOptionSelected,"$option == sunrider_mission4_salvage6","Highlight ""Prototype""","She barely seems to hear you. ""Captain, this is a Prototype. An artificial superhuman, genetically enhanced and cloned en masse, connected through a hivemind. These things are unpredictable and ruthless. Their sole motivation is the dominance of all humanity.""
+
+""There's no need for the gun, ex-girlfriend."" The girl wheezes. ""Just... a few hours alone will do the job, anyway.""
+
+The cryopod emits an alarming shrill as she slumps over like a doll. A medical officer steps forward. ""Captain, her vitals are unstable. We need to get her to sickbay now.""","sunrider_mission4_salvage7:Continue",
+sunrider_mission4_salvage7,DialogOptionSelected,"$option == sunrider_mission4_salvage7","HideSecondPerson
+ShowPersonVisual true sunrider_ava","You let the medical staff whisk their patient out of the cryopod and onto a stretcher. She demonstrates all the motion of a mannequin in the process.
+
+Only when she is out of sight does Ava lower her sidearm, exhaling slowly. ""I apologize for getting carried away, captain. But I repeat: Do not trust a Prototype. In my galaxy, they were mass infiltrators in our governments, our corporations, our societies. All strings manipulating us like puppets.""","sunrider_mission4_salvage8a:Acknowledge her words
+sunrider_mission4_salvage8b:Play devil's advocate",
+sunrider_mission4_salvage8a,DialogOptionSelected,"$option == sunrider_mission4_salvage8a",,"You thank her for the warning. The Sector already has enough spies, agents and manipulators without importing them from a foreign galaxy.
+
+Either way, the prisoner might be worth interrogating. The medical staff refuse to let anyone in for an hour, but eventually you and Ava get to step into the medbay.","sunrider_mission4_salvage9:Continue",
+sunrider_mission4_salvage8b,DialogOptionSelected,"$option == sunrider_mission4_salvage8b",,"The 'Prototype', as Ava called her, is on the brink of death. And if she's from Ava's galaxy, it's unlikely that a horde of them have managed to cross into the Sector. As dangerous as their kind might be where they came from, they have no power here.
+
+Ava rubs the 'wounded' side of her face. ""That may be so, captain. But even then, I can only recommend the utmost caution in dealing with the prisoner. She will certainly seize any opportunity to spread dissension among our ranks.""
+
+Either way, the Prototype might be worth interrogating. The medical staff refuse to let anyone in for an hour, but eventually you and Ava get to step into the medbay.","sunrider_mission4_salvage9:Continue",
+sunrider_mission4_salvage9,DialogOptionSelected,"$option == sunrider_mission4_salvage9","ShowPersonVisual true sunrider_celia","The patient lies flat on a sickbay bed, eyes closed, her flight suit traded for a pale green hospital gown. An IV loops into her arm, and her oxygen mask-assisted breathing is barely perceptible. She stirs when you approach, opening her eyes and looking at you, but does not speak.
+
+The doctor takes the two of you aside for a moment. ""I don't think she's going to make it, captain. She's lost a lot of blood, and her body is rejecting all our natural and artificial transfusions. There's symptoms of acute radiation poisoning, but also unusual nanite activity across organs, tissues, even in her genome."" 
+
+A shake of the head. ""At the current rate of cascading organ failure, the med AI gives her three hours to live. Assuming, of course, that it can make an informed guess with such alien physiology. The only thing we can do is put her back in the cryopod, which merely suspends the problem.""
+
+Ava glances at the girl. You might just be imagining it, but her expression is a little softer than before.","sunrider_mission4_salvage10:Speak with the patient",
+sunrider_mission4_salvage10,DialogOptionSelected,"$option == sunrider_mission4_salvage10","ShowSecondPerson sunrider_ava","You ask her if she can speak, and she nods. You ask her about herself.
+
+She pulls off the oxygen mask. ""Not... much to say."" Her eyes flicker to Ava's. ""It is as the ex-girl — as Commander Crescentia says. I am a Prototype, part of a hivemind of enhanced posthumans. A lot of good that's doing me now.""
+
+The girl meets, and this time holds, Ava's gaze. ""I have my suspicions, but... where are we?""
+
+""A galaxy far, far away from our own,"" the older woman answers calmly. ""And we can never go back.""","sunrider_mission4_salvage11:Continue",
+sunrider_mission4_salvage11,DialogOptionSelected,"$option == sunrider_mission4_salvage11",,"The girl sighs softly. ""So I feared.""
+
+Under your gentle prodding, she tells her story, what little there is of it prior to the present. A posting with a small flotilla of the PACT subfaction loyal to someone named Alice. An encounter with a task force of the Solar Alliance over an ancient Ryuvian site. A mauled ryder, a pilot falling out of the cockpit. 
+
+She doesn't remember how she got into the cryopod. ""Perhaps... they couldn't treat me... and were too afraid to let me die.""","sunrider_mission4_salvage12:""So you don't know how you came to our galaxy?""",
+sunrider_mission4_salvage12,DialogOptionSelected,"$option == sunrider_mission4_salvage12",,"""Even if I was conscious, I would not know how such a feat could be accomplished. My best guess is that a Ryuvian device brought our fleets – or what remained of them, at any rate – to this world... but it could also have been a trick of the wanderer, as unlikely as that sounds.""
+
+""Wanderer?"" Ava asks.
+
+An eyebrow, raised. ""You did not know that, either? She is the one you call Claude Trilleo."" The patient takes no notice of Ava's shocked expression. ""Some of us believe she is a trickster god, seeking nothing but amusement from her playthings."" 
+
+She pauses for several seconds. ""Ultimately, I have no idea what’s dragging ships and people from our galaxy to this one. So, what’s this 'Persean Sector' anyway?""
+
+You summarize the Sector’s story before and after the collapse, and she chuckles. ""Fallen just like ourselves, huh?""
+","sunrider_mission4_salvage13:Continue",
+sunrider_mission4_salvage13,DialogOptionSelected,"$option == sunrider_mission4_salvage13",,"""You are surprisingly cooperative,"" Ava says. ""The last Prototype I interrogated did her best to be snide and unhelpful.""
+
+""Which one was she?""
+
+""The one named Lynn.""
+
+""Ah, L7NN. A pilot type, like myself."" She lies back, staring up at the deckhead. ""Always had a streak of independence, that one. Even rebelliousness.""
+
+The patient closes her eyes. Opens them again. ""Now... I'm not so different. I am... severed from the mindstream, and for once... I feel what free will is like. Even if it’s not going to last...
+
+""I suppose... I should apologize for... the ex-girfriend comment as well. It was... uncalled for.""","sunrider_mission4_salvage14:Continue",
+sunrider_mission4_salvage14,DialogOptionSelected,"$option == sunrider_mission4_salvage14",,"The conversation meanders on, mostly Ava and the prisoner swapping stories about the worlds they left behind involuntarily. 
+
+Your officer seems to have calmed down a little. Perhaps it is because she can see that the fearsome Prototype is no threat in her present state, and is allowing herself a little civility. Pity, even.
+
+Aburptly, the girl coughs up blood. Wary medics rush forward, fussing over their chick, but luckily her condition doesn't get any worse. At least, not yet.
+
+Once they step back again, she looks at you. The emotion in her eyes seems unfamiliar even to herself.
+
+""What was your name again... captain?""","sunrider_mission4_salvage15:""$playerName.""",
+sunrider_mission4_salvage15,DialogOptionSelected,"$option == sunrider_mission4_salvage15","Sunrider_PlayInteractionMusic One_Day_In_August true
+SetEnabled sunrider_mission4_salvage16Refuse false
+SetTooltip sunrider_mission4_salvage16Refuse No.","""My time in... this realm is short. I have but one... final request. Let me... see the stars of this distant galaxy.""
+
+Ava starts to say something, but stops short. You exchange glances, and she looks at the patient and nods slowly.","sunrider_mission4_salvage16:Accept
+sunrider_mission4_salvage16Refuse:Refuse",
+sunrider_mission4_salvage16,DialogOptionSelected,"$option == sunrider_mission4_salvage16",,"You lift her petite form easily, overriding the doctor's protests, and princess carry her off.
+
+The nearest observation deck isn't too far. You seat the girl on a couch, leaning on your shoulder, facing the viewport, while Ava stands at parade rest on her other side. Beyond the window are the billions upon billions of stars of the Milky Way. It's just the three of you here, gazing out at the cosmos for several silent minutes.
+
+You feel her fingers close around yours. ""I don’t know... if it’s because I'm freed... from the mindstream,"" the prototype whispers. ""Or... if it’s because I'm... spending my last moments... with someone close. But... I think I understand now... what the humans mean... to be at peace."" Tears linger in her grey-blue eyes, a soft smile on her face.","sunrider_mission4_salvage17:Continue",
+sunrider_mission4_salvage17,DialogOptionSelected,"$option == sunrider_mission4_salvage17",,"""Young lady,"" Ava says. ""What is your name?""
+
+""Prototype C3L14."" Her voice is almost a sigh in the solar wind, now. ""No... call me Celia.""
+
+You don't know how much time passes before her hand goes limp in yours. Ava reaches out and squeezes the girl's shoulder.","sunrider_mission4_salvage18:Continue",
+sunrider_mission4_salvage18,DialogOptionSelected,"$option == sunrider_mission4_salvage18","ShowDefaultVisual","The funeral rites you give Celia are common in form to both her home galaxy and the worlds of the Domain, and perhaps to spacers across all galaxies and all universes. 
+
+You personally lower her body into the casket. You, Ava, your bridge and staff officers, and an honor guard picked from your crew see her off as she is released into the cosmos.
+
+From the stars, elements. From elements, life. So too shall life return to the stars.","sunrider_mission4_salvage19:Continue",
+sunrider_mission4_salvage19,DialogOptionSelected,"$option == sunrider_mission4_salvage19","Sunrider_PlayInteractionMusic
+AddStoryPoints 1
+Call $global.sunrider_mission4_ref completeSalvage
+BeginConversation sunrider_ava true true","After the deed is done, Ava turns to you. ""It may be worth returning to meet Mr. Bumble again, captain. There are still a few unanswered questions about these ships we need to deal with.""","sunrider_mission4_romance1:""Can I ask you a few questions? In private.""
+sunrider_mission4_salvageEnd:Leave",
+sunrider_mission4_salvageEnd,DialogOptionSelected,"$option == sunrider_mission4_salvageEnd","DismissDialog",,,
+sunrider_mission4_romance1,DialogOptionSelected,"$option == sunrider_mission4_romance1",,"The request takes Ava by surprise, but she nods and follows you to your office. The guard standing outside gives her a polite nod, making the assumption that this is a work visit.
+
+""Alright, captain,"" she begins, the two of you standing a couple of meters apart. ""What did you need?""","sunrider_mission4_romance2:Ask why Celia called her the 'ex-girlfriend'",
+sunrider_mission4_romance2Fail,DialogOptionSelected,"$option == sunrider_mission4_romance2
+$rel < 0.2",,"She freezes for a heartbeat. Then her face goes *almost* perfectly neutral; only the slightest hint of hardness in her cheek muscles betrays her true feelings. That, and her crossed arms.
+
+""I respectfully decline to answer that question. $PlayerSirOrMadam"".","sunrider_mission4_romanceAbortBad:""Fair enough. Sorry for prying.""",
+sunrider_mission4_romance2Success,DialogOptionSelected,"$option == sunrider_mission4_romance2
+$rel >= 0.2","Sunrider_PlayInteractionMusic One_Day_In_August true","She freezes for a heartbeat. Then she sighs, putting her hand to her face.
+
+""I was waiting for you to ask ever since that damned Prototype – since Celia opened her mouth. Very well, out of respect for our relationship, I will tell you."" She lowers the hand and assumes a parade rest position.
+
+""Captain Kayto Shields was my high school boyfriend, years before we joined the Cera Space Force. No... not even that. He was merely my... best friend, with whom I had a fling at the end. The day after, I graduated and left for the naval academy. We never saw each other again, until he was assigned to the Sunrider as her captain, and I as her executive officer.
+
+""The Prototypes found out one way or another, and one of them taunted me about it. Mere foolishness.""","sunrider_mission4_romance3:""What was Shields like?""
+sunrider_mission4_romanceAbort:Thank her for the explanation",
+sunrider_mission4_romance3,DialogOptionSelected,"$option == sunrider_mission4_romance3",,"Ava raises an eyebrow wordlessly.","sunrider_mission4_romance4a:""Just curious.""
+sunrider_mission4_romance4b:""I want to know the kind of officer you previously served under.""",
+sunrider_mission4_romance4a,DialogOptionSelected,"$option == sunrider_mission4_romance4a","$option = sunrider_mission4_romance4Common 0
+FireBest DialogOptionSelected","""Of course, you are..."" she rolls her eyes, sighs, then facepalms again for several seconds.",,
+sunrider_mission4_romance4b,DialogOptionSelected,"$option == sunrider_mission4_romance4b","$option = sunrider_mission4_romance4Common 0
+FireBest DialogOptionSelected","Ava looks at you with mild suspicion, then purses her lips briefly.",,
+sunrider_mission4_romance4Common,DialogOptionSelected,"$option == sunrider_mission4_romance4Common",,"""He was a hidden genius when it comes to tactical combat. Had an uncanny knack for taking on impossible odds and surviving. But he always gave me headaches on everything else, especially the paperwork."" She rubs her face again. ""Utterly unprofessional, thoughtless, reckless... it was a wonder he graduated from the academy at all, much less got promoted and recognized enough to become the CO of our experimental assault carrier.""
+
+""Then again, maybe he was the right man in the right place, at the right time."" She smiles, eyes distant at some memory. ""I don't know if anyone else could have made the Sunrider what she was.""","sunrider_mission4_romancePaperworkA:""I hope the paperwork isn't an issue for you here.""
+sunrider_mission4_romancePaperworkB:""You sure have a thing for paperwork, don't you?""
+sunrider_mission4_romance5:""It sounds as if you still think highly of him.""
+sunrider_mission4_romanceAbort:Thank her for the explanation",
+sunrider_mission4_romancePaperworkA,DialogOptionSelected,"$option == sunrider_mission4_romancePaperworkA","$option = sunrider_mission4_romanceAbort 0
+FireBest DialogOptionSelected","""A necessary duty of a commanding officer, captain. The burden is perfectly normal for my position within our fleet. You need not concern yourself on my behalf.""",,
+sunrider_mission4_romancePaperworkB,DialogOptionSelected,"$option == sunrider_mission4_romancePaperworkB","$option = sunrider_mission4_romanceAbort 0
+FireBest DialogOptionSelected","""I've heard that so many times before..."" she averts her gaze for a moment and continues, ""I’m just that way, $playerSirOrMadam. Perhaps I simply have a talent for it."" ",,
+sunrider_mission4_romance5,DialogOptionSelected,"$option == sunrider_mission4_romance5","Highlight jealous","Ava almost completely suppresses her flinch. Almost.
+
+""He is – was – my captain. No more and no less.""
+
+Suspicion flares in her eye, a tinge of red coloring her cheeks. ""Captain... $playerFirstName... are you jealous?""","sunrider_mission4_romance6Coomer:""Maybe I am.""
+sunrider_mission4_romance6:""I'm not. But I do think well of you.""
+sunrider_mission4_romanceAbortBad:""No, I'm not. You're misunderstanding me.""",
+sunrider_mission4_romance6,DialogOptionSelected,"$option == sunrider_mission4_romance6","Sunrider_AddOptionConfirmation sunrider_mission4_romance7Coomer ""Are you sure? You will have to live with yourself after viewing this dialog!"" ""Yes"" ""No""","She looks at you oddly and not entirely favorably. You don't catch her mutter.
+
+""If you have to play with your own subordinates,"" she says after a while, ""surely there are any number of officers or crew in the fleet who are a better match for you."" She looks away, staring off at some imaginary point beyond the ship. ""Someone who belongs in this realm.""","sunrider_mission4_romance7Coomer:""But I like you, Ava. You’re a dutiful and skilled ship commander, and a cute one on top of that.""
+sunrider_mission4_romance7:""Attraction doesn't work that way, Ava.""
+sunrider_mission4_romanceAbort:""I understand.""",
+sunrider_mission4_romance6Coomer,DialogOptionSelected,"$option == sunrider_mission4_romance6Coomer","$player.sunrider_coomerPoints++
+Sunrider_AddOptionConfirmation sunrider_mission4_romance7Coomer ""Are you sure? You will have to live with yourself after viewing this dialog!"" ""Yes"" ""No""","Again her hand, again her face. ""Why, by Ryuvia...""
+
+""If you really must fool around with your own subordinates,"" she says after a while, ""surely there are any number of officers or crew in the fleet who are a better match for you."" She looks away, staring off at some imaginary point beyond the ship. ""Someone who belongs in this realm.""","sunrider_mission4_romance7Coomer:""But I like you, Ava. You’re a dutiful and skilled ship commander, and a cute one on top of that.""
+sunrider_mission4_romance7:""Attraction doesn't work that way, Ava.""
+sunrider_mission4_romanceAbortBad:""I understand.""",
+sunrider_mission4_romance7,DialogOptionSelected,"$option == sunrider_mission4_romance7","$player.sunrider_confessToAva = true
+Sunrider_PlayInteractionMusic SunriderLoveTheme true
+AdjustRepPerson sunrider_ava FRIENDLY 25","She flushes, her organic hand coming up unconsciously to brush her loose hair. She can't quite bring herself to meet your eyes.
+
+""Captain... this is...""
+
+In this moment, both of you are acutely conscious that you are standing perhaps closer than is wise... and not just physically.","sunrider_mission4_romance8:Give her a moment to process it",
+sunrider_mission4_romance7Coomer,DialogOptionSelected,"$option == sunrider_mission4_romance7Coomer","$player.sunrider_coomerPoints++
+$player.sunrider_confessToAva = true
+Sunrider_PlayInteractionMusic SunriderLoveTheme true
+AdjustRepPerson sunrider_ava FRIENDLY 25","Her face turns as red as an old Earth tomato, luminescent blush visible even when she averts her gaze. Her organic hand tugs at her flowing brown hair, the silky strands wrapping around her smooth index finger. In the cool air of your office, her breath emerges from her warm lips in a puff of condensation.
+
+""C-c-captain! Seriously? Are you joking?""
+
+""No, not joking. You are my precious officer, Ava...""
+
+She shifts uneasily, her fingers now clutching at the suddenly-too-tight collar of her immaculate officer's uniform. She absolutely cannot look at you right now.","sunrider_mission4_romance8:Continue",
+sunrider_mission4_romance8,DialogOptionSelected,"$option == sunrider_mission4_romance8","Highlight cannot","The tension snaps like the spine of a Hammerhead. Gritting her teeth, she drops the hand, fingers clenching, and makes herself meet your gaze.
+
+""I am sorry, captain. I can not do this. Not will not, cannot.""
+
+She doesn't flinch even at the flicker of hurt in your eyes.","sunrider_mission4_romance9:""Why?""",
+sunrider_mission4_romance9,DialogOptionSelected,"$option == sunrider_mission4_romance9",,"""This is not what I was looking for when I chose you to recover my ship.""
+
+She folds her arms and takes a deep breath. ""As I've told you, I got... emotionally involved with my captain once. Even if he wasn't my captain at the time. That was a mistake, one that forever compromised my ability to serve as his executive officer.
+
+""Furthermore, what happens if I accept your feelings and then a way back to my home galaxy is somehow found? Would I then have to choose between love and my only chance to return to everything I knew?""
+
+She closes her eye briefly. ""Please, cease that kind of conversation, okay? I’m here to be your officer, not your girlfriend. Now please let’s return to our duties. We still need to speak to Mr. Bumble.""","sunrider_mission4_romanceEnd:Accept her decision and see her off",
+sunrider_mission4_romanceAbort,DialogOptionSelected,"$option == sunrider_mission4_romanceAbort",,"She shakes her head. ""Anyway, let’s return to our duties, please. We still need to talk to Mr. Bumble.""","sunrider_mission4_romanceEnd:Nod and dismiss her",
+sunrider_mission4_romanceEnd,DialogOptionSelected,"$option == sunrider_mission4_romanceEnd",,"Ava salutes, then turns and leaves in a perfectly smooth motion. You watch the sway of her long brown hair for the brief few moments before the hatch closes behind her.","sunrider_mission4_salvageEnd:End",
+sunrider_mission4_romanceAbortBad,DialogOptionSelected,"$option == sunrider_mission4_romanceAbortBad",,"She sighs. ""In that case, if that is all, $playerSirOrMadam?""
+
+You dismiss her, trying to conceal your own embarrassment. She salutes, then turns and walks out the hatch just a little too quickly.","sunrider_mission4_salvageEnd:End",
+#sunrider_mission4_returnPrompt,MarketPostDock,"Call $global.sunrider_mission4_ref wantPostDock","BeginConversation sunrider_ava true true",,"sunrider_mission3_promptContinue:Continue",
+sunrider_mission4_returnBarOpt,AddBarEvents,"$global.sunrider_mission4_ref != null
+Call $global.sunrider_mission4_ref updateData
+$market.id == $sunrider_mission4_drunkMarketId
+$sunrider_mission4_stage == RETURN_TO_SPACER
+!$sunrider_mission4_haveDrunkCommsID","AddBarEvent sunrider_mission4_returnBar1 ""Ask the bartender about Bumble"" ""Garney Bumble isn't around, but the bartender might know how to contact him."" highlight",,,
+sunrider_mission4_returnBar1,DialogOptionSelected,"$option == sunrider_mission4_returnBar1","Call $global.sunrider_mission4_ref addToCommDirectory
+AddTextSmall ""Received Garney Bumble's comms ID"" h","""Oh, you're looking for Garney? He still shows up once in a while, but you'll probably have more luck giving him a call. Here's his comms ID.
+
+""And if you tell him to pay his damn tab sometime, that'd be great too!""","sunrider_mission4_returnBarEnd:Thank the bartender and leave",
+sunrider_mission4_returnBarEnd,DialogOptionSelected,"$option == sunrider_mission4_returnBarEnd","EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions",,,
+sunrider_mission4_returnConvo1,PickGreeting,"$id == sunrider_bumble score:1000","ShowPersonVisual
+Call $global.sunrider_mission4_ updateData","""Hello, this is Bumble, can I help you?"" He doesn't seem to remember you. Probably too intoxicated at the time.","sunrider_mission4_returnConvo2:Reintroduce yourself",
+sunrider_mission4_returnConvo2,DialogOptionSelected,"$option == sunrider_mission4_returnConvo2",,"His eyes flash wide with belated recognition. ""Ah... $playerName, was it? Sorry, the old memory isn't what it used to be.""
+
+You brush aside his apology and get to the point. In the $sunrider_mission4_targetSystem system, you encountered a fleet with many green and red ships commanded by someone called Yoshio Suzuki and destroyed it.
+
+""Yoshio? I remember now; that’s the name of the guy that destroyed my fleet! Did you kill him?"" You nod in response.
+
+He frowns. ""Thank you captain, but I don’t have any money to compensate you for the trouble.""
+","sunrider_mission4_returnConvo3a:""I didn't have much choice.""
+sunrider_mission4_returnConvo3b:""I suppose that's why you said you didn’t want me to avenge your fleet.""",
+sunrider_mission4_returnConvo3a,DialogOptionSelected,"$option == sunrider_mission4_returnConvo3a",,"""Well, you could just have not gone there, you know. Though it's weird that Yoshio was still there, because I lost my fleet quite a while ago.
+
+""Anyway, is there anything else I can help you with?""","sunrider_mission4_returnConvo4:Continue",
+sunrider_mission4_returnConvo3b,DialogOptionSelected,"$option == sunrider_mission4_returnConvo3b",,"""Of course. I don’t have money to buy even a Kite anymore, and I'm not a skilled officer either, so this is where I will spend the rest of my days."" His expression bears the defeat of someone who played the starfarer's game and lost, which is most of them.
+
+""Anyway, is there anything else I can help you with?""","sunrider_mission4_returnConvo4:Continue",
+sunrider_mission4_returnConvo4,DialogOptionSelected,"$option == sunrider_mission4_returnConvo4","ShowSecondPerson sunrider_ava","""May I, captain?"" Ava asks, and you let her step into the call.
+
+Bumble seems to pale at the sight of her face; he certainly remembers her, at least. Nor is her smile entirely reassuring.
+
+""Don't worry, Mr. Bumble. I won't file a harassment suit, if you'd be so kind as to answer a few questions."" He nods jerkily.","sunrider_mission4_returnConvo5:Continue",
+sunrider_mission4_returnConvo5,DialogOptionSelected,"$option == sunrider_mission4_returnConvo5",,"""That day you told Captain $playerName that it all happened near a debris field full of green and red derelicts. Did you happen to find any survivors before the attack?""
+
+He shakes his head. ""We only searched one ship before we were attacked. There was no-one on board."" A pause. ""But I did grab a recording of the ship's final moments.
+
+""It seemed that the fleet was in a battle against things I never saw in my life. And in the middle of the fight, that fleet was swallowed by an anomalous singularity coming from what looked like a giant, even stranger station. That's when the recording cut off.""","sunrider_mission4_returnConvo6:Continue",
+sunrider_mission4_returnConvo6,DialogOptionSelected,"$option == sunrider_mission4_returnConvo6",,"Ava seems very intrigued by his last statement. ""Those things they were fighting, were they white ships and smaller red mechs?"" 
+
+He thinks for several seconds. ""I don’t know, I don’t remember. The data was lost with my fleet, so I can’t show you either, sorry.""
+
+Ava asks one last question: ""Do you remember when you were ambushed? How much time ago was it?"" He tells you both that the ambush occurred less than one month before he met you for the first time.
+","sunrider_mission4_returnConvo7:Continue",
+sunrider_mission4_returnConvo7,DialogOptionSelected,"$option == sunrider_mission4_returnConvo7",,"Ava nods. ""Thank you, Garney. That’s all."" 
+
+""You’re welcome, and once again, I'm sorry for not being able to compensate you for disposing of that pirate. And, uh, sorry again for the harrassment, I guess.""","sunrider_mission4_returnConvo8:End the call",
+sunrider_mission4_returnConvo8,DialogOptionSelected,"$option == sunrider_mission4_returnConvo8","HideSecondPerson
+BeginConversation sunrider_ava true false","After you cut the comm link, Ava turns to you and takes a deep breath.
+
+""It is as clear as day to me that the Sunrider was not the first or the last ship that got warped here. Although I am still intrigued by how the Hegemony and Sindrians seem to have come into possession of PACT ships... you know, the red ones... while Tri-Tachyon and the Persean League have the emerald Solar Alliance ships in their hands. I’m pretty sure those factions occasionally sell them as well, don’t they?""","sunrider_mission4_returnConvo9:""I might have seen some around.""
+sunrider_mission4_returnConvo9Alt:""Not sure.""",
+sunrider_mission4_returnConvo9,DialogOptionSelected,"$option == sunrider_mission4_returnConvo9",,"She looks at the vastness of space for a few seconds, then all but throws her hands up in the air.
+
+""What in all the galaxies is happening? Why is Ryuvian lost technology going on such a weird rampage, if it’s even a Ryuvian problem to begin with? Nobody will find out from here, that’s for sure.""","sunrider_mission4_returnConvo10:""If we find a way back, will you return to your galaxy?""
+sunrider_mission4_returnConvo11:Say nothing",
+sunrider_mission4_returnConvo9Alt,DialogOptionSelected,"$option == sunrider_mission4_returnConvo9Alt","$option = sunrider_mission4_returnConvo9
+FireBest DialogOptionSelected",,,
+sunrider_mission4_returnConvo10,DialogOptionSelected,"$option == sunrider_mission4_returnConvo10","$option = sunrider_mission4_returnConvo11
+FireBest DialogOptionSelected","""I..."" Ava exhales. ""I don’t know and I don't want to think about it right now. I will not build up expectations because I have no idea if these warps are one or two-way trips and I highly doubt it is the latter.""",,
+sunrider_mission4_returnConvo11,DialogOptionSelected,"$option == sunrider_mission4_returnConvo11","Call $global.sunrider_mission4_ref complete","She salutes. ""Anyway, I shall return to my duties. See you later, $playerSirOrMadam.""","sunrider_mission4_returnConvoEnd:End",
+sunrider_mission4_returnConvoEnd,DialogOptionSelected,"$option == sunrider_mission4_returnConvoEnd","ShowDefaultVisual
+EndConversation",,,
+"#END Ava quest 4",,,,,,
 ,,,,,,
 # Ava ragequit if you sat bomb someone,,,,,,
 sunrider_avaLeaveDock_start,MarketPostDock,"$tradeMode != NONE
 $marketSize >= 3
 !$global.sunrider_avaLeft
-Sunrider_MiscFunctions avaWantLeave score:600",,"Not long after your $shipOrFleet docks at $name, you receive an urgent report from one of your crew members.",sunrider_avaLeave1:Accept the comm request,
+Sunrider_MiscFunctions avaWantLeave score:600",,"Not long after your $shipOrFleet docks at $name, you receive an urgent report from one of your crew members.","sunrider_avaLeave1:Accept the comm request",
 sunrider_avaLeaveEnterSystem_start,DialogOptionSelected,"$option == sunrider_avaLeaveEnterSystem_start
 !$global.sunrider_avaLeft",,"You've entered the system Jinta Suzuki told you about. It's time to find the Sunrider. You use the intercom to ask Ava to come to the bridge.
 
 After five minutes without a response or her arrival, you repeat your message. Another five minutes later, feeling rather annoyed, you order your crew to look for her.
 
-It's another ten grinding minutes before they report in.",sunrider_avaLeave1:Continue,
+It's another ten grinding minutes before they report in.","sunrider_avaLeave1:Continue",
 sunrider_avaLeave1_noSunrider,DialogOptionSelected,"$option == sunrider_avaLeave1
-!$global.sunrider_findSunrider_complete",AddRemoveCommodity crew -1 true,"""Captain,"" the sweating figure on the other end says urgently. ""It's Commander Crescentia. She disappeared and one of the crew was found dead near the shuttle bay, too.""",sunrider_avaLeave2:Order an immediate search,
+!$global.sunrider_findSunrider_complete","AddRemoveCommodity crew -1 true","""Captain,"" the sweating figure on the other end says urgently. ""It's Commander Crescentia. She disappeared and one of the crew was found dead near the shuttle bay, too.""","sunrider_avaLeave2:Order an immediate search",
 sunrider_avaLeave1_haveSunrider,DialogOptionSelected,"$option == sunrider_avaLeave1
-$global.sunrider_findSunrider_complete",,"""Captain,"" the sweating figure on the other end says urgently. ""It's Commander Crescentia. She disappeared and we've detained several of the crew who are suspected of aiding her flight.""",sunrider_avaLeave2:Order an immediate search,
-sunrider_avaLeave2,DialogOptionSelected,$option == sunrider_avaLeave2,,"After a while, your crew report the results of a search of her cabin. All her personal effects are gone, but a single datachip was left in a drawer. A parting message, perhaps an explosive one.
+$global.sunrider_findSunrider_complete",,"""Captain,"" the sweating figure on the other end says urgently. ""It's Commander Crescentia. She disappeared and we've detained several of the crew who are suspected of aiding her flight.""","sunrider_avaLeave2:Order an immediate search",
+sunrider_avaLeave2,DialogOptionSelected,"$option == sunrider_avaLeave2",,"After a while, your crew report the results of a search of her cabin. All her personal effects are gone, but a single datachip was left in a drawer. A parting message, perhaps an explosive one.
 
 You have it sent to the bridge, the nearest crewmember gingerly picks up the item, as if worried that 'explosive' might be literal in this case.
 
-A few minutes later, you plug the chip into an air-gapped terminal and play the single holo on it. As expected, Ava's face appears on the display. Even with the grainy image, the cold fury in her expression is unmistakable.",sunrider_avaLeave3:Continue,
-sunrider_avaLeave3_common,DialogOptionSelected,$option == sunrider_avaLeave3,"$option = sunrider_avaLeave3Extra
+A few minutes later, you plug the chip into an air-gapped terminal and play the single holo on it. As expected, Ava's face appears on the display. Even with the grainy image, the cold fury in her expression is unmistakable.","sunrider_avaLeave3:Continue",
+sunrider_avaLeave3_common,DialogOptionSelected,"$option == sunrider_avaLeave3","$option = sunrider_avaLeave3Extra
 FireBest DialogOptionSelected
 ShowPersonVisual true sunrider_ava","""On my first day as executive officer of the Sunrider, I witnessed an unspeakable atrocity committed against Cera, my homeworld. Millions of lives, including my family..."" 
 
@@ -555,11 +978,11 @@ I don't give a damn because I don't accept any excuse to become yet another mons
 sunrider_avaLeave3_noSunrider,DialogOptionSelected,"$option == sunrider_avaLeave3Extra
 !$global.sunrider_findSunrider_complete",,"""It was foolish of me to trust you, I will not help you find the Sunrider anymore. I would have put a bullet in your head myself, but you are always surrounded by your poor puppets and I pity them for that.
 
-Goodbye $playerName. May the souls of the innocents you have killed crush you like a black hole. Over.""",sunrider_avaLeave4:Continue,
+Goodbye $playerName. May the souls of the innocents you have killed crush you like a black hole. Over.""","sunrider_avaLeave4:Continue",
 sunrider_avaLeave3_haveSunrider,DialogOptionSelected,"$option == sunrider_avaLeave3Extra
 $global.sunrider_findSunrider_complete",,"""It was foolish of me to think that you were worthy of the Sunrider. You could instruct me to attack fleets belonging to Pirates, Luddic Path, Tri-Tachyon or Hegemony for all I care, but I refuse to work for a genocidal.
 
-I will never be a part of your madness, and would have put a bullet in your head myself, but you are always surrounded by your poor puppets and I pity them for that. Goodbye $playerName, may the souls of the innocents you have killed crush you like a black hole. Over.""",sunrider_avaLeave4:Continue,
+I will never be a part of your madness, and would have put a bullet in your head myself, but you are always surrounded by your poor puppets and I pity them for that. Goodbye $playerName, may the souls of the innocents you have killed crush you like a black hole. Over.""","sunrider_avaLeave4:Continue",
 sunrider_avaLeave4_noSunrider,DialogOptionSelected,"$option == sunrider_avaLeave4
 !$global.sunrider_findSunrider_complete","Sunrider_MiscFunctions avaLeave true
 ShowDefaultVisual
@@ -571,13 +994,13 @@ ShowDefaultVisual","She's long gone, unreachable by now; it's too late for hinds
 The only thing that remains is to decide the fate of her alleged co-conspirators. Four of them have been identified and brought before you in cuffs, trembling and avoiding your gaze.","sunrider_avaLeave5_dismiss:Dismiss them
 sunrider_avaLeave5_execute:Execute them for betrayal
 sunrider_avaLeave5_warn:Let them off with a warning",
-sunrider_avaLeave5_dismiss,DialogOptionSelected,$option == sunrider_avaLeave5_dismiss,"AddRemoveCommodity crew -4 true
+sunrider_avaLeave5_dismiss,DialogOptionSelected,"$option == sunrider_avaLeave5_dismiss","AddRemoveCommodity crew -4 true
 FireBest Sunrider_AvaLeaveEnd","You fire all those crewmembers that helped a conspiracy against you. Since there's nothing to be done about the situation anymore, you move on to other business.",,
-sunrider_avaLeave5_execute,DialogOptionSelected,$option == sunrider_avaLeave5_execute,"AddRemoveCommodity crew -4 true
+sunrider_avaLeave5_execute,DialogOptionSelected,"$option == sunrider_avaLeave5_execute","AddRemoveCommodity crew -4 true
 FireBest Sunrider_AvaLeaveEnd","You toss them all out of the airlock as an example of what happens to traitors. Since there's nothing to be done about the situation anymore, you move on to other business.",,
-sunrider_avaLeave5_warn,DialogOptionSelected,$option == sunrider_avaLeave5_warn,FireBest Sunrider_AvaLeaveEnd,"You let them be this time, but with a warning that you will not be so forgiving if it happens again. Since there's nothing to be done about the situation any more, you move on to other business.",,
-sunrider_avaLeaveEnd_market,Sunrider_AvaLeaveEnd,$hasMarket,FireBest MarketPostDock,,,
-sunrider_avaLeaveEnd_noMarket,Sunrider_AvaLeaveEnd,!$hasMarket,,,defaultLeave:Leave,
+sunrider_avaLeave5_warn,DialogOptionSelected,"$option == sunrider_avaLeave5_warn","FireBest Sunrider_AvaLeaveEnd","You let them be this time, but with a warning that you will not be so forgiving if it happens again. Since there's nothing to be done about the situation any more, you move on to other business.",,
+sunrider_avaLeaveEnd_market,Sunrider_AvaLeaveEnd,"$hasMarket","FireBest MarketPostDock",,,
+sunrider_avaLeaveEnd_noMarket,Sunrider_AvaLeaveEnd,"!$hasMarket",,,"defaultLeave:Leave",
 ,,,,,,
 # mutiny option,,,,,,
 sunrider_avaMutiny1,DialogOptionSelected,"$market.sunrider_avaMutiny score:1000
@@ -589,8 +1012,8 @@ Sunrider_MiscFunctions avaLeave false","As you watch $market burn, you receive a
 
 ""What the fuck!?"" she snarls. ""You... you murderer!""
 
-""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""",sunrider_avaMutiny2:Continue,
-sunrider_avaMutiny1Alt,DialogOptionSelected,$option == sunrider_avaMutiny_alt,"$global.sunrider_avaMutinyManualDialog = true 0
+""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""","sunrider_avaMutiny2:Continue",
+sunrider_avaMutiny1Alt,DialogOptionSelected,"$option == sunrider_avaMutiny_alt","$global.sunrider_avaMutinyManualDialog = true 0
 ShowPersonVisual false sunrider_ava
 SetTextHighlightColors bad
 Highlight murderer
@@ -598,16 +1021,17 @@ Sunrider_MiscFunctions avaLeave false","As you watch $market burn, you receive a
 
 ""What the fuck!?"" she snarls. ""You... you murderer!""
 
-""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""",sunrider_avaMutiny2:Continue,
-sunrider_avaMutiny2,DialogOptionSelected,$option == sunrider_avaMutiny2,"EndConversation
+""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""","sunrider_avaMutiny2:Continue",
+sunrider_avaMutiny2,DialogOptionSelected,"$option == sunrider_avaMutiny2","EndConversation
 Sunrider_MiscFunctions avaMutiny
 ShowDefaultVisual",,,
 sunrider_avaMutinyWin,Sunrider_BeatAvaContinue,,,"Your $shipOrFleet watches in silence as Ava's ship goes down. Salvor teams later report no sign of her remains on the charred bridge.
 
-Hopefully this will serve as a lesson to any who would defy your will.",mktBombardResult:Continue,
-sunrider_avaMutinyWinAlt,Sunrider_BeatAvaContinue,$global.sunrider_avaMutinyManualDialog score:10,,"Your $shipOrFleet watches in silence as Ava's ship goes down. Salvor teams later report no sign of her remains on the charred bridge.
+Hopefully this will serve as a lesson to any who would defy your will.","mktBombardResult:Continue",
+sunrider_avaMutinyWinAlt,Sunrider_BeatAvaContinue,"$global.sunrider_avaMutinyManualDialog score:10",,"Your $shipOrFleet watches in silence as Ava's ship goes down. Salvor teams later report no sign of her remains on the charred bridge.
 
-Hopefully this will serve as a lesson to any who would defy your will.",defaultLeave:Leave,
-sunrider_avaMutinyUEC,UpdateEngagementChoice,$entity.sunrider_avaMutiny score:1000,,,,
-#END mutiny option,,,,,,
-#END Ava ragequit if you sat bomb someone,,,,,,
+Hopefully this will serve as a lesson to any who would defy your will.","defaultLeave:Leave",
+sunrider_avaMutinyUEC,UpdateEngagementChoice,"$entity.sunrider_avaMutiny score:1000",,,,
+"#END mutiny option",,,,,,
+"#END Ava ragequit if you sat bomb someone",,,,,,
+

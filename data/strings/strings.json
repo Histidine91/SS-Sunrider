@@ -23,6 +23,10 @@
 		"avaNameLast":"Crescentia",
 		"salvagerNameFirst":"Jinta",
 		"salvagerNameLast":"Suzuki",
+		"drunkNameFirst":"Garney",
+		"drunkNameLast":"Bumble",
+		"salvagerSonNameFirst":"Yoshio",
+		"prototypeName":"Prototype",
 		
 		"findSunrider_name":"First Arrival",	# lol
 		"findSunrider_playthroughLogText":"Recovered the Sunrider",
@@ -52,5 +56,14 @@
 		"mission3_nextStep":"Speak to Ava",
 		"mission3_desc":"Ava wants to discuss the potential weaknesses of the Nightmares with you.",
 		"mission3_button":"Speak with Ava",
+		
+		"mission4_name":"Son of Iniquity",		
+		"mission4_goToSystemDesc":"Go to the %s and track down the mysterious fleet that the drunken man was rambling about. See if you can find anything interesting as well.",
+		"mission4_goToSystemNextStep":"Go to %s",
+		"mission4_returnDesc":"Return to %s and speak with %s. You may be able to get his comms ID from the bar.",
+		"mission4_returnNextStep":"Return to %s and speak with %s",
+		"mission4_fleetName":"Strange Fleet",
+		"mission4_str_levelUp":"%s has advanced to level %s",
+		"mission4_str_learnedSkill":"Learned Elite %s",
 	},
 }
