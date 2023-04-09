@@ -23,8 +23,10 @@ import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
+import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
+import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
@@ -98,8 +100,7 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 	
 	// runcode com.sunrider.missions.SRMission4.debug()
 	public static void debug() {
-		SRPeople.createPrototype().setPortraitSprite("graphics/portraits/SunriderPrototype.png");
-		SRPeople.createAvaIfNeeded().getRelToPlayer().setRel(.25f);
+		SRMission4 mission = (SRMission4)Global.getSector().getMemoryWithoutUpdate().get("$sunrider_mission4_ref");
 	}
 	
 	// runcode com.sunrider.missions.SRMission4.enableMission()
@@ -212,9 +213,12 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_LOW_REP_IMPACT, true);
 		fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_REP_IMPACT, true);
 		fleet.getMemoryWithoutUpdate().set("$genericHail", true);
-		fleet.getMemoryWithoutUpdate().set("$genericHail_openComms", "Sunrider_M4Hail");	
+		fleet.getMemoryWithoutUpdate().set("$genericHail_openComms", "Sunrider_M4Hail");
+		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, 
+					new YoshioFIDConfigGen());
+		fleet.getMemoryWithoutUpdate().set("$sunrider_mission4_fleet", true);
 		
-		makeImportant(fleet, "$sunrider_mission4_fleet", Stage.GO_TO_SYSTEM);
+		makeImportant(fleet, "$sunrider_mission4_fleet_imp", Stage.GO_TO_SYSTEM);
 		Misc.addDefeatTrigger(fleet, "Sunrider_Mission4_FleetDefeated");
 		
 		LocData loc = new LocData(EntityLocationType.HIDDEN_NOT_NEAR_STAR, null, Global.getSector().getCurrentLocation());
@@ -447,5 +451,34 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 			done = true;
 		}
 		
+	}
+	
+	public static class YoshioFIDConfigGen implements FleetInteractionDialogPluginImpl.FIDConfigGen {
+		public FleetInteractionDialogPluginImpl.FIDConfig createConfig() {
+			FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
+			
+			
+			config.delegate = new FleetInteractionDialogPluginImpl.BaseFIDDelegate() {
+				public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
+					
+				}
+				public void notifyLeave(InteractionDialogAPI dialog) {		
+					// unreliable and won't work if fleet is killed with campaign console; just use the EveryFrameScript
+					/*
+					dialog.setInteractionTarget(Global.getSector().getPlayerFleet());
+					RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl();
+					dialog.setPlugin(plugin);
+					plugin.init(dialog);
+					plugin.fireBest("Sunrider_Mission4_PostEncounterDialogStart");
+					*/
+				}
+				
+				public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
+					bcc.aiRetreatAllowed = false;
+					bcc.fightToTheLast = true;
+				}
+			};
+			return config;
+		}
 	}
 }

@@ -606,8 +606,15 @@ sunrider_mission4_introAbort2,DialogOptionSelected,"$option == sunrider_mission4
 EndConversation DO_NOT_FIRE
 RestoreSavedVisual
 BarCMD showOptions","The ramblings of a drunk are no basis for an expedition into the fringe. You put the encounter out of your mind.",,
+sunrider_mission4_encounterBegin,BeginFleetEncounter,"!$ignorePlayerCommRequests
+$sunrider_mission4_fleet score:1100","FleetDesc
+HailPlayer
+unset $hailing
+$genericHail_isHailing = true 0
+OpenComms",,,
 sunrider_mission4_encounterHail,Sunrider_M4Hail,,"$entity.ignorePlayerCommRequests = true
 Call $global.sunrider_mission4 updateData
+unset $entity.genericHail_isHailing
 FireAll Sunrider_M4PostHail","""Hello there, $playerName. You don’t know me, but my dad said you visited him with a certain one-eyed... erm... I mean, a brown-haired girl to recover her alien white ship. I insisted that he should recover it, but no... he left and sold his phase fleet, the doddering old fool.
 
 ""But now I finally have the chance and power to get it myself. How about you hand both over to me and nobody gets hurt?"" 
