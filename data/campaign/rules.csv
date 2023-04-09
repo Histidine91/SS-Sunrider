@@ -364,13 +364,22 @@ sunrider_mission2_scanStartGargoyle3,DialogOptionSelected,"$option == sunrider_m
 UpdateMemory","Ava looks at you, but doesn't say anything. ""By your leave, captain?"" she asks after a few moments.
 
 You arrange a quiet appointment and order a shuttle to send her over to the Academy. Hopefully she can survive a few hours of interacting with Gargoyle... ah, who are you kidding?","sunrider_mission2_scanCompleteGargoyle1:Wait for them to finish",
-sunrider_mission2_scanStartKweenLow,DialogOptionSelected,"$option == sunrider_mission2_scanStart1
+#sunrider_mission2_scanStartKweenLow,DialogOptionSelected,"$option == sunrider_mission2_scanStart1
 $id == sfckween score:10
 $rel < 0.5","$sunrider_mission2_kween = true 0","$personLastName eyes you carefully as you explain the job you need done, explaining it away as something being a memory core from a ship with a non-standard design.  You refrain from explaining just how or why the systems are non-standard. You present Ava, who will provide needed semi-technical assistance. You also emphasize the need for complete discretion.
 
 The $personPost frowns after you finish. ""Captain, you know very well what kind of person I am. You think I have the liberty to do such a request? No... I'm afraid I shall decline this request. I unfortunately have more important things to do right now.""
 
 $personLastName glances away from you for a moment, perhaps looking at some other information. ""So is there something else you need, Captain? Or was this all you needed from me?""","sunrider_mission2_scanStartKween2:Plead with Kween",
+sunrider_mission2_scanStartKweenLow,DialogOptionSelected,"$option == sunrider_mission2_scanStart1
+$id == sfckween score:10
+$rel < 0.5","SetTextHighlightColors bad
+Highlight ""decline""
+SetEnabled sunrider_mission2_scanStart1 false","$personLastName eyes you carefully as you explain the job you need done, explaining it away as something being a memory core from a ship with a non-standard design.  You refrain from explaining just how or why the systems are non-standard. You present Ava, who will provide needed semi-technical assistance. You also emphasize the need for complete discretion.
+
+The $personPost frowns after you finish. ""Captain, you know very well what kind of person I am. You think I have the liberty to do such a request? No... I'm afraid I shall decline this request. I unfortunately have more important things to do right now.""
+
+$personLastName glances away from you for a moment, perhaps looking at some other information. ""So is there something else you need, Captain? Or was this all you needed from me?""",,
 sunrider_mission2_scanStartKweenLow2,DialogOptionSelected,"$option == sunrider_mission2_scanStartKween2
 $rel < 0.5","$sunrider_mission2_kween = true 0
 Highlight ""1 Gamma Core""
