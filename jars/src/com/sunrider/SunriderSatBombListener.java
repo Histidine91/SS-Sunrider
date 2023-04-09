@@ -16,6 +16,7 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.Nex_MarketCMD.NexTempData;
 import com.fs.starfarer.api.util.DelayedActionScript;
 import com.sunrider.missions.FindSunrider;
+import java.util.Map;
 
 /**
  * Detects when a sat bomb occurs.
@@ -106,9 +107,14 @@ public class SunriderSatBombListener implements ColonyPlayerHostileActListener {
 					}
 				});				
 			}
+			Global.getSector().getMemoryWithoutUpdate().set(Sunrider_MiscFunctions.MEM_KEY_AVA_WANT_LEAVE, true);
+			return;
 		}
 		
 		Global.getSector().getMemoryWithoutUpdate().set(Sunrider_MiscFunctions.MEM_KEY_AVA_WANT_LEAVE, true);
+		Map<String, MemoryAPI> memoryMap = null;
+		if (dialog != null) memoryMap = dialog.getPlugin().getMemoryMap();
+		Sunrider_MiscFunctions.terminateMissions(dialog, memoryMap);
 	}	
 	
 	// unused

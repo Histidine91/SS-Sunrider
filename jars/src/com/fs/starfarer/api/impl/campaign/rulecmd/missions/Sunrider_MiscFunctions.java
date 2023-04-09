@@ -76,7 +76,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 				return mission2CanScan(dialog, memoryMap, params.get(1).getBoolean(memoryMap));	
 			case "avaLeave":
 				removeAva(dialog, memoryMap, params.get(1).getBoolean(memoryMap), true);
-				updateSunriderMissions(dialog, memoryMap);
+				//updateSunriderMissions(dialog, memoryMap);	// no need, we're already hard-killing them anyway
 				break;
 			case "avaWantLeave":
 				return doesAvaWantToLeave();
