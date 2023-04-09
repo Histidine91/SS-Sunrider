@@ -242,10 +242,9 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 				new ShipRecoverySpecial.PerShipData(variantId, 
 						ShipRecoverySpecial.ShipCondition.PRISTINE, 0f), false);
 
-		carrier = BaseThemeGenerator.addSalvageEntity(Global.getSector().getHyperspace(), 
+		carrier = BaseThemeGenerator.addSalvageEntity(targetSystem, 
 				Entities.WRECK, Factions.NEUTRAL, params);
 		carrier.setDiscoverable(true);
-		fleet.getContainingLocation().addEntity(carrier);
 		carrier.setLocation(fleet.getLocation().x, fleet.getLocation().y);
 		makeImportant(carrier, "$sunrider_mission4_carrier_impFlag", Stage.GO_TO_SYSTEM);
 		carrier.getMemoryWithoutUpdate().set("$sunrider_mission4_carrier", true);
