@@ -91,9 +91,10 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_UNSAFE, Tags.THEME_CORE_POPULATED, 
 				Tags.TRANSIENT, Tags.SYSTEM_CUT_OFF_FROM_HYPER, Tags.THEME_HIDDEN);
 		requireSystemNotHasPulsar();
-		// try at least 25 LY but not more than 40
-		preferSystemOutsideRangeOf(salvagerMarket.getContainingLocation().getLocation(), 25);
-		preferSystemWithinRangeOf(salvagerMarket.getContainingLocation().getLocation(), 40);
+		requireSystemNotBlackHole();
+		// try at least 20 LY but not more than 30
+		preferSystemOutsideRangeOf(salvagerMarket.getContainingLocation().getLocation(), 20);
+		preferSystemWithinRangeOf(salvagerMarket.getContainingLocation().getLocation(), 30);
 		wreckLoc = pickSystem();
 		if (wreckLoc == null) return false;
 		

@@ -118,9 +118,10 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		requireSystemTags(ReqMode.NOT_ANY, Tags.THEME_UNSAFE, Tags.THEME_CORE_POPULATED, 
 				Tags.TRANSIENT, Tags.SYSTEM_CUT_OFF_FROM_HYPER, Tags.THEME_HIDDEN);
 		requireSystemNotHasPulsar();
-		// try at least 25 LY but not more than 40
-		preferSystemOutsideRangeOf(createdAt.getLocationInHyperspace(), 25);
-		preferSystemWithinRangeOf(createdAt.getLocationInHyperspace(), 40);
+		requireSystemNotBlackHole();
+		// try at least 15 LY but not more than 22
+		preferSystemOutsideRangeOf(createdAt.getLocationInHyperspace(), 15);
+		preferSystemWithinRangeOf(createdAt.getLocationInHyperspace(), 22);
 		
 		targetSystem = pickSystem();
 		if (targetSystem == null) return false;		
