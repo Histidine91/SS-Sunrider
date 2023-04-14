@@ -40,8 +40,10 @@
         "target_skills": {
             "sunrider_SunridersMother":2,
             "helmsmanship":2,
-            "combat_endurance":2,
-            "field_modulation":2,
+            #"combat_endurance":2,
+            #"field_modulation":2,
+            "target_analysis":2,
+            "systems_expertise":2,
             "point_defense":2,
             "ballistic_mastery":2,
             "gunnery_implants":2,

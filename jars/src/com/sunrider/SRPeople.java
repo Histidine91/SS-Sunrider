@@ -37,14 +37,16 @@ public class SRPeople {
 		// set skills (8 combat skills)
 		person.getStats().setLevel(8);
 		person.getStats().setSkillLevel(Skills.HELMSMANSHIP, 2);
-		person.getStats().setSkillLevel(Skills.COMBAT_ENDURANCE, 2);
-		person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
+		person.getStats().setSkillLevel(Skills.TARGET_ANALYSIS, 2);
 		person.getStats().setSkillLevel(Skills.POINT_DEFENSE, 2);
 		person.getStats().setSkillLevel(Skills.BALLISTIC_MASTERY, 2);
 		person.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 2);
-		//person.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 2);
 		person.getStats().setSkillLevel(Skills.ORDNANCE_EXPERTISE, 2);
+		person.getStats().setSkillLevel(Skills.SYSTEMS_EXPERTISE, 2);
 		person.getStats().setSkillLevel("sunrider_SunridersMother", 2);
+		//person.getStats().setSkillLevel(Skills.COMBAT_ENDURANCE, 2);
+		//person.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 2);
+		//person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
 		person.getStats().setSkillLevel(Skills.TACTICAL_DRILLS, 1);	// bonus
 		
 		Global.getSector().getImportantPeople().addPerson(person);
@@ -148,5 +150,27 @@ public class SRPeople {
 		
 		Global.getSector().getImportantPeople().addPerson(person);
 		return person;
+	}
+	
+	public static void updateAvaSkills() {
+		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(AVA_ID);
+		if (ava == null) return;	// no need to do anything
+		
+		int ta = (int)ava.getStats().getSkillLevel(Skills.TARGET_ANALYSIS);
+		int sysEx = (int)ava.getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE);
+		int ce = (int)ava.getStats().getSkillLevel(Skills.COMBAT_ENDURANCE);
+		int fm = (int)ava.getStats().getSkillLevel(Skills.FIELD_MODULATION);
+		
+		if (ta == 0 && sysEx == 0 && ce == 2 && fm == 2) {
+			ava.getStats().setSkillLevel(Skills.TARGET_ANALYSIS, 2);
+			ava.getStats().setSkillLevel(Skills.SYSTEMS_EXPERTISE, 2);
+			ava.getStats().setSkillLevel(Skills.COMBAT_ENDURANCE, 0);
+			ava.getStats().setSkillLevel(Skills.FIELD_MODULATION, 0);
+		}
+		
+		if (ava.getStats().getSkillLevel("sunrider_SunridersMother") == 0) {
+			ava.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 0);
+			ava.getStats().setSkillLevel("sunrider_SunridersMother", 2);
+		}		
 	}
 }
