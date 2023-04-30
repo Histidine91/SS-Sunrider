@@ -1,0 +1,76 @@
+{
+  "variantId": "SR_MBB_1",
+  "hullId": "SunriderMiningBattleship",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "blast_doors"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SunriderLaserMajor",
+        "WS0002": "SunriderLaserMajor"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0033": "SunriderMiningCannon",
+        "WS0034": "SunriderMiningCannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0035": "SunriderMiningCannon"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SunriderMiningPD",
+        "WS0004": "SunriderMiningPD",
+        "WS0005": "SunriderMiningPD",
+        "WS0006": "SunriderMiningPD",
+        "WS0007": "SunriderMiningPD",
+        "WS0008": "SunriderMiningPD",
+        "WS0009": "SunriderMiningPD",
+        "WS0010": "SunriderMiningPD",
+        "WS0011": "SunriderMiningPD",
+        "WS0012": "SunriderMiningPD",
+        "WS0013": "SunriderMiningPD",
+        "WS0014": "SunriderMiningPD",
+        "WS0015": "SunriderMiningPD",
+        "WS0016": "SunriderMiningPD",
+        "WS0017": "SunriderMiningPD",
+        "WS0018": "SunriderMiningPD",
+        "WS0019": "SunriderMiningPD",
+        "WS0020": "SunriderMiningPD",
+        "WS0021": "SunriderMiningPD",
+        "WS0022": "SunriderMiningPD",
+        "WS0023": "SunriderMiningPD",
+        "WS0024": "SunriderMiningPD",
+        "WS0025": "SunriderMiningPD",
+        "WS0026": "SunriderMiningPD",
+        "WS0027": "SunriderMiningPD",
+        "WS0028": "SunriderMiningPD",
+        "WS0029": "SunriderMiningPD",
+        "WS0030": "SunriderMiningPD",
+        "WS0031": "SunriderMiningPD",
+        "WS0032": "SunriderMiningPD"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

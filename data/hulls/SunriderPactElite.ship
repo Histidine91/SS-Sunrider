@@ -12,7 +12,8 @@
   "shieldRadius": 28,
   "viewOffset": 0,
   "builtInMods": [
-    "high_scatter_amp"
+    "high_scatter_amp",
+    "missleracks"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderEliteGun2",

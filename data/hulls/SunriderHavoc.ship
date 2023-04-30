@@ -11,6 +11,9 @@
   "shieldCenter": [-1, 0.5],
   "shieldRadius": 34.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "missleracks"
+  ],
   "builtInWeapons": {
     "WS0001": "SunriderHavocGun",
     "WS0002": "SunriderHavocTorpedo",

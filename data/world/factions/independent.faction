@@ -3,12 +3,20 @@
 		"hulls":[
 			"SunriderGunboat",
 			"SunriderMiningFrigate",
+			"SunriderMiningBattleship",
+		],
+	},
+	"knownWeapons":{
+		"weapons":[
+			"SunriderMiningPD",
+			"SunriderMiningCannon",
 		],
 	},
 	"hullFrequency":{		
 		"hulls":{
 			"SunriderGunboat":0.1,
 			"SunriderMiningFrigate":0.1,
+			"SunriderMiningBattleship":0.1,
 		},
 	}
 }

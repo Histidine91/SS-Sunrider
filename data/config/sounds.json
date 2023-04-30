@@ -97,5 +97,8 @@
 		"Battle_Against_Time":[
 			{"file": "Battle_Against_Time.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
+		"Colors_sad":[
+			{"file": "Colors_sad.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
+		],
 	}
 }

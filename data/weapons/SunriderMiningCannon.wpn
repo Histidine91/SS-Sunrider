@@ -1,0 +1,44 @@
+{
+  "id": "SunriderMiningCannon",
+  "specClass": "projectile",
+  "projectileSpecId": "hephag_shot",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "turretSprite": "graphics/weapons/SunriderMiningCannon.png",
+  "turretGunSprite": "graphics/weapons/SunriderMiningCannonBarrel.png",
+  "hardpointSprite": "graphics/weapons/SunriderMiningCannonHardpoint.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderMiningCannonBarrelHardpoint.png",
+  "visualRecoil": 12,
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretOffsets": [
+    62,
+    11,
+    74,
+    0,
+    62,
+    -11
+  ],
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    60,
+    11,
+    72,
+    0,
+    60,
+    -11
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "NONE",
+  "fireSoundTwo": "SunriderSaviorLow"
+}

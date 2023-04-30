@@ -11,6 +11,9 @@
   "shieldCenter": [-11.5, 0.5],
   "shieldRadius": 37.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "missleracks"
+  ],
   "builtInWeapons": {
     "WS0001": "SunriderBlackJackLaser2",
     "WS0002": "SunriderBlackJackDeco",

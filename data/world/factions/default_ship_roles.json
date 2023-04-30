@@ -39,6 +39,8 @@
 		"SR_PBB_1":5,
 		"SR_PBB_2":5,
 		"SR_PBB_3":5,
+		"SR_MBB_1":12,
+		"SR_MBB_2":12,
 	},
 	"CombatFreighterSmall":{
 		"SR_MF_1":4,
@@ -49,5 +51,8 @@
 		"SR_MF_1":4,
 		"SR_MF_2":4,
 		"SR_MF_3":4,
+	},
+	"combatFreighterLarge":{
+		"SR_MBB_3":12,
 	},
 }

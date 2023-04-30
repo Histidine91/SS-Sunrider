@@ -2,7 +2,7 @@
 	"id":"Sunrider", # internal id
 	"name":"Sunrider", # displayed to the player
 	"author":"Alex Sans",
-	"version":"0.3.0",
+	"version":"0.4.0",
 	"description":"A unique Ceran Assault Carrier has slipped into the Persean Sector.",
 	"gameVersion":"0.95.1a-RC6",
 	"modPlugin":"data.scripts.SunriderModPlugin",

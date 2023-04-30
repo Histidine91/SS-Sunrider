@@ -26,15 +26,15 @@ Flier Drone,,,Holy Ryuvian Empire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Southerland,,Carrier,PACT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vae Victus,,Assault Carrier,PACT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Veniczar,SunriderPactBattleship,PACT Battleship,PACT,burndrive,30,24000,2000,24000,,1000,300,0,35,9,9,7,10,4000,OMNI,,360,0.3,0.8,,,200,400,250,200,8,25,7,1000000,4,30,900,0.25,60,60,COMBAT,srp_bp,,0.4,2,4,10024
+Veniczar,SunriderPactBattleship,PACT Battleship,PACT,burndrive,30,24000,2000,24000,,1000,300,0,35,9,9,7,10,4000,OMNI,,360,0.3,0.8,,,280,400,250,200,8,25,7,1000000,4,30,900,0.25,60,60,COMBAT,srp_bp,,0.4,2,4,10024
 Guppy,SunriderPactCruiser,PACT Cruiser,PACT,damper,11,10000,1000,9000,,600,150,0,45,25,20,18,25,1800,OMNI,,360,0.2,0.9,,,130,250,100,125,5,25,7,90000,5,25,500,0.3,16,16,COMBAT,srp_bp,,0.4,2,4,10025
 Julian,SunriderPactDestroyer,PACT Destroyer,PACT,forgevats,1,3000,350,2500,,50,30,0,60,90,100,35,50,400,NONE,,,,,,,15,30,50,80,2,40,8,70000,6,20,300,0.4,1,1,"ALWAYS_PANIC,UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10026
 Marte,SunriderPactFrigate,PACT Frigate,PACT,fastmissileracks,1,2000,100,2000,,50,15,0,70,130,150,50,75,200,NONE,,,,,,,8,20,20,20,0.5,40,9,20000,6,12,200,0.5,1,1,"ALWAYS_PANIC,UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer, cbm_Epic_Action_Hero",,0.4,2,4,10027
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#Marte frigate will only appear in quest 4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#and Julian destroyer will only appear in quest 7,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#not playable anymore because it'd be borderline,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#useless to every player in existence.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 PACT Mook,SunriderPactMook,,PACT,,1,550,20,800,,100,0,0,185,200,230,90,130,18,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,,,0.4,2,4,10029
 PACT Bomber,SunriderPactBomber,,PACT,,2,850,50,800,,70,0,0,150,160,180,90,110,40,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,,,0.4,2,4,10030
@@ -47,14 +47,14 @@ Arcadius,SunriderArcadius,,PACT,,4,2500,50,1200,,150,0,0,210,220,240,120,150,70,
 # SOLAR ALLIANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Monstesquieu,,Carrier,Solar Alliance,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,rare_bp,,,,,
-Machiavelli,SunriderAllianceBattleship,Alliance Battleship,Solar Alliance,microburn,35,24000,1500,25000,,1750,360,0,40,8,7,9,12,3700,PHASE,SunriderIronWill,,,,,,230,450,250,200,8,25,7,1000000,4,30,1000,0.25,70,70,COMBAT,sralliance_bp,,0.4,2,4,10040
+Machiavelli,SunriderAllianceBattleship,Alliance Battleship,Solar Alliance,microburn,35,24000,1500,25000,,1500,360,0,35,8,7,9,12,4600,PHASE,SunriderIronWill,,,,,,350,450,250,200,8,25,7,1000000,4,30,1000,0.25,70,70,COMBAT,sralliance_bp,,0.4,2,4,10040
 Agatha Christie,SunriderAllianceCruiser,Alliance Cruiser,Solar Alliance,maneuveringjets,11,12000,1300,14000,,750,165,0,55,30,40,25,30,1700,NONE,,,,,,,100,330,500,400,5,80,8,95000,5,20,400,0.25,18,18,COMBAT,sralliance_bp,,0.4,2,4,10041
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Alliance Trooper,SunriderAllianceTrooper,,Solar Alliance,,2,1000,100,900,,125,0,0,170,200,175,85,100,40,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,,,0.4,2,4,10043
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # Mining Union,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sandworm,,Mining Battleship,Mining Union,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Sandworm,SunriderMiningBattleship,Mining Battleship,Mining Union,burndrive,40,32500,2000,20000,,1200,300,0,30,6,5,7,9,5500,PHASE,damper,,,,,,600,1400,6000,1500,25,60,7,1000000,3,25,720,0.25,80,80,,rare_bp,,0.4,2,4,10047
 Boi,SunriderMiningFrigate,Mining Frigate,Mining Union,highenergyfocus,4,2500,400,2000,,100,15,0,150,180,200,40,45,350,NONE,,,,,,,7,15,150,50,0.5,100,9,10000,6,15,300,0.5,5,5,,base_bp,,0.4,2,4,10048
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # PIRATE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
