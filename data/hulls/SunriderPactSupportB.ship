@@ -12,8 +12,9 @@
   "shieldRadius": 37.5,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding",
-    "fluxshunt"
+    "fluxshunt",
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
   ],
   "weaponSlots": [
     {

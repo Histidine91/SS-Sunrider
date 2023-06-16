@@ -11,6 +11,10 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 22,
   "viewOffset": 0,
+  "builtInMods": [
+    "SunriderRiderResilience",
+    "SunriderFallenOutsider"
+  ],
   "builtInWeapons": {
     "WS0001": "SunriderTrooperRifle",
     "WS0002": "SunriderAllianceGun",

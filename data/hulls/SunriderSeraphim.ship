@@ -11,6 +11,10 @@
   "shieldCenter": [7, -1],
   "shieldRadius": 37,
   "viewOffset": 0,
+  "builtInMods": [
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
+  ],
   "builtInWeapons": {
     "WS0001": "SunriderSeraphimGun"
   },

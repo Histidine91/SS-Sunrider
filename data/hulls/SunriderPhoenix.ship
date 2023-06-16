@@ -12,7 +12,9 @@
   "shieldRadius": 45,
   "viewOffset": 0,
   "builtInMods": [
-    "pointdefenseai"
+    "pointdefenseai",
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderPhoenixMachineGun1",

@@ -35,7 +35,7 @@ public class SunriderVanguard implements EveryFrameWeaponEffectPlugin {
 		
 			if (Proj != null && !Proj.isFading() && Proj.getElapsed() < 2f){
 				Vector2f point = Proj.getLocation();
-				float Damage = Proj.getDamageAmount() * 0.345f;
+				float Damage = Proj.getDamageAmount() * 1f;
 				
 				DamagingExplosionSpec PierceEffect = new DamagingExplosionSpec(
 					0.05f,				//duration

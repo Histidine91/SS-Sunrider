@@ -12,8 +12,9 @@
   "shieldRadius": 42,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding",
-    "no_weapon_flux"
+    "no_weapon_flux",
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderLibertyLaser",

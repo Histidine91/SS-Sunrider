@@ -13,7 +13,9 @@
   "viewOffset": 0,
   "builtInMods": [
     "high_scatter_amp",
-    "missleracks"
+    "missleracks",
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderEliteGun2",

@@ -12,8 +12,9 @@
   "shieldRadius": 49.5,
   "viewOffset": 0,
   "builtInMods": [
-    "advancedshieldemitter",
-    "pointdefenseai"
+    "pointdefenseai",
+    "SunriderRiderResilience",
+    "SunriderFallenOutsider"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderArcadiusLaser",

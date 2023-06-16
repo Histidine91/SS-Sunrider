@@ -12,8 +12,8 @@
   "shieldRadius": 66.5,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxbreakers",
-    "advancedoptics"
+    "advancedoptics",
+    "SunriderFallenOutsider"
   ],
   "builtInWeapons": {
     "WS0002": "SunriderLaserSmall",

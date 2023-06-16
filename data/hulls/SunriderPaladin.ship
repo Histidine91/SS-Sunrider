@@ -12,9 +12,10 @@
   "shieldRadius": 41,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding",
     "no_weapon_flux",
-    "fluxshunt"
+    "fluxshunt",
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderPaladinCannon1",

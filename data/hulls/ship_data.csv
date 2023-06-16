@@ -1,23 +1,23 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,tags,rarity,breakProb,minPieces,maxPieces,number
-# NO ID MEANS NOT FULLY IMPLEMENTED YET,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+# NO ID MEANS NOT IMPLEMENTED YET,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # MAIN CAST,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sunrider,Sunridership,Assault Carrier,Ceran,SunriderWarp,50,20000,1600,27500,,1000,320,7,50,35,25,12,15,3000,OMNI,,360,0.4,0.8,,,330,630,300,300,10,30,10,1500000,5,20,1080,0.2,90,90,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer, ",,0.4,2,4,10000
+Sunrider,Sunridership,Assault Carrier,Ceran,SunriderWarp,50,20000,1600,27500,,1000,320,7,50,35,25,12,15,3000,OMNI,,360,0.4,0.8,,,330,630,300,300,20,15,10,1500000,5,20,1080,0.2,90,90,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10000
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Bianca,SunriderBianca,,Unknown,entropyamplifier,2,800,50,1000,,200,0,0,180,200,180,120,180,30,OMNI,,360,0,1,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10002
 Black Jack,SunriderBlackJack,,Chigara Lynn Ashada,temporalshell,3,1500,130,900,,240,0,0,280,250,240,150,225,30,NONE,,,,,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10003
-Havoc,SunriderHavoc,,Pirate,ammofeed,3,1700,200,500,,150,0,0,175,200,180,120,180,80,NONE,,,,,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10004
+Havoc,SunriderHavoc,,Pirate,ammofeed,3,1700,200,500,,150,0,0,175,200,180,120,180,75,NONE,,,,,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10004
 Liberty,SunriderLiberty,,Chigara Lynn Ashada,acausaldisruptor,2,850,65,1000,,190,0,0,250,250,240,150,225,25,OMNI,,360,0,1,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10005
-Paladin,SunriderPaladin,,Solar Alliance,fortressshield,3,2200,300,1000,,220,0,0,160,150,130,100,150,100,OMNI,,360,0,0.8,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10006
+Paladin,SunriderPaladin,,Solar Alliance,fortressshield,3,2200,300,1000,,220,0,0,160,150,130,100,150,85,OMNI,,360,0,0.8,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10006
 Phoenix,SunriderPhoenix,,Unknown,maneuveringjets,2,600,30,700,,130,0,0,500,620,600,375,560,20,NONE,,,,,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10007
 Seraphim,SunriderSeraphim,,Holy Ryuvian Empire,SunriderSeraphimAwaken,3,750,45,500,,50,0,0,180,200,180,150,225,25,NONE,,,,,,,1,1,,,,,,,,,,,,,"COMBAT,HIDE_IN_CODEX"," omega, no_drop, no_sell, no_bp_drop, no_dealer",,0,1,1,10008
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # RYUVIAN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Nightmare,SunriderNightmare,War Machine,Holy Ryuvian Empire,highenergyfocus,90,37500,500,15000,,1800,0,0,1,250,300,225,300,250,OMNI,,360,0.1,1,,,0,0,0,0,1000,0,15,10000000,1,49,,,25,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer, cbm_SunriderBoss",,1,10,10,10012
-Shikire,SunriderRyuvianCruiser,Ritual Cruiser,Holy Ryuvian Empire,flarelauncher_active,15,14000,1000,12500,,850,160,0,1,80,110,15,25,1600,OMNI,,360,0.4,0.7,,,0,0,0,200,8,25,8,2000000,4,30,600,0.3,24,24,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","auto_rec, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10013
-Ryuvian Falcon,,Frigate,Holy Ryuvian Empire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Nightmare Ascendant,,God Ryder,Holy Ryuvian Empire,,,500000,5000,10000,,10000,0,2,150,200,300,60,80,20000,OMNI,,360,0,1,,,1,1,0,0,1000,0,20,500000000,1,49,,,30,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,1,20,20,10015
+Nightmare,SunriderNightmare,War Machine,Holy Ryuvian Empire,highenergyfocus,90,37500,500,15000,,1800,0,0,1,250,300,225,300,250,OMNI,,360,0.1,1,,,0,0,0,0,1000,0,15,10000000,1,1,,,1,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer, cbm_SunriderBoss",,1,10,10,10012
+Shikire,SunriderRyuvianCruiser,Ritual Cruiser,Holy Ryuvian Empire,flarelauncher_active,15,14000,1000,12500,,850,160,0,1,80,110,15,25,1600,OMNI,,360,0.4,0.7,,,0,70,0,200,8,25,8,2000000,4,30,600,0.3,23,23,"COMBAT,HIDE_IN_CODEX","no_sell, no_bp_drop, no_dealer",,0.4,2,4,10013
+Ryuvian Falcon,,Frigate,Holy Ryuvian Empire,,10,5000,600,7000,,400,40,0,40,310,360,140,200,300,NONE,,,,,,,0,10,0,20,1,20,10,115000,3,20,300,,11,11,"COMBAT,HIDE_IN_CODEX","no_sell, no_bp_drop, no_dealer",,0.4,2,4,10014
+Nightmare Ascendant,,God Ryder,Holy Ryuvian Empire,,,500000,5000,10000,,10000,0,2,150,200,300,60,80,30000,NONE,,,,,,,1,1,0,0,1000,0,20,500000000,1,1,,,30,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,1,20,20,10015
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Flier Drone,,,Holy Ryuvian Empire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -27,7 +27,7 @@ Flier Drone,,,Holy Ryuvian Empire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Southerland,,Carrier,PACT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Vae Victus,,Assault Carrier,PACT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Veniczar,SunriderPactBattleship,PACT Battleship,PACT,burndrive,30,24000,2000,24000,,1000,300,0,35,9,9,7,10,4000,OMNI,,360,0.3,0.8,,,280,400,250,200,8,25,7,1000000,4,30,900,0.25,60,60,COMBAT,srp_bp,,0.4,2,4,10024
-Guppy,SunriderPactCruiser,PACT Cruiser,PACT,damper,11,10000,1000,9000,,600,150,0,45,25,20,18,25,1800,OMNI,,360,0.2,0.9,,,130,250,100,125,5,25,7,90000,5,25,500,0.3,16,16,COMBAT,srp_bp,,0.4,2,4,10025
+Guppy,SunriderPactCruiser,PACT Cruiser,PACT,damper,11,9000,1100,9000,,600,150,0,45,25,20,18,25,1800,OMNI,,360,0.2,0.9,,,130,250,100,125,5,25,7,90000,5,25,500,0.3,15,15,COMBAT,srp_bp,,0.4,2,4,10025
 Julian,SunriderPactDestroyer,PACT Destroyer,PACT,forgevats,1,3000,350,2500,,50,30,0,60,90,100,35,50,400,NONE,,,,,,,15,30,50,80,2,40,8,70000,6,20,300,0.4,1,1,"ALWAYS_PANIC,UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10026
 Marte,SunriderPactFrigate,PACT Frigate,PACT,fastmissileracks,1,2000,100,2000,,50,15,0,70,130,150,50,75,200,NONE,,,,,,,8,20,20,20,0.5,40,9,20000,6,12,200,0.5,1,1,"ALWAYS_PANIC,UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer, cbm_Epic_Action_Hero",,0.4,2,4,10027
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -47,26 +47,26 @@ Arcadius,SunriderArcadius,,PACT,,4,2500,50,1200,,150,0,0,210,220,240,120,150,70,
 # SOLAR ALLIANCE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Monstesquieu,,Carrier,Solar Alliance,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,rare_bp,,,,,
-Machiavelli,SunriderAllianceBattleship,Alliance Battleship,Solar Alliance,microburn,35,24000,1500,25000,,1500,360,0,35,8,7,9,12,4600,PHASE,SunriderIronWill,,,,,,350,450,250,200,8,25,7,1000000,4,30,1000,0.25,70,70,COMBAT,sralliance_bp,,0.4,2,4,10040
-Agatha Christie,SunriderAllianceCruiser,Alliance Cruiser,Solar Alliance,maneuveringjets,11,12000,1300,14000,,750,165,0,55,30,40,25,30,1700,NONE,,,,,,,100,330,500,400,5,80,8,95000,5,20,400,0.25,18,18,COMBAT,sralliance_bp,,0.4,2,4,10041
+Machiavelli,SunriderAllianceBattleship,Alliance Battleship,Solar Alliance,microburn,40,24000,1500,25000,,1500,360,0,35,8,7,9,12,4600,PHASE,SunriderIronWill,,,,,,350,450,250,200,8,25,7,1000000,4,30,1000,0.25,70,70,COMBAT,sralliance_bp,,0.4,2,4,10040
+Agatha Christie,SunriderAllianceCruiser,Alliance Cruiser,Solar Alliance,maneuveringjets,11,12000,1000,14000,,750,165,0,55,30,40,25,30,1700,NONE,,,,,,,100,330,500,400,5,80,8,95000,5,20,400,0.25,17,17,COMBAT,sralliance_bp,,0.4,2,4,10041
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Alliance Trooper,SunriderAllianceTrooper,,Solar Alliance,,2,1000,100,900,,125,0,0,170,200,175,85,100,40,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,,,0.4,2,4,10043
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # Mining Union,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sandworm,SunriderMiningBattleship,Mining Battleship,Mining Union,burndrive,40,32500,2000,20000,,1200,300,0,30,6,5,7,9,5500,PHASE,damper,,,,,,600,1400,6000,1500,25,60,7,1000000,3,25,720,0.25,80,80,,rare_bp,,0.4,2,4,10047
-Boi,SunriderMiningFrigate,Mining Frigate,Mining Union,highenergyfocus,4,2500,400,2000,,100,15,0,150,180,200,40,45,350,NONE,,,,,,,7,15,150,50,0.5,100,9,10000,6,15,300,0.5,5,5,,base_bp,,0.4,2,4,10048
+Sandworm,SunriderMiningBattleship,Mining Battleship,Mining Union,burndrive,35,32500,2000,20000,,1200,300,0,30,6,5,7,9,5500,PHASE,damper,,,,,,600,1400,6000,1500,25,60,7,1000000,3,25,720,0.25,80,80,FREIGHTER,rare_bp,,0.4,2,4,10047
+Boi,SunriderMiningFrigate,Mining Frigate,Mining Union,highenergyfocus,4,2500,400,2000,,100,15,0,150,180,200,40,45,350,NONE,,,,,,,7,15,150,50,0.5,100,9,10000,6,15,300,0.5,4,4,FREIGHTER,base_bp,,0.4,2,4,10048
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # PIRATE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Kakapo,SunriderPirateFrigate,Pirate Frigate,Pirate,ammofeed,2,2000,350,3000,,250,40,0,130,180,200,60,90,300,NONE,,,,,,,7,15,40,15,0.5,30,9,8000,6,10,200,0.5,4,4,COMBAT,pirate_bp,,0.4,2,4,10052
-Ironhog,SunriderIronhog,Pirate Destroyer,Pirate,canister_flak,5,4000,500,5000,,300,85,0,70,140,170,35,50,500,NONE,,,,,,,10,20,60,70,2,35,8,16000,5,20,350,0.3,10,10,COMBAT,pirate_bp,,0.4,2,4,10053
+Kakapo,SunriderPirateFrigate,Pirate Frigate,Pirate,ammofeed,2,2000,350,3000,,250,40,0,130,180,200,60,90,300,NONE,,,,,,,7,15,40,15,0.5,30,9,8000,6,10,200,0.5,3,3,COMBAT,pirate_bp,,0.4,2,4,10052
+Ironhog,SunriderIronhog,Pirate Destroyer,Pirate,canister_flak,5,4000,500,5000,,300,85,0,70,140,170,35,50,500,NONE,,,,,,,10,20,60,70,2,35,8,16000,5,20,350,0.3,9,9,COMBAT,pirate_bp,,0.4,2,4,10053
 Pirate Grunt,SunriderPirateGrunt,,Pirate,,1,500,20,800,,80,0,0,195,210,180,120,150,20,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,pirate_bp,,0.4,2,4,10054
 Pirate Bomber,SunriderPirateBomber,,Pirate,,2,700,30,500,,100,0,0,150,165,180,90,130,40,NONE,,,,,,,1,1,,,,,,,,,,,,,COMBAT,pirate_bp,,0.4,2,4,10055
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # CERAN BUT NOT SUNRIDER,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Gunboat,SunriderGunboat,Ceran Frigate,Ceran,ammofeed,2,1800,250,3000,,300,50,0,190,200,220,85,110,200,NONE,,,,,,,5,10,20,15,0.5,30,9,12000,6,15,250,0.5,4,4,COMBAT,lowtech_bp,,0.4,2,4,10059
+Gunboat,SunriderGunboat,Ceran Frigate,Ceran,ammofeed,2,1800,250,3000,,300,50,0,190,200,220,85,110,200,NONE,,,,,,,5,10,20,15,0.5,30,9,12000,6,15,250,0.5,3,3,COMBAT,lowtech_bp,,0.4,2,4,10059
 Bohemian Maiden,SunriderBattleship,Ceran Battleship,Ceran,burndrive,30,16000,1400,20000,,900,255,0,30,9,8,10,12,3800,OMNI,,360,0.4,1,,,250,450,280,200,10,20,7,700000,4,30,850,0.25,45,45,"COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10060
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # maiden not quite ready yet ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -12,7 +12,7 @@
   "shieldRadius": 377,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding",
+    "SunriderFallenOutsider",
     "advancedshieldemitter"
   ],
   "builtInWeapons": {

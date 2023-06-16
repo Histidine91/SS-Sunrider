@@ -9,7 +9,7 @@ $faction.id != luddic_path
 !$global.sunrider_findSunrider_blockMission","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
 sunrider_findSunrider_barOptDev,AddBarEvents,"!$global.sunrider_findSunrider_seenMission
 $global.isDevMode
-$global.daysSinceStart <= 270","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
+$global.daysSinceStart <= 800","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
 sunrider_findSunrider_intro,DialogOptionSelected,$option == sunrider_findSunrider_barEvent,"$global.sunrider_findSunrider_seenMission = true
 ShowImageVisual SunriderAvaNeutral","The brunette slowly approaches, an eyepatch adorning her face. Seemingly un-phased by the presence of your towering bodyguards, she continues closing. Your guards start reaching for their sidearms...
 
@@ -156,24 +156,24 @@ sunrider_findSunrider_wreckWin3,DialogOptionSelected,$option == sunrider_findSun
 ""You don't ask for much, do you, commander? To begin with, this thing isn't even Domain, meaning we don't exactly have any blueprints for this, or even any safe assumptions about how it's built.
 
 Ava nods. ""That was part of why Jinta didn't recover it himself. That, and his fleet was configured for phase operations at the time, not salvage and recovery.""",sunrider_findSunrider_wreckWin4:Continue,
-sunrider_findSunrider_wreckWin4,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin4,"Highlight 250
-FireBest SunriderRecoverOptions","""Still, it can be done. Especially with Commander Crescentia here,"" a nod at Ava, ""helping us figure it out. I've got my team working out a detailed plan now... but it's gonna cost 250 supplies"".
+sunrider_findSunrider_wreckWin4,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin4,"Highlight 600
+FireBest SunriderRecoverOptions","""Still, it can be done. Especially with Commander Crescentia here,"" a nod at Ava, ""helping us figure it out. I've got my team working out a detailed plan now... but it's gonna cost 600 supplies"".
 
 Your bridge crew and guest look at you, all awaiting your decision.","sunrider_findSunrider_recover1:Order recovery operation
 defaultLeave:Leave",
 sunrider_findSunrider_wreckAfterWinReturn,OpenInteractionDialog,"$sunrider_findSunrider_target score:1000
 $sunrider_findSunrider_seenNightmares
 $defenderFleetDefeated","ShowImageVisual SunriderDerelict
-Highlight 250
+Highlight 600
 FireAll SunriderRecoverOptions","Your $shipOrFleet approaches the ship.
 
-The wreckage of the Sunrider is still here. It's going to need 250 supplies to recover.","sunrider_findSunrider_recover1:Order recovery operation
+The wreckage of the Sunrider is still here. It's going to need 600 supplies to recover.","sunrider_findSunrider_recover1:Order recovery operation
 defaultLeave:Leave",
-sunrider_findSunrider_recoverOpts,SunriderRecoverOptions,$player.supplies < 250,"SetEnabled sunrider_findSunrider_recover1 false
+sunrider_findSunrider_recoverOpts,SunriderRecoverOptions,$player.supplies < 600,"SetEnabled sunrider_findSunrider_recover1 false
 SetTooltip sunrider_findSunrider_recover1 ""You only have $player.supplies supplies.""
 SetTooltipHighlightColors sunrider_findSunrider_recover1 bad
 SetTooltipHighlights sunrider_findSunrider_recover1 $player.supplies",,,
-sunrider_findSunrider_recover1,DialogOptionSelected,$option == sunrider_findSunrider_recover1,"AddCommodity supplies -250
+sunrider_findSunrider_recover1,DialogOptionSelected,$option == sunrider_findSunrider_recover1,"AddCommodity supplies -600
 Sunrider_PlayInteractionMusic SunriderRecover true","Stitching together a bisected ship remains more an art than a technical discipline, but your crew know their business and get to work. Actually reconnecting the hull segments will take some time, but it's not long before they have power and air in the main compartments.
 
 Ava asks your permission to go inside. Since she knows the Sunrider better than anyone, it should not be a bad idea.","sunrider_findSunrider_recover2Short:Detach a small team to accompany her [fast dialog]
@@ -834,9 +834,11 @@ sunrider_mission4_romanceAbort:Thank her for the explanation",
 sunrider_mission4_romance3,DialogOptionSelected,$option == sunrider_mission4_romance3,,Ava raises an eyebrow wordlessly.,"sunrider_mission4_romance4a:""Just curious.""
 sunrider_mission4_romance4b:""I want to know the kind of officer you previously served under.""",
 sunrider_mission4_romance4a,DialogOptionSelected,$option == sunrider_mission4_romance4a,"$option = sunrider_mission4_romance4Common 0
-FireBest DialogOptionSelected","""Of course, you are..."" she rolls her eyes, sighs, then facepalms again for several seconds.",,
+FireBest DialogOptionSelected
+ShowImageVisual SunriderKayto","""Of course, you are..."" she rolls her eyes, sighs, then facepalms again for several seconds.",,
 sunrider_mission4_romance4b,DialogOptionSelected,$option == sunrider_mission4_romance4b,"$option = sunrider_mission4_romance4Common 0
-FireBest DialogOptionSelected","Ava looks at you with mild suspicion, then purses her lips briefly.",,
+FireBest DialogOptionSelected
+ShowImageVisual SunriderKayto","Ava looks at you with mild suspicion, then purses her lips briefly.",,
 sunrider_mission4_romance4Common,DialogOptionSelected,$option == sunrider_mission4_romance4Common,,"""He was a hidden genius when it comes to tactical combat. Had an uncanny knack for taking on impossible odds and surviving. But he always gave me headaches on everything else, especially the paperwork."" She rubs her face again. ""Utterly unprofessional, thoughtless, reckless... it was a wonder he graduated from the academy at all, much less got promoted and recognized enough to become the CO of our experimental assault carrier.""
 
 ""Then again, maybe he was the right man in the right place, at the right time."" She smiles, eyes distant at some memory. ""I don't know if anyone else could have made the Sunrider what she was.""","sunrider_mission4_romancePaperworkA:""I hope the paperwork isn't an issue for you here.""
@@ -844,10 +846,13 @@ sunrider_mission4_romancePaperworkB:""You sure have a thing for paperwork, don't
 sunrider_mission4_romance5:""It sounds as if you still think highly of him.""
 sunrider_mission4_romanceAbort:Thank her for the explanation",
 sunrider_mission4_romancePaperworkA,DialogOptionSelected,$option == sunrider_mission4_romancePaperworkA,"$option = sunrider_mission4_romanceAbort 0
-FireBest DialogOptionSelected","""A necessary duty of a commanding officer, captain. The burden is perfectly normal for my position within our fleet. You need not concern yourself on my behalf.""",,
+FireBest DialogOptionSelected
+ShowImageVisual SunriderAvaNeutral","""A necessary duty of a commanding officer, captain. The burden is perfectly normal for my position within our fleet. You need not concern yourself on my behalf.""",,
 sunrider_mission4_romancePaperworkB,DialogOptionSelected,$option == sunrider_mission4_romancePaperworkB,"$option = sunrider_mission4_romanceAbort 0
-FireBest DialogOptionSelected","""I've heard that so many times before..."" she averts her gaze for a moment and continues, ""I’m just that way, $playerSirOrMadam. Perhaps I simply have a talent for it."" ",,
-sunrider_mission4_romance5,DialogOptionSelected,$option == sunrider_mission4_romance5,Highlight jealous,"Ava almost completely suppresses her flinch. Almost.
+FireBest DialogOptionSelected
+ShowImageVisual SunriderAvaNeutral","""I've heard that so many times before..."" she averts her gaze for a moment and continues, ""I’m just that way, $playerSirOrMadam. Perhaps I simply have a talent for it."" ",,
+sunrider_mission4_romance5,DialogOptionSelected,$option == sunrider_mission4_romance5,"Highlight jealous
+ShowImageVisual SunriderAvaNeutral","Ava almost completely suppresses her flinch. Almost.
 
 ""He is – was – my captain. No more and no less.""
 
@@ -897,7 +902,7 @@ She folds her arms and takes a deep breath. ""As I've told you, I got... emotion
 ""Furthermore, what happens if I accept your feelings and then a way back to my home galaxy is somehow found? Would I then have to choose between love and my only chance to return to everything I knew?""
 
 She closes her eye briefly. ""Please, cease that kind of conversation, okay? I’m here to be your officer, not your girlfriend. Now please let’s return to our duties. We still need to speak to Mr. Bumble.""",sunrider_mission4_romanceEnd:Accept her decision and see her off,
-sunrider_mission4_romanceAbort,DialogOptionSelected,$option == sunrider_mission4_romanceAbort,,"She shakes her head. ""Anyway, let’s return to our duties, please. We still need to talk to Mr. Bumble.""",sunrider_mission4_romanceEnd:Nod and dismiss her,
+sunrider_mission4_romanceAbort,DialogOptionSelected,$option == sunrider_mission4_romanceAbort,ShowImageVisual SunriderAvaNeutral,"She shakes her head. ""Anyway, let’s return to our duties, please. We still need to talk to Mr. Bumble.""",sunrider_mission4_romanceEnd:Nod and dismiss her,
 sunrider_mission4_romanceEnd,DialogOptionSelected,$option == sunrider_mission4_romanceEnd,ShowImageVisual SunriderAvaHair,"Ava salutes, then turns and leaves in a perfectly smooth motion. You watch the sway of her long brown hair for the brief few moments before the hatch closes behind her.",sunrider_mission4_salvageEnd:End,
 sunrider_mission4_romanceAbortBad,DialogOptionSelected,$option == sunrider_mission4_romanceAbortBad,,"She sighs. ""In that case, if that is all, $playerSirOrMadam?""
 

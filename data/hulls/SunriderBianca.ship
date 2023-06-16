@@ -12,7 +12,8 @@
   "shieldRadius": 33.5,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding"
+    "SunriderRiderResilience",
+    "SunriderFallenOutsider"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderBiancaShotgun",

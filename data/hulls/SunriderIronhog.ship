@@ -12,7 +12,7 @@
   "shieldRadius": 68.5,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxbreakers",
+    "SunriderFallenOutsider",
     "eccm"
   ],
   "weaponSlots": [

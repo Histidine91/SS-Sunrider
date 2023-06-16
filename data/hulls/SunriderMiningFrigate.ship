@@ -15,7 +15,7 @@
     "high_scatter_amp",
     "targetingunit",
     "advancedoptics",
-    "fluxbreakers",
+    "SunriderFallenOutsider",
     "civgrade"
   ],
   "builtInWeapons": {

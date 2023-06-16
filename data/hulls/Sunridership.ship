@@ -15,8 +15,7 @@
     "SunriderShortRangeWarp",
     "SunriderCeranEngineering",
     "SunriderSickBay",
-    "solar_shielding",
-    "operations_center"
+    "SunriderFallenOutsider"
   ],
   "builtInWings": [
     "SunriderBlackJack",

@@ -12,7 +12,7 @@
   "shieldRadius": 208.5,
   "viewOffset": 0,
   "builtInMods": [
-    "solar_shielding",
+    "SunriderFallenOutsider",
     "ecm",
     "SunriderRyuvianAfterburners"
   ],

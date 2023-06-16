@@ -13,7 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "armoredweapons",
-    "solar_shielding"
+    "SunriderFallenOutsider"
   ],
   "builtInWeapons": {
     "WS0015": "SunriderLaserMedium",

@@ -12,7 +12,7 @@
   "shieldRadius": 135,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxbreakers",
+    "SunriderFallenOutsider",
     "autorepair"
   ],
   "builtInWeapons": {

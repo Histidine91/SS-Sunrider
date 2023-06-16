@@ -12,7 +12,9 @@
   "shieldRadius": 34.5,
   "viewOffset": 0,
   "builtInMods": [
-    "missleracks"
+    "missleracks",
+    "SunriderRiderResilience",
+    "SunriderFallenOutsider"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderHavocGun",

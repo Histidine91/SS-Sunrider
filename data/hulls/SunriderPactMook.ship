@@ -11,6 +11,10 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 14.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "SunriderFallenOutsider",
+    "SunriderRiderResilience"
+  ],
   "builtInWeapons": {
     "WS0001": "SunriderPactGun",
     "WS0002": "SunriderPactLaser",

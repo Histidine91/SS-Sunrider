@@ -12,7 +12,7 @@
   "shieldRadius": 90.5,
   "viewOffset": 0,
   "builtInMods": [
-    "fluxbreakers",
+    "SunriderFallenOutsider",
     "missleracks"
   ],
   "builtInWeapons": {
