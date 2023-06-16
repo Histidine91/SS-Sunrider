@@ -23,6 +23,7 @@ public class SunridersMother {
 	public static final float SYSTEM_FLUX_COST_MULT = 0;
 	public static final float FIGHTER_DAMAGE_REDUCTION = 20f;
 	public static final float FIGHTER_SPEED_BONUS = 20f;
+	public static final float SUPPLY_USE_REDUCTION_MULT = 0.25f;
 	
 	static {
 		FIGHTER_IDS.addAll(Arrays.asList(
@@ -162,15 +163,43 @@ public class SunridersMother {
 			return LevelBasedEffect.ScopeDescription.SHIP_FIGHTERS;
 		}
 	}
+	
+	public static class SupplyLevel1 implements ShipSkillEffect {
+		public void apply(MutableShipStatsAPI stats, HullSize hullSize, String id, float level) {
+			if (isApplicable(stats)) {
+				stats.getSuppliesPerMonth().modifyMult(id, 1 - SUPPLY_USE_REDUCTION_MULT);
+			}
+		}
+		
+		public void unapply(MutableShipStatsAPI stats, HullSize hullSize, String id) {
+			stats.getSuppliesPerMonth().unmodify(id);
+		}
+		
+		public String getEffectDescription(float level) {
+			return String.format(Global.getSettings().getString("sunrider", "skill_sunridersMother_descSupply1"), (int)Math.round(SUPPLY_USE_REDUCTION_MULT * 100));			
+		}
+		
+		public String getEffectPerLevelDescription() {
+			return null;
+		}
+		
+		public LevelBasedEffect.ScopeDescription getScopeDescription() {
+			return LevelBasedEffect.ScopeDescription.PILOTED_SHIP;
+		}
+		
+		protected boolean isApplicable(MutableShipStatsAPI stats) {
+			return isValidShip(stats);
+		}
+	}
+	
+	public static class SupplyLevel2 extends SupplyLevel1 {		
+		protected boolean isApplicable(MutableShipStatsAPI stats) {
+			String hullId = getHullId(stats);
+			return hullId.startsWith("Sunrider");
+		}
+		
+		public String getEffectDescription(float level) {
+			return String.format(Global.getSettings().getString("sunrider", "skill_sunridersMother_descSupply2"), (int)Math.round(SUPPLY_USE_REDUCTION_MULT * 100));			
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
-
-

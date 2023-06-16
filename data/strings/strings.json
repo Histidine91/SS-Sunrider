@@ -11,7 +11,9 @@
 		"skill_sunridersMother_desc1":"+%s%% flux dissipation (Sunrider only)",
 		"skill_sunridersMother_desc2":"Zero flux cost for ship system (Sunrider only)",
 		"skill_sunridersMother_desc3":"-%s%% fighter damage taken (Sunrider only)",
-		"skill_sunridersMother_desc4":"+%s%% fighter speed and acceleration (Sunrider only)"
+		"skill_sunridersMother_desc4":"+%s%% fighter speed and acceleration (Sunrider only)",
+		"skill_sunridersMother_descSupply1":"-%s%% supply cost per month for Sunriderverse ships",
+		"skill_sunridersMother_descSupply2":"-%s%% supply cost per month for for Sunrider"
 	},
 	"sunrider_missions":{
 		"firstTimeEngageOptionText":"BATTLE STATIONS",
