@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "SunriderFallenOutsider",
+	"SunriderIronhogMod",
     "eccm"
   ],
   "weaponSlots": [

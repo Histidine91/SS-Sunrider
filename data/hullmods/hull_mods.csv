@@ -18,10 +18,10 @@ However, it also increases monthly supply upkeep by %s, reduces 0-flux top speed
 If another hullmod increases 0-flux top speed by a flat amount, said buff is also affected.","Increases ECM rate by %s, and shield unfold and turn rate by %s.
 
 Prevents the use of active venting and reduces 0-flux top speed by %s.",graphics/hullmods/SunriderCeranEngineering.png
-Sick Bay,SunriderSickBay,0,,Ceran,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderSickBay,"The Sunrider hosts a special infirmary that can recover injuries of her crew members faster, and often prevent death.
+Sick Bay,SunriderSickBay,0,,Ceran,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderSickBay,"The Sunrider hosts a special infirmary that can recover injuries of her crew members faster, and often prevent death.
 
 Reduces crew casualities from hull damage and fighter losses by %s.",Reduces crew casualities from hull damage and fighter losses by %s.,graphics/hullmods/SunriderSickBay.png
-Fallen Outsider,SunriderFallenOutsider,0,,Unknown,Unknown,Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderFallenOutsider,"These ships that mysteriously came from an unknown place are built differently.
+Fallen Outsider,SunriderFallenOutsider,0,,Unknown,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderFallenOutsider,"These ships that mysteriously came from an unknown place are built differently.
 
 Energy damage to shields reduced by %s.
 Damage taken by solar coronas and hyperspace storms reduced by %s.

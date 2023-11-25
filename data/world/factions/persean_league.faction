@@ -2,7 +2,7 @@
 	"hullFrequency":{
 		"hulls":{
 			"SunriderAllianceBattleship":0.1,
-			"SunriderAllianceCruiser":1,
+			"SunriderAllianceCruiser":0.2,
 			"SunriderGunboat":0.1,
 			"SunriderMiningFrigate":0.1,
 		},
@@ -12,11 +12,6 @@
 		"hulls":[
 			"SunriderAllianceBattleship",
 			"SunriderAllianceCruiser",
-		],
-	},
-	"priorityShips":{
-		"hulls":[
-			"SunriderAllianceBattleship",
 		],
 	},
 	"knownFighters":{

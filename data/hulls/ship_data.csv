@@ -54,7 +54,7 @@ Alliance Trooper,SunriderAllianceTrooper,,Solar Alliance,,2,1000,100,900,,125,0,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # Mining Union,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Sandworm,SunriderMiningBattleship,Mining Battleship,Mining Union,burndrive,35,32500,2000,20000,,1200,300,0,30,6,5,7,9,5500,PHASE,damper,,,,,,600,1400,6000,1500,25,60,7,1000000,3,25,720,0.25,80,80,FREIGHTER,rare_bp,,0.4,2,4,10047
+Sandworm,SunriderMiningBattleship,Mining Battleship,Mining Union,burndrive,35,32500,2000,20000,,1200,300,0,30,6,5,7,9,5500,PHASE,damper,,,,,,600,1400,6000,1500,25,60,7,1000000,3,25,720,0.25,80,80,"FREIGHTER, COMBAT",rare_bp,,0.4,2,4,10047
 Boi,SunriderMiningFrigate,Mining Frigate,Mining Union,highenergyfocus,4,2500,400,2000,,100,15,0,150,180,200,40,45,350,NONE,,,,,,,7,15,150,50,0.5,100,9,10000,6,15,300,0.5,4,4,FREIGHTER,base_bp,,0.4,2,4,10048
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 # PIRATE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

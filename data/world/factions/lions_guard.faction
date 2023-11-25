@@ -14,11 +14,6 @@
 			"SunriderPactCruiser",
 		],
 	},
-	"priorityShips":{
-		"hulls":[
-			"SunriderPactBattleship",
-		],
-	},
 	"knownFighters":{
 		"tags":["srp_bp"],
 		"fighters":[
