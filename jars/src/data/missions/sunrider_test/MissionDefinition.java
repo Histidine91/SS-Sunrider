@@ -39,6 +39,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 			"SunriderAllianceBattleship",
 			"SunriderAllianceCruiser",
 			"SunriderMiningFrigate",
+			"SunriderMiningBattleship",
 			"SunriderPirateFrigate",
 			"SunriderIronhog",
 			"SunriderGunboat",
