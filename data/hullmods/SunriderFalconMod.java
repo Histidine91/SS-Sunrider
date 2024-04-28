@@ -7,12 +7,13 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 public class SunriderFalconMod extends BaseHullMod {
 
-	// yes the numbers are maximum cringe, don't look at me I don't balance this stuff ? H.
+	// yes the numbers are maximum cringe, don't look at me I don't balance this stuff - H.
 	public static final float HULL_MOD = 900;						// 10x health
 	public static final float BALLISTIC_ENERGY_DAMAGE_MOD = 400;	// 5x dam
 	public static final float RANGE_MOD = 50;
 	public static final float RECOVER_CHANCE_MULT = 0;
 	public static final float SUPPLY_FUEL_COST_MULT = 100;
+	public static final float DP_COST_MULT = 100;					// to block deployment unless no other ships are deployed
 	
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -23,6 +24,7 @@ public class SunriderFalconMod extends BaseHullMod {
 		stats.getDynamic().getMod(Stats.SHIP_RECOVERY_MOD).modifyMult(id, RECOVER_CHANCE_MULT);
 		stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_FUEL_COST_MULT);
 		stats.getFuelUseMod().modifyMult(id, SUPPLY_FUEL_COST_MULT);
+		stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyMult(id, DP_COST_MULT);
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
