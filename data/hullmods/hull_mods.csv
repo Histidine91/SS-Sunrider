@@ -10,12 +10,12 @@ Increases weapons durability by %s and engines durability by %s.",Increases weap
 Short Range Warp,SunriderShortRangeWarp,0,,Chigara Lynn Ashada,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderShortRangeWarp,"The Sunrider's ultra accurate warp system can be used even on ground invasions, such as the barely successful Wedding Crash. Besides, without this, the Sunrider would cause you to be always identified regardless of transponder.
 
 Increases the effective strength of planetary raids by %s, up to the total number of marines in the fleet and lowers sensor profile by %s.","Increases the effective strength of planetary raids by %s, up to the total number of marines in the fleet.",graphics/hullmods/SunriderShortRangeWarp.png,
-Advanced Ceran Engineering,SunriderCeranEngineering,0,,Ceran,"special, engines, defensive, shields, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Engines, Shields, Defenses, Support",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderCeranEngineering,"The Sunrider was built with the most modern technologies available at Cera when she was developed, but with upgrades provided by Chigara Lynn Ashada and the Solar Alliance, she became even more modern. Her interior is also luxurious, giving her more combat readiness than normal, but also making her require more supplies to keep.
-
-Increases maximum combat readiness by %s, ECM rate by %s, shield unfold and turn rate by %s, and flux dissipation rate, including additional vents by %s.
+Advanced Ceran Engineering,SunriderCeranEngineering,0,,Ceran,"special, engines, defensive, shields, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Engines, Shields, Defenses, Support",50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderCeranEngineering,"Increases maximum combat readiness by %s, ECM rate by %s, shield unfold and turn rate by %s, and flux dissipation rate, including additional vents by %s.
 
 However, it also increases monthly supply upkeep by %s, reduces 0-flux top speed by %s and prevents the use of active venting. 
-If another hullmod increases 0-flux top speed by a flat amount, said buff is also affected.","Increases ECM rate by %s, and shield unfold and turn rate by %s.
+If another hullmod increases 0-flux top speed by a flat amount, said buff is also affected. 
+
+The Sunrider was built with the most modern technologies available at Cera when she was developed, but with upgrades provided by Chigara Lynn Ashada and the Solar Alliance, she became even more modern. Her interior is also luxurious, giving her more combat readiness than normal, but also making her monthly supply requirement skyrocket.","Increases ECM rate by %s, and shield unfold and turn rate by %s.
 
 Prevents the use of active venting and reduces 0-flux top speed by %s.",graphics/hullmods/SunriderCeranEngineering.png,
 Sick Bay,SunriderSickBay,0,,Ceran,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderSickBay,"The Sunrider hosts a special infirmary that can recover injuries of her crew members faster, and often prevent death.
@@ -31,14 +31,15 @@ Monthly supply upkeep increased by %s.
 Incompatible with Solar Shielding.",X,graphics/hullmods/SunriderFallenOutsider.png,
 Ryder Resilience,SunriderRiderResilience,0,,Unknown,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderRyderResilience,"Weapon and engine durability increased by %s.
 Weapon and engine repair speed by %s.",X,graphics/hullmods/SunriderRyderResilience.png,
-Shield Always On,SunriderShieldAlwaysOn,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.SunriderShieldAlwaysOn,,"Forces shield to stay on. Hidden, doesn't need description or icon.",,graphics/hullmods/hardened_shields.png
-Volatile Raider Suite,SunriderIronhogMod,,,Pirate,,,,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderIronhogMod,"The pirates of the other universe love things that go bang, much like ours. Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.
+Volatile Raider Suite,SunriderIronhogMod,,,Pirate,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderIronhogMod,"The pirates of the other universe love things that go bang, much like ours. Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.
 
 Incompatible with Expanded Missile Racks.",Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.,graphics/hullmods/expanded_magazines2.png,
-Blue Behemoth Suite,SunriderMiningBBMod,,,Mining Union,,,,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderMiningBBMod,"Various equipment used by the Sandworm-class for its work. EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.
+Blue Behemoth Suite,SunriderMiningBBMod,,,Mining Union,"special, engines, defensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderMiningBBMod,"Various equipment used by the Sandworm-class for its work. EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.
 
 Incompatible with Surveying Equipment.","EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.",graphics/hullmods/surveying_equipment.png,
-Gunboat Suppression FCS,SunriderGunboatMod,,,Ceran,,,,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderGunboatMod,"Advanced gunnery control system used by the Gunboat.
+Gunboat Suppression FCS,SunriderGunboatMod,,,Ceran,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderGunboatMod,"Advanced gunnery control system used by the Gunboat.
 
 Ballistic weapon damage increased by %s and projectile speed by %s. All weapons do %s more damage to fighters and frigates.",Ballistic weapon damage increased by %s and projectile speed by %s. All weapons do %s more damage to fighters and frigates.,graphics/hullmods/ballistic_rangefinder.png,
-Project FALKE,SunriderFalconMod,,,Unknown,,,,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderFalconMod,Hull integrity increased by %s. Ballistic and energy weapon damage increased by %s and range by %s. Ship cannot be recovered.,,graphics/hullmods/targeting_supercomputer.png,
+Project FALKE,SunriderFalconMod,,,Holy Ryuvian Empire,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderFalconMod,Hull integrity increased by %s. Ballistic and energy weapon damage increased by %s and range by %s. Ship cannot be recovered.,,graphics/hullmods/targeting_supercomputer.png,
+,,,,,,,,,,,,,,,,,,,
+Shield Always On,SunriderShieldAlwaysOn,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.SunriderShieldAlwaysOn,,"Forces shield to stay on. Hidden, doesn't need description or icon.",,graphics/hullmods/hardened_shields.png

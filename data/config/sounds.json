@@ -73,29 +73,35 @@
 		"SunriderTheDeparture":[
 			{"file": "SunriderTheDeparture.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
+		"SunriderWedding":[
+			{"file": "SunriderWedding.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
 		"cbm_Epic_Action_Hero":[
 			{"file": "Epic_Action_Hero.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
 		"One_Day_In_August":[
 			{"file": "One_Day_In_August.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
 		],
-		"SunriderAnguish":[
-			{"file": "SunriderAnguish.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
-		],
-		"SunriderTumbrel":[
-			{"file": "SunriderTumbrel.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
-		],
-		"SunriderValve":[
-			{"file": "SunriderValve.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
-		],
-		"SunriderLoveTheme":[
-			{"file": "SunriderLoveTheme.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
-		],
 		"Monkeys_Spinning_Monkeys":[
 			{"file": "Monkeys_Spinning_Monkeys.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
 		],
-		"Battle_Against_Time":[
-			{"file": "Battle_Against_Time.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		"SunriderAnguish":[
+			{"file": "SunriderAnguish.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
+		],
+		"SunriderTerror":[
+			{"file": "SunriderTerror.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.9}
+		],
+		"SunriderEpicBravery":[
+			{"file": "SunriderEpicBravery.ogg", "source":"sounds/music/", "pitch": 1, "volume": 1}
+		],
+		"Fallen_Angel_Pt3":[
+			{"file": "Fallen_Angel_Pt3.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.7}
+		],
+		"SunriderValve":[
+			{"file": "SunriderValve.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
+		],
+		"SunriderLoveTheme":[
+			{"file": "SunriderLoveTheme.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
 		"Colors_sad":[
 			{"file": "Colors_sad.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}

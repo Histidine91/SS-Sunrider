@@ -24,11 +24,16 @@
 			"SunriderAvaHair":"graphics/illustrations/SunriderAvaHair.png",
 			"SunriderAvaSmile":"graphics/illustrations/SunriderAvaSmile.png",
 			"SunriderAvaSaluteNoBG":"graphics/illustrations/SunriderAvaSaluteNoBG.png",
+			"SunriderAvaRage":"graphics/illustrations/SunriderAvaRage.png",
 			"SunriderKayto":"graphics/illustrations/SunriderKayto.png",
 		},
 		"portraits":{
 			"sunrider_ava":"graphics/portraits/Portrait_Ava.png",
 			"SunriderPrototype":"graphics/portraits/SunriderPrototype.png",
+			"SunriderLCone":"graphics/portraits/SunriderLCone.png",
+			"SunriderLCtwo":"graphics/portraits/SunriderLCtwo.png",
+			"SunriderLCthree":"graphics/portraits/SunriderLCthree.png",
+			"SunriderLCfour":"graphics/portraits/SunriderLCfour.png",
 		},	
 		"blueprint_packages":{
 			"SunriderPactPackage":"graphics/icons/cargo/SunriderPactIcon.png",
@@ -39,7 +44,7 @@
 	{
 	"Holy Ryuvian Empire":[70, 119, 141, 255],
 	"Chigara Lynn Ashada":[96, 123, 198, 255],
-	"Ceran":[186, 190, 205, 255],
+	"Cera":[186, 190, 205, 255],
 	"Solar Alliance":[24, 79, 64, 255],
 	"PACT":[255, 117, 102, 255],
 	},

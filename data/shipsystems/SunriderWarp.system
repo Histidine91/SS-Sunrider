@@ -24,7 +24,7 @@
 	"randomRange":0,
 	"requiresZeroFluxBoost":false,
 	
-	"vulnerableChargeup":true,
+	"vulnerableChargeup":false,
 	"vulnerableChargedown":false,
 	"renderCopyDuringTeleport":true,
 	

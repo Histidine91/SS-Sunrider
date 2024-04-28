@@ -40,8 +40,8 @@ public class SunriderIronhogMod extends BaseHullMod {
 	
 	@Override
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "" + (int) Math.round(BALLISTIC_ROF_MOD*100f) + "%";
-		if (index == 1) return "" + (int) Math.round(MISSILE_DAMAGE_MOD*100f) + "%";
+		if (index == 0) return "" + (int) Math.round(BALLISTIC_ROF_MOD*1f) + "%";
+		if (index == 1) return "" + (int) Math.round(MISSILE_DAMAGE_MOD*1f) + "%";
 		return null;
 	}
 	

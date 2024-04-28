@@ -1,0 +1,50 @@
+{
+  "id": "SunriderFalconPulserLeft",
+  "specClass": "projectile",
+  "projectileSpecId": "ionpulser_shot",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "turretSprite": "graphics/weapons/SunriderFalconPulserLeft.png",
+  "turretGlowSprite": "graphics/weapons/glow/SunriderFalconPulserGlowLeft.png",
+  "hardpointSprite": "graphics/weapons/SunriderFalconPulserLeft.png",
+  "hardpointGlowSprite": "graphics/weapons/glow/SunriderFalconPulserGlowLeft.png",
+  "glowColor": [
+    100,
+    150,
+    255,
+    255
+  ],
+  "turretOffsets": [
+    11.5,
+    1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    17.5,
+    1
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "requiresFullCharge": false,
+  "muzzleFlashSpec": {
+    "length": 15,
+    "spread": 2,
+    "particleSizeMin": 15,
+    "particleSizeRange": 17,
+    "particleDuration": 0.15,
+    "particleCount": 7,
+    "particleColor": [
+      100,
+      200,
+      255,
+      255
+    ]
+  },
+  "fireSoundOne": "thumper_spinup",
+  "fireSoundTwo": "SunriderNightmarePulser"
+}

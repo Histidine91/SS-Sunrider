@@ -3,7 +3,7 @@
   "autocharge": true,
   "barrelMode": "ALTERNATING",
   "fireSoundOne": "thumper_spinup",
-  "fireSoundTwo": "SunriderNightmarePulser",
+  "fireSoundTwo": "SunriderBlackJackPulser",
   "glowColor": [
     100,
     150,

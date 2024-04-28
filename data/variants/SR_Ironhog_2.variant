@@ -1,15 +1,15 @@
 {
   "variantId": "SR_Ironhog_2",
   "hullId": "SunriderIronhog",
-  "displayName": "Combat",
+  "displayName": "LDMG",
   "goalVariant": true,
   "fluxCapacitors": 0,
-  "fluxVents": 15,
+  "fluxVents": 20,
   "quality": 0,
   "permaMods": [],
   "hullMods": [
     "autorepair",
-    "armoredweapons",
+    "pointdefenseai",
     "targetingunit"
   ],
   "weaponGroups": [
@@ -17,27 +17,26 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "lightag",
-        "WS0002": "lightag",
-        "WS0005": "lightag",
-        "WS0006": "lightag"
-      }
-    },
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0007": "sabotpod",
-        "WS0008": "sabotpod"
+        "WS0007": "breachpod",
+        "WS0008": "breachpod"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
+        "WS0001": "lightdualmg",
+        "WS0002": "lightdualmg",
         "WS0003": "lightdualmg",
-        "WS0004": "lightdualmg"
+        "WS0004": "lightdualmg",
+        "WS0005": "lightdualmg",
+        "WS0006": "lightdualmg"
       }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "modules": [],

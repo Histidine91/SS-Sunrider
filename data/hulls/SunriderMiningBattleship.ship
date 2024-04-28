@@ -14,8 +14,8 @@
   "builtInMods": [
     "civgrade",
     "SunriderFallenOutsider",
-	"SunriderMiningBBMod",
-    "advancedcore"
+    "advancedcore",
+    "SunriderMiningBBMod"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderLaserMajor",
@@ -345,7 +345,7 @@
       "width": 30,
       "angle": 180,
       "contrailSize": 30,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-405.5, 55],
@@ -353,7 +353,7 @@
       "width": 30,
       "angle": -180,
       "contrailSize": 30,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-404.5, -40.5],
@@ -361,7 +361,7 @@
       "width": 30,
       "angle": 180,
       "contrailSize": 30,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-404.5, 40.5],
@@ -369,7 +369,7 @@
       "width": 30,
       "angle": -180,
       "contrailSize": 30,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-405.5, 0],
@@ -377,7 +377,7 @@
       "width": 30,
       "angle": -180,
       "contrailSize": 30,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     },
     {
       "location": [-424, -0],
@@ -385,7 +385,7 @@
       "width": 64,
       "angle": 180,
       "contrailSize": 64,
-      "style": "LOW_TECH"
+      "style": "HIGH_TECH"
     }
   ],
   "bounds": [

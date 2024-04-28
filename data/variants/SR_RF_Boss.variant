@@ -1,0 +1,30 @@
+{
+  "variantId": "SR_RF_Boss",
+  "hullId": "SunriderFalcon",
+  "displayName": "Boss",
+  "goalVariant": false,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "SunriderFalconMod",
+    "SunriderRyuvianEngineering",
+    "automated"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0001": "SunriderFalconCannon",
+        "WS0002": "SunriderFalconCannon",
+        "WS0003": "SunriderFalconPulserLeft",
+        "WS0004": "SunriderFalconPulserRight",
+        "WS0005": "SunriderFalconPulserLeft"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

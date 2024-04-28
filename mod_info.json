@@ -2,8 +2,8 @@
 	"id":"Sunrider", # internal id
 	"name":"Sunrider", # displayed to the player
 	"author":"Alex Sans",
-	"version":"0.4.1",
-	"description":"A unique Ceran Assault Carrier has slipped into the Persean Sector.",
+	"version":"0.5.0",
+	"description":"A unique Ceran Assault Carrier, many Ryuvian, PACT and Solar Alliance ships have slipped into the Persean Sector.",
 	"gameVersion":"0.96a-RC6",
 	"modPlugin":"data.scripts.SunriderModPlugin",
 	"jars":["jars/Sunrider.jar"],

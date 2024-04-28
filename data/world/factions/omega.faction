@@ -2,5 +2,10 @@
 	"music":{
 		"encounter_neutral":"music_tritach_encounter_hostile",
 	},	
-
+	"hullFrequency":{
+		"hulls":{
+			"Sunridership":0,
+			"SunriderNightmare":0,
+		},
+	},
 },

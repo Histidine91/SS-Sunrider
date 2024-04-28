@@ -16,26 +16,26 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "lightag",
-        "WS0002": "lightag",
-        "WS0005": "lightag",
-        "WS0006": "lightag"
+        "WS0007": "annihilatorpod",
+        "WS0008": "annihilatorpod"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0007": "sabotpod",
-        "WS0008": "sabotpod"
+        "WS0001": "lightdualac",
+        "WS0002": "lightdualac",
+        "WS0005": "lightdualac",
+        "WS0006": "lightdualac"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "vulcan",
-        "WS0004": "vulcan"
+        "WS0003": "lightmg",
+        "WS0004": "lightmg"
       }
     }
   ],

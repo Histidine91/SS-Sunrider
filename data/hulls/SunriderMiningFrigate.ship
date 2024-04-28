@@ -12,11 +12,10 @@
   "shieldRadius": 95.5,
   "viewOffset": 0,
   "builtInMods": [
-    "high_scatter_amp",
-    "targetingunit",
-    "advancedoptics",
+    "advancedcore",
     "SunriderFallenOutsider",
-    "civgrade"
+    "civgrade",
+    "high_scatter_amp"
   ],
   "builtInWeapons": {
     "WS0001": "SunriderLaserSmall",

@@ -60,6 +60,7 @@ public class SRMission2 extends HubMissionWithSearch implements SunriderMissionI
 		
 		// don't use a completion stage trigger, it can't be trusted https://fractalsoftworks.com/forum/index.php?topic=5061.msg392175#msg392175
 		beginStageTrigger(Stage.COMPLETED);
+		triggerSetGlobalMemoryValuePermanent("$sunrider_wolololo", true);
 		endTrigger();
 		
 		setStageOnMemoryFlag(Stage.FAILED, Global.getSector().getMemoryWithoutUpdate(), "$sunrider_avaLeft");

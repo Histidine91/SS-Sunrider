@@ -12,8 +12,6 @@
   "shieldRadius": 41,
   "viewOffset": 0,
   "builtInMods": [
-    "no_weapon_flux",
-    "fluxshunt",
     "SunriderFallenOutsider",
     "SunriderRiderResilience"
   ],

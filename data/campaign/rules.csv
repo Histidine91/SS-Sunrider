@@ -2,7 +2,7 @@ id,trigger,conditions,script,text,options,notes
 #RULESET_NAME Sunrider,,,,,,
 ,,,,,,
 # Ava quest,,,,,,
-sunrider_findSunrider_barOpt,AddBarEvents,"$global.daysSinceStart > 270
+sunrider_findSunrider_barOpt,AddBarEvents,"$global.daysSinceStart > 800
 !$global.sunrider_findSunrider_seenMission
 $faction.id != pirates
 $faction.id != luddic_path
@@ -157,7 +157,7 @@ sunrider_findSunrider_wreckWin3,DialogOptionSelected,$option == sunrider_findSun
 
 Ava nods. ""That was part of why Jinta didn't recover it himself. That, and his fleet was configured for phase operations at the time, not salvage and recovery.""",sunrider_findSunrider_wreckWin4:Continue,
 sunrider_findSunrider_wreckWin4,DialogOptionSelected,$option == sunrider_findSunrider_wreckWin4,"Highlight 600
-FireBest SunriderRecoverOptions","""Still, it can be done. Especially with Commander Crescentia here,"" a nod at Ava, ""helping us figure it out. I've got my team working out a detailed plan now... but it's gonna cost 600 supplies"".
+FireBest SunriderRecoverOptions","""Still, it can be done. Especially with Commander Crescentia here,"" a nod at Ava, ""helping us figure it out. I've got my team working out a detailed plan now... but it'll cost 600 supplies"".
 
 Your bridge crew and guest look at you, all awaiting your decision.","sunrider_findSunrider_recover1:Order recovery operation
 defaultLeave:Leave",
@@ -189,7 +189,7 @@ A few more minutes later, the ship starts up and hails you. As you open the comm
 
 ""The Sunrider is at your disposal, captain.""","sunrider_findSunrider_contract1:""Welcome to my fleet, Sunrider.""",
 sunrider_findSunrider_recover2Lewd,DialogOptionSelected,$option == sunrider_findSunrider_recover2Lewd,"ShowImageVisual SunriderBlush
-AdjustRepPerson sunrider_ava WELCOMING 5","You turn slightly towards her and take her gloved hand in yours. ""Shall we?""
+AdjustRepPerson sunrider_ava WELCOMING 5","You turn slightly towards her and take her hand in yours. ""Shall we?""
 
 For the first time since you met her, she blushes. After a few seconds, she hastily turns her crimson-tinged face away, muttering, but not pulling her hand away.
 
@@ -199,7 +199,7 @@ sunrider_findSunrider_recover3,DialogOptionSelected,$option == sunrider_findSunr
 It's not clear whether the pilot is intentonally looping part way around the ship, but this gives the both of you a good look at the once-magnificent vessel. Ava stares quietly out the window all the way in.",sunrider_findSunrider_recover4:Continue,
 sunrider_findSunrider_recover4,DialogOptionSelected,$option == sunrider_findSunrider_recover4,ShowImageVisual SunriderBridge,"The two of you arrive on the bridge, where a team of technicians is trying to get the computers working again. This might be a good time to ask her just what happened here.
 
-Ava tells you that the Sunrider, along with a few ""Alliance"" and ""PACT"" ships were investigating strange activity within ""Ryuvian"" derelict site, but were ambushed by automated defenses. You can’t help but wonder what those names are about since this is the first time you've heard them and can only think that they were defeated by more Nightmares.
+Ava tells you that the Sunrider, along with a few ""Alliance"" ships were investigating strange activity within ""Ryuvian"" derelict site, but were ambushed by automated defenses. You can’t help but wonder what those names are about since this is the first time you've heard them and can only think that they were defeated by more Nightmares.
 
 ""The fighting was chaotic,"" she says, perhaps more to herself than to you. ""And just when I thought we were done for, there was an... anomaly from the site itself. Would explain how the ship, and I, ended up here."" 
 
@@ -761,7 +761,7 @@ sunrider_mission4_salvage12,DialogOptionSelected,$option == sunrider_mission4_sa
 
 ""Wanderer?"" Ava asks.
 
-An eyebrow, raised. ""You did not know that, either? She is the one you call Claude Trilleo."" The patient takes no notice of Ava's shocked expression. ""Some of us believe she is a trickster god, seeking nothing but amusement from her playthings. Shields is without question her latest plaything."" 
+An eyebrow, raised. ""You did not know that, either? She is the one you call Claude Triello."" The patient takes no notice of Ava's shocked expression. ""Some of us believe she is a trickster god, seeking nothing but amusement from her playthings. Shields is without question her latest plaything."" 
 
 She pauses for several seconds. ""Ultimately, I have no idea what’s dragging ships and people from our galaxy to this one. So, what’s this 'Persean Sector' anyway?""
 
@@ -789,7 +789,7 @@ Once they step back again, she looks at you. The emotion in her eyes seems unfam
 ""What was your name again... captain?""","sunrider_mission4_salvage15:""$playerName.""",
 sunrider_mission4_salvage15,DialogOptionSelected,$option == sunrider_mission4_salvage15,"Sunrider_PlayInteractionMusic One_Day_In_August true
 SetEnabled sunrider_mission4_salvage16Refuse false
-SetTooltip sunrider_mission4_salvage16Refuse No.","""My time in... this realm is short. I have but one... final request. Let me... see the stars of this distant galaxy.""
+SetTooltip sunrider_mission4_salvage16Refuse No.","""Captain $playerName, my time in... this realm is short. I have but one... final request. Let me... see the stars of this distant galaxy.""
 
 Ava starts to say something, but stops short. You exchange glances, and she looks at the patient and nods slowly.","sunrider_mission4_salvage16:Accept
 sunrider_mission4_salvage16Refuse:Refuse",
@@ -819,7 +819,7 @@ sunrider_mission4_romance1,DialogOptionSelected,$option == sunrider_mission4_rom
 ""Alright, captain,"" she begins, the two of you standing a couple of meters apart. ""What did you need?""",sunrider_mission4_romance2:Ask why Celia called her the 'ex-girlfriend',
 sunrider_mission4_romance2Fail,DialogOptionSelected,"$option == sunrider_mission4_romance2
 $rel < 0.2","
-ShowImageVisual SunriderAvaFingerUp","She freezes for a heartbeat. Then her face goes *almost* perfectly neutral; only the slightest hint of hardness in her cheek muscles betrays her true feelings. That, and her crossed arms.
+ShowImageVisual SunriderAvaFingerUp","She freezes for a heartbeat. Then her face goes *almost* perfectly neutral; only the slightest hint of hardness in her cheek muscles betrays her true feelings.
 
 ""I respectfully decline to answer that question. $PlayerSirOrMadam"".","sunrider_mission4_romanceAbortBad:""Fair enough. Sorry for prying.""",
 sunrider_mission4_romance2Success,DialogOptionSelected,"$option == sunrider_mission4_romance2
@@ -865,7 +865,7 @@ sunrider_mission4_romance6,DialogOptionSelected,$option == sunrider_mission4_rom
 sunrider_mission4_romance7:""Attraction doesn't work that way, Ava.""
 sunrider_mission4_romanceAbort:""I understand.""",
 sunrider_mission4_romance6Coomer,DialogOptionSelected,$option == sunrider_mission4_romance6Coomer,"$player.sunrider_coomerPoints++
-Sunrider_AddOptionConfirmation sunrider_mission4_romance7Coomer ""Are you sure? You will have to live with yourself after viewing this dialog!"" ""Yes"" ""No""","Again her hand, again her face. ""Why, by Ryuvia...""
+Sunrider_AddOptionConfirmation sunrider_mission4_romance7Coomer ""Are you sure? You will have to live with yourself after viewing this dialog!"" ""Yes"" ""No""","Again her hand, again her face. ""Absolutely unbelievable!""
 
 ""If you really must fool around with your own subordinates,"" she says after a while, ""surely there are any number of officers or crew in the fleet who are a better match for you."" She looks away, staring off at some imaginary point beyond the ship. ""Someone who belongs in this realm.""","sunrider_mission4_romance7Coomer:""But I like you, Ava. You’re a dutiful and skilled ship commander, and a cute one on top of that.""
 sunrider_mission4_romance7:""Attraction doesn't work that way, Ava.""
@@ -890,7 +890,7 @@ ShowImageVisual SunriderBlush2","Her face turns as red as an old Earth tomato, l
 
 She shifts uneasily, her fingers now clutching at the suddenly-too-tight collar of her immaculate officer's uniform. She absolutely cannot look at you right now.",sunrider_mission4_romance8:Continue,
 sunrider_mission4_romance8,DialogOptionSelected,$option == sunrider_mission4_romance8,"Highlight cannot
-ShowImageVisual SunriderAvaFingerUp","The tension snaps like the spine of a Hammerhead. Gritting her teeth, she drops the hand, finger pointing up, and makes herself meet your gaze almost as if she's about to scold you.
+ShowImageVisual SunriderAvaFingerUp","The tension snaps like the spine of a Hammerhead. Gritting her teeth, she drops her embarrassment, finger pointing up, and makes herself meet your gaze almost as if she's about to scold you.
 
 ""I am sorry, captain. I can not do this. Not will not, cannot.""
 
@@ -1033,21 +1033,23 @@ sunrider_avaLeaveEnd_noMarket,Sunrider_AvaLeaveEnd,!$hasMarket,,,defaultLeave:Le
 # mutiny option,,,,,,
 sunrider_avaMutiny1,DialogOptionSelected,"$market.sunrider_avaMutiny score:1000
 $option == mktBombardResult","unset $market.sunrider_avaMutiny
-ShowPersonVisual false sunrider_ava
+ShowImageVisual SunriderAvaRage
 SetTextHighlightColors bad
 Highlight murderer
-Sunrider_MiscFunctions avaLeave false","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
+Sunrider_MiscFunctions avaLeave false
+Sunrider_PlayInteractionMusic SunriderTerror","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
 
-""What the fuck!?"" she snarls. ""You... you murderer!""
+""What the fuck!?"" she snarls. ""You... you genocidal maniac!""
 
 ""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""",sunrider_avaMutiny2:Continue,
 sunrider_avaMutiny1Alt,DialogOptionSelected,$option == sunrider_avaMutiny_alt,"$global.sunrider_avaMutinyManualDialog = true 0
-ShowPersonVisual false sunrider_ava
+ShowImageVisual SunriderAvaRage
 SetTextHighlightColors bad
 Highlight murderer
-Sunrider_MiscFunctions avaLeave false","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
+Sunrider_MiscFunctions avaLeave false
+Sunrider_PlayInteractionMusic SunriderTerror","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
 
-""What the fuck!?"" she snarls. ""You... you murderer!""
+""What the fuck!?"" she snarls. ""You... you genocidal maniac!""
 
 ""Captain,"" your sensors officer cuts in urgently, ""Commander Crescentia's ship is powering up weapons!""",sunrider_avaMutiny2:Continue,
 sunrider_avaMutiny2,DialogOptionSelected,$option == sunrider_avaMutiny2,"EndConversation

@@ -1,0 +1,52 @@
+{
+  "id": "SunriderFalconCannon",
+  "specClass": "projectile",
+  "projectileSpecId": "heavymauler_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "turretSprite": "graphics/weapons/SunriderFalconCannon.png",
+  "turretGunSprite": "graphics/weapons/SunriderFalconCannonBarrel.png",
+  "hardpointSprite": "graphics/weapons/SunriderFalconCannon.png",
+  "hardpointGunSprite": "graphics/weapons/SunriderFalconCannonBarrel.png",
+  "visualRecoil": 7,
+  "turretOffsets": [
+    43,
+    2.5,
+    43,
+    -2.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    65,
+    2.5,
+    65,
+    -2.5
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "barrelMode": "LINKED",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "spread": 3,
+    "particleSizeMin": 7,
+    "particleSizeRange": 10,
+    "particleDuration": 0.5,
+    "particleCount": 6,
+    "particleColor": [
+      255,
+      255,
+      255,
+      255
+    ]
+  },
+  "fireSoundTwo": "SunriderSaviorLow"
+}

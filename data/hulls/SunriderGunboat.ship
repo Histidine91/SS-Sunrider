@@ -14,7 +14,7 @@
   "builtInMods": [
     "pointdefenseai",
     "SunriderFallenOutsider",
-	"SunriderGunboatMod",
+    "SunriderGunboatMod"
   ],
   "builtInWeapons": {
     "WS0006": "SunriderGunboatDeco"

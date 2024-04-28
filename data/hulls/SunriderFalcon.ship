@@ -1,0 +1,104 @@
+{
+  "hullName": "Ryuvian Falcon",
+  "hullId": "SunriderFalcon",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/SunriderFalcon.png",
+  "style": "SUNRIDERNM",
+  "height": 169,
+  "width": 127,
+  "center": [63.5, 83.5],
+  "collisionRadius": 86.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 88,
+  "viewOffset": 0,
+  "builtInMods": [
+    "SunriderFallenOutsider",
+    "SunriderRyuvianAfterburners",
+    "delicate",
+    "tow_cable"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SunriderFalconCannon",
+    "WS0002": "SunriderFalconCannon",
+    "WS0003": "SunriderFalconPulserLeft",
+    "WS0004": "SunriderFalconPulserRight",
+    "WS0005": "SunriderFalconPulserLeft"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 35,
+      "angle": 8.5,
+      "locations": [8.5, 17]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 35,
+      "angle": -8.5,
+      "locations": [8.5, -17]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 26,
+      "locations": [65.5, 6.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -26,
+      "locations": [65.5, -6.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [73, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-68.5, -0],
+      "length": 14,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "OMEGA"
+    }
+  ],
+  "bounds": [
+    81.5, -5.5,
+    35.5, -10,
+    35.5, -22,
+    -60, -63,
+    -59.5, -41.5,
+    -16, -17,
+    -25.5, -7,
+    -42.5, -7,
+    -73, -27.5,
+    -73.5, 28,
+    -42.5, 7,
+    -25.5, 7,
+    -16, 17,
+    -59.5, 41.5,
+    -60, 63,
+    35.5, 22,
+    35.5, 10,
+    81.5, 5.5
+  ]
+}
