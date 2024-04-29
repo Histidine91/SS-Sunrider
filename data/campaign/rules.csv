@@ -494,7 +494,7 @@ Sunrider_PlayInteractionMusic","""But don’t worry, I’m fine. I already accep
 # Ava quest 3,,,,,,
 sunrider_mission3_prompt,MarketPostDock,"!$global.sunrider_seenMission3
 !$global.sunrider_mission3_delay
-Sunrider_MiscFunctions canShowMission2","ShowPersonVisual true sunrider_ava
+Sunrider_MiscFunctions canShowMission3","ShowPersonVisual true sunrider_ava
 $global.sunrider_seenMission3 = true
 BeginMission sunrider_mission3","As your $shipOrFleet docks at $name, you receive a message from Ava Crescentia.
 
@@ -1035,7 +1035,7 @@ sunrider_avaMutiny1,DialogOptionSelected,"$market.sunrider_avaMutiny score:1000
 $option == mktBombardResult","unset $market.sunrider_avaMutiny
 ShowImageVisual SunriderAvaRage
 SetTextHighlightColors bad
-Highlight murderer
+Highlight genocidal
 Sunrider_MiscFunctions avaLeave false
 Sunrider_PlayInteractionMusic SunriderTerror","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
 
@@ -1045,7 +1045,7 @@ Sunrider_PlayInteractionMusic SunriderTerror","As you watch $market burn, you re
 sunrider_avaMutiny1Alt,DialogOptionSelected,$option == sunrider_avaMutiny_alt,"$global.sunrider_avaMutinyManualDialog = true 0
 ShowImageVisual SunriderAvaRage
 SetTextHighlightColors bad
-Highlight murderer
+Highlight genocidal
 Sunrider_MiscFunctions avaLeave false
 Sunrider_PlayInteractionMusic SunriderTerror","As you watch $market burn, you receive an urgent transmission from Ava. The face that greets you on the comm link is twisted by fury.
 
