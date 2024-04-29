@@ -37,9 +37,9 @@
     "particleCount": 11,
     "particleColor": [
       255,
-      120,
-      105,
-      250
+      255,
+      0,
+      100
     ]
   },
   "fireSoundTwo": "SunriderGunFire"

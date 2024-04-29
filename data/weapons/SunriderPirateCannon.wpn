@@ -1,7 +1,7 @@
 {
   "id": "SunriderPirateCannon",
   "specClass": "projectile",
-  "projectileSpecId": "heavymauler_shot",
+  "projectileSpecId": "SunriderKImedium",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "renderHints": [
@@ -42,17 +42,17 @@
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
-    "length": 30,
-    "spread": 3,
+    "length": 20,
+    "spread": 5,
     "particleSizeMin": 5,
     "particleSizeRange": 8,
     "particleDuration": 0.5,
     "particleCount": 4,
     "particleColor": [
-      255,
-      165,
-      100,
-      200
+      205,
+      205,
+      0,
+      180
     ]
   },
   "fireSoundTwo": "SunriderSaviorLow"

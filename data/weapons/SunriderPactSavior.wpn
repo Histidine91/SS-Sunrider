@@ -1,7 +1,7 @@
 {
   "id": "SunriderPactSavior",
   "specClass": "projectile",
-  "projectileSpecId": "hephag_shot",
+  "projectileSpecId": "SunriderKIlarge",
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/weapons/SunriderPactSavior.png",
@@ -52,7 +52,7 @@
       255,
       185,
       115,
-      215
+      205
     ]
   },
   "fireSoundTwo": "SunriderSaviorFire"

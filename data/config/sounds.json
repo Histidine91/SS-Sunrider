@@ -38,6 +38,9 @@
 	"SunriderNightmarePulser":[
 		{"file": "sounds/effects/SunriderNightmarePulser.ogg", "pitch": 1, "volume": 0.2}
 	],
+	"SunriderFalconPulser":[
+		{"file": "sounds/effects/SunriderNightmarePulser.ogg", "pitch": 1, "volume": 0.1}
+	],
 	"SunriderGunFire":[
 		{"file": "sounds/effects/SunriderGunFire.ogg", "pitch": 1, "volume": 0.1}
 	],
@@ -60,6 +63,9 @@
 		],
 		"SunriderDiscover":[
 			{"file": "SunriderDiscover.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.5}
+		],
+		"Sora_no_Senritsu":[
+			{"file": "Sora_no_Senritsu.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
 		],
 		"SunriderRecover":[
 			{"file": "SunriderRecover.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
@@ -87,6 +93,9 @@
 		],
 		"SunriderAnguish":[
 			{"file": "SunriderAnguish.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
+		],
+		"Cracking_the_Code":[
+			{"file": "Cracking_the_Code.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.6}
 		],
 		"SunriderTerror":[
 			{"file": "SunriderTerror.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.9}

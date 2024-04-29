@@ -19,9 +19,9 @@
       "weapons": {
         "WS0001": "SunriderFalconCannon",
         "WS0002": "SunriderFalconCannon",
-        "WS0003": "SunriderFalconPulserLeft",
-        "WS0004": "SunriderFalconPulserRight",
-        "WS0005": "SunriderFalconPulserLeft"
+        "WS0003": "SunriderFalconPulser",
+        "WS0004": "SunriderFalconPulser",
+        "WS0005": "SunriderFalconPulser"
       }
     }
   ],

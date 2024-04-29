@@ -16,7 +16,7 @@ Seraphim,SunriderSeraphim,,Holy Ryuvian Empire,SunriderSeraphimAwaken,4,750,45,5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Nightmare,SunriderNightmare,War Machine,Holy Ryuvian Empire,highenergyfocus,120,37500,50,20000,,8000,0,0,1,250,300,225,300,250,OMNI,,360,0.1,1,,,0,0,0,0,1000,0,15,10000000,1,1,,,1,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer, cbm_SunriderBoss",,1,10,10,10012
 Shikire,SunriderRyuvianCruiser,Ritual Cruiser,Holy Ryuvian Empire,flarelauncher_active,15,14000,1000,12500,,850,160,0,1,80,110,15,25,1600,OMNI,,360,0.4,0.7,,,0,70,0,200,8,25,8,250000,4,30,600,0.3,23,23,"COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,0.4,2,4,10013
-Ryuvian Falcon,SunriderFalcon,Frigate,Holy Ryuvian Empire,,12,9000,50,3000,,500,20,0,20,310,360,140,200,300,NONE,,,,,,,0,8,0,20,1,20,10,300000,3,20,500,0.5,15,15,"COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,1,10,10,10014
+Lost Wings,SunriderFalcon,Autonomous Frigate,Holy Ryuvian Empire,,12,9000,50,3000,,500,20,0,20,180,160,75,60,300,NONE,,,,,,,0,8,0,20,1,20,10,300000,3,20,500,0.5,15,15,"COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,1,10,10,10014
 Nightmare Ascendant,,God Ryder,Holy Ryuvian Empire,,,500000,5000,10000,,10000,0,2,150,200,300,60,80,30000,NONE,,,,,,,1,1,0,0,1000,0,20,500000000,1,1,,,30,1000,"UNBOARDABLE,COMBAT,HIDE_IN_CODEX","no_drop, no_sell, no_bp_drop, no_dealer",,1,20,20,10015
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Flier Drone,,,Holy Ryuvian Empire,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

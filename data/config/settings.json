@@ -26,6 +26,12 @@
 			"SunriderAvaSaluteNoBG":"graphics/illustrations/SunriderAvaSaluteNoBG.png",
 			"SunriderAvaRage":"graphics/illustrations/SunriderAvaRage.png",
 			"SunriderKayto":"graphics/illustrations/SunriderKayto.png",
+			"SunriderPhoto":"graphics/illustrations/SunriderPhoto.png",
+			"SunriderShowdown":"graphics/illustrations/SunriderShowdown.png",
+			"SRdogoo":"graphics/illustrations/SRdogoo.png",
+			"SRgalleon":"graphics/illustrations/SRgalleon.png",
+			"SRrensouhou":"graphics/illustrations/SRrensouhou.png",
+			"GalleonDogooRensouhou":"graphics/illustrations/GalleonDogooRensouhou.png",
 		},
 		"portraits":{
 			"sunrider_ava":"graphics/portraits/Portrait_Ava.png",

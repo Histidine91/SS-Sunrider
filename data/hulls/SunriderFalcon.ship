@@ -1,7 +1,7 @@
 {
   "hullName": "Ryuvian Falcon",
   "hullId": "SunriderFalcon",
-  "hullSize": "FRIGATE",
+  "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/SunriderFalcon.png",
   "style": "SUNRIDERNM",
   "height": 169,
@@ -20,9 +20,11 @@
   "builtInWeapons": {
     "WS0001": "SunriderFalconCannon",
     "WS0002": "SunriderFalconCannon",
-    "WS0003": "SunriderFalconPulserLeft",
-    "WS0004": "SunriderFalconPulserRight",
-    "WS0005": "SunriderFalconPulserLeft"
+    "WS0003": "SunriderFalconPulser",
+    "WS0004": "SunriderFalconPulser",
+    "WS0005": "SunriderFalconPulser",
+    "WS0006": "SunriderFalconDeco",
+    "WS0007": "SunriderFalconDecorative"
   },
   "weaponSlots": [
     {
@@ -65,10 +67,30 @@
       "id": "WS0005",
       "size": "SMALL",
       "type": "BUILT_IN",
-      "mount": "HIDDEN",
+      "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [73, -0]
+      "locations": [72, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [8.5, -0],
+      "renderOrderMod": 1
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [71.5, -0],
+      "renderOrderMod": 1
     }
   ],
   "engineSlots": [

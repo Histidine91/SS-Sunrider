@@ -36,10 +36,10 @@
     "particleDuration": 0.15,
     "particleCount": 11,
     "particleColor": [
-      255,
-      120,
-      105,
-      250
+      185,
+      185,
+      0,
+      100
     ]
   },
   "fireSoundTwo": "SunriderGunFire"

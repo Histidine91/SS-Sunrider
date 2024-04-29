@@ -1,0 +1,16 @@
+{
+	"id":"SunriderHEmedium",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":50.0,
+	"hitGlowRadius":80,
+	"width":9.0,
+	"fadeTime":0.2,
+	"fringeColor":[255,50,50,155],
+	"coreColor":[255,150,150,180],	
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/shell_large_yellow.png"
+}

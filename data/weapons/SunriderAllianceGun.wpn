@@ -17,9 +17,9 @@
     "length": 30,
     "particleColor": [
       255,
-      120,
-      105,
-      250
+      255,
+      0,
+      200
     ],
     "particleCount": 11,
     "particleDuration": 0.15,

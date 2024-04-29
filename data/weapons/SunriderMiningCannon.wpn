@@ -1,7 +1,7 @@
 {
   "id": "SunriderMiningCannon",
   "specClass": "projectile",
-  "projectileSpecId": "hephag_shot",
+  "projectileSpecId": "SunriderHElarge",
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/weapons/SunriderMiningCannon.png",
@@ -39,6 +39,20 @@
     0
   ],
   "barrelMode": "LINKED",
-  "animationType": "NONE",
-  "fireSoundTwo": "SunriderSaviorLow"
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 17,
+    "spread": 10,
+    "particleSizeMin": 10,
+    "particleSizeRange": 15,
+    "particleDuration": 1,
+    "particleCount": 32,
+    "particleColor": [
+      255,
+      0,
+      0,
+      120
+    ]
+  },
+  "fireSoundTwo": "SunriderSaviorFire"
 }

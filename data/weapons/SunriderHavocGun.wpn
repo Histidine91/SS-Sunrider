@@ -31,10 +31,10 @@
     "particleDuration": 0.15,
     "particleCount": 10,
     "particleColor": [
-      255,
-      255,
-      155,
-      255
+      211,
+      211,
+      44,
+      140
     ]
   },
   "projectileSpecId":"chaingun_shot",  # projectile that will be fired

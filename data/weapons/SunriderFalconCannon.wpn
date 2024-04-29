@@ -1,7 +1,7 @@
 {
   "id": "SunriderFalconCannon",
   "specClass": "projectile",
-  "projectileSpecId": "heavymauler_shot",
+  "projectileSpecId": "SunriderHEmedium",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "renderHints": [
@@ -35,17 +35,17 @@
   "barrelMode": "LINKED",
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
-    "length": 40,
-    "spread": 3,
+    "length": 30,
+    "spread": 5,
     "particleSizeMin": 7,
     "particleSizeRange": 10,
     "particleDuration": 0.5,
     "particleCount": 6,
     "particleColor": [
       255,
-      255,
-      255,
-      255
+      0,
+      0,
+      80
     ]
   },
   "fireSoundTwo": "SunriderSaviorLow"

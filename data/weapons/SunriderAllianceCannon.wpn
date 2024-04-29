@@ -1,7 +1,7 @@
 {
   "id": "SunriderAllianceCannon",
   "specClass": "projectile",
-  "projectileSpecId": "heavymauler_shot",
+  "projectileSpecId": "SunriderKImedium",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "turretSprite": "graphics/weapons/SunriderAllianceCannon.png",
@@ -35,17 +35,17 @@
   "barrelMode": "ALTERNATING",
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
-    "length": 40,
-    "spread": 3,
+    "length": 20,
+    "spread": 8,
     "particleSizeMin": 7,
     "particleSizeRange": 10,
     "particleDuration": 1,
     "particleCount": 6,
     "particleColor": [
       255,
-      185,
-      115,
-      200
+      255,
+      0,
+      180
     ]
   },
   "fireSoundTwo": "SunriderSaviorLow"
