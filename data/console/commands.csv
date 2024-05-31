@@ -1,0 +1,2 @@
+command,class,tags,syntax,help
+Sunrider_EnableMission,com.sunrider.console.EnableMission,"campaign,sunrider",EnableMission <num>,Sets the flags to enable launching of the Sunrider mission with the specified number.
