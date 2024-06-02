@@ -4,3 +4,5 @@ sunrider_findSunrider,,,,,"priority, non_repeatable",,,,,,,,,,graphics/portraits
 sunrider_mission2,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/cera.png,com.sunrider.missions.SRMission2
 sunrider_mission3,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_nightmare_icon.png,com.sunrider.missions.SRMission3
 sunrider_mission4,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_allianceCruiser_icon.png,com.sunrider.missions.SRMission4
+sunrider_missionVows,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_ring_icon.png,com.sunrider.missions.SRVows
+sunrider_missionShowdown,,,,,"priority, non_repeatable",,,,,,,,,,graphics/icons/missions/sunrider_ryuvian_cruiser_icon.png,com.sunrider.missions.SRShowdown

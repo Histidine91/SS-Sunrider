@@ -195,9 +195,9 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {			
 			member.getCrewComposition().addCrew(member.getHullSpec().getMinCrew());
 			float maxCR = member.getRepairTracker().getMaxCR();
-			log.info(String.format("Member %s max CR is %s", member.getShipName(), maxCR));
+			//log.info(String.format("Member %s max CR is %s", member.getShipName(), maxCR));
 			member.getRepairTracker().setCR(maxCR);
-			log.info(String.format("Member %s current CR is %s", member.getShipName(), member.getRepairTracker().getCR()));
+			//log.info(String.format("Member %s current CR is %s", member.getShipName(), member.getRepairTracker().getCR()));
 		}
 		
 		fleet.setName(Sunrider_MiscFunctions.getString("mission4_fleetName"));
@@ -237,7 +237,7 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 	public void reportWonBattle() {
 		wonBattle = true;
 		spawnCarrier();
-		Global.getSector().addScript(new OpenDialogScript("Sunrider_Mission4_PostEncounterDialogStart"));
+		Global.getSector().addScript(new SRMissionUtils.OpenDialogScript("Sunrider_Mission4_PostEncounterDialogStart"));
 	}
 	
 	protected void spawnCarrier() {
@@ -307,7 +307,8 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		//drunkMarket.removePerson(drunk);
 		drunkMarket.getCommDirectory().removePerson(drunk);
 		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission4_missionCompleted", true);
-		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission4_doneOrSkipped", true);	
+		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission4_doneOrSkipped", true);
+		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_missionVows_delay", true, SRVows.DELAY_BEFORE_AVAILABLE);
 	}
 	
 	@Override
@@ -323,7 +324,7 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 				return true;
 			case "postEncounterDialog":
 				return true;
-			case "afterPostEncounterDialog":				
+			case "afterPostEncounterDialog":
 				return true;
 			case "addPACTSupports":
 				addPACTSupports(dialog);
@@ -422,43 +423,10 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		}
 	}
 	
-	protected static class OpenDialogScript implements EveryFrameScript {
-		
-		public final String ruleTrigger;
-		protected boolean done;
-
-		public OpenDialogScript(String ruleTrigger) {
-			this.ruleTrigger = ruleTrigger;
-		}	
-
-		@Override
-		public boolean isDone() {
-			return done;
-		}
-
-		@Override
-		public boolean runWhilePaused() {
-			return true;
-		}
-
-		@Override
-		public void advance(float time) {
-			CampaignUIAPI ui = Global.getSector().getCampaignUI();
-			if (ui.isShowingDialog() || ui.isShowingMenu()) return;
-			
-			RuleBasedInteractionDialogPluginImpl plugin = new RuleBasedInteractionDialogPluginImpl();
-			ui.showInteractionDialog(plugin, Global.getSector().getPlayerFleet());
-			plugin.fireBest(ruleTrigger);
-			done = true;
-		}
-		
-	}
-	
 	public static class YoshioFIDConfigGen implements FleetInteractionDialogPluginImpl.FIDConfigGen {
 		public FleetInteractionDialogPluginImpl.FIDConfig createConfig() {
 			FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
-			
-			
+			config.pullInEnemies = false;
 			config.delegate = new FleetInteractionDialogPluginImpl.BaseFIDDelegate() {
 				public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
 					

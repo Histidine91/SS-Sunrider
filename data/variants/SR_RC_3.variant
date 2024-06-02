@@ -19,20 +19,20 @@
       "weapons": {
         "WS0001": "heavymauler",
         "WS0002": "heavymauler",
-        "WS0003": "sabotpod",
-        "WS0004": "sabotpod",
-        "WS0005": "plasma"
       }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0003": "sabotpod",
+        "WS0004": "sabotpod",
+      }
     },
     {
       "autofire": false,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {"WS0005": "plasma"}
     }
   ],
   "modules": [],

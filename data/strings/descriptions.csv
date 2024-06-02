@@ -8,7 +8,13 @@ SunriderNightmare,SHIP,"An unknown and autonomous entity from a distant, unreach
 
 Please register your Tri-Tachyon datapad to receive the latest news and updates.",,,,,,,,,,,,,,,,,,,,,
 SunriderRyuvianCruiser,SHIP,"Although not too powerful, the Shikire Ryuvian Cruiser was once a numerous unit of the Holy Ryuvian Empire's fleet. She does not need a crew to operate, is fairly agile and has tough armor and shield. Unfortunately, the Shikire also has severe drawbacks: the engines will be disabled if overloaded and has an extremely low amount of weapon mounts, leaving little room for versatility.",,,,,,,,,,,,,,,,,,,,,,,
-SunriderFalcon,SHIP,"The original Ryuvian Falcon was unbelievably powerful for her size, and re-creating an equally strong one in the Persean Sector is impossible because the materials to do so are inexistent here. However, having the data to make a replica with our Heavy Industries or Orbital Works, she can still be a notable addition to a fleet. As to not confuse names with the sector's Falcon-class Light Cruiser, she was re-baptized to Lost Wings.",,,,,,,,,,,,,,,,,,,,,,,
+SunriderFalcon,SHIP,"The original Ryuvian Falcon was unbelievably powerful for her size, and re-creating an equally strong one in the Persean Sector is impossible because the materials to do so are inexistent here. However, having the data to make a replica with our Heavy Industries or Orbital Works, she can still be a notable addition to a fleet. As to not confuse names with the sector's Falcon-class Light Cruiser, she was re-baptized to Lost Wings.",Ryuvian Falcon?,"WARNING: Tactical analysis failure
+  Retrying (1/?)... failed
+  Retrying (2/?)... failed
+  Retrying (3/?)... failed
+
+Stack overflow error
+Beginning core memory dump...",,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,
 #PACT,,,,,,,,,,,,,,,,,,,,,,,,,
 SunriderPactBattleship,SHIP,"A large, relatively rare, complex and expensive hull, the Veniczar Battleship is deployed in the presence of a powerful enemy where only cruisers may not be enough. The tough armor and shields make her an unbreakable barrier with heavy firepower. On the other hand, the high frontal firepower focus also makes this ship very vulnerable to ion damage and attacks from behind, potentially disabling her from battle if the ""problem"" is not dealt with.",,,,,,,,,,,,,,,,,,,,,,,

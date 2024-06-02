@@ -1,13 +1,20 @@
 package com.sunrider;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.FactionAPI;
+import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
+import com.fs.starfarer.api.impl.campaign.ids.Personalities;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Voices;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Random;
 
 public class SRPeople {	
 	
@@ -16,21 +23,51 @@ public class SRPeople {
 	public static final String DRUNK_ID = "sunrider_bumble";
 	public static final String SALVAGER_SON_ID = "sunrider_yoshio";
 	public static final String PROTOTYPE_ID = "sunrider_celia";
+	public static final String BRIDE_ID = "sunrider_grandorder";
+	public static final String GROOM_ID = "sunrider_santos";
+	public static final String HEG_OFFICER_ID = "sunrider_saint";
+	public static final String CHURCH_OFFICER_ID = "sunrider_holyoak";
+	
+	
+	public static PersonAPI getOrCreatePerson(String personId, @Nullable Integer officerLevel, String factionId, String firstName, String lastName,
+											  @Nullable FullName.Gender gender, @Nullable String portrait, @Nullable String rankId, @Nullable String postId,
+											  @Nullable String personality, @Nullable String voice, @Nullable PersonImportance importance, @Nullable Random random)
+	{
+		PersonAPI person = Global.getSector().getImportantPeople().getPerson(personId);
+		if (person != null) return person;
+
+		FactionAPI faction = Global.getSector().getFaction(factionId);
+		if (officerLevel != null) {
+			person = OfficerManagerEvent.createOfficer(faction, officerLevel, OfficerManagerEvent.SkillPickPreference.ANY, random);
+		} else {
+			person = faction.createRandomPerson();
+		}
+		person.setId(personId);
+		if (gender != null) person.getName().setGender(gender);
+		person.getName().setFirst(firstName);
+		person.getName().setLast(lastName);
+		if (portrait != null) person.setPortraitSprite(portrait);
+		if (rankId != null) person.setRankId(rankId);
+		if (postId != null) person.setPostId(postId);
+		if (personality != null) person.setPersonality(personality);
+		if (voice != null) person.setVoice(voice);
+		if (importance != null) person.setImportance(importance);
+
+		Global.getSector().getImportantPeople().addPerson(person);
+
+		return person;
+	}
 	
 	public static PersonAPI createAvaIfNeeded() {
 		PersonAPI person = Global.getSector().getImportantPeople().getPerson(AVA_ID);
 		if (person != null) return person;
 		
-		person = Global.getFactory().createPerson();
-		person.setId(AVA_ID);
-		person.setVoice(Voices.SOLDIER);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.FEMALE);
-		person.setRankId(Ranks.SPACE_COMMANDER);
-		person.setPostId(Ranks.POST_OFFICER);
-		person.getName().setFirst(Sunrider_MiscFunctions.getString("avaNameFirst"));
-		person.getName().setLast(Sunrider_MiscFunctions.getString("avaNameLast"));
-		person.setPortraitSprite("graphics/portraits/Portrait_Ava.png");
+		person = getOrCreatePerson(AVA_ID, null, Factions.INDEPENDENT, 
+				Sunrider_MiscFunctions.getString("avaNameFirst"), Sunrider_MiscFunctions.getString("avaNameLast"),
+				FullName.Gender.FEMALE, "graphics/portraits/Portrait_Ava.png",
+				Ranks.SPACE_COMMANDER, Ranks.POST_OFFICER, Personalities.STEADY, Voices.SOLDIER, null, null
+		);
+		
 		person.getMemoryWithoutUpdate().set("$chatterChar", "sunrider_ava");
 		person.getMemoryWithoutUpdate().set("$nex_noOfficerDeath", true);	// waifus do not die when killed
 		
@@ -49,7 +86,6 @@ public class SRPeople {
 		//person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
 		person.getStats().setSkillLevel(Skills.TACTICAL_DRILLS, 1);	// bonus
 		
-		Global.getSector().getImportantPeople().addPerson(person);
 		return person;
 	}
 	
@@ -57,17 +93,11 @@ public class SRPeople {
 		PersonAPI person = Global.getSector().getImportantPeople().getPerson(SALVAGER_ID);
 		if (person != null) return person;
 		
-		person = Global.getFactory().createPerson();
-		person.setId(SALVAGER_ID);
-		person.setVoice(Voices.SPACER);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.MALE);
-		person.setRankId(Ranks.SPACE_CAPTAIN);
-		person.setPostId(Ranks.POST_SPACER);
-		person.getName().setFirst(Sunrider_MiscFunctions.getString("salvagerNameFirst"));
-		person.getName().setLast(Sunrider_MiscFunctions.getString("salvagerNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait31.png");
-		Global.getSector().getImportantPeople().addPerson(person);
+		person = getOrCreatePerson(SALVAGER_ID, null, Factions.INDEPENDENT, 
+				Sunrider_MiscFunctions.getString("salvagerNameFirst"), Sunrider_MiscFunctions.getString("salvagerNameLast"),
+				FullName.Gender.MALE, "graphics/portraits/portrait31.png",
+				Ranks.SPACE_CAPTAIN, Ranks.POST_SPACER, Personalities.STEADY, Voices.SPACER, null, null
+		);
 		return person;
 	}
 	
@@ -75,17 +105,11 @@ public class SRPeople {
 		PersonAPI person = Global.getSector().getImportantPeople().getPerson(DRUNK_ID);
 		if (person != null) return person;
 		
-		person = Global.getFactory().createPerson();
-		person.setId(DRUNK_ID);
-		person.setVoice(Voices.SPACER);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.MALE);
-		person.setRankId(Ranks.CITIZEN);
-		person.setPostId(Ranks.POST_CITIZEN);
-		person.getName().setFirst(Sunrider_MiscFunctions.getString("drunkNameFirst"));
-		person.getName().setLast(Sunrider_MiscFunctions.getString("drunkNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait25.png");
-		Global.getSector().getImportantPeople().addPerson(person);
+		person = person = getOrCreatePerson(DRUNK_ID, null, Factions.INDEPENDENT, 
+				Sunrider_MiscFunctions.getString("drunkNameFirst"), Sunrider_MiscFunctions.getString("drunkNameLast"),
+				FullName.Gender.MALE, "graphics/portraits/portrait25.png",
+				Ranks.CITIZEN, Ranks.POST_CITIZEN, Personalities.STEADY, Voices.SPACER, null, null
+		);
 		return person;
 	}
 	
@@ -93,16 +117,11 @@ public class SRPeople {
 		PersonAPI person = Global.getSector().getImportantPeople().getPerson(SALVAGER_SON_ID);
 		if (person != null) return person;
 		
-		person = Global.getFactory().createPerson();
-		person.setId(SALVAGER_SON_ID);
-		person.setVoice(Voices.VILLAIN);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.MALE);
-		person.setRankId(Ranks.SPACE_CAPTAIN);
-		person.setPostId(Ranks.POST_SPACER);
-		person.getName().setFirst(Sunrider_MiscFunctions.getString("salvagerSonNameFirst"));
-		person.getName().setLast(Sunrider_MiscFunctions.getString("salvagerNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait40.png");
+		person = getOrCreatePerson(SALVAGER_SON_ID, null, Factions.INDEPENDENT, 
+				Sunrider_MiscFunctions.getString("salvagerSonNameFirst"), Sunrider_MiscFunctions.getString("salvagerNameLast"),
+				FullName.Gender.MALE, "graphics/portraits/portrait40.png",
+				Ranks.SPACE_CAPTAIN, Ranks.POST_SPACER, Personalities.STEADY, Voices.VILLAIN, null, null
+		);
 		
 		// skills
 		person.getStats().setLevel(6);
@@ -116,7 +135,6 @@ public class SRPeople {
 		person.getStats().setSkillLevel(Skills.MAKESHIFT_EQUIPMENT, 1);
 		person.getStats().setSkillLevel(Skills.SALVAGING, 1);
 		
-		Global.getSector().getImportantPeople().addPerson(person);
 		return person;
 	}
 	
@@ -124,16 +142,11 @@ public class SRPeople {
 		PersonAPI person = Global.getSector().getImportantPeople().getPerson(PROTOTYPE_ID);
 		if (person != null) return person;
 		
-		person = Global.getFactory().createPerson();
-		person.setId(PROTOTYPE_ID);
-		person.setVoice(Voices.SCIENTIST);
-		person.setFaction(Factions.INDEPENDENT);
-		person.setGender(FullName.Gender.FEMALE);
-		person.setRankId(Ranks.PILOT);
-		person.setPostId(Ranks.POST_PATROL_COMMANDER);
-		person.getName().setFirst(Sunrider_MiscFunctions.getString("prototypeName"));
-		person.getName().setLast("");
-		person.setPortraitSprite("graphics/portraits/SunriderPrototype.png");
+		person = getOrCreatePerson(PROTOTYPE_ID, null, Factions.INDEPENDENT, 
+				Sunrider_MiscFunctions.getString("prototypeName"), "",
+				FullName.Gender.FEMALE, "graphics/portraits/SunriderPrototype.png",
+				Ranks.PILOT, Ranks.POST_PATROL_COMMANDER, Personalities.STEADY, Voices.SCIENTIST, null, null
+		);
 		
 		// skills
 		person.getStats().setLevel(7);
@@ -149,6 +162,74 @@ public class SRPeople {
 		person.getStats().setSkillLevel(Skills.NEURAL_LINK, 1);
 		
 		Global.getSector().getImportantPeople().addPerson(person);
+		return person;
+	}
+	
+	public static PersonAPI getOrCreateBride() {
+		PersonAPI person = Global.getSector().getImportantPeople().getPerson(BRIDE_ID);
+		if (person != null) return person;
+		
+		person = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson(FullName.Gender.FEMALE);
+		person.setId(BRIDE_ID);
+		person.setVoice(Voices.FAITHFUL);	// I guess
+		person.setFaction(Factions.LUDDIC_CHURCH);
+		person.setRankId(Ranks.CITIZEN);
+		person.setPostId(Ranks.CITIZEN);
+		
+		long seed = Sunrider_MiscFunctions.getSectorSeed();
+		boolean altName = new Random(seed).nextBoolean();
+		
+		person.getName().setFirst(Sunrider_MiscFunctions.getString("brideNameFirst" + (altName ? "2" : "")));
+		person.getName().setLast(Sunrider_MiscFunctions.getString("brideNameLast"));
+		person.setPortraitSprite("graphics/portraits/portrait_luddic03.png");	// TODO
+		
+		Global.getSector().getImportantPeople().addPerson(person);
+		return person;
+	}
+	
+	public static PersonAPI getOrCreateGroom() {
+		PersonAPI person = Global.getSector().getImportantPeople().getPerson(GROOM_ID);
+		if (person != null) return person;
+		
+		person = Global.getSector().getFaction(Factions.LUDDIC_CHURCH).createRandomPerson(FullName.Gender.MALE);
+		person.setId(GROOM_ID);
+		person.setVoice(Voices.FAITHFUL);
+		person.setFaction(Factions.LUDDIC_CHURCH);
+		person.setRankId(Ranks.CITIZEN);
+		person.setPostId(Ranks.CITIZEN);
+		person.getName().setFirst(Sunrider_MiscFunctions.getString("groomNameFirst"));
+		person.getName().setLast(Sunrider_MiscFunctions.getString("groomNameLast"));
+		person.setPortraitSprite("graphics/portraits/portrait_luddic00.png");
+		
+		Global.getSector().getImportantPeople().addPerson(person);
+		return person;
+	}
+	
+	public static PersonAPI getOrCreateHegOfficer() {
+		PersonAPI person = Global.getSector().getImportantPeople().getPerson(HEG_OFFICER_ID);
+		if (person != null) return person;
+		
+		long seed = Sunrider_MiscFunctions.getSectorSeed();
+		
+		person = getOrCreatePerson(HEG_OFFICER_ID, 6, Factions.HEGEMONY, 
+				Sunrider_MiscFunctions.getString("hegOfficerNameFirst"), Sunrider_MiscFunctions.getString("hegOfficerNameLast"),
+				FullName.Gender.MALE, null,
+				Ranks.SPACE_CAPTAIN, Ranks.POST_AGENT, null, Voices.SOLDIER, null, new Random(seed)
+		);
+		return person;
+	}
+	
+	public static PersonAPI getOrCreateChurchOfficer() {
+		PersonAPI person = Global.getSector().getImportantPeople().getPerson(CHURCH_OFFICER_ID);
+		if (person != null) return person;
+		
+		long seed = Sunrider_MiscFunctions.getSectorSeed();
+		
+		person = getOrCreatePerson(CHURCH_OFFICER_ID, 5, Factions.LUDDIC_CHURCH, 
+				Sunrider_MiscFunctions.getString("churchOfficerNameFirst"), Sunrider_MiscFunctions.getString("churchOfficerNameLast"),
+				FullName.Gender.MALE, null,
+				Ranks.KNIGHT_CAPTAIN, Ranks.POST_AGENT, null, Voices.FAITHFUL, null, new Random(seed)
+		);
 		return person;
 	}
 	
@@ -171,6 +252,6 @@ public class SRPeople {
 		if (ava.getStats().getSkillLevel("sunrider_SunridersMother") == 0) {
 			ava.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 0);
 			ava.getStats().setSkillLevel("sunrider_SunridersMother", 2);
-		}		
+		}	
 	}
 }

@@ -13,16 +13,19 @@ import com.fs.starfarer.api.characters.OfficerDataAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActionEnvelope;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActions;
 import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
+import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
+import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
 import com.fs.starfarer.api.impl.campaign.intel.bar.events.BarEventManager;
 import com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission;
@@ -63,6 +66,8 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 				return haveSunrider();
 			case "isAvaInParty":
 				return isAvaInParty();
+			case "isAvaOnSunrider":
+				return isAvaOnSunrider();
 			case "createMission":
 				return createMission(dialog, params.get(1).getString(memoryMap));
 			case "declineMission":
@@ -73,7 +78,15 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 			case "canShowMission3":
 				return canShowMission3(dialog, memoryMap);
 			case "mission2CanScan":
-				return mission2CanScan(dialog, memoryMap, params.get(1).getBoolean(memoryMap));	
+				return mission2CanScan(dialog, memoryMap, params.get(1).getBoolean(memoryMap));
+			case "canShowVowsMissionHere":
+				return canShowVowsMissionHere(dialog, memoryMap);
+			case "showdownCanReportMission":
+				return showdownCanReportMission(dialog, memoryMap);
+			case "showHull":
+				String hullId = params.get(1).getString(memoryMap);
+				showHull(dialog, hullId);
+				return true;
 			case "avaLeave":
 				removeAva(dialog, memoryMap, params.get(1).getBoolean(memoryMap), true);
 				//updateSunriderMissions(dialog, memoryMap);	// no need, we're already hard-killing them anyway
@@ -83,7 +96,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 			case "avaMutiny":
 				return avaMutiny(dialog, memoryMap);
 			case "blockSPDisengage":
-				blockSPDisengage(dialog);
+				blockSPDisengage(dialog, params.get(1).getString(memoryMap));
 				return true;
 			// have you considered remembering which one it is and sticking to it? no
 			case "haveItem":
@@ -92,8 +105,8 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 				int needed = 1;
 				if (params.size() >= 3)
 					needed = params.get(2).getInt(memoryMap);
-				
-				Global.getLogger(this.getClass()).info("wololo " + itemId + " " + needed);
+
+				//Global.getLogger(this.getClass()).info("wololo " + itemId + " " + needed);
 				return Global.getSector().getPlayerFleet().getCargo().getCommodityQuantity(itemId) >= needed;
 		}
 		
@@ -101,6 +114,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
     }
 	
 	// same as BeginMission except for not accepting the mission immediately
+	// obsolete, just use BeginMission with {@code false} for the {@code accept} arg.
 	protected static boolean createMission(InteractionDialogAPI dialog, String missionId) {
 		
 		PersonMissionSpec spec = Global.getSettings().getMissionSpec(missionId);
@@ -193,6 +207,16 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		return m1complete;
 	}
 	
+	public static boolean canShowVowsMissionHere(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) 
+	{		
+		MarketAPI market = dialog.getInteractionTarget().getMarket();
+		if (market == null) return false;
+		if (!market.hasCondition(Conditions.LUDDIC_MAJORITY) && !market.hasTag(Tags.LUDDIC_SHRINE))
+			return false;
+		
+		return true;
+	}
+	
 	public static boolean mission2CanScan(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap, boolean checkForAdmin) 
 	{
 		PersonAPI pers = dialog.getInteractionTarget().getActivePerson();
@@ -207,6 +231,23 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		if (doesAvaWantToLeave()) return false;
 		
 		return haveSunrider();
+	}
+
+	public static boolean showdownCanReportMission(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap)
+	{
+		PersonAPI pers = dialog.getInteractionTarget().getActivePerson();
+		if (pers == null) return false;
+
+		boolean admin = Ranks.POST_ADMINISTRATOR.equals(pers.getPostId()) || pers == dialog.getInteractionTarget().getMarket().getAdmin();
+		if (!admin) return false;
+
+		return true;
+	}
+
+	public static void showHull(InteractionDialogAPI dialog, String hullId) {
+		FleetMemberAPI temp = Global.getFactory().createFleetMember(FleetMemberType.SHIP, hullId + "_Hull");
+		temp.setShipName(Global.getSettings().getString("sunrider", "shipNameUnknown"));
+		dialog.getVisualPanel().showFleetMemberInfo(temp);
 	}
 	
 	public static boolean haveSunrider() {
@@ -282,6 +323,18 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		
 		return true;
 	}
+
+	public static boolean isAvaOnSunrider() {
+		if (!isAvaInParty()) {
+			return false;
+		}
+		FleetMemberAPI member = getAvasFleetMember();
+		if (member == null) {
+			return false;
+		}
+
+		return member.getHullId().equals("Sunridership");
+	}
 	
 	/**
 	 * Adapted from {@code SalvageDefenderInteraction.java}; sets up the battle with Ava during the mutiny.
@@ -356,7 +409,7 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		dialog.setPlugin(plugin);
 		plugin.init(dialog);
 		
-		blockSPDisengage(dialog);
+		blockSPDisengage(dialog, Global.getSettings().getString("sunrider", "mutinyBlockSPDisengageTooltip"));
 	
 		return true;
 	}
@@ -470,10 +523,15 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		return null;
 	}
 	
-	public static void blockSPDisengage(InteractionDialogAPI dialog) {
+	public static void blockSPDisengage(InteractionDialogAPI dialog, String tooltip) {
 		dialog.getOptionPanel().setEnabled(FleetInteractionDialogPluginImpl.OptionId.CLEAN_DISENGAGE, false);
-        dialog.getOptionPanel().setTooltip(FleetInteractionDialogPluginImpl.OptionId.CLEAN_DISENGAGE, 
-				Global.getSettings().getString("sunrider", "mutinyBlockSPDisengageTooltip"));
+        dialog.getOptionPanel().setTooltip(FleetInteractionDialogPluginImpl.OptionId.CLEAN_DISENGAGE, tooltip);
+	}
+	
+	public static long getSectorSeed() {
+		String seedStr = Global.getSector().getSeedString().replaceAll("[^0-9]", "");
+		long seed = Long.parseLong(seedStr);
+		return seed;
 	}
 	
 	public static String getString(String id) {

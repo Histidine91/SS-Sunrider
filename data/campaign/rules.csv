@@ -6,10 +6,12 @@ sunrider_findSunrider_barOpt,AddBarEvents,"$global.daysSinceStart > 800
 !$global.sunrider_findSunrider_seenMission
 $faction.id != pirates
 $faction.id != luddic_path
-!$global.sunrider_findSunrider_blockMission","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
+!$global.sunrider_findSunrider_blockMission
+!Sunrider_MiscFunctions isAvaInParty","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
 sunrider_findSunrider_barOptDev,AddBarEvents,"!$global.sunrider_findSunrider_seenMission
 $global.isDevMode
-$global.daysSinceStart <= 800","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
+$global.daysSinceStart <= 800
+!Sunrider_MiscFunctions isAvaInParty","AddBarEvent sunrider_findSunrider_barEvent ""Take a seat and wait for the officer to make the first move"" ""A dark-haired woman in an officer's uniform you don't recognize is standing in a dimly lit corner of the bar. When you catch her eye, she seems to shift uneasily."" highlight",,,
 sunrider_findSunrider_intro,DialogOptionSelected,$option == sunrider_findSunrider_barEvent,"$global.sunrider_findSunrider_seenMission = true
 ShowImageVisual SunriderAvaNeutral","The brunette slowly approaches, an eyepatch adorning her face. Seemingly un-phased by the presence of your towering bodyguards, she continues closing. Your guards start reaching for their sidearms...
 
@@ -818,8 +820,7 @@ sunrider_mission4_romance1,DialogOptionSelected,$option == sunrider_mission4_rom
 
 ""Alright, captain,"" she begins, the two of you standing a couple of meters apart. ""What did you need?""",sunrider_mission4_romance2:Ask why Celia called her the 'ex-girlfriend',
 sunrider_mission4_romance2Fail,DialogOptionSelected,"$option == sunrider_mission4_romance2
-$rel < 0.2","
-ShowImageVisual SunriderAvaFingerUp","She freezes for a heartbeat. Then her face goes *almost* perfectly neutral; only the slightest hint of hardness in her cheek muscles betrays her true feelings.
+$rel < 0.2",ShowImageVisual SunriderAvaFingerUp,"She freezes for a heartbeat. Then her face goes *almost* perfectly neutral; only the slightest hint of hardness in her cheek muscles betrays her true feelings.
 
 ""I respectfully decline to answer that question. $PlayerSirOrMadam"".","sunrider_mission4_romanceAbortBad:""Fair enough. Sorry for prying.""",
 sunrider_mission4_romance2Success,DialogOptionSelected,"$option == sunrider_mission4_romance2
@@ -973,6 +974,390 @@ sunrider_mission4_returnConvo11,DialogOptionSelected,$option == sunrider_mission
 sunrider_mission4_returnConvoEnd,DialogOptionSelected,$option == sunrider_mission4_returnConvoEnd,"ShowDefaultVisual
 EndConversation",,,
 #END Ava quest 4,,,,,,
+,,,,,,
+# Vows mission,,,,,,
+sunrider_missionVows_introOpt,AddBarEvents,"Sunrider_MiscFunctions isAvaInParty
+$global.sunrider_mission3_doneOrSkipped
+$global.sunrider_mission4_doneOrSkipped
+!$global.sunrider_missionVows_doneOrSkipped
+!$global.sunrider_missionVows_delay
+!Call $global.sunrider_missionVows_ref isMissionRunning
+Sunrider_MiscFunctions canShowVowsMissionHere
+RollProbability 0.6","AddBarEvent sunrider_missionVows_introPre ""Visit the couple at the table"" ""You see a man and a woman in Luddic pilgrims' robes at a table, each enjoying a cup of tea after their meal. When they briefly meet your gaze, the man beams."" highlight",,,
+sunrider_missionVows_introPre,DialogOptionSelected,$option == sunrider_missionVows_introPre,"BeginMission sunrider_missionVows false
+BeginConversation sunrider_grandorder true false
+Call $global.sunrider_missionVows_ref updateData
+$option = sunrider_missionVows_intro1 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_intro1,DialogOptionSelected,$option == sunrider_missionVows_intro1,"ShowSecondPerson sunrider_santos
+$global.sunrider_missionVows_seenMission = true
+Highlight ""Beholder Station"" $sunrider_missionVows_rewardStr
+AddTextSmall ""This mission will be time-sensitive.""","The couple both appear to be barely of age. They greet you with smiles, the woman's pronounced heterochromic eyes shining in the overhead light.
+
+""Good day, Captain. Blessings be upon you,"" he says with his palms together.
+
+The woman says ""My name is $sunrider_missionVows_brideName and this is $sunrider_missionVows_groomName. We’re looking for someone to give us a ride to Beholder Station. Will ya please take us there for $sunrider_missionVows_rewardStr credits?""
+
+""It's our wedding,"" he adds.","sunrider_missionVows_intro2:Agree
+sunrider_missionVows_introAbort:Decline, saying you have other plans",# could show map here but we want to see the people's faces
+sunrider_missionVows_intro2,DialogOptionSelected,$option == sunrider_missionVows_intro2,"AdjustRep sunrider_grandorder FRIENDLY 5
+AdjustRep sunrider_santos FRIENDLY 5
+AcceptMission","""Thank you very much,"" the man says, bowing. His fiancée lets out a ""yay"" before covering her mouth with both hands, blushing awkwardly.",sunrider_missionVows_introReturn:Return to the bar,
+sunrider_missionVows_introAbort,DialogOptionSelected,$option == sunrider_missionVows_introAbort,AbortMission,"The youngsters look down, crestfallen. As you turn away, you hear the man say ""Don't fret, dear, there'll be another one along soon. Ludd will provide.""",sunrider_missionVows_introReturn:Return to the bar,
+sunrider_missionVows_introReturn,DialogOptionSelected,$option == sunrider_missionVows_introReturn,"EndConversation DO_NOT_FIRE
+RestoreSavedVisual
+BarCMD showOptions",,,
+,,,,,,
+sunrider_missionVows_shrineDock,OpenInteractionDialog,"$id == beholder_station
+$sunrider_missionVows_shrine score:10","Call $global.sunrider_missionVows_ref updateData
+PrintDescription 1
+ShowDefaultVisual
+ShrineCMD addIntel",,sunrider_missionVows_shrineStart:Prepare to deliver the couple to their wedding,
+sunrider_missionVows_shrineStart,DialogOptionSelected,$option == sunrider_missionVows_shrineStart,"ShowPersonVisual true sunrider_grandorder
+ShowSecondPerson sunrider_santos
+Sunrider_AddOptionConfirmation sunrider_missionVows_shrineAbort ""This will terminate the quest prematurely. Are you sure?"" ""Yes"" ""No""","You head to shuttle bay to see off your passengers.
+
+$sunrider_missionVows_groomFirst turns to you. ""While you're here, would you like to visit the shrine? It's quite beautiful, though not as beautiful as my $sunrider_missionVows_brideFirst."" That line gets him a playful punch in the shoulder from her.","sunrider_missionVows_shrine1:Agree
+sunrider_missionVows_shrineAbort:Decline, but wish them well",
+sunrider_missionVows_shrine1,DialogOptionSelected,$option == sunrider_missionVows_shrine1,"AdjustRep sunrider_grandorder FRIENDLY 2
+AdjustRep sunrider_santos FRIENDLY 2
+Sunrider_PlayInteractionMusic SunriderClaude","You take a shuttle over to the station with the young couple.
+
+As the hatch opens, $sunrider_missionVows_groomFirst turns and says ""$sunrider_missionVows_brideFirst, could you wait here with Captain $playerName and the luggage for a second?""
+
+""Okay, baby."" 
+
+He gasps and whispers, ""Hey, don’t call me that in public."" She chuckles and answers, ""My bad, cutie... oops, Ludd forgive me, sweetie...""
+
+You see his face going red just before he turns his back and walks towards a priest in the distance. Nearby, one of your guards makes a sound suspiciously similar to repressed laughter.
+
+That was quite the unusual scene to witness between Luddic pilgrims, but well, such is young love. Were you ever like that, yourself?",sunrider_missionVows_shrine2:Continue,
+sunrider_missionVows_shrine2,DialogOptionSelected,$option == sunrider_missionVows_shrine2,HideSecondPerson,"$sunrider_missionVows_brideFirst puts her hands on her hips. She takes a contrapposto stance at first, but soon starts swaying her hips side to side slowly, switching her weight from leg to leg.","sunrider_missionVows_shrine3:""Are you okay?""
+sunrider_missionVows_shrine3Alt:Say nothing",
+sunrider_missionVows_shrine3,DialogOptionSelected,$option == sunrider_missionVows_shrine3,,"""Oh?"" She stops, turns to you and lets out a giggle, ""I’m excited, and a little nervous as well, of course. I’ll get married with my beloved boy very soon after all!""
+
+She starts to say something more, but her face scrunches up for a moment, before she sneezes. 
+
+""Sorry. What about ya? Have ya a darling yourself, cap’n?"" Between her speech style and how fast she's talking, it's a little hard to follow what she's saying.","sunrider_missionVows_shrine4Yes:Say yes
+sunrider_missionVows_shrine4No:Say no
+sunrider_missionVows_shrine4Maybe:Avoid the question",
+sunrider_missionVows_shrine3Alt,DialogOptionSelected,$option == sunrider_missionVows_shrine3Alt,"$option = sunrider_missionVows_shrine4Common 0
+FireBest DialogOptionSelected","After a few moments, she stops moving and turns to you. ""Oh, before I forget, ya invited to watch the ceremony if ya wanna, $playerFirstName. I can call you $playerFirstName, right?""",,
+sunrider_missionVows_shrine4Yes,DialogOptionSelected,$option == sunrider_missionVows_shrine4Yes,"$option = sunrider_missionVows_shrine4Common 0
+FireBest DialogOptionSelected","""Nice,"" she gives you thumbs up and a grin. ""If ya’d like, both are welcome to the ceremony, alright?""",,
+sunrider_missionVows_shrine4No,DialogOptionSelected,$option == sunrider_missionVows_shrine4No,"$option = sunrider_missionVows_shrine4Common 0
+FireBest DialogOptionSelected","""I see. Spacers like ya don’t have much time for that, I suppose. But if ya wanna watch the ceremony, ya welcome to.""",,
+sunrider_missionVows_shrine4Maybe,DialogOptionSelected,$option == sunrider_missionVows_shrine4Maybe,"$option = sunrider_missionVows_shrine4Common 0
+FireBest DialogOptionSelected","""Ah,"" she very quickly holds her palms together and bows, ""forgive me, I got a little carried away.""",,
+sunrider_missionVows_shrine4Commmon,DialogOptionSelected,$option == sunrider_missionVows_shrine4Common,"ShowSecondPerson sunrider_santos
+AddCredits $sunrider_missionVows_reward","At this point, $sunrider_missionVows_groomFirst returns, his smile suddenly gone. ""Here are the credits, captain,"" he says with a polite yet stiff bow.",sunrider_missionVows_shrine5:Continue,
+sunrider_missionVows_shrine5,DialogOptionSelected,$option == sunrider_missionVows_shrine5,Sunrider_PlayInteractionMusic,"He turns to her, ""Love, we have a problem. Our officiant isn’t coming."" Her hand flies to her mouth. ""Looks like he broke a leg two weeks ago and won’t walk for a few months. Nobody on the station right now can replace him.""",sunrider_missionVows_shrine6:Continue,
+sunrider_missionVows_shrine6,DialogOptionSelected,$option == sunrider_missionVows_shrine6,FireAll MostLuddicEthosRefresh,"She looks back at him. ""The least we can do is pray for his recovery, but what now? What about us?"" 
+
+He turns to you and asks without hesitation, ""will you please give us a hand again?""","sunrider_missionVows_shrine7Officiate:""You want me to officiate?""
+sunrider_missionVows_shrine7How:Ask how",
+sunrider_missionVows_shrine7Officiate,DialogOptionSelected,$option == sunrider_missionVows_shrine7Officiate,"$option = sunrider_missionVows_shrine7How 0
+FireBest DialogOptionSelected","""No!"" he laughs, despite the situation, ""of course not, captain.""",,
+sunrider_missionVows_shrine7OfficiateFaithful,DialogOptionSelected,"$option == sunrider_missionVows_shrine7Officiate
+$player.luddicFaithfulOrChurchCom","$option = sunrider_missionVows_shrine7How 0
+FireBest DialogOptionSelected","""No!"" he laughs, despite the situation. ""You may be a $playerBrotherOrSister of the faith, captain, but that just won't do at all.""",,
+sunrider_missionVows_shrine7How,DialogOptionSelected,$option == sunrider_missionVows_shrine7How,"Highlight $sunrider_missionVows_curateName $sunrider_missionVows_curateLocName $sunrider_missionVows_rewardStr
+Sunrider_AddOptionConfirmation sunrider_missionVows_shrineAbort2 ""This will terminate the quest prematurely. Are you sure?"" ""Yes"" ""No""","""There is a curate of the Church, named $sunrider_missionVows_curateName. We have met before, and $sunrider_missionVows_curateHeOrShe once promised us that if something went wrong, $sunrider_missionVows_curateHeOrShe would help,"" he explains, ""but $sunrider_missionVows_curateHeOrShe is $sunrider_missionVows_curateLocOnOrAt $sunrider_missionVows_curateLocName right now.
+
+""If you could bring $sunrider_missionVows_curateHimOrHer to us, we could pay you another $sunrider_missionVows_rewardStr credits.""","sunrider_missionVows_shrine8:Accept
+sunrider_missionVows_shrineAbort2:Decline",
+sunrider_missionVows_shrine8,DialogOptionSelected,$option == sunrider_missionVows_shrine8,"AdjustRep sunrider_grandorder FRIENDLY 10
+AdjustRep sunrider_santos FRIENDLY 10
+Call $global.sunrider_missionVows_ref findCurate","Her face lights up at your answer, ""Yay, thankies, cap’n!"" 
+
+""Tell the curate that we’re here and waiting,"" he says. ""We'll pay you when you get back.""
+
+The couple says their farewell, bows with their palms together and walk into the shrine.","sunrider_missionVows_shrineAbortContinue:Visit the shrine while you're here
+defaultLeave:Leave",
+sunrider_missionVows_shrineAbort,DialogOptionSelected,$option == sunrider_missionVows_shrineAbort,"AddCredits $sunrider_missionVows_reward
+Call $global.sunrider_missionVows_ref complete","He nods. ""I see. We’re grateful for your generosity all the same, and will pray for your safety among the stars. Goodbye."" 
+
+After paying you, they wave, get into the shuttle and leave.","sunrider_missionVows_shrineAbortContinue:Visit the shrine on your own time
+defaultLeave:Leave",
+sunrider_missionVows_shrineAbort2,DialogOptionSelected,$option == sunrider_missionVows_shrineAbort2,Call $global.sunrider_missionVows_ref fail,"She starts to tear up, and he looks at you in silence before they both walk away.",defaultLeave:Leave,
+sunrider_missionVows_shrineAbortContinue,DialogOptionSelected,$option == sunrider_missionVows_shrineAbortContinue,"ShowDefaultVisual
+EndConversation DO_NOT_FIRE
+FireAll BeholderShrineMainOptions",,,
+,,,,,,
+sunrider_missionVows_curatePostDock,PopulateOptions,"$market.sunrider_missionVows_curateLoc
+Call $global.sunrider_missionVows_ref updateData",,You could look for the curate $sunrider_missionVows_curateName at the local shrine to officiate for that young couple.,2:sunrider_missionVows_curate1:Visit the shrine and look for the curate,
+sunrider_missionVows_curate1,DialogOptionSelected,$option == sunrider_missionVows_curate1,BeginConversation shrine_curate true false,"You take a shuttle down to the shrine, making whatever arrangements are needed to get past whoever might be in the way at the moment.
+
+A novice greets you at the door. After explaining your purpose, you are led to a small chamber, where the curate is currently resting.
+
+""What brings you here, child?""",sunrider_missionVows_curate2:Explain the matter,
+sunrider_missionVows_curate2,DialogOptionSelected,$option == sunrider_missionVows_curate2,Call $global.sunrider_missionVows_ref returnToShrine,"$Rank $personLastName's face flickers at the mention of the young couple. After you describe the situation, $heOrShe holds $hisOrHer palms together.
+
+""My heart aches for the officiant’s misfortune. Either way, I shall fulfill the promise I made to the radiant youngsters years ago. Please give me an hour and I shall accompany you.""",sunrider_missionVows_curate3:Leave once ready,
+sunrider_missionVows_curate3,DialogOptionSelected,$option == sunrider_missionVows_curate3,"ShowDefaultVisual
+EndConversation DO_NOT_FIRE
+FireAll PopulateOptions","As promised, $personLastName accompanies you on your shuttle back to your $shipOrFleet.",,
+,,,,,,
+sunrider_missionVows_returnStart,OpenInteractionDialog,"$id == beholder_station
+$sunrider_missionVows_shrine2 score:2","PrintDescription 1
+BeginConversation shrine_curate true false
+Call $global.sunrider_missionVows_ref updateData
+$option = sunrider_missionVows_return1 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_return1,DialogOptionSelected,$option == sunrider_missionVows_return1,"ShowSecondPerson sunrider_grandorder
+ShowThirdPerson sunrider_santos
+AddCredits $sunrider_missionVows_reward","You take a shuttle down to the station with the curate. As you disembark, $sunrider_missionVows_brideFirst and $sunrider_missionVows_groomFirst approach, smiling radiantly.
+
+""Welcome back, cap'n"" she holds her palms together and bows to both of you, ""here’s the payment.""",sunrider_missionVows_return2:Continue,
+sunrider_missionVows_return2,DialogOptionSelected,$option == sunrider_missionVows_return2,,"""And hello, $personName. It's wonderful to see you again."" The couple bow deeply, and the old curate returns it with grace.
+
+""Y’re here to be our officiant, right?"" The $personRank nods, and
+and $sunrider_missionVows_brideFirst says with glee, ""then we can let them know that everything and everyone is here for the big day!""
+
+She walks away, almost running. The curate takes one step after her, then stops with a weary sigh. 
+
+""Honestly, I’m not sure how to feel about that young lady’s way of talking and behaving. I’ve never seen such a... an informal and carefree pilgrim like her.
+
+""Yet, blessed be her kind and selfless heart.""",sunrider_missionVows_return3:Continue,
+sunrider_missionVows_return3,DialogOptionSelected,$option == sunrider_missionVows_return3,"EndConversation DO_NOT_FIRE
+ShowDefaultVisual","After the curate takes a moment to get $hisOrHer bearings, $heOrShe hobbles off.
+
+You start to leave as well when two uniformed men, who had been standing nearby in a parade rest, now turn and walk towards you.
+
+""$PlayerSirOrMadam? A moment of your time, if you would.""",sunrider_missionVows_return4:Continue,
+sunrider_missionVows_return4,DialogOptionSelected,$option == sunrider_missionVows_return4,"BeginConversation sunrider_holyoak true false
+ShowSecondPerson sunrider_saint","""We are... inquiring into a matter of grave concern to the security of the Sector,"" the man in the garments of a Church knight says. 
+
+When you ask him to elaborate, he seems to hesitate. ""It is also a matter of grave secrecy. You must swear that nothing we tell you shall reach the ears of others, and-""","sunrider_missionVows_return5Ask:""What's this about, sir?""
+sunrider_missionVows_return5Silent:Say nothing
+sunrider_missionVows_return5Games:""I don't have time for games.""",
+sunrider_missionVows_return5Common,DialogOptionSelected,$option == sunrider_missionVows_return5Common,,"The Hegemony officer chuckles. ""Cass, Cass. Please stop upsetting the good captain."" He turns to you. ""You must forgive my good friend here; he does not converse well with others outside his own order.
+
+""I am Captain Azreal Saint, representing Hegemony Naval Intelligence. This is Knight-Captain Cassiel Holyoak, a brother of the Church. If you would kindly accompany us, we can discuss this matter in a more comfortable - and private - setting.""",sunrider_missionVows_return6:Go with them,
+sunrider_missionVows_return5Ask,DialogOptionSelected,$option == sunrider_missionVows_return5Ask,"$option = sunrider_missionVows_return5Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_return5Silent,DialogOptionSelected,$option == sunrider_missionVows_return5Silent,"$option = sunrider_missionVows_return5Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_return5Games,DialogOptionSelected,$option == sunrider_missionVows_return5Games,"$option = sunrider_missionVows_return5Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_return6,DialogOptionSelected,$option == sunrider_missionVows_return6,ShowImageVisual SunriderPhoto,"A couple of minutes later, the three of you are seated around a small table in a private reception room, your respective guards (one each) standing a safe distance behind. Capt. Saint activates a privacy field that blurs the room past your hard, utilitarian chairs - this is Beholder Station, after all - into a blue haze.
+
+He taps on his alternative-brand TriPad, and an image appears on the table before you.
+
+""Do you recognize this, captain?""","sunrider_missionVows_return7Yes:""...These are Ryuvian Nightmares.""
+sunrider_missionVows_return7No:Say you don't know (lie)",
+sunrider_missionVows_return7Common,DialogOptionSelected,$option == sunrider_missionVows_return7Common,"ShowPersonVisual false sunrider_holyoak
+ShowSecondPerson sunrider_saint
+Highlight ""Five million credits""
+Sunrider_AddOptionConfirmation sunrider_missionVows_returnAbort ""This will lose you access to the mission. Are you sure?"" ""Yes"" ""No""","Saint goes on, ""We have confirmed the presence of these... hostile entities outside the core worlds. Two points make them significant: their completely unknown origin, and the fact that their  combat capabilities appear to surpass the AI abominations from the First AI War.
+
+""As such, the Hegemony and the Church of Galactic Redemption are jointly offering an extraordinary bounty for the confirmed destruction of these constructs. Should you accept, we will provide you with the location where this image was taken.""
+
+You ask how extraordinary the bounty is.
+
+Holyoak puts a hand on the table, leaning on it. ""Five million credits.""","sunrider_missionVows_return8:Accept
+sunrider_missionVows_returnAbort:Decline",
+sunrider_missionVows_return7Yes,DialogOptionSelected,$option == sunrider_missionVows_return7Yes,"$option = sunrider_missionVows_return7Common 0
+FireBest DialogOptionSelected","""Ry-u-vian,"" Holyoak repeats. ""Is that what they're called?""",,
+sunrider_missionVows_return7No,DialogOptionSelected,$option == sunrider_missionVows_return7No,"$player.ethosLiar++
+$option = sunrider_missionVows_return7Common 0
+FireBest DialogOptionSelected","The two officers glance at each other, than at you, the Hegemony captain raising an eyebrow. But neither of them quite pushes the matter.",,
+sunrider_missionVows_return8,DialogOptionSelected,$option == sunrider_missionVows_return8,"BeginMission sunrider_missionShowdown
+Call $global.sunrider_missionShowdown_ref updateData","""Very good, captain,"" Holyoak says. ""Very, very good.""",sunrider_missionVows_return8Cont:Continue,
+sunrider_missionVows_return8Cont,DialogOptionSelected,$option == sunrider_missionVows_return8Cont,"Highlight $sunrider_missionShowdown_system
+#Call $global.sunrider_missionShowdown_ref showMap","Saint brings up a map display. The so-called Nightmares were observed in the $sunrider_missionShowdown_system, as seen here. A large joint Hegemony-Church task force was sent here to deal with this threat. Suffice to say, they... did not succeed.""
+
+He transmits the mission details to your TriPad. ""Should you defeat this menace, transmit the evidence and this authentication code to a Hegemony or Church military official for your payment. Good hunting, captain,"" he extends a hand over the table.
+
+Holyoak puts his hands together and bows solemnly. ""I pray for your success, captain.""",sunrider_missionVows_return9:Shake hands and leave,"showMap is currently broken, it checks startingStage after that value has already been set to null"
+sunrider_missionVows_return9,DialogOptionSelected,"$option == sunrider_missionVows_return9
+Call $global.sunrider_missionVows_ref updateData","Highlight ""next five days""
+Call $global.sunrider_missionVows_ref enableWedding
+ShowDefaultVisual
+EndConversation DO_NOT_FIRE","As you leave, you receive a message from $sunrider_missionVows_brideFirst on your TriPad.
+
+""Sorry I forgot! Now that we have our officiant, our wedding will take place in the next five days. Be there, okay? ^^""
+
+First things first, though. You'll want to talk about your new mission with the person most familiar with the Ryuvians.",sunrider_missionShowdown_avaBrief1:Speak with Ava,
+sunrider_missionVows_returnAbort,DialogOptionSelected,$option == sunrider_missionVows_returnAbort,,"Saint hides his disappointment rather better than Holyoak does.
+
+""Understandable,"" the Hegemony officer says. ""We'd hoped that... no matter. Thank you for your time, captain.""",sunrider_missionVows_returnAbortContinue:Return to the main area,
+sunrider_missionVows_returnAbortContinue,DialogOptionSelected,$option == sunrider_missionVows_returnAbortContinue,"Highlight ""next five days""
+Call $global.sunrider_missionVows_ref enableWedding
+ShowDefaultVisual
+EndConversation DO_NOT_FIRE
+FireAll BeholderShrineMainOptions","As you leave, you receive a message from $sunrider_missionVows_brideFirst on your TriPad.
+
+""Sorry I forgot! Now that we have our officiant, our wedding will take place in the next five days. Be there, okay? ^^""",,
+#END Vows mission,,,,,,
+,,,,,,
+# Showdown,,,,,,
+sunrider_missionShowdown_avaBrief1NoSunrider,DialogOptionSelected,$option == sunrider_missionShowdown_avaBrief1,BeginConversation sunrider_ava true false,"After returning to your $shipOrFleet, you summon Ava to your bridge. Minutes later, she arrives and salutes.",sunrider_missionShowdown_avaBrief2:Continue,
+sunrider_missionShowdown_avaBrief1Sunrider,DialogOptionSelected,"$option == sunrider_missionShowdown_avaBrief1
+Sunrider_MiscFunctions isAvaOnSunrider",BeginConversation sunrider_ava true false,"You take a shuttle to the Sunrider and pay a visit to Ava in her office.
+
+She stands and salutes as you enter. ""$PlayerSirOrMadam.""",sunrider_missionShowdown_avaBrief2:Continue,
+sunrider_missionShowdown_avaBrief2,DialogOptionSelected,$option == sunrider_missionShowdown_avaBrief2,"BeginConversation sunrider_ava true false
+Call $global.sunrider_missionShowdown_ref updateData","You explain the new mission and show her the photo Saint gave you. At the sight, her eye widens instantly.
+
+""More Nightmares?"" She zooms in on the image, frowning. ""...and Ryuvian Cruisers too, it seems.""",sunrider_missionShowdown_avaBrief3:Ask about the cruisers,
+sunrider_missionShowdown_avaBrief3,DialogOptionSelected,$option == sunrider_missionShowdown_avaBrief3,,"""They were the most numerous units of the ancient Holy Ryuvian Empire, not many weapons, but strong shield and can be crewed or operate autonomously."" Her eye sweeps over the image for a few moments, before she zooms the display back out.
+
+""We've encountered them a few times; thankfully, they aren’t as dangerous as the Nightmares. They’re perhaps closer to a..."" she thinks for a moment, ""an Aurora.
+
+""With your permission, captain, I will brief the $shipOrFleet's officers about the threat we will face.""",sunrider_missionShowdown_avaBriefEnd:Thank her and end the conversation,
+sunrider_missionShowdown_avaBriefEnd,DialogOptionSelected,$option == sunrider_missionShowdown_avaBriefEnd,EndConversation DO_NOT_FIRE,"After the two of you part ways, you consider how to tackle this challenge. It should be solvable... right?
+
+The $sunrider_missionShowdown_system awaits.",defaultLeave:Resume course,
+sunrider_missionShowdown_hegWreckOpen,OpenInteractionDialog,"$customType == wreck
+$sunrider_missionShowdown_hegemonyWreck score:1000
+!$sunrider_missionShowdown_wreckExplored","$canNotSalvage = true 0
+ShowDefaultVisual
+SalvageGenFromSeed
+FireBest SalvageCheckHostile
+Call $global.sunrider_missionShowdown_ref updateData","Your $shipOrFleet approaches $aOrAn $nameInText.
+
+The ship was ravaged so badly that you can barely identify it as a Hegemony vessel. Presumably it's a survivor - for certain values of the term - from the encounter with the Ryuvian fleet. If anyone else made it, there's no sign of them here.",,
+sunrider_missionShowdown_hegWreck1,CheckSalvageSpecial,"$customType == wreck
+$sunrider_missionShowdown_hegemonyWreck score:1000
+!$sunrider_missionShowdown_wreckExplored","$sunrider_missionShowdown_wreckExplored = true
+AddCommodity organs 2","Your salvors find a few of sleeper pods running on backup power, but they appear to have malfunctioned. No convenient witnesses, there.
+
+More interesting is an apparently still-working databank retrieved from the ship's bridge. It appears to be a ship's log.",sunrider_missionShowdown_hegWreck2:Access the log,
+sunrider_missionShowdown_hegWreck2,DialogOptionSelected,$option == sunrider_missionShowdown_hegWreck2,"Highlight energy damage
+Sunrider_PlayInteractionMusic SunriderValve","The black box is already unlocked, perhaps the work of an unknown crewmember as the ship died. It seems to belong to an Enforcer fresh off the Bhilai Astra yards on its first - and last - official mission.
+
+The most recent recordings show a Hegemony fleet being pursued by something in hyperspace. They had come to the star system to fight it alongside a Luddic Church fleet, but four Ryuvian Nightmares annihilated both in a matter of minutes.
+
+The really alarming detail is an audio recording of radio chatter from what appears to be the Hegemony flagship. ""What the hell? The TPC is doing nothing! Are their shields immune to energy damage?""
+
+The news leaves a sour taste in everyone's mouths. Should you encounter this fleet, it’ll be more than twice as difficult as the first time you fought Ryuvian monstruous technology.
+
+Still, a job is a job.",sunrider_missionShowdown_hegWreck3:Continue,
+sunrider_missionShowdown_hegWreck3,DialogOptionSelected,$option == sunrider_missionShowdown_hegWreck3,"Highlight $sunrider_missionShowdown_system2
+Call $global.sunrider_missionShowdown_ref advanceToStage2","With your officers, you analyze the data more carefully, spending a few hours to study the hyperspace pursuit recordings and conclude that the most plausible point of origin is the $sunrider_missionShowdown_system2.
+
+Of course, the fleet might have moved on already... but it's still the best lead you've got.",sunrider_missionShowdown_hegWreckEnd:Continue,
+sunrider_missionShowdown_hegWreckEnd,DialogOptionSelected,$option == sunrider_missionShowdown_hegWreckEnd,"unset $canNotSalvage
+ShowDefaultVisual
+SalvageSpecialInteraction",,,
+sunrider_missionShowdown_encounterInit,BeginFleetEncounter,"$sunrider_missionShowdown_fleet score:1000
+!$sunrider_missionShowdown_fleetSeenDialog
+!$ignorePlayerCommRequests",OpenComms,,,
+sunrider_missionShowdown_encounter1,OpenCommLink,"$entity.sunrider_missionShowdown_fleet score:2000
+!$entity.sunrider_missionShowdown_fleetSeenDialog","$entity.sunrider_missionShowdown_fleetSeenDialog = true
+Call $global.sunrider_missionShowdown_ref delayedSetEncounterVisual","Four Ryuvian Nightmares come towards your $shipOrFleet; your sensors indicate exactly what you heard from that XIV Enforcer’s black box: the mechs’ shields are immune to energy damage.
+
+Not too far behind them, there are seven cruiser-sized black and white ships, and one frigate-sized ship.",sunrider_missionShowdown_encounter2:Continue,
+sunrider_missionShowdown_encounter1Repeat,OpenCommLink,"$entity.sunrider_missionShowdown_fleet score:2000
+$entity.sunrider_missionShowdown_fleetSeenDialog","ShowDefaultVisual
+EndConversation NO_CONTINUE
+Sunrider_MiscFunctions blockSPDisengage ""NO ESCAPE\nNO ESCAPE\nNO ESCAPE""","You try to establish a comm link, but only get static.",sunrider_missionShowdown_encounter2:Continue,
+sunrider_missionShowdown_encounter2,DialogOptionSelected,$option == sunrider_missionShowdown_encounter2,,"Your comms link opens with an emergency fleetwide broadcast from Ava. She shouts, ""Everyone, that one ship is a Ryuvian Falcon! Almost thrice as tou..."" 
+
+The comm link is abruptly interrupted by static and dies. You realize they’re already closing in when your comms officer manages to turn it back on by getting around the electronic attack your ship received.","sunrider_missionShowdown_encounter3:""You have to be kidding me!""",
+sunrider_missionShowdown_encounter3,DialogOptionSelected,$option == sunrider_missionShowdown_encounter3,,"To the good listener, half a word is enough... and there is nothing so bad it can’t be made worse. As if four Nightmares aren’t enough trouble, there’s another unknown ship much stronger than them. This fight may be dreadful and with heavy casualties.",sunrider_missionShowdown_encounterEnd:BATTLE STATIONS,
+sunrider_missionShowdown_encounterEnd,DialogOptionSelected,$option == sunrider_missionShowdown_encounterEnd,"ShowDefaultVisual
+EndConversation NO_CONTINUE
+Sunrider_MiscFunctions blockSPDisengage ""NO ESCAPE\nNO ESCAPE\nNO ESCAPE""",,,
+sunrider_missionShowdown_encounterReportWin,Sunrider_MissionShowdown_FleetDefeated,,Call $global.sunrider_missionShowdown_ref wonEncounter,,,
+sunrider_missionShowdown_encounterAfter1,Sunrider_MissionShowdown_PostEncounterDialogStart,,Call $global.sunrider_missionShowdown_ref updateData,"Many of your crewmembers and officers, at least the ones who survived, celebrate this victory. This foe, which had taken apart two major fleets with ease, has now fallen to you.
+
+Besides, such a small, frail-looking ship being four times as durable as an Onslaught isn’t something you see every day.",sunrider_missionShowdown_encounterAfter2:Continue,
+sunrider_missionShowdown_encounterAfter2,DialogOptionSelected,$option == sunrider_missionShowdown_encounterAfter2,BeginConversation sunrider_ava true false,"While you consider your victory, your terminal chimes. It's a private communication from Ava.
+
+""Captain... there's something I noticed about the Ryuvian ships we recovered."" She sighs, closes her eye for a moment, ""They had AI cores installed. Furthermore, the Cruisers had more weapons than I remember.""
+
+Ava thinks, visibly concerned. ""There’s no explanation other than... the Remnants somehow took control of the Ryuvian fleet and upgraded the Cruisers.""
+",sunrider_missionShowdown_encounterAfter3:Continue,
+sunrider_missionShowdown_encounterAfter3,DialogOptionSelected,$option == sunrider_missionShowdown_encounterAfter3,,"""I still do not know what is happening back in my..."" Ava hesitates, ""my galaxy. I don’t know why PACT and Alliance ships are here. I don’t know..."" she sniffs and wipes her good eye with her ungloved hand, ""I don’t know why I am here."" 
+
+She recovers her composure and leans forward slightly. ""But if it keeps going, if something similar to what we just fought starts showing up close to unprotected worlds, I’m afraid things are only going to get worse.""","sunrider_missionShowdown_encounterAfter4:""...""",
+sunrider_missionShowdown_encounterAfter4,DialogOptionSelected,$option == sunrider_missionShowdown_encounterAfter4,,"""The least we can do from here is to hope these were the last of them. If not, we will triumph over them again."" 
+
+She lets out a heavy sigh. ""Anyway, thank you for listening. With your leave, captain.""",sunrider_missionShowdown_encounterAfterEnd:Leave,
+sunrider_missionShowdown_encounterAfterEnd,DialogOptionSelected,$option == sunrider_missionShowdown_encounterAfterEnd,DismissDialog,,,
+sunrider_missionShowdown_falconWreckOpen,OpenInteractionDialog,"$sunrider_missionShowdown_falcon score:1000
+!$sunrider_missionShowdown_wreckExplored","ShowImageVisual space_wreckage
+$sunrider_missionShowdown_wreckExplored = true
+Call $global.sunrider_missionShowdown_ref startFalconDecrypt","That small but incredibly strong frigate is broken beyond recovery according to the salvage team’s analysis.
+
+However, a single device was found: a strange and surprisingly intact computer core.
+
+You order your salvage team to bring it aboard. A while later, you receive the report that the data within can be decrypted, but it will take some unknown length of time.",sunrider_missionShowdown_falconWreckEnd:Continue,
+sunrider_missionShowdown_falconWreckEnd,DialogOptionSelected,$option == sunrider_missionShowdown_falconWreckEnd,"unset $canNotSalvage
+ShowDefaultVisual
+SalvageSpecialInteraction",,,
+sunrider_missionShowdown_falconDecryptStart,Sunrider_MissionShowdown_FalconDecryptDialogStart,,"#Sunrider_MiscFunctions showHull SunriderFalcon
+ShowImageVisual free_orbit","Your engineering team submits the full report about the Ryuvian Falcon’s computer core. It includes a complete blueprint of the ship; enough to build copies with post-Collapse technology.
+
+Regrettably, your own Ryuvian Falcons will be no more than shadows of the original; expensive to manufacture and maintain because of how delicate the work is and not nearly as powerful as the one you fought. Much of the design relies on elements not found in the Sector's periodic table; local substitutes are possible but performance necessarily suffers.
+
+Still, it'll outperform any conventional frigate in the Sector, and can operate without a crew.",sunrider_missionShowdown_falconDecrypt1:Continue,"Don't show the hull, it spoils the name"
+sunrider_missionShowdown_falconDecrypt1,DialogOptionSelected,$option == sunrider_missionShowdown_falconDecrypt1,,"Now it just needs a name that isn't already used by an existing ship in the Sector. And names for its weapons, while you're at it; something that isn't unpronounceable old Ryuvian.
+
+Speaking of the weapons: the report notes that they're integral to the ship and not readily removable for use on another vessel; nor does the Falcon have mounts for Sector-origin armaments.",sunrider_missionShowdown_falconDecrypt2:Call Ava and a few officers up for brainstorming,
+sunrider_missionShowdown_falconDecrypt2,DialogOptionSelected,$option == sunrider_missionShowdown_falconDecrypt2,BeginConversation sunrider_ava true false,"Down in the ship bar, your impromptu party discusses the findings, and tries to come up with a suitably cool and impressive name for the ship and its guns.
+
+One engineer says, ""Perhaps we could use terms that Commander Crescentia told us about."" 
+
+""How about Blue Bird?"" another officer puts in.","sunrider_missionShowdown_falconDecrypt3:""...""",
+sunrider_missionShowdown_falconDecrypt3,DialogOptionSelected,$option == sunrider_missionShowdown_falconDecrypt3,,"Nobody seems to have liked the first suggestion. It’s clear that it won’t work if just one person comes up with names out of the blue.
+
+For a while, things devolve into random name generation.
+
+""Nevermore.""
+
+""Judgement Bird.""
+
+""Road Runner!""",sunrider_missionShowdown_falconDecrypt4:Continue,
+sunrider_missionShowdown_falconDecrypt4,DialogOptionSelected,$option == sunrider_missionShowdown_falconDecrypt4,"Highlight ""Lost Wings"" ""Lost Claws"" ""Lost Beaks""
+AddRemoveAnyItem SPECIAL ship_bp SunriderFalcon 1","Eventually, a slightly more systematic approach based on the ship's origin and circumstances is adopted. 
+
+A compromise option is selected: Lost Wings, in turn leading to its weapons being named ""Lost Claws"" and ""Lost Beaks"".
+
+And so the Ryuvian Falcon, fallen at your hands, is reborn as the Lost Wings.",sunrider_missionShowdown_falconDecryptEnd:Leave,
+sunrider_missionShowdown_falconDecryptEnd,DialogOptionSelected,$option == sunrider_missionShowdown_falconDecryptEnd,DismissDialog,,,
+sunrider_missionShowdown_reportBackOptHeg,PopulateOptions,"$isPerson
+$faction.id == hegemony
+Sunrider_MiscFunctions showdownCanReportMission
+$player.sunrider_missionShowdown_reportBack",,,sunrider_missionShowdown_reportBack1:Report the results of the bounty on the Ryuvian fleet,
+sunrider_missionShowdown_reportBackOptChurch,PopulateOptions,"$isPerson
+$faction.id == luddic_church
+Sunrider_MiscFunctions showdownCanReportMission
+$player.sunrider_missionShowdown_reportBack",,,sunrider_missionShowdown_reportBack1:Report the results of the bounty on the Ryuvian fleet,
+sunrider_missionShowdown_reportBack1Heg,DialogOptionSelected,"$option == sunrider_missionShowdown_reportBack1
+$faction.id == hegemony",,"You upload the token that Captain Saint gave you back on Beholder Station, along with the confirmation that the Ryuvian Fleet was destroyed. 
+
+$HeOrShe look skeptically at you for a moment before checking the file's contents.
+
+""I see,"" $heOrShe says with a nod after a while. ""Five million credits for taking out the target and keeping it confidential. Three million from us and two from the Church. We thank you for the job well done, citizen.""","sunrider_missionShowdown_reportBackEnd:Thank $himOrHer and return to other matters
+sunrider_missionShowdown_reportBackBlackBox:""I also have a black box from the original fleet's encounter.""",
+sunrider_missionShowdown_reportBack1Church,DialogOptionSelected,"$option == sunrider_missionShowdown_reportBack1
+$faction.id == luddic_church",,"You upload the token that Captain Saint gave you back on Beholder Station, along with the confirmation that the Ryuvian Fleet was destroyed. 
+
+$personLastName takes a good moment to process the information. ""Oh my God!"" $HeOrShe gulps. ""Give me a moment, please."" The screen winks out.",sunrider_missionShowdown_reportBack2:Wait,
+sunrider_missionShowdown_reportBack2Church,DialogOptionSelected,"$option == sunrider_missionShowdown_reportBack2
+$faction.id == luddic_church",Call $global.sunrider_missionShowdown_ref complete,"After a few minutes, the $personPost reappears. ""The Hegemony and the Church will transfer a total of 5 million credits to you shortly, captain. Farewell."" 
+
+It was more than obvious that the $personRank was very uncomfortable with the subject, and it was no surprise that $heOrShe made it as short as $heOrShe could.",cutCommLink:Disconnect,
+sunrider_missionShowdown_reportBackBlackBox,DialogOptionSelected,$option == sunrider_missionShowdown_reportBackBlackBox,"Highlight 20,000","You describe the flight recorder that revealed how the target destroyed the Hegemony and Church fleets. 
+
+The $personPost's eyes open wide. ""You have the black box? Give me another moment, please."" 
+
+The feed disappears, replaced by a spinning Hegemony crest. After a while, $personLastName appears again.
+
+""If you're willing to turn over the black box, we can compensate you with another 20,000 credits.""","sunrider_missionShowdown_reportBackBlackBoxAccept:Accept
+sunrider_missionShowdown_reportBackBlackBoxDecline:Decline",
+sunrider_missionShowdown_reportBackBlackBoxAccept,DialogOptionSelected,$option == sunrider_missionShowdown_reportBackBlackBoxAccept,AddCredits 20000,"""Thank you for your cooperation, citizen.""
+
+You have the device sent over, and the $personPost's payment arrives promptly after delivery.",sunrider_missionShowdown_reportBackEnd:Thank $himOrHer and return to other matters,
+sunrider_missionShowdown_reportBackBlackBoxDecline,DialogOptionSelected,$option == sunrider_missionShowdown_reportBackBlackBoxDecline,,"The $personPost frowns slightly. 
+
+""Well, we won’t force you to hand it over, but I don’t know why you want to keep it.""",sunrider_missionShowdown_reportBackEnd:Return to other matters,
+sunrider_missionShowdown_reportBackEnd,DialogOptionSelected,$option == sunrider_missionShowdown_reportBackEnd,"Call $global.sunrider_missionShowdown_ref complete
+FireAll PopulateOptions",,,
+#END Showdown,,,,,,
 ,,,,,,
 # Ava ragequit if you sat bomb someone,,,,,,
 sunrider_avaLeaveDock_start,MarketPostDock,"$tradeMode != NONE

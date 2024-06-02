@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 public class Sunrider_PlayInteractionMusic extends BaseCommandPlugin {
 	
 	public static Logger log = Global.getLogger(Sunrider_PlayInteractionMusic.class);
+	public static final String MEMORY_KEY_NEED_RESET = "$sunrider_wantResetMusic";
 	
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -20,7 +21,10 @@ public class Sunrider_PlayInteractionMusic extends BaseCommandPlugin {
 		
 		if (params.isEmpty()) {
 			log.info("Unsetting music for " + entity.getName());
-			entity.getMemoryWithoutUpdate().unset(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY);
+			if (entity.getMemoryWithoutUpdate().getBoolean(MEMORY_KEY_NEED_RESET)) {
+				entity.getMemoryWithoutUpdate().unset(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY);
+			}
+			
 			playMusic(null);
 			return true;
 		}
@@ -34,6 +38,7 @@ public class Sunrider_PlayInteractionMusic extends BaseCommandPlugin {
 		if (persistent) {
 			log.info("Setting music for " + entity.getName() + ": " + track);
 			entity.getMemoryWithoutUpdate().set(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY, track);
+			entity.getMemoryWithoutUpdate().set(MEMORY_KEY_NEED_RESET, true);
 			playMusic(track);	// make double sure we're playing the right stuff
 		} else {
 			playMusic(track);

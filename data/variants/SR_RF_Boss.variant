@@ -6,7 +6,11 @@
   "fluxCapacitors": 10,
   "fluxVents": 10,
   "quality": 1,
-  "permaMods": [],
+  "permaMods": [
+    "SunriderFalconMod",
+    "SunriderRyuvianEngineering",
+    "automated"
+  ],
   "hullMods": [
     "SunriderFalconMod",
     "SunriderRyuvianEngineering",
@@ -19,6 +23,12 @@
       "weapons": {
         "WS0001": "SunriderFalconCannon",
         "WS0002": "SunriderFalconCannon",
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
         "WS0003": "SunriderFalconPulser",
         "WS0004": "SunriderFalconPulser",
         "WS0005": "SunriderFalconPulser"

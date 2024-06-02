@@ -5,7 +5,8 @@
 		"systemIronWillDesc2":"ballistic rate of fire +%s%%",
 		"systemIronWillDesc3":"ballistic flux use -%s%%",
 		
-		"mutinyFleetName":"Ava's Mutiny",		
+		"mutinyFleetName":"Ava's Mutiny",
+		
 		"mutinyBlockSPDisengageTooltip":"This is unavoidable, face the consequences!",
 		
 		"skill_sunridersMother_desc1":"+%s%% flux dissipation (Sunrider only)",
@@ -13,7 +14,9 @@
 		"skill_sunridersMother_desc3":"-%s%% fighter damage taken (Sunrider only)",
 		"skill_sunridersMother_desc4":"+%s%% fighter speed and acceleration (Sunrider only)",
 		"skill_sunridersMother_descSupply1":"-%s%% supply cost per month (Fallen Outsider ships only)",
-		"skill_sunridersMother_descSupply2":"-%s%% supply cost per month (Sunrider only, fully stacks with the non-elite effect)"
+		"skill_sunridersMother_descSupply2":"-%s%% supply cost per month (Sunrider only, stacks with non-elite effect)",
+		
+		"shipNameUnknown":"<name unknown>"
 	},
 	"sunrider_missions":{
 		"firstTimeEngageOptionText":"BATTLE STATIONS",
@@ -29,6 +32,15 @@
 		"drunkNameLast":"Bumble",
 		"salvagerSonNameFirst":"Yoshio",
 		"prototypeName":"Prototype",
+		"brideNameFirst":"Ai",
+		"brideNameFirst2":"Beru",
+		"brideNameLast":"Grand Order",	# stay night
+		"groomNameFirst":"Gabriel",
+		"groomNameLast":"Santos",
+		"hegOfficerNameFirst":"Azrael",
+		"hegOfficerNameLast":"Saint",
+		"churchOfficerNameFirst":"Cassiel",
+		"churchOfficerNameLast":"Holyoak",
 		
 		"findSunrider_name":"First Arrival",	# lol
 		"findSunrider_playthroughLogText":"Recovered the Sunrider",
@@ -67,5 +79,22 @@
 		"mission4_fleetName":"Strange Fleet",
 		"mission4_str_levelUp":"%s has advanced to level %s",
 		"mission4_str_learnedSkill":"Learned Elite %s",
+		
+		"missionVows_name":"Vows of the Cosmos",
+		"missionVows_goToBeholderDesc":"Take a young Luddic couple to their wedding on %s.",
+		"missionVows_goToBeholderNextStep":"Go to %s",
+		"missionVows_findCurateDesc":"Go to the shrine on %s and find the curate to officiate the wedding.",
+		"missionVows_findCurateNextStep":"Go to the shrine on %s",
+		"missionVows_returnToBeholderDesc":"Take a young Luddic couple to their wedding on %s.",
+		"missionVows_returnToBeholderNextStep":"Return to %s",
+		"missionVows_partyDesc":"The wedding is taking place on %s. You should go there within five days of receiving the invitation.",
+		"missionVows_partyNextStep":"Go to %s within 5 days for the wedding",
+		
+		"missionShowdown_name":"Ryuvian Showdown",
+		"missionShowdown_firstSystemDesc":"Go to the %s to look for the Ryuvian fleet.",
+		"missionShowdown_secondSystemDesc":"The Ryuvian fleet is thought to be in %s; locate and destroy it.",
+		"missionShowdown_reportBackDesc":"You have defeated the Ryuvian fleet. Report back to a %s or %s official to receive payment.",
+		"missionShowdown_reportBackNextStep":"Report back to a %s or %s official",
+		"missionShowdown_fleetName":"Ryuvian Fleet?"
 	},
 }

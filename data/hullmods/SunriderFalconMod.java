@@ -25,6 +25,7 @@ public class SunriderFalconMod extends BaseHullMod {
 		stats.getSuppliesPerMonth().modifyMult(id, SUPPLY_FUEL_COST_MULT);
 		stats.getFuelUseMod().modifyMult(id, SUPPLY_FUEL_COST_MULT);
 		stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyMult(id, DP_COST_MULT);
+		stats.getHullBonus().modifyPercent(id, HULL_MOD);
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
