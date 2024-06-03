@@ -21,7 +21,7 @@ public class SunriderMiningBBMod extends SurveyingEquipment {
 	));	
 	
 	public static final float EMP_DAMAGE_MULT = 0.5f;   // 50% EMP damage resistance
-	public static final float SURVEY_COST_MOD = 60;   // 60 fewer supplies and machinery
+	public static final float SURVEY_COST_MOD = 60f;   // 60 fewer supplies and machinery
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 	

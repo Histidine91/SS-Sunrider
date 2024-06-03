@@ -67,6 +67,9 @@
 		"Sora_no_Senritsu":[
 			{"file": "Sora_no_Senritsu.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
 		],
+		"cbm_sunrider_senritsu":[	# for Custom Battle Music mod
+			{"file": "Sora_no_Senritsu.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.4}
+		],
 		"SunriderRecover":[
 			{"file": "SunriderRecover.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],

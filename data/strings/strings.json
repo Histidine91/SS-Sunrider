@@ -34,7 +34,7 @@
 		"prototypeName":"Prototype",
 		"brideNameFirst":"Ai",
 		"brideNameFirst2":"Beru",
-		"brideNameLast":"Grand Order",	# stay night
+		"brideNameLast":"Grand Order",
 		"groomNameFirst":"Gabriel",
 		"groomNameLast":"Santos",
 		"hegOfficerNameFirst":"Azrael",
@@ -44,6 +44,7 @@
 		
 		"findSunrider_name":"First Arrival",	# lol
 		"findSunrider_playthroughLogText":"Recovered the Sunrider",
+		"findSunrider_fleetName":"Nightmares",
 		
 		"findSunrider_talkToPirateDesc":"Talk to a pirate boss in comms directory in a permanent pirate settlement to find information on the salvage captain, %s.",
 		"findSunrider_talkToSalvagerDesc":"You've learned that %s is currently retired on the planet %s. Pay him a visit to find the location of the Sunrider.",
@@ -93,8 +94,8 @@
 		"missionShowdown_name":"Ryuvian Showdown",
 		"missionShowdown_firstSystemDesc":"Go to the %s to look for the Ryuvian fleet.",
 		"missionShowdown_secondSystemDesc":"The Ryuvian fleet is thought to be in %s; locate and destroy it.",
-		"missionShowdown_reportBackDesc":"You have defeated the Ryuvian fleet. Report back to a %s or %s official to receive payment.",
-		"missionShowdown_reportBackNextStep":"Report back to a %s or %s official",
+		"missionShowdown_reportBackDesc":"You have defeated the Ryuvian fleet. Report back to a %s or %s administrator to receive payment.",
+		"missionShowdown_reportBackNextStep":"Report back to a %s or %s administrator",
 		"missionShowdown_fleetName":"Ryuvian Fleet?"
 	},
 }

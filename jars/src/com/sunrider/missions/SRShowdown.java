@@ -8,6 +8,7 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.combat.ShipHullSpecAPI;
 import com.fs.starfarer.api.combat.ShipVariantAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.MusicPlayerPluginImpl;
@@ -19,7 +20,6 @@ import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.missions.hub.ReqMode;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import com.fs.starfarer.api.impl.campaign.rulecmd.ShowImageVisual;
-import com.fs.starfarer.api.impl.campaign.rulecmd.Sunrider_PlayInteractionMusic;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.loading.VariantSource;
@@ -29,7 +29,6 @@ import com.fs.starfarer.api.util.DelayedActionScript;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.sunrider.SRPeople;
-import exerelin.campaign.intel.missions.remnant.RemnantFragments;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -191,11 +190,13 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
         fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_LOW_REP_IMPACT, true);
         fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_REP_IMPACT, true);
         fleet.getMemoryWithoutUpdate().set(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY, "Fallen_Angel_Pt3");
-        //fleet.getMemoryWithoutUpdate().set("$genericHail", true);
-        //fleet.getMemoryWithoutUpdate().set("$genericHail_openComms", "Sunrider_ShowdownHail");
         fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,
-                new SRMission4.YoshioFIDConfigGen());
+                new SRMission4.NoRetreatFIDConfigGen(false));
         fleet.getMemoryWithoutUpdate().set("$sunrider_missionShowdown_fleet", true);
+        fleet.setNoFactionInName(true);
+
+        fleet.addTag("cbm_sunrider_senritsu");   // for Custom Battle Music mod
+        fleet.getMemoryWithoutUpdate().set("$sunrider_music", "Sora_no_Senritsu");
 
         fleet.inflateIfNeeded();
         ShipVariantAPI var = flag.getVariant().clone();
@@ -285,7 +286,7 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
     public void reportWonBattle(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
         wonBattle = true;
         setCurrentStage(Stage.REPORT_BACK, dialog, memoryMap);
-        spawnFalcon();
+        //spawnFalcon();
         Global.getSector().addScript(new SRMissionUtils.OpenDialogScript("Sunrider_MissionShowdown_PostEncounterDialogStart"));
     }
 
@@ -319,8 +320,10 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
                 hegOfficer.getFaction().getId());
 
         setCurrentStage(Stage.COMPLETED, dialog, memoryMap);
+        Global.getSector().getCharacterData().getMemoryWithoutUpdate().unset("$sunrider_missionShowdown_reportBack");
     }
 
+    @Deprecated
     protected void spawnFalcon() {
         String variantId = "SR_RF_Boss";    // FIXME correct?
 

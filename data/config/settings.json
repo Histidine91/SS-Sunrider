@@ -1,4 +1,8 @@
 {
+	"plugins":{
+		"sunrider_musicPlugin":"com.sunrider.combat.CombatMusicPlugin",		
+	},
+	
 	"graphics":{
 		"fx":{
 			"SunriderVanguardTrail1":"graphics/fx/trails/SunriderVanguardTrail1.png",

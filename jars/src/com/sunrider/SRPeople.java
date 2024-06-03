@@ -213,7 +213,7 @@ public class SRPeople {
 		
 		person = getOrCreatePerson(HEG_OFFICER_ID, 6, Factions.HEGEMONY, 
 				Sunrider_MiscFunctions.getString("hegOfficerNameFirst"), Sunrider_MiscFunctions.getString("hegOfficerNameLast"),
-				FullName.Gender.MALE, null,
+				null, null,
 				Ranks.SPACE_CAPTAIN, Ranks.POST_AGENT, null, Voices.SOLDIER, null, new Random(seed)
 		);
 		return person;
@@ -227,7 +227,7 @@ public class SRPeople {
 		
 		person = getOrCreatePerson(CHURCH_OFFICER_ID, 5, Factions.LUDDIC_CHURCH, 
 				Sunrider_MiscFunctions.getString("churchOfficerNameFirst"), Sunrider_MiscFunctions.getString("churchOfficerNameLast"),
-				FullName.Gender.MALE, null,
+				null, null,
 				Ranks.KNIGHT_CAPTAIN, Ranks.POST_AGENT, null, Voices.FAITHFUL, null, new Random(seed)
 		);
 		return person;

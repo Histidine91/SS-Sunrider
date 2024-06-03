@@ -8,7 +8,10 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 public class SunriderShieldAlwaysOn extends BaseHullMod {
 
+	public static final float OVERLOAD_DURATION_PERCENT_MOD = 50f;
+
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
+		stats.getOverloadTimeMod().modifyPercent(id, OVERLOAD_DURATION_PERCENT_MOD);
 	}
 		
 	public String getDescriptionParam(int index, HullSize hullSize) {

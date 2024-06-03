@@ -6,9 +6,9 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 public class SunriderGunboatMod extends BaseHullMod {
 	
-	public static final float BALLISTIC_DAMAGE_MOD = 20;   // +20% ballistic damage
-	public static final float BALLISTIC_VELOCITY_MOD = 25;   // +25% ballistic projectile velocity
-	public static final float FRIGATE_FIGHTER_DAMAGE_MOD = 10;   // +10% damage to frigates and fighters
+	public static final float BALLISTIC_DAMAGE_MOD = 20f;   // +20% ballistic damage
+	public static final float BALLISTIC_VELOCITY_MOD = 25f;   // +25% ballistic projectile velocity
+	public static final float FRIGATE_FIGHTER_DAMAGE_MOD = 10f;   // +10% damage to frigates and fighters
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {	
 		stats.getBallisticWeaponDamageMult().modifyPercent(id, BALLISTIC_DAMAGE_MOD);

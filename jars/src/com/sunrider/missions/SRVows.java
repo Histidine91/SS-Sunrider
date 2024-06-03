@@ -155,6 +155,11 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		set("$sunrider_missionVows_curateName", curate.getNameString());
 		set("$sunrider_missionVows_curateHeOrShe", curate.getHeOrShe());
 		set("$sunrider_missionVows_curateHimOrHer", curate.getHimOrHer());
+
+		set("$sunrider_missionVows_saintHeOrShe", hegOfficer.getHeOrShe());
+		set("$sunrider_missionVows_saintHimOrHer", hegOfficer.getHimOrHer());
+		set("$sunrider_missionVows_SaintHeOrShe", Misc.ucFirst(hegOfficer.getHeOrShe()));
+		set("$sunrider_missionVows_SaintHimOrHer", Misc.ucFirst(hegOfficer.getHimOrHer()));
 	}
 	
 	// intel text in intel screen description

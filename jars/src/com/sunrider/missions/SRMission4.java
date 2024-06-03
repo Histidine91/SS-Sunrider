@@ -5,13 +5,11 @@
  */
 package com.sunrider.missions;
 
-import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.Script;
 import com.fs.starfarer.api.campaign.BattleAPI;
 import com.fs.starfarer.api.campaign.CampaignEventListener;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.CampaignUIAPI;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
@@ -28,7 +26,6 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
-import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
@@ -216,7 +213,7 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		fleet.getMemoryWithoutUpdate().set("$genericHail", true);
 		fleet.getMemoryWithoutUpdate().set("$genericHail_openComms", "Sunrider_M4Hail");
 		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, 
-					new YoshioFIDConfigGen());
+					new NoRetreatFIDConfigGen(true));
 		fleet.getMemoryWithoutUpdate().set("$sunrider_mission4_fleet", true);
 		
 		makeImportant(fleet, "$sunrider_mission4_fleet_imp", Stage.GO_TO_SYSTEM);
@@ -423,7 +420,14 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		}
 	}
 	
-	public static class YoshioFIDConfigGen implements FleetInteractionDialogPluginImpl.FIDConfigGen {
+	public static class NoRetreatFIDConfigGen implements FleetInteractionDialogPluginImpl.FIDConfigGen {
+
+		protected boolean haveObjectives;
+
+		public NoRetreatFIDConfigGen(boolean haveObjectives) {
+			this.haveObjectives = haveObjectives;
+		}
+
 		public FleetInteractionDialogPluginImpl.FIDConfig createConfig() {
 			FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
 			config.pullInEnemies = false;
@@ -445,6 +449,7 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 				public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
 					bcc.aiRetreatAllowed = false;
 					bcc.fightToTheLast = true;
+					bcc.objectivesAllowed = haveObjectives;
 				}
 			};
 			return config;

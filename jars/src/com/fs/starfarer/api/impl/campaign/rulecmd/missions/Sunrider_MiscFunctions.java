@@ -20,12 +20,7 @@ import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin.RepActions;
 import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
-import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Ranks;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
+import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
 import com.fs.starfarer.api.impl.campaign.intel.bar.events.BarEventManager;
 import com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission;
@@ -208,9 +203,22 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 	}
 	
 	public static boolean canShowVowsMissionHere(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) 
-	{		
+	{
+		// not a locational check but I'm not making a separate method just for this
+		MemoryAPI global = Global.getSector().getMemoryWithoutUpdate();
+		boolean metCurate = global.getBoolean("$lpp_inProgress") || global.getBoolean("$lpp_missionCompleted");
+		if (!metCurate) return false;
+
 		MarketAPI market = dialog.getInteractionTarget().getMarket();
 		if (market == null) return false;
+
+		// doesn't work, curate has no market
+		/*
+		PersonAPI curate = Global.getSector().getImportantPeople().getPerson(People.SHRINE_CURATE);
+		if (curate == null || curate.getMarket() == market) return false;
+		 */
+
+		if (Factions.LUDDIC_PATH.equals(market.getFactionId()) || Factions.DIKTAT.equals(market.getFactionId())) return false;
 		if (!market.hasCondition(Conditions.LUDDIC_MAJORITY) && !market.hasTag(Tags.LUDDIC_SHRINE))
 			return false;
 		

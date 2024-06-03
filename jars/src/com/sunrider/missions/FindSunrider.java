@@ -55,7 +55,7 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 	
 	public static final int HIRE_COST = 10000;
 
-	public static enum Stage {
+	public enum Stage {
 		TALK_TO_PIRATE,
 		FIND_SCAVENGER,
 		RECOVERY,
@@ -251,10 +251,11 @@ public class FindSunrider extends HubMissionWithSearch implements CurrentLocatio
 		setEntityMissionRef(wreck, MISSION_REF);
 		makeImportant(wreck, "$sunrider_findSunrider_target", Stage.RECOVERY);
 		
-		CampaignFleetAPI defender = Global.getFactory().createEmptyFleet(Factions.OMEGA, "Nightmares", true);
+		CampaignFleetAPI defender = Global.getFactory().createEmptyFleet(Factions.OMEGA, getString("findSunrider_fleetName"), true);
 		defender.getFleetData().addFleetMember("SunriderNMsim");
 		defender.getFleetData().addFleetMember("SunriderNMsim");
-		defender.addTag("cbm_SunriderBoss");
+		defender.addTag("cbm_SunriderBoss");	// for Custom Battle Music mod
+		defender.getMemoryWithoutUpdate().set("$sunrider_music", "SunriderBoss");
 		for (FleetMemberAPI member : defender.getFleetData().getMembersListWithFightersCopy()) {
 			member.setVariant(member.getVariant().clone(), false, false);
 			member.getVariant().setSource(VariantSource.REFIT);
