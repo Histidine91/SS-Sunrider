@@ -215,6 +215,8 @@ public class SRMission4 extends HubMissionWithSearch implements SunriderMissionI
 		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN, 
 					new NoRetreatFIDConfigGen(true));
 		fleet.getMemoryWithoutUpdate().set("$sunrider_mission4_fleet", true);
+		fleet.addTag("cbm_Epic_Action_Hero");
+		fleet.getMemoryWithoutUpdate().set("$sunrider_music", "Epic_Action_Hero");
 		
 		makeImportant(fleet, "$sunrider_mission4_fleet_imp", Stage.GO_TO_SYSTEM);
 		Misc.addDefeatTrigger(fleet, "Sunrider_Mission4_FleetDefeated");

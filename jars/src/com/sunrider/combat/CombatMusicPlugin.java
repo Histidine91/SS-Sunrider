@@ -8,24 +8,26 @@ import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.mission.FleetSide;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CombatMusicPlugin implements EveryFrameCombatPlugin {
 
+    public static Logger log = Global.getLogger(CombatMusicPlugin.class);
+
     protected int countdown = 3;
     protected String track;
+    protected boolean playedMusic = false;
+    protected CombatEngineAPI engine;
 
     protected String getTrack() {
         List<CampaignFleetAPI> checked = new ArrayList<>();
         List<FleetMemberAPI> toCheck = new ArrayList<>(Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getReservesCopy());
         toCheck.addAll(Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedCopy());
 
-        Global.getCombatEngine().getContext().getOtherFleet().getTags()
-
         for (FleetMemberAPI enemy : toCheck) {
-            Global.getLogger(this.getClass()).info("Checking fleet member " + enemy.getShipName());
             if (enemy.getFleetData() == null) continue;
             CampaignFleetAPI fleet = enemy.getFleetData().getFleet();
             if (fleet == null) continue;
@@ -50,30 +52,50 @@ public class CombatMusicPlugin implements EveryFrameCombatPlugin {
     }
 
     protected void removeSelf() {
+        log.info("Removing plugin");
         Global.getCombatEngine().removePlugin(this);
     }
 
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
-        if (track == null) {
-            if (!needMod()) {
-                //Global.getLogger(this.getClass()).info("Battle music mod is running, remove");
-                removeSelf();
-                return;
-            }
+        if (engine == null) engine = Global.getCombatEngine();
+        if (engine == null) return;
 
-            track = getTrack();
-            if (track == null) {
-                //Global.getLogger(this.getClass()).info("No track found, remove");
-                removeSelf();
-                return;
-            }
+        if (engine.isSimulation()) {
+            removeSelf();
+            return;
+        }
+
+        if (track != null && engine.isCombatOver()) {
+            log.info("Terminating custom music playback");
+            //Global.getSoundPlayer().setSuspendDefaultMusicPlayback(false);
+            Global.getSoundPlayer().playCustomMusic(1, 0, null);
+            removeSelf();
+            return;
         }
 
         if (countdown == 0) {
-            //Global.getSoundPlayer().setSuspendDefaultMusicPlayback(true);
-            Global.getSoundPlayer().playCustomMusic(0, 0, track, true);
-            removeSelf();
+
+            if (!playedMusic) {
+                if (track == null) {
+                    if (!needMod()) {
+                        removeSelf();
+                        return;
+                    }
+
+                    track = getTrack();
+                    if (track == null) {
+                        removeSelf();
+                        return;
+                    } else {
+                        log.info("Found track " + track);
+                    }
+                }
+
+                //Global.getSoundPlayer().setSuspendDefaultMusicPlayback(true);
+                Global.getSoundPlayer().playCustomMusic(1, 0, track, true);
+                playedMusic = true;
+            }
             return;
         }
 

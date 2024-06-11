@@ -85,6 +85,9 @@
 		"SunriderWedding":[
 			{"file": "SunriderWedding.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
+		"Epic_Action_Hero":[
+			{"file": "Epic_Action_Hero.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
+		],
 		"cbm_Epic_Action_Hero":[
 			{"file": "Epic_Action_Hero.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.3}
 		],
