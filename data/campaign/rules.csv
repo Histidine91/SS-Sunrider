@@ -1000,8 +1000,8 @@ The woman says ""My name is $sunrider_missionVows_brideName and this is $sunride
 
 ""It's our wedding,"" he adds.","sunrider_missionVows_intro2:Agree
 sunrider_missionVows_introAbort:Decline, saying you have other plans",# could show map here but we want to see the people's faces
-sunrider_missionVows_intro2,DialogOptionSelected,$option == sunrider_missionVows_intro2,"AdjustRep sunrider_grandorder FRIENDLY 5
-AdjustRep sunrider_santos FRIENDLY 5
+sunrider_missionVows_intro2,DialogOptionSelected,$option == sunrider_missionVows_intro2,"AdjustRepPerson sunrider_grandorder FRIENDLY 5
+AdjustRepPerson sunrider_santos FRIENDLY 5
 AcceptMission","""Thank you very much,"" the man says, bowing. His fiancée lets out a ""yay"" before covering her mouth with both hands, blushing awkwardly.",sunrider_missionVows_introReturn:Return to the bar,
 sunrider_missionVows_introAbort,DialogOptionSelected,$option == sunrider_missionVows_introAbort,AbortMission,"The youngsters look down, crestfallen. As you turn away, you hear the man say ""Don't fret, dear, there'll be another one along soon. Ludd will provide.""",sunrider_missionVows_introReturn:Return to the bar,
 sunrider_missionVows_introReturn,DialogOptionSelected,$option == sunrider_missionVows_introReturn,"EndConversation DO_NOT_FIRE
@@ -1019,8 +1019,8 @@ Sunrider_AddOptionConfirmation sunrider_missionVows_shrineAbort ""This will term
 
 $sunrider_missionVows_groomFirst turns to you. ""While you're here, would you like to visit the shrine? It's quite beautiful, though not as beautiful as my $sunrider_missionVows_brideFirst."" That line gets him a playful punch in the shoulder from her.","sunrider_missionVows_shrine1:Agree
 sunrider_missionVows_shrineAbort:Decline, but wish them well",
-sunrider_missionVows_shrine1,DialogOptionSelected,$option == sunrider_missionVows_shrine1,"AdjustRep sunrider_grandorder FRIENDLY 2
-AdjustRep sunrider_santos FRIENDLY 2
+sunrider_missionVows_shrine1,DialogOptionSelected,$option == sunrider_missionVows_shrine1,"AdjustRepPerson sunrider_grandorder FRIENDLY 2
+AdjustRepPerson sunrider_santos FRIENDLY 2
 Sunrider_PlayInteractionMusic SunriderClaude","You take a shuttle over to the station with the young couple.
 
 As the hatch opens, $sunrider_missionVows_groomFirst turns and says ""$sunrider_missionVows_brideFirst, could you wait here with Captain $playerName and the luggage for a second?""
@@ -1066,8 +1066,8 @@ Sunrider_AddOptionConfirmation sunrider_missionVows_shrineAbort2 ""This will ter
 
 ""If you could bring $sunrider_missionVows_curateHimOrHer to us, we could pay you another $sunrider_missionVows_rewardStr credits.""","sunrider_missionVows_shrine8:Accept
 sunrider_missionVows_shrineAbort2:Decline",
-sunrider_missionVows_shrine8,DialogOptionSelected,$option == sunrider_missionVows_shrine8,"AdjustRep sunrider_grandorder FRIENDLY 10
-AdjustRep sunrider_santos FRIENDLY 10
+sunrider_missionVows_shrine8,DialogOptionSelected,$option == sunrider_missionVows_shrine8,"AdjustRepPerson sunrider_grandorder FRIENDLY 10
+AdjustRepPerson sunrider_santos FRIENDLY 10
 Call $global.sunrider_missionVows_ref findCurate","Her face lights up at your answer, ""Yay, thankies, cap’n!"" 
 
 ""Tell the curate that we’re here and waiting,"" he says. ""We'll pay you when you get back.""
@@ -1146,7 +1146,7 @@ $sunrider_missionVows_SaintHeOrShe taps on his alternative-brand TriPad, and an 
 
 ""Do you recognize this, captain?""","sunrider_missionVows_return7Yes:""...These are Ryuvian Nightmares.""
 sunrider_missionVows_return7No:Say you don't know (lie)",
-sunrider_missionVows_return7Common,DialogOptionSelected,$option == sunrider_missionVows_return7Common,"ShowPersonVisual false sunrider_holyoak
+sunrider_missionVows_return7Common,DialogOptionSelected,$option == sunrider_missionVows_return7Common,"ShowPersonVisual true sunrider_holyoak
 ShowSecondPerson sunrider_saint
 Highlight ""Five million credits""
 Sunrider_AddOptionConfirmation sunrider_missionVows_returnAbort ""This will lose you access to the mission. Are you sure?"" ""Yes"" ""No""","Saint goes on, ""We have confirmed the presence of these... hostile entities outside the core worlds. Two points make them significant: their completely unknown origin, and the fact that their  combat capabilities appear to surpass the AI abominations from the First AI War.
@@ -1163,9 +1163,10 @@ sunrider_missionVows_return7No,DialogOptionSelected,$option == sunrider_missionV
 $option = sunrider_missionVows_return7Common 0
 FireBest DialogOptionSelected","The two officers glance at each other, than at you, the Hegemony captain raising an eyebrow. But neither of them quite pushes the matter.",,
 sunrider_missionVows_return8,DialogOptionSelected,$option == sunrider_missionVows_return8,"BeginMission sunrider_missionShowdown
+Call $global.sunrider_missionVows_ref updateData
 Call $global.sunrider_missionShowdown_ref updateData","""Very good, captain,"" Holyoak says. ""Very, very good.""",sunrider_missionVows_return8Cont:Continue,
 sunrider_missionVows_return8Cont,DialogOptionSelected,$option == sunrider_missionVows_return8Cont,"Highlight $sunrider_missionShowdown_system
-#Call $global.sunrider_missionShowdown_ref showMap","Saint brings up a map display. The so-called Nightmares were observed in the $sunrider_missionShowdown_system, as seen here. A large joint Hegemony-Church task force was sent here to deal with this threat. Suffice to say, they... did not succeed.""
+Call $global.sunrider_missionShowdown_ref showMap ""$sunrider_missionShowdown_system""","Saint brings up a map display. The so-called Nightmares were observed in the $sunrider_missionShowdown_system, as seen here. A large joint Hegemony-Church task force was sent here to deal with this threat. Suffice to say, they... did not succeed.""
 
 $sunrider_missionVows_SaintHeOrShe transmits the mission details to your TriPad. ""Should you defeat this menace, transmit the evidence and this authentication code to a Hegemony or Church military official for your payment. Good hunting, captain,"" $sunrider_missionVows_SaintHeOrShe extends a hand over the table.
 
@@ -1173,6 +1174,7 @@ Holyoak puts $hisOrHer hands together and bows solemnly. ""I pray for your succe
 sunrider_missionVows_return9,DialogOptionSelected,"$option == sunrider_missionVows_return9
 Call $global.sunrider_missionVows_ref updateData","Highlight ""next five days""
 Call $global.sunrider_missionVows_ref enableWedding
+$entity.
 ShowDefaultVisual
 EndConversation DO_NOT_FIRE","As you leave, you receive a message from $sunrider_missionVows_brideFirst on your TriPad.
 
@@ -1189,6 +1191,369 @@ EndConversation DO_NOT_FIRE
 FireAll BeholderShrineMainOptions","As you leave, you receive a message from $sunrider_missionVows_brideFirst on your TriPad.
 
 ""Sorry I forgot! Now that we have our officiant, our wedding will take place in the next five days. Be there, okay? ^^""",,
+,,,,,,
+sunrider_missionVows_weddingStart,BeholderShrineMainOptions,$sunrider_missionVows_shrine3 score:2,,,sunrider_missionVows_wedding1:Look for the wedding,
+sunrider_missionVows_wedding1,DialogOptionSelected,$option == sunrider_missionVows_wedding1,"Call $global.sunrider_missionVows_ref updateData
+$player.sunrider_missionVows_attendedWedding = true","You inquire with the curate about the wedding and are told to follow the decorated corridors.
+
+After navigating a trail of synthetic flowers, hearts and stars of paper, you see an open door. A few guards are lounging nearby, perhaps a concession to the importance of some of the guests.
+
+A deacon standing next to the opening with an old-fashioned clipboard asks for your name, and after checking it against the guest list, one of the guards gives you a piece of paper. ""Enjoy the party, captain.""",sunrider_missionVows_wedding2:Enter,
+sunrider_missionVows_wedding2,DialogOptionSelected,$option == sunrider_missionVows_wedding2,,"You step into a cavernous nave, Kumari Aru visible through a large window on the far side. An usher greets you and invites you to find a seat at one of the many tables, most of which are crowded with strangers.
+
+You pick a random table, your guards standing behind you, and look around. Every table has a square board with a checkered pattern, a small box with many cards, and board game pieces.
+
+The paper in your hand contains only a number: 19603. Odd. You put it in your pocket for now.",sunrider_missionVows_wedding3:Wait,
+sunrider_missionVows_wedding3,DialogOptionSelected,$option == sunrider_missionVows_wedding3,"Sunrider_PlayInteractionMusic SunriderWedding
+ShowPersonVisual true shrine_curate
+ShowSecondPerson sunrider_grandorder
+ShowThirdPerson sunrider_santos","Several minutes later, the groom walks down the aisle, and so does the bride shortly after.
+
+Curate $sunrider_missionVows_curateName does $sunrider_missionVows_curateHisOrHer speech, and the couple exchange their vows and rings, then the curate pronounces them husband and wife.
+
+""You may kiss the bride.""
+
+The moment brings a great applause from the audience. Family members surround the couple with hugs.","sunrider_missionVows_wedding4:Stand and cheer with the others
+sunrider_missionVows_wedding4Alt:Keep it low-key",
+sunrider_missionVows_wedding4,DialogOptionSelected,$option == sunrider_missionVows_wedding4,,"When everyone calms down, $sunrider_missionVows_groomFirst speaks, the PA system capturing his voice and carrying it to all corners of the room. 
+
+""I’d like to thank all of you for your presence; it means a lot to us. I also would like to thank all the people who helped our wedding to happen...""
+
+He mentions a few people for various reasons, ""... and of course, captain $playerName, who brought us and $sunrider_missionVows_curateFatherOrMother $sunrider_missionVows_curateLast here."" The audience turns their attention to you briefly, as they had to everyone else mentioned.",sunrider_missionVows_wedding5:Continue,
+sunrider_missionVows_wedding4Alt,DialogOptionSelected,$option == sunrider_missionVows_wedding4Alt,"$option = sunrider_missionVows_wedding4
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_wedding5,DialogOptionSelected,$option == sunrider_missionVows_wedding5,"Sunrider_AddOptionConfirmation sunrider_missionVows_weddingLeaveEarly ""Are you sure you want to skip out early?"" ""Yes"" ""No""","$sunrider_missionVows_brideFirst speaks up, an arm around her new husband. 
+
+""There’s a lot of food and a few games for the party, but I need to point out two rules,"" she takes a deep breath and speaks in a serious tone, ""one: you can eat and drink as much as you want, but do not leave this hall with any of our food! Two: we’re here to chill and have fun with simple things! With all that said, enjoy.""","sunrider_missionVows_wedding6:Continue
+sunrider_missionVows_weddingLeaveEarly:Leave",
+sunrider_missionVows_weddingLeaveEarly,DialogOptionSelected,$option == sunrider_missionVows_weddingLeaveEarly,"Call $global.sunrider_missionVows_ref complete
+unset $sunrider_missionVows_shrine3
+AddStoryPoints 1
+ShowDefaultVisual","You skip out of the wedding while you can. It's been fun, but the galaxy remains out there.",defaultLeave:Leave,
+sunrider_missionVows_wedding6,DialogOptionSelected,$option == sunrider_missionVows_wedding6,"Sunrider_PlayInteractionMusic Monkeys_Spinning_Monkeys
+HideFirstPerson","A few people leave, but most stay. The newlywed couple move around the hall to greet the guests with a handshake or hug... most of the time both. There’s more than enough food and drink for everyone, but no alcohol or lobsters... which is maybe regrettable, but certainly not the end of the world.
+
+Everyone picks their food and drink at their own pace, some start playing their games and others just talk. The food is quintesenntially Luddic: simple, but well-made and satisfying. 
+
+It’s not long before the couple approach you. They give you a handshake as you congratulate them.","sunrider_missionVows_wedding7Good:Compliment the food
+sunrider_missionVows_wedding7Lobster:Comment about the lack of lobsters",
+sunrider_missionVows_wedding7Good,DialogOptionSelected,$option == sunrider_missionVows_wedding7Good,,"$sunrider_missionVows_groomFirst smiles. ""Thanks."" 
+
+$sunrider_missionVows_brideFirst nods. ""Yeah, my dearest’s granny is a great chef, especially with sweets. Ya’d absolutely love her pudding and apple pie, cap’n.""
+
+""Oh, right,"" he says, ""the desserts will be out later, give them a go. ""
+",sunrider_missionVows_wedding8:Continue,
+sunrider_missionVows_wedding7Lobster,DialogOptionSelected,$option == sunrider_missionVows_wedding7Lobster,,"She speaks in a lower voice, ""I know. These guys are annoyingly strict sometimes... for example, weeks after $sunrider_missionVows_groomFirst proposed to me in Gilead’s shrine, I jokingly brought up Volturnian lobsters for the afterparty,"" she points at someone in the crowd, ""and that father over there yelled a whole bible-sized lecture at me."" He nods.",sunrider_missionVows_wedding8:Continue,
+sunrider_missionVows_wedding8,DialogOptionSelected,$option == sunrider_missionVows_wedding8,,"""Oh, captain. Before I forget, did Raphael... I mean the guard at the entrance give you a piece of paper with a number?"" He asks, and you affirm. ""Did he tell you what it is for?"" 
+
+When you say no, he turns to her and with a mischievous smile puts a hand on her shoulder. ""A lot of ‘no’ and not a single ‘yes.’ You owe me 5 credits, love."" 
+
+She pouts and he laughs. ""Keep this number if you intend to stay for the whole party. Anyway, talk to you later, captain $playerName. Have fun.""",sunrider_missionVows_weddingHubStart:Look around,
+sunrider_missionVows_weddingHubStart,DialogOptionSelected,$option == sunrider_missionVows_weddingHubStart,"HideSecondPerson
+HideThirdPerson
+FireAll Sunrider_MissionVows_WeddingOpts
+AddTextSmall ""Each activity can only be done once.""
+$eventsDone = 0 0","There's a few games to play with the other guests. Or you could try your hand (so to speak) at a little singing.
+
+What do you want to do?",,
+sunrider_missionVows_weddingHubFirstEvent,DialogOptionSelected,"$option == sunrider_missionVows_weddingHubRepeat
+$eventsDone == 1
+!$seenFirstEvent","$option = sunrider_missionVows_weddingFirstEvent1 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingHubSecondEvent,DialogOptionSelected,"$option == sunrider_missionVows_weddingHubRepeat
+$eventsDone == 2
+!$seenSecondEvent","$option = sunrider_missionVows_weddingSecondEvent1 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingHubRepeat,DialogOptionSelected,$option == sunrider_missionVows_weddingHubRepeat,"EndConversation DO_NOT_FIRE
+ShowDefaultVisual
+FireAll Sunrider_MissionVows_WeddingOpts",What next?,,
+sunrider_missionVows_weddingHubRepeatWithMusicReset,DialogOptionSelected,"$option == sunrider_missionVows_weddingHubRepeat
+$wantMusicReset score:100","Sunrider_PlayInteractionMusic Monkeys_Spinning_Monkeys
+unset $wantMusicReset
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingHubOptBoard,Sunrider_MissionVows_WeddingOpts,!$sunrider_missionVows_seenBoard,,,sunrider_missionVows_weddingBoard1:Play some board games,
+sunrider_missionVows_weddingHubOptRPG,Sunrider_MissionVows_WeddingOpts,!$sunrider_missionVows_seenRPG,,,sunrider_missionVows_weddingRPG1:Try the role-playing game,
+sunrider_missionVows_weddingHubOptKaraoke,Sunrider_MissionVows_WeddingOpts,!$sunrider_missionVows_seenKaraoke,,,sunrider_missionVows_weddingKaraoke1:Try some karaoke,
+sunrider_missionVows_weddingHubOptFinale,Sunrider_MissionVows_WeddingOpts,"$sunrider_missionVows_seenBoard
+$sunrider_missionVows_seenRPG
+$sunrider_missionVows_seenKaraoke",,,sunrider_missionVows_weddingFinale1:Conclude the wedding,
+sunrider_missionVows_weddingHubOptFinaleDev,Sunrider_MissionVows_WeddingOpts,"$eventsDone < 3
+$global.isDevMode",,,sunrider_missionVows_weddingFinale1:>>(dev) Conclude the wedding,
+sunrider_missionVows_weddingHubOptLeaveEarly,Sunrider_MissionVows_WeddingOpts,$eventsDone < 3,"Sunrider_AddOptionConfirmation sunrider_missionVows_weddingLeaveEarly ""Are you sure you want to skip out early?"" ""Yes"" ""No""",,sunrider_missionVows_weddingLeaveEarly:Leave,
+sunrider_missionVows_weddingBoard1,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard1,"$sunrider_missionVows_seenBoard = true
+$eventsDone++","There are several games to play here, using cards, dice or other small pieces, but all of them have one thing in common: they predate humanity leaving old Earth.
+
+There is chess, checkers, dominoes, several possible games with a standard card deck, and even a board racing game which you choose one of the Hound frigate miniatures and roll the dice to fly it from Asher to Gilead faster than other players while avoiding squares with a Paragon or Atlas MkII.
+",sunrider_missionVows_weddingBoard2:How about a nice game of chess?,
+sunrider_missionVows_weddingBoard2,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard2,ShowPersonVisual true sunrider_grandorder,"Every good starfarer commanding more than one ship knows how to play chess, or at least that's what the stereotype would say. The game remains surprisingly popular to this day, especially on Luddic worlds. It somehow remains competitive even with the latest hyper-detailed immersive strategy simulations.
+
+After a couple of casual matches against your fellow wedding guests, you look up to see $sunrider_missionVows_brideFirst dropping into the seat in front of you. ""'sup, cap?"" She rests her hands on the table. ""Wanna give it a go?""","sunrider_missionVows_weddingBoard3Yes:Accept her challenge
+sunrider_missionVows_weddingBoard3No:Decline",
+sunrider_missionVows_weddingBoard3Yes,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard3Yes,$player.sunrider_missionVows_playedChessWithGrandOrder = true,"""Cool,"" she replies, ""don’t take it too seriously, cuz I won’t.""
+
+Every time you move a piece, she moves hers seconds later, even as the match goes on and you need more and more time to do your turn.
+
+After roughly half of the pieces on the board are captured, you can clearly see that you’re going to lose. Her moves were immaculate.","sunrider_missionVows_weddingBoard4:""How do you play so well?""",
+sunrider_missionVows_weddingBoard3No,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard3No,$player.sunrider_missionVows_playedChessWithGrandOrder = false,"""Aight then,"" she replies. You leave the table and someone else takes your place to play it with her.",sunrider_missionVows_weddingHubRepeat:See what else there is to do,
+sunrider_missionVows_weddingBoard4,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard4,,"She shrugs, ""I dunno. When I was a kid, I just learned the rules, played a few games then got good, I guess. If it’s any comfort, ya played well and took longer to give up than everyone else here.""
+
+A frown comes to her face. ""But it’s kinda boring that I only had a real challenge in chess like once in life, not gonna lie. Anyway, thanks for the game.""
+
+You watch as she stands up and leaves the table. When she said she didn’t lose a single game, you were certain that she was talking about only today, not this. ",sunrider_missionVows_weddingHubRepeat:Get up and do something else,
+sunrider_missionVows_weddingRPG1,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG1,"$sunrider_missionVows_seenRPG = true
+$eventsDone++
+Call $global.sunrider_missionVows_ref showTempDM
+ShowThirdPerson sunrider_santos","You see a larger table in a corner near the exit, with eight people, including the groom and a large photo of the void. With a closer inspection, you notice that it’s an RPG game that simulates space combat. 
+
+The dungeon master (DM) looks at you. ""Hi there. Would you like to join our game? You just need to choose which pre-made ship to use with the others and beat my challenge.""","sunrider_missionVows_weddingRPG2Yes:Accept
+sunrider_missionVows_weddingRPG2No:Decline",
+sunrider_missionVows_weddingRPG2No,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG2No,,"Ship combat? Don't you already have enough of that out there?
+
+You shake your head. The DM looks a bit disappointed, but it's not like there aren't enough players already.",sunrider_missionVows_weddingHubRepeat:Find something else to do,
+sunrider_missionVows_weddingRPG2Yes,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG2Yes,,"""Excellent. Since you’re the eighth player and no duplicates are allowed, you can only choose the three remaining ships in the heroes’ fleet."" 
+
+The DM shows you three pieces of paper for you to pick.","sunrider_missionVows_weddingRPG3Erad:SO Eradicator 
+sunrider_missionVows_weddingRPG3Erad2:Long-range Eradicator
+sunrider_missionVows_weddingRPG3Hammer:SO Hammerhead",
+sunrider_missionVows_weddingRPG3Erad,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad,"Call $global.sunrider_missionVows_ref pickShipErad
+$option = sunrider_missionVows_weddingRPG3Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingRPG3Erad2,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad2,"Call $global.sunrider_missionVows_ref pickShipErad2
+$option = sunrider_missionVows_weddingRPG3Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingRPG3Hammer,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Hammer,"Call $global.sunrider_missionVows_ref pickShipHammer
+$option = sunrider_missionVows_weddingRPG3Common 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_weddingRPG3Common,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Common,"AddTextSmall ""match TODO""","""Okay, let’s wait a few minutes,"" the DM says, ""if nobody comes to play with the last two sheets, we can begin.""
+
+Minutes later, with nobody showing up, the DM starts the game. ""Good luck with the d20 dices, brothers and sisters.""","sunrider_missionVows_weddingRPG5Win:Win match (todo)
+sunrider_missionVows_weddingRPG5Lose:Lose match (todo)",
+sunrider_missionVows_weddingRPG5Win,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG5Win,"AddStoryPoints 1
+$option = sunrider_missionVows_weddingRPG6 0
+FireBest DialogOptionSelected","The table bursts into cheers as the formidable foe is overcome.
+
+""Good game, everyone,"" the DM says, ""I won’t say that your Invictus friend carried the fight because it’d lose on 1vs1 against the first phase.""",,
+sunrider_missionVows_weddingRPG5Lose,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG5Lose,"$option = sunrider_missionVows_weddingRPG6 0
+FireBest DialogOptionSelected","The players are disappointed. 
+
+""Good game, everyone,"" the DM says, ""you stood your ground to the end, although, if I may leave a comment on how most of you could have played, surrounding the boss at its first phase would be the most effective way to kill it quickly.""",,
+sunrider_missionVows_weddingRPG6,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG6,FireAll Sunrider_MissionVows_RPGHypershuntCheck,"One of the players comments, ""How did you come up with a starship that splits on death? As if the big one wasn’t enough trouble.""
+
+The dungeon master replies, ""You wouldn’t believe me if I told you.""",sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave,"
+-	
+-	""Did you visit a Hypershunt?"" (only visible if player has visited one before)"
+sunrider_missionVows_weddingRPG6HaveShunt,FireAll Sunrider_MissionVows_RPGHypershuntCheck,$TODO,,,"sunrider_missionVows_weddingRPG7:""Did you find a Hypershunt?""",
+sunrider_missionVows_weddingRPG7,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG7,,"The DM looks at you. ""A what?"" 
+
+You tell them you’re familiar with the ‘boss’ they claim to have made up. Excepting $sunrider_missionVows_groomFirst, the other players are horrified about the idea that such an alien monstrosity exists.","sunrider_missionVows_weddingRPG8Joke:""Calm down, I'm just joking.""
+sunrider_missionVows_weddingRPG8True:""It’s true.""",
+sunrider_missionVows_weddingRPG8Joke,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG8Joke,,"Most of them let out a sigh of relief. ""Phew, don’t scare me like that,"" one says. 
+
+Another gets up from their chair, saying ""That’s one hell of a sense of humor. Well, thank you for the game, folks."" 
+
+Before you realize, the DM is nowhere to be seen. ",sunrider_missionVows_weddingHubRepeat:Leave,
+sunrider_missionVows_weddingRPG8True,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG8True,,"As you keep continue the details, they become more and more scared, as if you’re telling them a horror story, until they give up and rush out of the party to pray for their safety from the Tesseracts. At this point, they might as well be scarred for life rather than scared. Look at what you’ve done!
+
+Gabriel gives you a disappointed look. ""That was so mean. You could have spared them from the nightmare fuel, you know?"" Your best guess is that he is reacting different because he doesn’t want to take your words seriously, as he’d probably be way too young to have travelled beyond the core worlds at all.
+
+As you turn away, you notice someone at a neighboring table looking back at you. It's Cassiel Holyoak, with a stare of profound irritation.",sunrider_missionVows_weddingHubRepeat:Excuse yourself in a hurry,
+sunrider_missionVows_weddingKaraoke1,DialogOptionSelected,$option == sunrider_missionVows_weddingKaraoke1,"$sunrider_missionVows_seenKaraoke = true
+$eventsDone++
+","There are quite a few people surrounding the music player here. It’s a karaoke, the only electronic entertainment in the party, 
+
+A staffer explains that each person can sing only once, and the song is always random. The name of the song and the singer is displayed when the roll stops.
+
+After a few songs, it’s your turn.",sunrider_missionVows_weddingKaraoke2:See what song you got,Stop music here?
+sunrider_missionVows_weddingKaraoke2,DialogOptionSelected,$option == sunrider_missionVows_weddingKaraoke2,"#Call $global.sunrider_missionVows_ref pickSong
+FireBest Sunrider_MissionVows_DisplaySong",,sunrider_missionVows_weddingKaraoke3:Sing!,
+sunrider_missionVows_weddingKaraoke3,DialogOptionSelected,$option == sunrider_missionVows_weddingKaraoke3,"Call $global.sunrider_missionVows_ref genSingingResult
+FireBest Sunrider_MissionVows_GetKaraokeResults",,,
+sunrider_missionVows_weddingKaraokeSong_armageddon,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = armageddon 0
+Highlight Armageddon","The screen scrolls through several songs until it stops at ""Armageddon, by Emi Evans."" 
+
+A teenage boy says ""ouch! That is such a bad luck!"" You look at him and he elaborates, ""I know that one, it’s in made-up language by the singer."" 
+
+After the song starts, it takes a while for the lyrics to show up on the screen, but when they do, it’s pure chaos!",,
+sunrider_missionVows_weddingKaraokeSong_hpMugen,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = hpMugen 0
+Highlight ""HP Mugen LOVE Power""","The screen scrolls through several songs until it stops at ""HP Mugen LOVE Power, by Rina Satou."" A cheerful song in Japanese that for unknown reasons, it somehow reminds you of the bride. Odd.",,
+sunrider_missionVows_weddingKaraokeSong_panPakaPan,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = panPakaPan 0
+Highlight ""Pan Paka Pan""","The screen scrolls through several songs until it stops at ""Pan Paka Pan, by Nao Touyama."" This sounds like a very cheerful song in Japanese, but fast and difficult.",,
+sunrider_missionVows_weddingKaraokeSong_soraNoRequiem,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = soraNoRequiem 0
+Highlight ""Sora no Requiem""","The screen scrolls through several songs until it stops at ""Sora no Requiem, by Faylan."" A song in Japanese that makes you feel like it could have something to do with someone in your fleet. Odd.",,
+sunrider_missionVows_weddingKaraokeSong_rickroll,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = rickroll 0
+Highlight ""Never Gonna Give You Up""","The screen scrolls through several songs until it stops at ""Never Gonna Give You Up, by Rick Astley."" An English classic.
+
+Seconds after it starts, you see $sunrider_missionVows_brideFirst emerging from the crowd, ""hold on, hold on, who got it, who got it? Cap’n? Wow, out of all people to get rick rolled here...""
+ 
+Whatever is up with her? Well, better focus on the screen, and quick!",,
+sunrider_missionVows_weddingKaraokeSong_stringTheocracy,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = stringTheocracy 0
+Highlight ""String Theocracy""","The screen scrolls through several songs until it stops at ""String Theocracy, by Cassie Wei."" This indie song in English sounds peppy, yet it seems to speak of a dark, somber tale.",,
+sunrider_missionVows_weddingKaraokeSong_queen,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = queen 0
+Highlight ""Queen""","The screen scrolls through several songs until it stops at ""Queen, by Kanaria."" A teenage girl in the crowd tells you that this is a very short, but tough track in Japanese for its speed, then wishes you good luck.",,
+sunrider_missionVows_weddingKaraokeSong_seaOfFire,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = seaOfFire 0
+Highlight ""Sea of Fire""","The screen scrolls through several songs until it stops at ""Sea of Fire, by Mizuki (UNIDOTS)."" It starts in Japanese, but it’s mostly in English. Very shortly after is begins, Gabriel emerges from the crowd, ""Sea of Fire? A friend told me about it sometime ago, and I loved it! Come on, captain... nail it!""",,
+sunrider_missionVows_weddingKaraokeSong_lagtrain,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = lagtrain 0
+Highlight ""Lagtrain""","The screen scrolls through several songs until it stops at ""Lagtrain, by Kaai Yuki."" Quite the song in Japanese, but if you understand the language, you’ll probably wonder why a song with such lyrics has such rhythm.",,
+sunrider_missionVows_weddingKaraokeSong_bohemianRhapsody,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = bohemianRhapsody 0
+Highlight ""Bohemian Rhapsody""","The screen scrolls through several songs until it stops at ""Bohemian Rhapsody, by Queen."" This song in English starts slow, but gets faster as it progresses, besides, it’s a classic notably loved by many, a few of the crowd envy you for having rolled it.",,
+sunrider_missionVows_weddingKaraokeSong_amazingGrace,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = seaOfFire 0
+Highlight ""Amazing Grace""","The screen scrolls through several songs until it stops at ""Amazing Grace, by various artists."" A very slow and calm song in English. Nearly everyone in this hall, especially the older people enjoy this one with a passion. ",,
+sunrider_missionVows_weddingKaraokeSong_starSky,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = starSky 0
+Highlight ""Star Sky""","The screen scrolls through several songs until it stops at ""Star Sky, by Felicia Farerre."" A song in English that thanks to the singer’s voice, manages to give you goosebumps despite the lyrics being on the slower side of the playlist.",,
+sunrider_missionVows_weddingKaraokeSong_gate,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = gate 0
+Highlight ""Gate""","The screen scrolls through several songs until it stops at ""Gate (Sore wa Akatsuki no You ni)."" A slightly fast song in Japanese. Good luck.",,
+sunrider_missionVows_weddingKaraokeSong_sweetLittleLies,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = sweetLittleLies 0
+Highlight ""Sweet Little Lies""","The screen scrolls through several songs until it stops at ""Sweet Little Lies, by Bülow."" A song in English that manages to simultaneously be a moment of touching vulnerability and a veritable, euphoric bop.",,
+sunrider_missionVows_weddingKaraokeSong_akuma,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = gate 0
+Highlight ""AKUMA""","The screen scrolls through several songs until it stops at ""AKUMA, by Tokoyami Towa."" A quite energetic song in Japanese. It seems that the teens nearby like the title.",,
+sunrider_missionVows_weddingKaraokeSong_buryTheLight,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = buryTheLight 0
+Highlight ""Bury the Light""","The screen scrolls through several songs until it stops at ""Bury the Light, by Casey Edwards and Victor Borba."" At the mention of this English song, some youths nearby start hollering. You catch something about an... approaching storm?",,
+sunrider_missionVows_weddingKaraokeResult_na,Sunrider_MissionVows_GetKaraokeResults,$songResult == 0,,"You start singing, but soon decide to stop. The crowd around you is slightly disappointed, but it can’t be helped, this isn’t your thing after all.",sunrider_missionVows_weddingHubRepeat:Leave in disgrace,
+sunrider_missionVows_weddingKaraokeResult_1,Sunrider_MissionVows_GetKaraokeResults,$songResult == 1,"Highlight ""10"" ""100""","When the song ends, the screen displays: ""Score: 10/100 - Go sing in the shower for your own sake, friend.""
+
+Well, at least the only thing making fun of you for your poor performance is the machine because. The crowd just puts on a commiserative look for you before you return the microphone.
+",sunrider_missionVows_weddingHubRepeat:Leave in disgrace,
+sunrider_missionVows_weddingKaraokeResult_2,Sunrider_MissionVows_GetKaraokeResults,$songResult == 2,"Highlight ""25"" ""100""","When the song ends, the screen displays: ""Score: 25/100 - At least you tried.""
+
+The crowd around you look indifferent as they didn’t know what score to expect. You return the microphone and decide to stay away from any other for a while.",sunrider_missionVows_weddingHubRepeat:Leave quietly,
+sunrider_missionVows_weddingKaraokeResult_3,Sunrider_MissionVows_GetKaraokeResults,$songResult == 3,"Highlight ""45"" ""100""","When the song ends, the screen displays: ""Score: 45/100 - Not too bad, practice some more though. Remember that the master has failed more than the beginner has ever tried.""
+
+You get a few claps from the crowd, but it’s not a satisfying score at all. ",sunrider_missionVows_weddingHubRepeat:Leave,
+sunrider_missionVows_weddingKaraokeResult_4,Sunrider_MissionVows_GetKaraokeResults,$songResult == 4,"Highlight ""75"" ""100""","When the song ends, the screen displays: ""Score: 75/100 - Excellent!""
+
+The crowd liked your performance. You return the microphone with a smile. If you weren’t a spacer, you’d certainly be a singer.",sunrider_missionVows_weddingHubRepeat:Leave,
+sunrider_missionVows_weddingKaraokeResult_5,Sunrider_MissionVows_GetKaraokeResults,$songResult == 5,"Highlight ""100"" ""100""","When the song ends, the screen displays: ""Score: 100/100 - Beautiful performance, you are a superstar. Congratulations!""
+
+You were flawless, to the point that the whole party gave you as much applauses as they gave to $sunrider_missionVows_groomFirst and $sunrider_missionVows_brideFirst the moment they became husband and wife. You return the microphone proud of yourself and raising your arms in celebration.",sunrider_missionVows_weddingHubRepeat:Ride the high back to the party,
+sunrider_missionVows_weddingFirstEvent1,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent1,"$seenFirstEvent = true 0
+ShowPersonVisual true sunrider_santos
+Call $global.sunrider_missionVows_ref showTempHegOfficer
+ShowThirdPerson sunrider_saint","You get yourself some water before returning to your table, and when you sit down to take a break, you see the groom talking to two people in Hegemony uniforms. One of them is Azrael; the other is not familiar, but almost certainly in higher rank.
+
+The other person says, ""You’ve shown talent for it, young lad. You should really consider my offer.""",sunrider_missionVows_weddingFirstEvent2:Continue,
+sunrider_missionVows_weddingFirstEvent2,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent2,,"They don’t seem to care that multiple people may be listening, especially Gabriel, who replies, ""Sorry, Raziel. I will have to turn it down, not just because I’d probably be fired quickly for refusing to ever take a human life... or tell anyone to, but also because I had the privilege of being born in a world where I can come out in the open, take a deep breath and appreciate the lush green fields under a blue sky, and if Ludd allows, I intend to die there when my time comes.""
+
+""Told you he'd say no,"" Azrael says.
+
+Gabriel concludes, ""I thank you for the offer, but I’m already having a fulfilling and happy life. I don’t want it to be any different to my future children, you know."" 
+
+Raziel nods. ""Then I deeply respect your decision, Gabriel.""",sunrider_missionVows_weddingFirstEvent3:Continue,
+sunrider_missionVows_weddingFirstEvent3,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent3,HideSecondPerson,"Azrael looks around rather quickly. ""Where is she...? Ah, too far."" 
+
+Gabriel asks confused. ""Come again?"" 
+
+Azrael answers, ""Boy, imagine if Mrs. Grand Order heard what you just said. I’d grab a chair and popcorn to watch the show.""
+
+The officer, who seemingly had a serious face all the time, starts laughing, while Gabriel covers his mouth with a hand and tries not to laugh himself too... at least until Azrael says, ""you know what? I'm telling her,"" and starts sauntering towards the bride. Gabriel follows and yells, ""DON’T YOU DARE!""",sunrider_missionVows_weddingFirstEvent4:...,
+sunrider_missionVows_weddingFirstEvent4,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent4,HideThirdPerson,"Some time later, when you’re about to get up from your break, you see Gabriel again, holding a cupcake. 
+
+He looks at you and shouts ""Enjoying the party, captain?"" However, you notice that now his face is full of lipstick marks.","sunrider_missionVows_weddingFirstEvent5Laugh:Laugh at him
+sunrider_missionVows_weddingFirstEvent5Warn:Warn him about it
+sunrider_missionVows_weddingFirstEvent5Nod:Nod and raise your glass of water",
+sunrider_missionVows_weddingFirstEvent5Laugh,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent5Laugh,,"""What’s wrong?"" he asks. 
+
+When you point at his face, he rubs his cheek, then looks at his hand. It takes a moment for him to understand, whereupon he shrugs and shakes his head with an almost unnoticeable smile.
+
+""Yeah, with a cousin like Azrael, do I even need enemies?"" 
+
+He walks away to wash it off. At least he took it with good sense of humor. ",sunrider_missionVows_weddingHubRepeat:Return to the party,
+sunrider_missionVows_weddingFirstEvent5Warn,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent5Warn,,"You tell him what the problem is. He rubs his face, looks at his hand, then shrugs and shakes his head with an almost unnoticeable smile.
+
+""Yeah, with a cousin like Azrael, do I even need enemies?"" 
+
+He walks away to wash it off. At least he took it with good sense of humor. ",sunrider_missionVows_weddingHubRepeat:Return to the party,
+sunrider_missionVows_weddingFirstEvent5Nod,DialogOptionSelected,$option == sunrider_missionVows_weddingFirstEvent5Nod,,"He gives you a thumbs up and continues on his way, still oblivious of the situation. Oh dear!",sunrider_missionVows_weddingHubRepeat:Return to the party,
+sunrider_missionVows_weddingSecondEvent1,DialogOptionSelected,$option == sunrider_missionVows_weddingSecondEvent1,"$seenSecondEvent = true 0
+ShowDefaultVisual
+ShowPersonVisual true sunrider_grandorder","It’s past half the time of the party. The bride’s voice is heard on the speaker, ""can the ladies please gather here in the middle of the hall? Because it’s time for bouquet toss!"" 
+
+Almost all the women, and even a few guards do as she requests, she turns her back on them and prepares to toss the bouquet. ""Three, two, one...""",sunrider_missionVows_weddingSecondEvent2:Continue,
+sunrider_missionVows_weddingSecondEvent2,DialogOptionSelected,$option == sunrider_missionVows_weddingSecondEvent2,Sunrider_PlayInteractionMusic Colors_sad,"However, when she raises her arms, she doesn’t toss it. ""...Nope!"" 
+
+Instead, she turns to the women again, walks towards them and hands over the bouquet to one of her bridesmaids. The other woman is confused, and then told to look behind her.
+
+One of the guards removes his helmet and kneels before her with a ring. ""Will you marry me?"" 
+
+The woman starts crying and nods, ""Sa-Sariel! Yes, I will!"" 
+
+They hug each other, and the guests celebrate this new engagement.
+",sunrider_missionVows_weddingSecondEvent3:Continue,
+sunrider_missionVows_weddingSecondEvent3,DialogOptionSelected,$option == sunrider_missionVows_weddingSecondEvent3,$wantMusicReset = true 0,"When the crowd calms down, the wedded couple announces that it’s time for the cake, which looks large enough for a thousand people. They cut the first slices together, but don’t choose who will have the first or second slice, they simply let everybody have one as soon as possible.
+
+When it’s your turn to have one, you take a bite. It is a masterpiece of chocolate that leaves you mesmerized for a moment. 
+",sunrider_missionVows_weddingHubRepeat:Return to the party,
+sunrider_missionVows_weddingFinale1,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale1,"unset $eventsDone
+ShowPersonVisual true sunrider_santos","As the party is coming to an end, $sunrider_missionVows_groomFirst asks the attendees to move close to the altar for another announcement. 
+
+""Do you all remember the piece of paper you received before entering this hall?"" You notice three tables behind the couple, which weren’t there until a few minutes ago. Each has different colors and objects. 
+
+""If $sunrider_missionVows_brideFirst pulls your number, you’ll get a prize of your choice, but the second can’t pick anything from the gold table, and the third can only choose what’s in the bronze table, okay?""",sunrider_missionVows_weddingFinale2:Continue,
+sunrider_missionVows_weddingFinale2,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale2,ShowSecondPerson sunrider_grandorder,"Without delay, $sunrider_missionVows_brideFirst shakes a cardboard box, then pulls a piece of paper. 
+
+""The first winner is 25424. Congratulations!"" 
+
+A guest nearby celebrates as they show the winning number in their hands, then happily grabs a ship miniature.",sunrider_missionVows_weddingFinale3:Wait for the next draw,
+sunrider_missionVows_weddingFinale3,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale3,,"She shakes the box again, this time drawing the number 10399.
+
+The winning person picks up a handcrafted pendant with a grin.",sunrider_missionVows_weddingFinale4:Wait for the final draw,
+sunrider_missionVows_weddingFinale4,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale4,,"""The third and last winner is..."" she says before pulling the paper, ""19603. Congratulations!""
+",sunrider_missionVows_weddingFinale5:It's your number!,
+sunrider_missionVows_weddingFinale5,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale5,ShowImageVisual GalleonDogooRensouhou,"$sunrider_missionVows_groomFirst calls you to the bronze table. ""Which one will it be?""
+
+There are only three stuffed toys, however, given the looks of everything else in the other prize pools, hardly anything is worth 5 credits.
+","sunrider_missionVows_weddingFinalePrizeGalleon:Check the brown box
+sunrider_missionVows_weddingFinalePrizeDogoo:Check the blue box
+sunrider_missionVows_weddingFinalePrizeRensouhou:Check the gray box",
+sunrider_missionVows_weddingFinale5Repeat,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale5Repeat,ShowImageVisual GalleonDogooRensouhou,You think over your choices again.,"sunrider_missionVows_weddingFinalePrizeGalleon:Check the brown box
+sunrider_missionVows_weddingFinalePrizeDogoo:Check the blue box
+sunrider_missionVows_weddingFinalePrizeRensouhou:Check the gray box",
+sunrider_missionVows_weddingFinalePrizeGalleon,DialogOptionSelected,$option == sunrider_missionVows_weddingFinalePrizeGalleon,"$prize = galleon 0
+ShowImageVisual SRgalleon","""This is a dragon, Galleon,"" he says. ""I’m sure she will gladly bless you with her might and grace.""","sunrider_missionVows_weddingFinalePickPrize:Choose this prize
+sunrider_missionVows_weddingFinale5Repeat:Go back",
+sunrider_missionVows_weddingFinalePrizeDogoo,DialogOptionSelected,$option == sunrider_missionVows_weddingFinalePrizeDogoo,"$prize = dogoo 0
+ShowImageVisual SRdogoo","""This is a dogoo,"" he says, ""a mixture of a dog and a goo monster. It may look weird, but if you pick it, I'm sure it’ll be your new best friend.""","sunrider_missionVows_weddingFinalePickPrize:Choose this prize
+sunrider_missionVows_weddingFinale5Repeat:Go back",
+sunrider_missionVows_weddingFinalePrizeRensouhou,DialogOptionSelected,$option == sunrider_missionVows_weddingFinalePrizeRensouhou,"$prize = rensouhou 0
+ShowImageVisual SRrensouhou","""This is Rensouhou-chan,"" he says. ""An ancient turret that was supposed to be sentient. It says ‘Zekamashi’ on the lifebuoy, but that’s all I can say about it.""","sunrider_missionVows_weddingFinalePickPrize:Choose this prize
+sunrider_missionVows_weddingFinale5Repeat:Go back",
+sunrider_missionVows_weddingFinalePickPrize,DialogOptionSelected,$option == sunrider_missionVows_weddingFinalePickPrize,"$player.sunrider_vowsPrize = $prize
+ShowPersonVisual true sunrider_santos
+ShowSecondPerson sunrider_grandorder
+Sunrider_PlayInteractionMusic SunriderRecover","$sunrider_missionVows_groomFirst nods. ""All yours, captain.""
+
+You hear $sunrider_missionVows_brideFirst on the microphone. ""With this, we’re done. Once again, God bless you all for being with us in such an important and joyous moment of our lives, I hope everyone enjoyed it to the fullest. And... Muriel and Sariel, we will be here for your wedding too.""",sunrider_missionVows_weddingFinale6:Continue,
+sunrider_missionVows_weddingFinale6,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale6,,"You examine your new stuffed toy for a few minutes, then put it under your arm. When you look up, the couple are standing in front of you with warm smiles. 
+
+""We hope that this plush brings you not only good memories, but also good fortune in your travels among the stars, $playerName,"" $sunrider_missionVows_groomFirst says before hugging you.
+
+$sunrider_missionVows_brideFirst hugs you as well. ""Thankies so much for everything, cap’n, we love ya. Take care!""","sunrider_missionVows_weddingFinale7Invite:""I’ll invite you both to my eventual wedding too.""
+sunrider_missionVows_weddingFinale7Bye:""Goodbye.""",
+sunrider_missionVows_weddingFinale7Invite,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale7Invite,"AdjustRepPerson sunrider_grandorder COOPERATIVE 10
+AdjustRepPerson sunrider_santos COOPERATIVE 10","She raises both eyebrows. ""Really? We'll gladly attend to it. Let me warn ya tho... the more cycles ya take, the more little guests we’ll have to bring with us.""
+
+He covers his face with one hand and laughs, she continues with a smirk, ""one smaller than the other,"" and starts to hold a laugh as well.
+
+""Don't mind her, captain,"" he says after he managed to stop laughing. ""She always looks for the slightest opportunity to mess with me.""
+
+You can't help but let out a chuckle yourself. The sector may have fallen into a dark and chaotic age; however, it perhaps wouldn’t be so hopeless if people like this couple weren’t so rare. They aren’t afraid of smiling, or making others smile.",sunrider_missionVows_weddingFinale7Bye:Say goodbye and leave,
+sunrider_missionVows_weddingFinale7Bye,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale7Bye,"AdjustRepPerson sunrider_grandorder COOPERATIVE 5
+AdjustRepPerson sunrider_santos COOPERATIVE 5","Finally, as you exchange your last farewells, they hold their palms together and bow slightly. ""We’ll be praying for your safety out there, captain $playerName. Goodbye,"" he says.
+
+""Bye-bye, cap’n. Ya got a new friend now, go show the galaxy to it,"" she says playfully before you leave the hall.",sunrider_missionVows_weddingFinale8:Depart,
+sunrider_missionVows_weddingFinale8,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale8,"ShowDefaultVisual
+Call $global.sunrider_missionVows_ref complete
+AddStoryPoints 2","You return to your fleet with a stuffed toy in your hands, looking silently out at the colors of Kumari Aru.
+
+No wonder the curate called them ""radiant youngsters.""",sunrider_missionVows_weddingFinale9:...,
+sunrider_missionVows_weddingFinale9,DialogOptionSelected,$option == sunrider_missionVows_weddingFinale9,,"You return to your $shipOrFleet without event. 
+
+It was nice to know peace in the Sector, however briefly. Now... the galaxy awaits.",defaultLeave:Continue on your journey,
+sunrider_missionVows_weddingFinale9Chess,DialogOptionSelected,"$option == sunrider_missionVows_weddingFinale9
+$player.sunrider_missionVows_playedChessWithGrandOrder",,"You return to your $shipOrFleet.
+
+Later, while you're chatting with your officers about the event, someone recognizes $sunrider_missionVows_brideFirst's name. They tap their TriPad a few times and show you that she came out as the winner of a Sector-wide chess championship when she was a teenager.
+
+For a moment, you wonder why she didn’t say anything, but if she did, she’d probably have nobody to play with.",defaultLeave:Oh well! Time to leave.,
 #END Vows mission,,,,,,
 ,,,,,,
 # Showdown,,,,,,

@@ -24,6 +24,7 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunction
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.loading.VariantSource;
 import com.fs.starfarer.api.ui.LabelAPI;
+import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.DelayedActionScript;
 import com.fs.starfarer.api.util.Misc;
@@ -182,21 +183,28 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
         fleet.getFleetData().syncIfNeeded();
         fleet.inflateIfNeeded();
 
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALWAYS_PURSUE, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PURSUE_PLAYER, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_HOSTILE, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE_ONE_BATTLE_ONLY, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_LOW_REP_IMPACT, true);
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_REP_IMPACT, true);
-        fleet.getMemoryWithoutUpdate().set(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY, "Fallen_Angel_Pt3");
-        fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,
-                new SRMission4.NoRetreatFIDConfigGen(false));
-        fleet.getMemoryWithoutUpdate().set("$sunrider_missionShowdown_fleet", true);
-        fleet.setNoFactionInName(true);
+        MemoryAPI mem = fleet.getMemoryWithoutUpdate();
 
+        mem.set(MemFlags.MEMORY_KEY_MAKE_ALWAYS_PURSUE, true);
+        mem.set(MemFlags.MEMORY_KEY_PURSUE_PLAYER, true);
+        mem.set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
+        mem.set(MemFlags.MEMORY_KEY_MAKE_HOSTILE, true);
+        mem.set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE_ONE_BATTLE_ONLY, true);
+        mem.set(MemFlags.MEMORY_KEY_LOW_REP_IMPACT, true);
+        mem.set(MemFlags.MEMORY_KEY_NO_REP_IMPACT, true);
+        mem.set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true);
+        mem.set(MemFlags.FLEET_DO_NOT_IGNORE_PLAYER, true);
+        mem.set(MemFlags.FLEET_IGNORED_BY_OTHER_FLEETS, true);
+        mem.set("$sunrider_missionShowdown_fleet", true);
+        mem.set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,
+                new SRMission4.NoRetreatFIDConfigGen(false));
+
+
+        mem.set(MusicPlayerPluginImpl.MUSIC_SET_MEM_KEY, "Fallen_Angel_Pt3");
         fleet.addTag("cbm_sunrider_senritsu");   // for Custom Battle Music mod
-        fleet.getMemoryWithoutUpdate().set("$sunrider_music", "Sora_no_Senritsu");
+        mem.set("$sunrider_music", "Sora_no_Senritsu");
+
+        fleet.setNoFactionInName(true);
 
         fleet.inflateIfNeeded();
         ShipVariantAPI var = flag.getVariant().clone();
@@ -207,10 +215,7 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
         makeImportant(fleet, "$sunrider_missionShowdown_fleet_imp", Stage.SECOND_SYSTEM);
         Misc.addDefeatTrigger(fleet, "Sunrider_MissionShowdown_FleetDefeated");
 
-        LocData loc = new LocData(EntityLocationType.HIDDEN_NOT_NEAR_STAR, null, system2);
-        loc.loc = new BaseThemeGenerator.EntityLocation();
-        loc.type = EntityLocationType.ORBITING_PLANET_OR_STAR;
-        loc.updateLocIfNeeded(this, null);
+        LocData loc = new LocData(EntityLocationType.ORBITING_PLANET_OR_STAR, null, system2);
 
         SectorEntityToken token = spawnEntityToken(loc);
         system2.addEntity(fleet);
@@ -392,6 +397,15 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
             return true;
         }
         return false;
+    }
+
+    @Override
+    public SectorEntityToken getMapLocation(SectorMapAPI map, Object currentStage) {
+        // stupid hack to make showMap work correctly after accepting
+        if (this.currentStage == Stage.FIRST_SYSTEM) {
+            return system.getHyperspaceAnchor();
+        }
+        return super.getMapLocation(map, currentStage);
     }
 
     @Override

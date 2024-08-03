@@ -16,7 +16,10 @@
 		"skill_sunridersMother_descSupply1":"-%s%% supply cost per month (Fallen Outsider ships only)",
 		"skill_sunridersMother_descSupply2":"-%s%% supply cost per month (Sunrider only, stacks with non-elite effect)",
 		
-		"shipNameUnknown":"<name unknown>"
+		"shipNameUnknown":"<name unknown>",
+
+		"mother":"mother",
+		"father": "father"
 	},
 	"sunrider_missions":{
 		"firstTimeEngageOptionText":"BATTLE STATIONS",
@@ -41,6 +44,7 @@
 		"hegOfficerNameLast":"Saint",
 		"churchOfficerNameFirst":"Cassiel",
 		"churchOfficerNameLast":"Holyoak",
+		"hegOfficerExtraNameFirst":"Raziel",
 		
 		"findSunrider_name":"First Arrival",	# lol
 		"findSunrider_playthroughLogText":"Recovered the Sunrider",

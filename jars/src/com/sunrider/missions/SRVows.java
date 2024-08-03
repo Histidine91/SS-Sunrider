@@ -1,29 +1,28 @@
 package com.sunrider.missions;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.BattleAPI;
-import com.fs.starfarer.api.campaign.CampaignEventListener;
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
-import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
+import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
+import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Conditions;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.People;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
+import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.sunrider.SRPeople;
 import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
+import org.lazywizard.lazylib.MathUtils;
 
 /**
  * The main code body for the fifth mission.
@@ -61,6 +60,8 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 	// runcode com.sunrider.missions.SRMission4.debug()
 	public static void debug() {
 		SRVows mission = (SRVows)Global.getSector().getMemoryWithoutUpdate().get("$sunrider_missionVows_ref");
+		SectorEntityToken beholder = Global.getSector().getEntityById("beholder_station");
+		mission.makeImportant(beholder, "$sunrider_missionVows_shrine3", Stage.PARTY);
 	}
 	
 	@Override
@@ -112,6 +113,24 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		setCurrentStage(Stage.FAILED, dialog, memoryMap);
 		Global.getSector().getMemoryWithoutUpdate().set("$sunrider_missionVows_doneOrSkipped", true);
 	}
+
+	public int getRandomSingingScore(MemoryAPI mem) {
+		String song = mem.getString("$song");
+		if (song == null) return 0;
+		if (song.equals("armageddon")) return 0;
+		return MathUtils.getRandomNumberInRange(1, 5);
+	}
+
+	protected void showTempHegOfficer(InteractionDialogAPI dialog) {
+		PersonAPI officer = OfficerManagerEvent.createOfficer(hegOfficer.getFaction(), 7, OfficerManagerEvent.SkillPickPreference.ANY, this.genRandom);
+		officer.getName().setFirst(Sunrider_MiscFunctions.getString("hegOfficerExtraNameFirst"));
+		dialog.getVisualPanel().showSecondPerson(officer);
+	}
+
+	protected void showTempDM(InteractionDialogAPI dialog) {
+		PersonAPI dm = bride.getFaction().createRandomPerson(FullName.Gender.MALE);
+		dialog.getVisualPanel().showPersonInfo(dm, true);
+	}
 	
 	@Override
 	public boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) 
@@ -133,8 +152,25 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 			case "fail":
 				fail(dialog, memoryMap);
 				return true;
-			case "isMissionRunning":
-				// if you got here the mission is indeed running
+			case "genSingingResult": {
+				MemoryAPI local = memoryMap.get(MemKeys.LOCAL);
+				local.set("$songResult", getRandomSingingScore(local), 0);
+				return true;
+			}
+			case "pickShipErad":
+				// TODO
+				return true;
+			case "pickShipErad2":
+				// TODO
+				return true;
+			case "pickShipHammer":
+				// TODO
+				return true;
+			case "showTempHegOfficer":
+				showTempHegOfficer(dialog);
+				return true;
+			case "showTempDM":
+				showTempDM(dialog);
 				return true;
 		}
 		return false;
@@ -152,8 +188,13 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		set("$sunrider_missionVows_groomFirst", groom.getName().getFirst());
 		set("$sunrider_missionVows_brideName", bride.getNameString());
 		set("$sunrider_missionVows_brideFirst", bride.getName().getFirst());
+
 		set("$sunrider_missionVows_curateName", curate.getNameString());
+		set("$sunrider_missionVows_curateLast", curate.getName().getLast());
+		boolean female = curate.getName().getGender() == FullName.Gender.FEMALE;
+		set("$sunrider_missionVows_curateFatherOrMother", Global.getSettings().getString("sunrider", female ? "mother" : "father"));
 		set("$sunrider_missionVows_curateHeOrShe", curate.getHeOrShe());
+		set("$sunrider_missionVows_curateHisOrHer", curate.getHisOrHer());
 		set("$sunrider_missionVows_curateHimOrHer", curate.getHimOrHer());
 
 		set("$sunrider_missionVows_saintHeOrShe", hegOfficer.getHeOrShe());
@@ -161,7 +202,7 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		set("$sunrider_missionVows_SaintHeOrShe", Misc.ucFirst(hegOfficer.getHeOrShe()));
 		set("$sunrider_missionVows_SaintHimOrHer", Misc.ucFirst(hegOfficer.getHimOrHer()));
 	}
-	
+
 	// intel text in intel screen description
 	@Override
 	public void addDescriptionForNonEndStage(TooltipMakerAPI info, float width, float height) {
