@@ -200,7 +200,19 @@ public class SRPeople {
 		person.getName().setFirst(Sunrider_MiscFunctions.getString("groomNameFirst"));
 		person.getName().setLast(Sunrider_MiscFunctions.getString("groomNameLast"));
 		person.setPortraitSprite("graphics/portraits/portrait_luddic00.png");
-		
+
+		// for the RPG
+		person.getStats().setLevel(7);
+		person.getStats().setSkillLevel(Skills.IMPACT_MITIGATION, 2);
+		person.getStats().setSkillLevel(Skills.DAMAGE_CONTROL, 2);
+		person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
+		person.getStats().setSkillLevel(Skills.POINT_DEFENSE, 2);
+		person.getStats().setSkillLevel(Skills.SYSTEMS_EXPERTISE, 2);
+		person.getStats().setSkillLevel(Skills.ORDNANCE_EXPERTISE, 1);
+		person.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 1);
+
+		person.getMemoryWithoutUpdate().set("$chatterChar", "default2");	// church_2 might be good when Chatter updates
+
 		Global.getSector().getImportantPeople().addPerson(person);
 		return person;
 	}
@@ -232,7 +244,8 @@ public class SRPeople {
 		);
 		return person;
 	}
-	
+
+	// reverse compatibility, no longer used
 	public static void updateAvaSkills() {
 		PersonAPI ava = Global.getSector().getImportantPeople().getPerson(AVA_ID);
 		if (ava == null) return;	// no need to do anything

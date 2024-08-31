@@ -1,3 +1,5 @@
 id,name,order,tier,reqPoints,reqPointsPerExtraSkill,description,author,combat officer,admiral,admin,tags,icon
 sunrider_SunridersMother,Sunrider's Mother,0,1,0,,"Aye, there, have a look at her. So advanced that the brass needed to train a new line of officers to fly her.",Unnamed shuttle pilot,TRUE,,,"player_only, npc_only",graphics/icons/skills/SunridersMother.png
-#bla,,,,,,,,,,,,
+sunrider_plushGalleon,The Gold's Blessing,0,1,0,,"Whatever path you choose, know that I will support you every step of the way.",[data expunged],TRUE,,,"player_only, npc_only",graphics/icons/skills/SunriderGalleonSkill.png
+sunrider_plushDogoo,Slimy Toughness,0,1,0,,"Viscous, excellent hydraulic properties, oxidation resistance moderate. Shows promise as a lubricant. Source abundant, renewable.",hastily scribbled lab notes from undetermined source,TRUE,,,"player_only, npc_only",graphics/icons/skills/SunriderDogooSkill.png
+sunrider_plushRensouhou,Swift Gunner,0,1,0,,I guess only being fast isn't good enough...,final transmission of ISS Shimakaze,TRUE,,,"player_only, npc_only",graphics/icons/skills/SunriderRensouhouSkill.png

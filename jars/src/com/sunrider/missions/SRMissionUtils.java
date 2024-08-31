@@ -3,9 +3,21 @@ package com.sunrider.missions;
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignUIAPI;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
+import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 
 public class SRMissionUtils {
+
+    // runcode com.sunrider.missions.SRMissionUtils.testSkills();
+    public static void testSkills() {
+        PersonAPI pers = OfficerManagerEvent.createOfficer(Global.getSector().getPlayerFaction(), 1);
+        pers.getStats().setSkillLevel("sunrider_plushGalleon", 1);
+        pers.getStats().setSkillLevel("sunrider_plushDogoo", 1);
+        pers.getStats().setSkillLevel("sunrider_plushRensouhou", 1);
+        Global.getSector().getPlayerFleet().getFleetData().addOfficer(pers);
+    }
 
     public static class OpenDialogScript implements EveryFrameScript {
 
@@ -36,6 +48,5 @@ public class SRMissionUtils {
             plugin.fireBest(ruleTrigger);
             done = true;
         }
-
     }
 }

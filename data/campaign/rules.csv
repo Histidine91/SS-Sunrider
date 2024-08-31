@@ -1199,6 +1199,15 @@ $player.sunrider_missionVows_attendedWedding = true","You inquire with the curat
 After navigating a trail of synthetic flowers, hearts and stars of paper, you see an open door. A few guards are lounging nearby, perhaps a concession to the importance of some of the guests.
 
 A deacon standing next to the opening with an old-fashioned clipboard asks for your name, and after checking it against the guest list, one of the guards gives you a piece of paper. ""Enjoy the party, captain.""",sunrider_missionVows_wedding2:Enter,
+sunrider_missionVows_wedding1Devmode,DialogOptionSelected,"$option == sunrider_missionVows_wedding1
+$global.isDevMode","Call $global.sunrider_missionVows_ref updateData
+$player.sunrider_missionVows_attendedWedding = true
+$eventsDone = 0 0","You inquire with the curate about the wedding and are told to follow the decorated corridors.
+
+After navigating a trail of synthetic flowers, hearts and stars of paper, you see an open door. A few guards are lounging nearby, perhaps a concession to the importance of some of the guests.
+
+A deacon standing next to the opening with an old-fashioned clipboard asks for your name, and after checking it against the guest list, one of the guards gives you a piece of paper. ""Enjoy the party, captain.""","sunrider_missionVows_wedding2:Enter
+sunrider_missionVows_weddingRPG1:>> (dev) Skip to RPG",
 sunrider_missionVows_wedding2,DialogOptionSelected,$option == sunrider_missionVows_wedding2,,"You step into a cavernous nave, Kumari Aru visible through a large window on the far side. An usher greets you and invites you to find a seat at one of the many tables, most of which are crowded with strangers.
 
 You pick a random table, your guards standing behind you, and look around. Every table has a square board with a checkered pattern, a small box with many cards, and board game pieces.
@@ -1278,7 +1287,7 @@ sunrider_missionVows_weddingHubOptFinale,Sunrider_MissionVows_WeddingOpts,"$sunr
 $sunrider_missionVows_seenRPG
 $sunrider_missionVows_seenKaraoke",,,sunrider_missionVows_weddingFinale1:Conclude the wedding,
 sunrider_missionVows_weddingHubOptFinaleDev,Sunrider_MissionVows_WeddingOpts,"$eventsDone < 3
-$global.isDevMode",,,sunrider_missionVows_weddingFinale1:>>(dev) Conclude the wedding,
+$global.isDevMode",,,sunrider_missionVows_weddingFinale1:>> (dev) Conclude the wedding,
 sunrider_missionVows_weddingHubOptLeaveEarly,Sunrider_MissionVows_WeddingOpts,$eventsDone < 3,"Sunrider_AddOptionConfirmation sunrider_missionVows_weddingLeaveEarly ""Are you sure you want to skip out early?"" ""Yes"" ""No""",,sunrider_missionVows_weddingLeaveEarly:Leave,
 sunrider_missionVows_weddingBoard1,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard1,"$sunrider_missionVows_seenBoard = true
 $eventsDone++","There are several games to play here, using cards, dice or other small pieces, but all of them have one thing in common: they predate humanity leaving old Earth.
@@ -1303,7 +1312,7 @@ You watch as she stands up and leaves the table. When she said she didn’t lose
 sunrider_missionVows_weddingRPG1,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG1,"$sunrider_missionVows_seenRPG = true
 $eventsDone++
 Call $global.sunrider_missionVows_ref showTempDM
-ShowThirdPerson sunrider_santos","You see a larger table in a corner near the exit, with eight people, including the groom and a large photo of the void. With a closer inspection, you notice that it’s an RPG game that simulates space combat. 
+ShowThirdPerson sunrider_santos","You see a larger table in a corner near the exit, with eight people, including $sunrider_missionVows_groomFirst and a large photo of the void. With a closer inspection, you notice that it’s an RPG game that simulates space combat. 
 
 The dungeon master (DM) looks at you. ""Hi there. Would you like to join our game? You just need to choose which pre-made ship to use with the others and beat my challenge.""","sunrider_missionVows_weddingRPG2Yes:Accept
 sunrider_missionVows_weddingRPG2No:Decline",
@@ -1315,37 +1324,43 @@ sunrider_missionVows_weddingRPG2Yes,DialogOptionSelected,$option == sunrider_mis
 The DM shows you three pieces of paper for you to pick.","sunrider_missionVows_weddingRPG3Erad:SO Eradicator 
 sunrider_missionVows_weddingRPG3Erad2:Long-range Eradicator
 sunrider_missionVows_weddingRPG3Hammer:SO Hammerhead",
-sunrider_missionVows_weddingRPG3Erad,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad,"Call $global.sunrider_missionVows_ref pickShipErad
+sunrider_missionVows_weddingRPG3Erad,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad,"$rpgShip = eradicator_Overdriven 0
+Call $global.sunrider_missionVows_ref pickShip
 $option = sunrider_missionVows_weddingRPG3Common 0
 FireBest DialogOptionSelected",,,
-sunrider_missionVows_weddingRPG3Erad2,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad2,"Call $global.sunrider_missionVows_ref pickShipErad2
+sunrider_missionVows_weddingRPG3Erad2,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Erad2,"$rpgShip = eradicator_Support 0
+Call $global.sunrider_missionVows_ref pickShip
 $option = sunrider_missionVows_weddingRPG3Common 0
 FireBest DialogOptionSelected",,,
-sunrider_missionVows_weddingRPG3Hammer,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Hammer,"Call $global.sunrider_missionVows_ref pickShipHammer
+sunrider_missionVows_weddingRPG3Hammer,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Hammer,"$rpgShip = hammerhead_Overdriven 0
+Call $global.sunrider_missionVows_ref pickShip
 $option = sunrider_missionVows_weddingRPG3Common 0
 FireBest DialogOptionSelected",,,
-sunrider_missionVows_weddingRPG3Common,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Common,"AddTextSmall ""match TODO""","""Okay, let’s wait a few minutes,"" the DM says, ""if nobody comes to play with the last two sheets, we can begin.""
+sunrider_missionVows_weddingRPG3Common,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG3Common,,"""Okay, let’s wait a few minutes,"" the DM says, ""if nobody comes to play with the last two sheets, we can begin.""
 
-Minutes later, with nobody showing up, the DM starts the game. ""Good luck with the d20 dices, brothers and sisters.""","sunrider_missionVows_weddingRPG5Win:Win match (todo)
-sunrider_missionVows_weddingRPG5Lose:Lose match (todo)",
-sunrider_missionVows_weddingRPG5Win,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG5Win,"AddStoryPoints 1
+While waiting, you cast a glance at the others players and their character sheets. Most of these players are new, but $sunrider_missionVows_groomFirst has the marks of a veteran tabletop gamer. Something tells you you're going to need it...
+
+Minutes later, with nobody showing up, the DM starts the game. ""Good luck with the d20 dices, brothers and sisters.""",sunrider_missionVows_weddingRPG4:Begin!,
+sunrider_missionVows_weddingRPG4,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG4,Call $global.sunrider_missionVows_ref beginRPGBattle,,,
+sunrider_missionVows_weddingRPG5Win,Sunrider_MissionVows_RPGResult,$player.sunrider_missionVows_wonRPG,"AddStoryPoints 1
+$wantMusicReset = true 0
 $option = sunrider_missionVows_weddingRPG6 0
 FireBest DialogOptionSelected","The table bursts into cheers as the formidable foe is overcome.
 
 ""Good game, everyone,"" the DM says, ""I won’t say that your Invictus friend carried the fight because it’d lose on 1vs1 against the first phase.""",,
-sunrider_missionVows_weddingRPG5Lose,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG5Lose,"$option = sunrider_missionVows_weddingRPG6 0
+sunrider_missionVows_weddingRPG5Lose,Sunrider_MissionVows_RPGResult,,"$wantMusicReset = true 0
+$option = sunrider_missionVows_weddingRPG6 0
 FireBest DialogOptionSelected","The players are disappointed. 
 
 ""Good game, everyone,"" the DM says, ""you stood your ground to the end, although, if I may leave a comment on how most of you could have played, surrounding the boss at its first phase would be the most effective way to kill it quickly.""",,
 sunrider_missionVows_weddingRPG6,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG6,FireAll Sunrider_MissionVows_RPGHypershuntCheck,"One of the players comments, ""How did you come up with a starship that splits on death? As if the big one wasn’t enough trouble.""
 
-The dungeon master replies, ""You wouldn’t believe me if I told you.""",sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave,"
--	
--	""Did you visit a Hypershunt?"" (only visible if player has visited one before)"
-sunrider_missionVows_weddingRPG6HaveShunt,FireAll Sunrider_MissionVows_RPGHypershuntCheck,$TODO,,,"sunrider_missionVows_weddingRPG7:""Did you find a Hypershunt?""",
+The dungeon master replies, ""You wouldn’t believe me if I told you.""",sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave,
+sunrider_missionVows_weddingRPG6HaveShunt,FireAll Sunrider_MissionVows_RPGHypershuntCheck,$TODO,,,"sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave
+sunrider_missionVows_weddingRPG7:""Did you find a Hypershunt?""",needs testing
 sunrider_missionVows_weddingRPG7,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG7,,"The DM looks at you. ""A what?"" 
 
-You tell them you’re familiar with the ‘boss’ they claim to have made up. Excepting $sunrider_missionVows_groomFirst, the other players are horrified about the idea that such an alien monstrosity exists.","sunrider_missionVows_weddingRPG8Joke:""Calm down, I'm just joking.""
+You tell them you’re familiar with the ‘boss’ they claim to have made up. Excepting $sunrider_missionVows_groomFirst, the other players are horrified at the idea that such an alien monstrosity exists.","sunrider_missionVows_weddingRPG8Joke:""Calm down, I'm just joking.""
 sunrider_missionVows_weddingRPG8True:""It’s true.""",
 sunrider_missionVows_weddingRPG8Joke,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG8Joke,,"Most of them let out a sigh of relief. ""Phew, don’t scare me like that,"" one says. 
 
@@ -1517,6 +1532,7 @@ sunrider_missionVows_weddingFinalePrizeRensouhou,DialogOptionSelected,$option ==
 ShowImageVisual SRrensouhou","""This is Rensouhou-chan,"" he says. ""An ancient turret that was supposed to be sentient. It says ‘Zekamashi’ on the lifebuoy, but that’s all I can say about it.""","sunrider_missionVows_weddingFinalePickPrize:Choose this prize
 sunrider_missionVows_weddingFinale5Repeat:Go back",
 sunrider_missionVows_weddingFinalePickPrize,DialogOptionSelected,$option == sunrider_missionVows_weddingFinalePickPrize,"$player.sunrider_vowsPrize = $prize
+Call $global.sunrider_missionVows_ref addSkillFromPlush
 ShowPersonVisual true sunrider_santos
 ShowSecondPerson sunrider_grandorder
 Sunrider_PlayInteractionMusic SunriderRecover","$sunrider_missionVows_groomFirst nods. ""All yours, captain.""

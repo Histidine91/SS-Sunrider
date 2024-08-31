@@ -541,7 +541,12 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 		long seed = Long.parseLong(seedStr);
 		return seed;
 	}
-	
+
+	/**
+	 * Gets a string in the {@code sunrider_missions} category (not {@code sunrider} category).
+	 * @param id
+	 * @return
+	 */
 	public static String getString(String id) {
 		return Global.getSettings().getString("sunrider_missions", id);
 	}

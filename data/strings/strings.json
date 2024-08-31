@@ -16,6 +16,12 @@
 		"skill_sunridersMother_descSupply1":"-%s%% supply cost per month (Fallen Outsider ships only)",
 		"skill_sunridersMother_descSupply2":"-%s%% supply cost per month (Sunrider only, stacks with non-elite effect)",
 		
+		"skill_plushGalleon_desc1":"-%s%% damage taken",
+		"skill_plushDogoo_desc1":"-%s%% weapon and engine repair time",
+		"skill_plushDogoo_desc2":"-%s%% overload duration",
+		"skill_plushRensouhou_desc1":"+%s%% weapon rate of fire and -%s%% flux cost, effect %s for frigates and destroyers",
+		"skill_plushRensouhou_desc1Highlight":"doubled",
+		
 		"shipNameUnknown":"<name unknown>",
 
 		"mother":"mother",
@@ -94,6 +100,9 @@
 		"missionVows_returnToBeholderNextStep":"Return to %s",
 		"missionVows_partyDesc":"The wedding is taking place on %s. You should go there within five days of receiving the invitation.",
 		"missionVows_partyNextStep":"Go to %s within 5 days for the wedding",
+		"missionVows_dialog_postBattleDesc":"As the battle concludes, you look at the (simulated) debris and whatever is still moving on the field...",
+		"missionVows_dialog_endBattle":"Finish reviewing the outcome of the battle",
+		"missionVows_dialog_skillUnlockStr":"Gained skill %s",
 		
 		"missionShowdown_name":"Ryuvian Showdown",
 		"missionShowdown_firstSystemDesc":"Go to the %s to look for the Ryuvian fleet.",

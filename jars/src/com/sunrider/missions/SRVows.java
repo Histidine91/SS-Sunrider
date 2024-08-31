@@ -1,24 +1,28 @@
 package com.sunrider.missions;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.InteractionDialogAPI;
-import com.fs.starfarer.api.campaign.SectorEntityToken;
+import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.FullName;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.combat.BattleCreationContext;
+import com.fs.starfarer.api.combat.EngagementResultAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.FleetEncounterContext;
+import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
-import com.fs.starfarer.api.impl.campaign.ids.People;
-import com.fs.starfarer.api.impl.campaign.ids.Tags;
+import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
+import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithSearch;
+import com.fs.starfarer.api.impl.campaign.rulecmd.FireBest;
 import com.fs.starfarer.api.impl.campaign.rulecmd.missions.Sunrider_MiscFunctions;
-import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.sunrider.SRPeople;
 import java.awt.Color;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -35,6 +39,8 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 	public static final float DELAY_BEFORE_AVAILABLE = 30;	// from completion of mission 4 (Sons of Inquity)
 	public static final float TIME_LIMIT = 30;
 	public static final float CREDIT_REWARD = 6000;
+	public static final Map<String, String> PLUSH_TO_SKILL = new HashMap<>();
+	public static final String TESSERACT_CORE_ID = Commodities.BETA_CORE;
 	//public static final Set<String> VALID_CURATE_MARKETS = new HashSet<>(Arrays.asList("gilead", "volturn", "hesperus", "jangala"));
 	
 	public enum Stage {
@@ -56,12 +62,29 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 	protected PersonAPI hegOfficer = SRPeople.getOrCreateHegOfficer();
 	protected PersonAPI churchOfficer = SRPeople.getOrCreateChurchOfficer();
 	protected MarketAPI curateLoc;
+	protected String playerShipVariant;
+
+	static {
+		PLUSH_TO_SKILL.put("galleon", "sunrider_plushGalleon");
+		PLUSH_TO_SKILL.put("dogoo", "sunrider_plushDogoo");
+		PLUSH_TO_SKILL.put("rensouhou", "sunrider_plushRensouhou");
+	}
 	
-	// runcode com.sunrider.missions.SRMission4.debug()
+	// runcode com.sunrider.missions.SRVows.debug()
 	public static void debug() {
 		SRVows mission = (SRVows)Global.getSector().getMemoryWithoutUpdate().get("$sunrider_missionVows_ref");
 		SectorEntityToken beholder = Global.getSector().getEntityById("beholder_station");
 		mission.makeImportant(beholder, "$sunrider_missionVows_shrine3", Stage.PARTY);
+
+		PersonAPI person = mission.groom;
+		person.getStats().setLevel(7);
+		person.getStats().setSkillLevel(Skills.IMPACT_MITIGATION, 2);
+		person.getStats().setSkillLevel(Skills.DAMAGE_CONTROL, 2);
+		person.getStats().setSkillLevel(Skills.FIELD_MODULATION, 2);
+		person.getStats().setSkillLevel(Skills.POINT_DEFENSE, 2);
+		person.getStats().setSkillLevel(Skills.SYSTEMS_EXPERTISE, 2);
+		person.getStats().setSkillLevel(Skills.ORDNANCE_EXPERTISE, 1);
+		person.getStats().setSkillLevel(Skills.POLARIZED_ARMOR, 1);
 	}
 	
 	@Override
@@ -72,7 +95,8 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		
 		SectorEntityToken beholder = Global.getSector().getEntityById("beholder_station");
 		if (beholder == null) return false;
-		
+
+		// the curate's location isn't actually saved in vanilla, so we'll make something up
 		requireMarketIsNot(createdAt);
 		requireMarketIsNot(Global.getSector().getEconomy().getMarket("volturn"));
 		search.marketReqs.add(new HaveShrineRequirement());
@@ -131,10 +155,158 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		PersonAPI dm = bride.getFaction().createRandomPerson(FullName.Gender.MALE);
 		dialog.getVisualPanel().showPersonInfo(dm, true);
 	}
+
+	protected void pickShip(InteractionDialogAPI dialog, MemoryAPI local) {
+		playerShipVariant = local.getString("$rpgShip");
+	}
+
+	protected void addSkillFromPlush(InteractionDialogAPI dialog, MemoryAPI local) {
+		String skill = PLUSH_TO_SKILL.get(local.getString("$prize"));
+		Global.getSector().getCharacterData().getPerson().getStats().setSkillLevel(skill, 1);
+
+		PersonAPI temp = Global.getSector().getPlayerFaction().createRandomPerson();
+		temp.getStats().setSkillLevel(skill, 1);
+
+		String skillName = Global.getSettings().getSkillSpec(skill).getName();
+		dialog.getTextPanel().setFontSmallInsignia();
+		dialog.getTextPanel().addPara(Sunrider_MiscFunctions.getString("missionVows_dialog_skillUnlockStr"), Misc.getHighlightColor(), skillName);
+		dialog.getTextPanel().setFontInsignia();
+		dialog.getTextPanel().addSkillPanel(temp, false);
+	}
+
+	protected void setTempFleetLocation(CampaignFleetAPI fleet) {
+		CampaignFleetAPI pf = Global.getSector().getPlayerFleet();
+		fleet.setContainingLocation(pf.getContainingLocation());
+		fleet.setLocation(pf.getLocation().x, pf.getLocation().y);
+	}
+
+	protected CampaignFleetAPI createEnemyFleet() {
+		CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet(Factions.REMNANTS, FleetTypes.PATROL_SMALL, null);
+		fleet.setNoFactionInName(true);
+		fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true);
+
+		FleetMemberAPI member = fleet.getFleetData().addFleetMember("tesseract_Attack");
+		PersonAPI captain = Misc.getAICoreOfficerPlugin(TESSERACT_CORE_ID).createPerson(TESSERACT_CORE_ID, Factions.REMNANTS, this.genRandom);
+		fleet.getFleetData().addOfficer(captain);
+		fleet.setCommander(captain);
+		member.setCaptain(captain);
+		fleet.getFleetData().setFlagship(member);
+
+		return fleet;
+	}
+
+	protected CampaignFleetAPI createFriendlyFleet() {
+		CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet(Factions.LUDDIC_CHURCH, FleetTypes.PATROL_LARGE, null);
+		fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true);
+
+		// you
+		PersonAPI player = Global.getSector().getPlayerPerson();
+		//fleet.getFleetData().addOfficer(player);
+		FleetMemberAPI member = fleet.getFleetData().addFleetMember(playerShipVariant);
+		member.setCaptain(player);
+		fleet.getFleetData().setFlagship(member);
+		fleet.setCommander(player);
+
+		// Gabriel
+		member = fleet.getFleetData().addFleetMember("invictus_Standard");
+		//fleet.getFleetData().addOfficer(groom);
+		member.setCaptain(groom);
+
+		// le other NPCs
+		fleet.getFleetData().addFleetMember("retribution_Standard");
+		fleet.getFleetData().addFleetMember("mora_Strike");
+		fleet.getFleetData().addFleetMember("condor_Support");
+		fleet.getFleetData().addFleetMember("manticore_Balanced");
+		fleet.getFleetData().addFleetMember("vanguard_Outdated");
+		fleet.getFleetData().addFleetMember("lasher_luddic_church_Standard");
+
+		for (FleetMemberAPI curr : fleet.getFleetData().getMembersListCopy()) {
+			curr.getRepairTracker().setCR(0.7f);
+		}
+
+		//fleet.getFleetData().sort();
+		//fleet.getFleetData().setSyncNeeded();
+		//fleet.getFleetData().syncIfNeeded();
+
+		setTempFleetLocation(fleet);
+
+		return fleet;
+	}
+
+	protected void createBattle(InteractionDialogAPI dialog, final Map<String, MemoryAPI> memoryMap) {
+		final SectorEntityToken entity = dialog.getInteractionTarget();
+
+		final CampaignFleetAPI playerFleetBackup = Global.getSector().getPlayerFleet();
+
+		final CampaignFleetAPI enemyFleetTemp = createEnemyFleet();
+		final CampaignFleetAPI playerFleetTemp = createFriendlyFleet();
+		dialog.setInteractionTarget(enemyFleetTemp);
+		Global.getSector().setPlayerFleet(playerFleetTemp);
+
+		final FleetInteractionDialogPluginImpl.FIDConfig config = new FleetInteractionDialogPluginImpl.FIDConfig();
+		config.leaveAlwaysAvailable = false;
+		config.showCommLinkOption = false;
+		config.showEngageText = false;
+		config.showFleetAttitude = false;
+		config.showTransponderStatus = false;
+		config.showWarningDialogWhenNotHostile = false;
+		config.alwaysAttackVsAttack = true;
+		config.impactsAllyReputation = false;
+		config.impactsEnemyReputation = false;
+		config.pullInAllies = false;
+		config.pullInEnemies = false;
+		config.pullInStations = false;
+		config.lootCredits = false;
+		config.straightToEngage = true;
+
+		config.dismissOnLeave = false;
+		config.printXPToDialog = true;
+
+		final RPGFIDP plugin = new RPGFIDP(config);
+
+		final InteractionDialogPlugin originalPlugin = dialog.getPlugin();
+		config.delegate = new FleetInteractionDialogPluginImpl.BaseFIDDelegate() {
+			@Override
+			public void notifyLeave(InteractionDialogAPI dialog) {
+				enemyFleetTemp.despawn();
+				playerFleetTemp.despawn();
+
+				Global.getSector().setPlayerFleet(playerFleetBackup);
+
+				dialog.setPlugin(originalPlugin);
+				dialog.setInteractionTarget(Global.getSector().getEntityById("beholder_station"));
+
+				EngagementResultAPI result = plugin.getLastResult();
+				FleetEncounterContext context = (FleetEncounterContext) plugin.getContext();
+				log.info("Checking outcome:");
+				log.info(String.format("ERAPI: did player win? %s", result.didPlayerWin()));
+				log.info(String.format("FEC: player won last %s, most recent %s, ultimate %s",
+						context.didPlayerWinLastEngagement(), context.didPlayerWinMostRecentBattleOfEncounter(), context.didPlayerWinEncounterOutright()));
+				if (result.didPlayerWin()) {
+					memoryMap.get(MemKeys.PLAYER).set("$sunrider_missionVows_wonRPG", true);
+				}
+
+				FireBest.fire(null, dialog, memoryMap, "Sunrider_MissionVows_RPGResult");
+			}
+			@Override
+			public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
+				bcc.aiRetreatAllowed = false;
+				bcc.enemyDeployAll = true;
+			}
+			@Override
+			public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
+			}
+		};
+
+		dialog.setPlugin(plugin);
+		plugin.init(dialog);
+		plugin.optionSelected(null, FleetInteractionDialogPluginImpl.OptionId.CONTINUE_INTO_BATTLE);
+	}
 	
 	@Override
 	public boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) 
-	{		
+	{
+		MemoryAPI local = memoryMap.get(MemKeys.LOCAL);
 		switch (action) {
 			case "findCurate":
 				setCurrentStage(Stage.FIND_CURATE, dialog, memoryMap);
@@ -152,25 +324,23 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 			case "fail":
 				fail(dialog, memoryMap);
 				return true;
-			case "genSingingResult": {
-				MemoryAPI local = memoryMap.get(MemKeys.LOCAL);
+			case "genSingingResult":
 				local.set("$songResult", getRandomSingingScore(local), 0);
 				return true;
-			}
-			case "pickShipErad":
-				// TODO
+			case "pickShip":
+				pickShip(dialog, local);
 				return true;
-			case "pickShipErad2":
-				// TODO
-				return true;
-			case "pickShipHammer":
-				// TODO
+			case "beginRPGBattle":
+				createBattle(dialog, memoryMap);
 				return true;
 			case "showTempHegOfficer":
 				showTempHegOfficer(dialog);
 				return true;
 			case "showTempDM":
 				showTempDM(dialog);
+				return true;
+			case "addSkillFromPlush":
+				addSkillFromPlush(dialog, local);
 				return true;
 		}
 		return false;
