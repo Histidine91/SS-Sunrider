@@ -1124,9 +1124,13 @@ ShowDefaultVisual","After the curate takes a moment to get $hisOrHer bearings, $
 
 You start to leave as well when two uniformed men, who had been standing nearby in a parade rest, now turn and walk towards you.
 
-""$PlayerSirOrMadam? A moment of your time, if you would.""",sunrider_missionVows_return4:Continue,
-sunrider_missionVows_return4,DialogOptionSelected,$option == sunrider_missionVows_return4,"BeginConversation sunrider_holyoak true false
-ShowSecondPerson sunrider_saint","""We are... inquiring into a matter of grave concern to the security of the Sector,"" the $manOrWoman in the garments of a Church knight says. 
+""$PlayerSirOrMadam? A moment of your time, if you would.""",sunrider_missionVows_return4Init:Continue,
+sunrider_missionVows_return4Init,DialogOptionSelected,$option == sunrider_missionVows_return4Init,"BeginConversation sunrider_holyoak true false
+ShowSecondPerson sunrider_saint
+Call $global.sunrider_missionVows_ref updateData
+$option = sunrider_missionVows_return4 0
+FireBest DialogOptionSelected",,,
+sunrider_missionVows_return4,DialogOptionSelected,$option == sunrider_missionVows_return4,,"""We are... inquiring into a matter of grave concern to the security of the Sector,"" the $manOrWoman in the garments of a Church knight says. 
 
 When you ask $himOrHer to elaborate, $heOrShe seems to hesitate. ""It is also a matter of grave secrecy. You must swear that nothing we tell you shall reach the ears of others, and-""","sunrider_missionVows_return5Ask:""What's this about, sir?""
 sunrider_missionVows_return5Silent:Say nothing
@@ -1142,7 +1146,7 @@ sunrider_missionVows_return5Games,DialogOptionSelected,$option == sunrider_missi
 FireBest DialogOptionSelected",,,
 sunrider_missionVows_return6,DialogOptionSelected,$option == sunrider_missionVows_return6,ShowImageVisual SunriderPhoto,"A couple of minutes later, the three of you are seated around a small table in a private reception room, your respective guards (one each) standing a safe distance behind. Capt. Saint activates a privacy field that blurs the room past your hard, utilitarian chairs - this is Beholder Station, after all - into a blue haze.
 
-$sunrider_missionVows_SaintHeOrShe taps on his alternative-brand TriPad, and an image appears on the table before you.
+$sunrider_missionVows_SaintHeOrShe taps on nrider_missionVows_saintHisOrHer alternative-brand TriPad, and an image appears on the table before you.
 
 ""Do you recognize this, captain?""","sunrider_missionVows_return7Yes:""...These are Ryuvian Nightmares.""
 sunrider_missionVows_return7No:Say you don't know (lie)",
@@ -1356,8 +1360,8 @@ FireBest DialogOptionSelected","The players are disappointed.
 sunrider_missionVows_weddingRPG6,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG6,FireAll Sunrider_MissionVows_RPGHypershuntCheck,"One of the players comments, ""How did you come up with a starship that splits on death? As if the big one wasn’t enough trouble.""
 
 The dungeon master replies, ""You wouldn’t believe me if I told you.""",sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave,
-sunrider_missionVows_weddingRPG6HaveShunt,FireAll Sunrider_MissionVows_RPGHypershuntCheck,$TODO,,,"sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave
-sunrider_missionVows_weddingRPG7:""Did you find a Hypershunt?""",needs testing
+sunrider_missionVows_weddingRPG6HaveShunt,Sunrider_MissionVows_RPGHypershuntCheck,Sunrider_MiscFunctions encounteredOmega,,,"sunrider_missionVows_weddingHubRepeat:Thank them for the game and leave
+sunrider_missionVows_weddingRPG7:""Did you encounter a Tesseract?""",needs testing
 sunrider_missionVows_weddingRPG7,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG7,,"The DM looks at you. ""A what?"" 
 
 You tell them you’re familiar with the ‘boss’ they claim to have made up. Excepting $sunrider_missionVows_groomFirst, the other players are horrified at the idea that such an alien monstrosity exists.","sunrider_missionVows_weddingRPG8Joke:""Calm down, I'm just joking.""
@@ -1386,7 +1390,7 @@ FireBest Sunrider_MissionVows_GetKaraokeResults",,,
 sunrider_missionVows_weddingKaraokeSong_armageddon,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = armageddon 0
 Highlight Armageddon","The screen scrolls through several songs until it stops at ""Armageddon, by Emi Evans."" 
 
-A teenage boy says ""ouch! That is such a bad luck!"" You look at him and he elaborates, ""I know that one, it’s in made-up language by the singer."" 
+A teenage boy says ""Ouch! That is such a bad luck!"" You look at him and he elaborates, ""I know that one, it’s in made-up language by the singer."" 
 
 After the song starts, it takes a while for the lyrics to show up on the screen, but when they do, it’s pure chaos!",,
 sunrider_missionVows_weddingKaraokeSong_hpMugen,Sunrider_MissionVows_DisplaySong,!$fakeVar score:10,"$song = hpMugen 0

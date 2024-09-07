@@ -6,6 +6,7 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.sunrider.SRPeople;
 import com.sunrider.SunriderSatBombListener;
+import com.sunrider.TesseractEncounterListener;
 
 public class SunriderModPlugin extends BaseModPlugin {
 	
@@ -14,6 +15,10 @@ public class SunriderModPlugin extends BaseModPlugin {
 		reverseCompatibility();
 		SRPeople.createAvaIfNeeded();
 		SunriderSatBombListener.addIfNeeded();
+
+		if (!TesseractEncounterListener.hasMemkey()) {
+			Global.getSector().getListenerManager().addListener(new TesseractEncounterListener(), true);
+		}
 	}
 	
 	public void reverseCompatibility() {

@@ -109,6 +109,9 @@
 		"SunriderEpicBravery":[
 			{"file": "SunriderEpicBravery.ogg", "source":"sounds/music/", "pitch": 1, "volume": 1}
 		],
+		"cbm_SunriderEpicBravery":[
+			{"file": "SunriderEpicBravery.ogg", "source":"sounds/music/", "pitch": 1, "volume": 1}
+		],
 		"Fallen_Angel_Pt3":[
 			{"file": "Fallen_Angel_Pt3.ogg", "source":"sounds/music/", "pitch": 1, "volume": 0.7}
 		],

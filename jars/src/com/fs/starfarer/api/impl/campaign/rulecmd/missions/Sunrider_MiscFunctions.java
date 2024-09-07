@@ -34,6 +34,7 @@ import com.fs.starfarer.api.util.DelayedActionScript;
 import com.fs.starfarer.api.util.Misc;
 import com.sunrider.NexUtils;
 import com.sunrider.SRPeople;
+import com.sunrider.TesseractEncounterListener;
 import com.sunrider.missions.FindSunrider;
 import com.sunrider.missions.SunriderMissionInterface;
 import java.util.ArrayList;
@@ -103,6 +104,8 @@ public class Sunrider_MiscFunctions extends BaseCommandPlugin {
 
 				//Global.getLogger(this.getClass()).info("wololo " + itemId + " " + needed);
 				return Global.getSector().getPlayerFleet().getCargo().getCommodityQuantity(itemId) >= needed;
+			case "encounteredOmega":
+				return TesseractEncounterListener.hasMemkey();
 		}
 		
 		return false;

@@ -40,7 +40,7 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 	public static final float TIME_LIMIT = 30;
 	public static final float CREDIT_REWARD = 6000;
 	public static final Map<String, String> PLUSH_TO_SKILL = new HashMap<>();
-	public static final String TESSERACT_CORE_ID = Commodities.BETA_CORE;
+	public static final String TESSERACT_CORE_ID = Commodities.ALPHA_CORE;
 	//public static final Set<String> VALID_CURATE_MARKETS = new HashSet<>(Arrays.asList("gilead", "volturn", "hesperus", "jangala"));
 	
 	public enum Stage {
@@ -192,6 +192,9 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		member.setCaptain(captain);
 		fleet.getFleetData().setFlagship(member);
 
+		fleet.addTag("cbm_SunriderEpicBravery");
+		fleet.getMemoryWithoutUpdate().set("$sunrider_music", "cbm_SunriderEpicBravery");
+
 		return fleet;
 	}
 
@@ -220,8 +223,10 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 		fleet.getFleetData().addFleetMember("vanguard_Outdated");
 		fleet.getFleetData().addFleetMember("lasher_luddic_church_Standard");
 
+		fleet.getCargo().addCrew((int)fleet.getFleetData().getMinCrew());
+
 		for (FleetMemberAPI curr : fleet.getFleetData().getMembersListCopy()) {
-			curr.getRepairTracker().setCR(0.7f);
+			curr.getRepairTracker().setCR(curr.getRepairTracker().getMaxCR());
 		}
 
 		//fleet.getFleetData().sort();
@@ -342,6 +347,9 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 			case "addSkillFromPlush":
 				addSkillFromPlush(dialog, local);
 				return true;
+			case "isMissionRunning":
+				// if you got here the mission is indeed running
+				return true;
 		}
 		return false;
 	}
@@ -369,8 +377,10 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 
 		set("$sunrider_missionVows_saintHeOrShe", hegOfficer.getHeOrShe());
 		set("$sunrider_missionVows_saintHimOrHer", hegOfficer.getHimOrHer());
+		set("$sunrider_missionVows_saintHisOrHer", hegOfficer.getHisOrHer());
 		set("$sunrider_missionVows_SaintHeOrShe", Misc.ucFirst(hegOfficer.getHeOrShe()));
 		set("$sunrider_missionVows_SaintHimOrHer", Misc.ucFirst(hegOfficer.getHimOrHer()));
+		set("$sunrider_missionVows_SaintHisOrHer", Misc.ucFirst(hegOfficer.getHisOrHer()));
 	}
 
 	// intel text in intel screen description
