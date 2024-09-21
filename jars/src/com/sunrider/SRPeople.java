@@ -177,11 +177,17 @@ public class SRPeople {
 		person.setPostId(Ranks.CITIZEN);
 		
 		long seed = Sunrider_MiscFunctions.getSectorSeed();
-		boolean altName = new Random(seed).nextBoolean();
+		Random rand = new Random(seed);
+		boolean altName = rand.nextBoolean();
 		
 		person.getName().setFirst(Sunrider_MiscFunctions.getString("brideNameFirst" + (altName ? "2" : "")));
 		person.getName().setLast(Sunrider_MiscFunctions.getString("brideNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait_luddic03.png");	// TODO
+		int num = rand.nextInt(3);
+		String numStr = "one";
+		if (num == 1) numStr = "two";
+		else if (num == 2) numStr = "three";
+
+		person.setPortraitSprite("graphics/portraits/SunriderLC" + numStr + ".png");
 		
 		Global.getSector().getImportantPeople().addPerson(person);
 		return person;
@@ -199,7 +205,7 @@ public class SRPeople {
 		person.setPostId(Ranks.CITIZEN);
 		person.getName().setFirst(Sunrider_MiscFunctions.getString("groomNameFirst"));
 		person.getName().setLast(Sunrider_MiscFunctions.getString("groomNameLast"));
-		person.setPortraitSprite("graphics/portraits/portrait_luddic00.png");
+		person.setPortraitSprite("graphics/portraits/SunriderLCfour.png");
 
 		// for the RPG
 		person.getStats().setLevel(7);

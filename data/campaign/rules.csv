@@ -107,8 +107,7 @@ It has exactly the intended effect.
 Ava answers with extreme formality ""I’m fine, thank you for asking. And I see you’re enjoying your retirement.""
 
 ""That I am. But what brings you... ah, I see.""",sunrider_findSunrider_salvager3:Continue,
-sunrider_findSunrider_salvager3,DialogOptionSelected,$option == sunrider_findSunrider_salvager3,"$sunrider_findSunrider_systemName
-Call $global.sunrider_findSunrider_ref talkedToSalvager","Jinta looks up and puts a finger on his chin for a few seconds, then says ""If my memory doesn’t fail me, we rescued you in the $sunrider_findSunrider_systemName. Wait, are you really going for it?"" 
+sunrider_findSunrider_salvager3,DialogOptionSelected,$option == sunrider_findSunrider_salvager3,Call $global.sunrider_findSunrider_ref talkedToSalvager,"Jinta looks up and puts a finger on his chin for a few seconds, then says ""If my memory doesn’t fail me, we rescued you in the $sunrider_findSunrider_systemName. Wait, are you really going for it?"" 
 
 ""Yes, we are,"" Ava says. ""Thank you, Jinta."" 
 
@@ -1293,7 +1292,7 @@ $sunrider_missionVows_seenKaraoke",,,sunrider_missionVows_weddingFinale1:Conclud
 sunrider_missionVows_weddingHubOptFinaleDev,Sunrider_MissionVows_WeddingOpts,"$eventsDone < 3
 $global.isDevMode",,,sunrider_missionVows_weddingFinale1:>> (dev) Conclude the wedding,
 sunrider_missionVows_weddingHubOptLeaveEarly,Sunrider_MissionVows_WeddingOpts,$eventsDone < 3,"Sunrider_AddOptionConfirmation sunrider_missionVows_weddingLeaveEarly ""Are you sure you want to skip out early?"" ""Yes"" ""No""",,sunrider_missionVows_weddingLeaveEarly:Leave,
-sunrider_missionVows_weddingBoard1,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard1,"$sunrider_missionVows_seenBoard = true
+sunrider_missionVows_weddingBoard1,DialogOptionSelected,$option == sunrider_missionVows_weddingBoard1,"$sunrider_missionVows_seenBoard = true 0
 $eventsDone++","There are several games to play here, using cards, dice or other small pieces, but all of them have one thing in common: they predate humanity leaving old Earth.
 
 There is chess, checkers, dominoes, several possible games with a standard card deck, and even a board racing game which you choose one of the Hound frigate miniatures and roll the dice to fly it from Asher to Gilead faster than other players while avoiding squares with a Paragon or Atlas MkII.
@@ -1313,7 +1312,7 @@ sunrider_missionVows_weddingBoard4,DialogOptionSelected,$option == sunrider_miss
 A frown comes to her face. ""But it’s kinda boring that I only had a real challenge in chess like once in life, not gonna lie. Anyway, thanks for the game.""
 
 You watch as she stands up and leaves the table. When she said she didn’t lose a single game, you were certain that she was talking about only today, not this. ",sunrider_missionVows_weddingHubRepeat:Get up and do something else,
-sunrider_missionVows_weddingRPG1,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG1,"$sunrider_missionVows_seenRPG = true
+sunrider_missionVows_weddingRPG1,DialogOptionSelected,$option == sunrider_missionVows_weddingRPG1,"$sunrider_missionVows_seenRPG = true 0
 $eventsDone++
 Call $global.sunrider_missionVows_ref showTempDM
 ShowThirdPerson sunrider_santos","You see a larger table in a corner near the exit, with eight people, including $sunrider_missionVows_groomFirst and a large photo of the void. With a closer inspection, you notice that it’s an RPG game that simulates space combat. 
@@ -1376,7 +1375,7 @@ sunrider_missionVows_weddingRPG8True,DialogOptionSelected,$option == sunrider_mi
 Gabriel gives you a disappointed look. ""That was so mean. You could have spared them from the nightmare fuel, you know?"" Your best guess is that he is reacting different because he doesn’t want to take your words seriously, as he’d probably be way too young to have travelled beyond the core worlds at all.
 
 As you turn away, you notice someone at a neighboring table looking back at you. It's Cassiel Holyoak, with a stare of profound irritation.",sunrider_missionVows_weddingHubRepeat:Excuse yourself in a hurry,
-sunrider_missionVows_weddingKaraoke1,DialogOptionSelected,$option == sunrider_missionVows_weddingKaraoke1,"$sunrider_missionVows_seenKaraoke = true
+sunrider_missionVows_weddingKaraoke1,DialogOptionSelected,$option == sunrider_missionVows_weddingKaraoke1,"$sunrider_missionVows_seenKaraoke = true 0
 $eventsDone++
 ","There are quite a few people surrounding the music player here. It’s a karaoke, the only electronic entertainment in the party, 
 

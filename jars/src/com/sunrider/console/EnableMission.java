@@ -82,7 +82,7 @@ public class EnableMission implements BaseCommand {
 				addAvaIfNeeded();
 				Global.getSector().getMemoryWithoutUpdate().set("$sunrider_findSunrider_complete", true);
 				Global.getSector().getMemoryWithoutUpdate().set("$sunrider_mission2_doneOrSkipped", true);
-				Global.getSector().getMemoryWithoutUpdate().unset("$sunrider_seenMission4");
+				Global.getSector().getMemoryWithoutUpdate().unset("sunrider_mission4_seenMission");
 				Global.getSector().getMemoryWithoutUpdate().unset("$sunrider_mission4_delay");
 				Console.showMessage("Variables set for showing mission 4");
 				return true;
@@ -104,7 +104,6 @@ public class EnableMission implements BaseCommand {
 		if (!Sunrider_MiscFunctions.isAvaInParty()) {
 			PersonAPI ava = SRPeople.createAvaIfNeeded();
 			Global.getSector().getPlayerFleet().getFleetData().addOfficer(ava);
-			Console.showMessage("Added Ava to player fleet");
 		}
 	}
 	

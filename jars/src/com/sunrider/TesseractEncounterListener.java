@@ -35,8 +35,8 @@ public class TesseractEncounterListener implements FleetEventListener {
             if (remnant || omega) {
                 List<FleetMemberAPI> toCheck = new ArrayList<>(otherFleet.getFleetData().getMembersListCopy());
                 toCheck.addAll(Misc.getSnapshotMembersLost(otherFleet));
-                for (FleetMemberAPI member : toCheck) {
-
+                for (FleetMemberAPI member : toCheck)
+                {
                     if (member.getHullSpec().hasTag(Tags.OMEGA) && member.getHullSpec().getHullSize().compareTo(ShipAPI.HullSize.DESTROYER) >= 0)
                     {
                         saveMemkey();

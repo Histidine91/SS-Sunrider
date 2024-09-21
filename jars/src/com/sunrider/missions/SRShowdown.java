@@ -325,6 +325,7 @@ public class SRShowdown extends HubMissionWithSearch implements SunriderMissionI
                 hegOfficer.getFaction().getId());
 
         setCurrentStage(Stage.COMPLETED, dialog, memoryMap);
+        Global.getSector().getCharacterData().getMemoryWithoutUpdate().set("$sunrider_missionShowdown_missionCompleted", true);
         Global.getSector().getCharacterData().getMemoryWithoutUpdate().unset("$sunrider_missionShowdown_reportBack");
     }
 
