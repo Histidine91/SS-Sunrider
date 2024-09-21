@@ -49,6 +49,9 @@
 			"SunriderPactPackage":"graphics/icons/cargo/SunriderPactIcon.png",
 			"SunriderAlliancePackage":"graphics/icons/cargo/SunriderAllianceIcon.png",
 		},
+		"misc":{
+			"sunrider_icon":"graphics/icons/sunrider_logo.png",
+		}
 	},
 	"designTypeColors":
 	{

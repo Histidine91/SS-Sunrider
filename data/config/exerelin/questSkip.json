@@ -1,0 +1,86 @@
+{		
+	"questChains":{
+		"sunrider":{
+			"name":"Sunrider",
+			"image":"graphics/icons/sunrider_logo.png",
+			"quests":["sunrider_firstArrival", "sunrider_origins", "sunrider_nightmareBreakdown", "sunrider_iniquity", "sunrider_vows", "sunrider_showdown"],
+			"plugin":"com.sunrider.SunriderQuestSkipPlugin",
+		},
+	},
+	
+	"quests":{
+		"sunrider_firstArrival":{
+			"name":"First Arrival",
+			"tooltip":"The player meets Ava Crescentia and recovers the ==Sunrider==.",
+			"idsToForceOffWhenDisabled":["sunrider_origins", "sunrider_nightmareBreakdown", "sunrider_iniquity", "sunrider_vows", "sunrider_showdown"],
+			"sectorMemFlags":{
+				"$sunrider_findSunrider_complete":true,
+				"$sunrider_findSunrider_missionCompleted":true,
+				"$sunrider_findSunrider_seenMission":true,
+			},
+			"playerMemFlags":{}
+		},
+		"sunrider_origins":{
+			"name":"Origins",
+			"tooltip":"The player unlocks information on Ava's origins.",
+			"idsToForceOnWhenEnabled":["sunrider_firstArrival"],
+			"idsToForceOffWhenDisabled":["sunrider_iniquity", "sunrider_vows", "sunrider_showdown"],
+			"sectorMemFlags":{
+				"$sunrider_mission2_missionCompleted":true,
+				"$sunrider_seenMission2":true,
+				"$sunrider_mission2_doneOrSkipped":true
+			},
+			"playerMemFlags":{}
+		},
+		"sunrider_nightmareBreakdown":{
+			"name":"N. Breakdown",
+			"tooltip":"Ava teaches the player how best to fight Ryuvian Nightmares.",
+			"idsToForceOnWhenEnabled":["sunrider_firstArrival"],
+			"idsToForceOffWhenDisabled":["sunrider_iniquity", "sunrider_vows", "sunrider_showdown"],
+			"sectorMemFlags":{
+				"$sunrider_mission3_missionCompleted":true,
+				"$sunrider_seenMission3":true,
+				"$sunrider_mission3_doneOrSkipped":true,
+			},
+			"playerMemFlags":{}
+		},
+		"sunrider_iniquity":{
+			"name":"Sons of Iniquity",
+			"tooltip":"The player ties up some loose ends from Ava's recent past.",
+			"idsToForceOnWhenEnabled":["sunrider_firstArrival", "sunrider_origins"],
+			"idsToForceOffWhenDisabled":["sunrider_vows", "sunrider_showdown"],
+			"sectorMemFlags":{
+				"$sunrider_mission4_missionCompleted":true,
+				"$sunrider_mission4_seenMission":true,
+				"$sunrider_mission4_doneOrSkipped":true,
+			},
+			"playerMemFlags":{
+				"$sunrider_confessToAva":true,
+			}
+		},
+		"sunrider_vows":{
+			"name":"Vows of the Cosmos",
+			"tooltip":"The player helps a young Luddic couple get to their wedding.\n\nGrants a ==random== plushie skill.",
+			"idsToForceOnWhenEnabled":["sunrider_firstArrival", "sunrider_origins", "sunrider_iniquity"],
+			"idsToForceOffWhenDisabled":["sunrider_showdown"],
+			"sectorMemFlags":{
+				"$sunrider_missionVows_missionCompleted":true,
+				"$sunrider_missionVows_doneOrSkipped":true,
+			},
+			"playerMemFlags":{
+				"$sunrider_missionVows_attendedWedding":true,
+				"$sunrider_missionVows_playedChessWithGrandOrder":true
+			}
+		},
+		"sunrider_showdown":{
+			"name":"Ryuvian Showdown",
+			"tooltip":"The player hunts down a strange fleet with Ryuvian technology.",
+			"idsToForceOnWhenEnabled":["sunrider_firstArrival", "sunrider_origins", "sunrider_iniquity", "sunrider_vows"],
+			"idsToForceOffWhenDisabled":[],
+			"sectorMemFlags":{
+				"$sunrider_missionShowdown_missionCompleted":true,
+			},
+			"playerMemFlags":{}
+		},
+	}
+}
