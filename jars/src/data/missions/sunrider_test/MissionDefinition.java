@@ -36,6 +36,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 			"SunriderPactCruiser",
 			"SunriderPactDestroyer",
 			"SunriderPactFrigate",
+			"SunriderAllianceCarrier",
 			"SunriderAllianceBattleship",
 			"SunriderAllianceCruiser",
 			"SunriderMiningFrigate",
@@ -43,7 +44,6 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 			"SunriderPirateFrigate",
 			"SunriderIronhog",
 			"SunriderGunboat",
-			"SunriderBattleship"
 		}));
 		
 		for (String hullId : ships) {

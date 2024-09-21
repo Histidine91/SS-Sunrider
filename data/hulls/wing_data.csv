@@ -7,14 +7,14 @@ SunriderPaladin,SunriderPaladin_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V
 SunriderPhoenix,SunriderPhoenix_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,8000,1000,500,1,INTERCEPTOR,Interceptor,5,100000,,,,,,,,,,,,,105
 SunriderSeraphim,SunriderSeraphim_variant,"no_bp_drop, no_drop, no_sell",3,,1,99,V,0,2200,1000,1,SUPPORT,Sniper,15,100000,,,,,,,,,,,,,106
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-SunriderAllianceTrooper,SunriderAllianceTrooper_variant,sralliance_bp,1,0.3,1,18,V,4000,900,500,2,FIGHTER,Fighter,14,35000,,,,,,,,,,,,,
+SunriderAllianceTrooper,SunriderAllianceTrooper_variant,"sralliance_bp, fighter4",1,0.3,1,18,V,4000,900,500,2,FIGHTER,Fighter,14,35000,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-SunriderPirateGrunt,SunriderPirateGrunt_variant,pirate_bp,1,0.3,1,7,V,4000,700,500,3,INTERCEPTOR,Interceptor,7,5000,,,,,,,,,,,,,
-SunriderPirateBomber,SunriderPirateBomber_variant,pirate_bp,1,0.5,1,12,V,4000,1300,500,1,BOMBER,Bomber,15,7500,,,,,,,,,,,,,
+SunriderPirateGrunt,SunriderPirateGrunt_variant,"pirate_bp, interceptor2",1,0.3,1,7,V,4000,700,500,3,INTERCEPTOR,Interceptor,7,5000,,,,,,,,,,,,,
+SunriderPirateBomber,SunriderPirateBomber_variant,"pirate_bp, bomber3",1,0.5,1,12,V,4000,1300,500,1,BOMBER,Bomber,15,7500,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-SunriderPactMook,SunriderPactMook_variant,srp_bp,1,0.8,1,8,V,4000,800,500,3,INTERCEPTOR,Interceptor,8,5500,,,,,,,,,,,,,
-SunriderPactSupportA,SunriderPactSupportA_variant,"no_bp_drop, no_drop, no_sell",3,,1,25,V,3000,800,400,1,BOMBER,Support,80,150000,,,,,,,,,,,,,107
-SunriderPactSupportB,SunriderPactSupportB_variant,"no_bp_drop, no_drop, no_sell",3,,1,25,V,3000,800,400,1,BOMBER,Support,80,150000,,,,,,,,,,,,,108
-SunriderPactBomber,SunriderPactBomber_variant,srp_bp,1,0.5,1,10,V,4000,1300,500,1,BOMBER,Bomber,14,7000,,,,,,,,,,,,,
-SunriderPactElite,SunriderPactElite_variant,srp_bp,1,0.8,1,13,V,4000,1100,500,1,FIGHTER,Heavy Fighter,17,65000,,,,,,,,,,,,,
-SunriderArcadius,SunriderArcadius_variant,"no_bp_drop, no_drop, no_sell",1,,1,20,V,6000,1300,500,1,FIGHTER,Heavy Fighter,35,300000,,,,,,,,,,,,,
+SunriderPactMook,SunriderPactMook_variant,"srp_bp, interceptor2",1,0.8,1,8,V,4000,800,500,3,INTERCEPTOR,Interceptor,8,5500,,,,,,,,,,,,,
+SunriderPactSupportA,SunriderPactSupportA_variant,"no_bp_drop, no_drop, no_sell, support5",3,,1,25,V,3000,800,400,1,BOMBER,Support,80,150000,,,,,,,,,,,,,107
+SunriderPactSupportB,SunriderPactSupportB_variant,"no_bp_drop, no_drop, no_sell, support5",3,,1,25,V,3000,800,400,1,BOMBER,Support,80,150000,,,,,,,,,,,,,108
+SunriderPactBomber,SunriderPactBomber_variant,"srp_bp, bomber2",1,0.5,1,10,V,4000,1300,500,1,BOMBER,Bomber,14,7000,,,,,,,,,,,,,
+SunriderPactElite,SunriderPactElite_variant,"srp_bp, fighter3",1,0.8,1,13,V,4000,1100,500,1,FIGHTER,Heavy Fighter,17,65000,,,,,,,,,,,,,
+SunriderArcadius,SunriderArcadius_variant,"no_bp_drop, no_drop, no_sell, fighter6",1,,1,20,V,6000,1300,500,1,FIGHTER,Heavy Fighter,35,300000,,,,,,,,,,,,,

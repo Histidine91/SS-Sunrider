@@ -1,0 +1,28 @@
+{
+  "hullName": "Montesquieu Right Launch Bay",
+  "hullId": "SunriderACVright",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/SunriderAllianceCarrierRight.png",
+  "style": "HIGH_TECH",
+  "height": 225,
+  "width": 69,
+  "center": [34.5, 112.5],
+  "collisionRadius": 117.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 117.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "SunriderFallenOutsider",
+	"SunriderAllianceCarrierMod",
+    "always_detaches",
+    "reduced_explosion"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [
+    111.5, -33.5,
+    -112, -34.5,
+    -112, 34.5,
+    111.5, 33.5
+  ]
+}

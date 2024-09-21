@@ -1,0 +1,17 @@
+{
+  "variantId": "SunriderACVright_variant",
+  "hullId": "SunriderACVright",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": [
+    "SunriderAllianceTrooper",
+    "SunriderAllianceTrooper"
+  ]
+}

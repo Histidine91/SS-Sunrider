@@ -1,0 +1,47 @@
+{
+  "hullName": "Montesquieu Left Launch Bay",
+  "hullId": "SunriderACVleft",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/SunriderAllianceCarrierLeft.png",
+  "style": "HIGH_TECH",
+  "height": 225,
+  "width": 69,
+  "center": [34.5, 112.5],
+  "collisionRadius": 117.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 117.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "SunriderFallenOutsider",
+	"SunriderAllianceCarrierMod",
+    "always_detaches",
+    "reduced_explosion"
+  ],
+  "weaponSlots": [
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [110.5, -1]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [110.5, 4]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    111.5, -33.5,
+    -112, -34.5,
+    -112, 34.5,
+    111.5, 33.5
+  ]
+}

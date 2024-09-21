@@ -34,12 +34,20 @@ Monthly supply upkeep increased by %s.
 Incompatible with Solar Shielding.",X,graphics/hullmods/SunriderFallenOutsider.png,
 Ryder Resilience,SunriderRiderResilience,0,,Unknown,"special, no_drop, no_drop_salvage, restricted, progsmod_no_build_in",Fighters,50000,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderRyderResilience,"Weapon and engine durability increased by %s.
 Weapon and engine repair speed by %s.",X,graphics/hullmods/SunriderRyderResilience.png,
-Volatile Raider Suite,SunriderIronhogMod,,,Pirate,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderIronhogMod,"The pirates of the other universe love things that go bang, much like ours. Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.
+Volatile Raider Suite,SunriderIronhogMod,,,Pirate,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderIronhogMod,"The pirates of the other universe love things that go bang, much like ours. Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.
 
 Incompatible with Expanded Missile Racks.",Ballistic weapon rate of fire increased by %s and missile weapon damage increased by %s.,graphics/hullmods/expanded_magazines2.png,
-Blue Behemoth Suite,SunriderMiningBBMod,,,Mining Union,"special, engines, defensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderMiningBBMod,"Various equipment used by the Sandworm-class for its work. EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.
+Blue Behemoth Suite,SunriderMiningBBMod,,,Mining Union,"special, engines, defensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderMiningBBMod,"Various equipment used by the Sandworm-class for its work. EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.
 
 Incompatible with Surveying Equipment.","EMP damage taken reduced by %s. Reduces the heavy machinery and supplies required to perform surveys by %s, down to a minimum of %s for each.",graphics/hullmods/surveying_equipment.png,
+Emerald Dreadnought Suite,SunriderAllianceCarrierMod,,,Solar Alliance,"special, engines, defensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in","Special, Support",,FALSE,TRUE,,0,0,0,0,com.sunrider.hullmods.SunriderAllianceCarrierMod,"The Montesquieu's design is the embodiment of Alliance doctrine for concentrated, overwhelming firepower.
+
+ - Modules are synchronized with core hull in terms of venting/overload and fighter targets.
+ - Fighter engagement range increased by %s.
+ - %s wings get %s extra craft.
+ - Automated fighters cannot be installed.
+
+Incompatible with Unstable Injector and Defensive Targeting Array.",Controls various ship behaviors.,graphics/hullmods/SunriderAllianceIcon.png,
 Gunboat Suppression FCS,SunriderGunboatMod,,,Ceran,"special, offensive, no_drop, no_drop_salvage, restricted, progsmod_no_build_in,","Special, Support",,FALSE,TRUE,,0,0,0,0,data.hullmods.SunriderGunboatMod,"Advanced gunnery control system used by the Gunboat.
 
 Ballistic weapon damage increased by %s and projectile speed by %s. All weapons do %s more damage to fighters and frigates.",Ballistic weapon damage increased by %s and projectile speed by %s. All weapons do %s more damage to fighters and frigates.,graphics/hullmods/ballistic_rangefinder.png,

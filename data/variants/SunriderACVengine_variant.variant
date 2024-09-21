@@ -1,0 +1,17 @@
+{
+  "variantId": "SunriderACVengine_variant",
+  "hullId": "SunriderACVengine",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 3,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "reinforcedhull",
+    "blast_doors"
+  ],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}
