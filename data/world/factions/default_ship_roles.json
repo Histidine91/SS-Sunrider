@@ -42,7 +42,10 @@
 		"SR_MBB_1":12,
 		"SR_MBB_2":12,
 	},
-	"CombatFreighterSmall":{
+	"carrierLarge":{
+		"SR_ACV_1":1,
+	},
+	"combatFreighterSmall":{
 		"SR_MF_1":4,
 		"SR_MF_2":4,
 		"SR_MF_3":4,

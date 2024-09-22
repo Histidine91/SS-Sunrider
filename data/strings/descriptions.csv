@@ -137,3 +137,4 @@ SunriderWarp,SHIP_SYSTEM,"Reverse-engineered by Chigara Lynn Ashada from the Ser
 It's unbelievable how such a thing could be installed in a capital ship and never threaten the safety of her crew, no matter how many times it is activated.",Mobility,Teleports to any desired nearby location up to 3500 range. Generates 5000 flux and has 60 seconds cooldown.,,,,,,,,,,,,,,,,,,,,,
 SunriderSeraphimAwaken,SHIP_SYSTEM,"Doubles range, damage per hit and projectile speed for two shots.",Special,,,,,,,,,,,,,,,,,,,,,,
 SunriderIronWill,SHIP_SYSTEM,Reduces damage taken by 40%. Increases ballistic rate of fire by 60% and reduces flux generation to match. Generates flux while active.,Offense/Defense,,,,,,,,,,,,,,,,,,,,,,
+SunriderEmeraldAssault,SHIP_SYSTEM,"Directs and coordinates the carrier's fighters, increasing their speed and damage by 30%.",Fighter,Increases fighter speed and damage by 30%.,,,,,,,,,,,,,,,,,,,,,
