@@ -395,7 +395,7 @@ public class SRVows extends HubMissionWithSearch implements SunriderMissionInter
 			info.addPara(Sunrider_MiscFunctions.getString("missionVows_goToBeholderDesc"), opad, church, 
 					Global.getSector().getEntityById("beholder_station").getName());
 		}
-		if (currentStage == Stage.FIND_CURATE) 
+		else if (currentStage == Stage.FIND_CURATE)
 		{
 			info.addPara(Sunrider_MiscFunctions.getString("missionVows_findCurateDesc"), opad, church, 
 					curateLoc.getName());

@@ -13,7 +13,7 @@ public class PlushRensouhou {
     public static class Level1 implements ShipSkillEffect {
         public void apply(MutableShipStatsAPI stats, ShipAPI.HullSize hullSize, String id, float level) {
             float rofMod = ROF_PERCENT;
-            float fluxMod = FLUX_PERCENT;
+            float fluxMod = FLUX_PERCENT * 0.01f;
             if (hullSize == ShipAPI.HullSize.FRIGATE || hullSize == ShipAPI.HullSize.DESTROYER) {
                 rofMod *= 2;
                 fluxMod *= 2;

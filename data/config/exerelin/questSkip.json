@@ -45,7 +45,7 @@
 			"playerMemFlags":{}
 		},
 		"sunrider_iniquity":{
-			"name":"Sons of Iniquity",
+			"name":"Son of Iniquity",
 			"tooltip":"The player ties up some loose ends from Ava's recent past.",
 			"idsToForceOnWhenEnabled":["sunrider_firstArrival", "sunrider_origins"],
 			"idsToForceOffWhenDisabled":["sunrider_vows", "sunrider_showdown"],

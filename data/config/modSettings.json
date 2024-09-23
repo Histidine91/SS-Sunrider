@@ -4,7 +4,7 @@
 			"SunriderMiningFrigate":8, # completely forgot to do this for a good while then histidine did it cuz someone brought it up smh
 			"SunriderMiningBattleship":100,
 		},
-				"mining_weapon_strengths":{
+		"mining_weapon_strengths":{
 			"SunriderMiningCannon":20,
 		},
     }
